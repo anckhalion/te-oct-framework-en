@@ -2,6 +2,13 @@
 
 English public mirror of a research framework for AI reasoning protocols and formal theoretical work.
 
+## First-Time Reader Shortcut
+
+If this is your first visit, start here:
+1. `START_HERE_FIRST_TIME.md`
+2. `SIMPLE_GLOSSARY.md`
+3. `SUPER_SIMPLE_FAQ.md`
+
 ## What This Repository Is
 
 This repository contains two connected layers:
@@ -32,11 +39,13 @@ It does **not** refer to optical coherence tomography (medical imaging).
 
 If you are new, read in this order:
 
-1. `INDEX.md`
-2. `TE_BOOTLOADER_v6_0_PROJECT.md`
-3. `TE_CORE_v5.1.md`
-4. `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
-5. `OCT/validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
+1. `START_HERE_FIRST_TIME.md`
+2. `INDEX.md`
+3. `TE_BOOTLOADER_v6_0_PROJECT.md`
+4. `TE_CORE_v5.1.md`
+5. `OCT/START_HERE_OCT.md`
+6. `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
+7. `OCT/validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
 
 ## Publication Scope
 

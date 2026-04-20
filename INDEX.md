@@ -6,10 +6,13 @@ English publication mirror index for TE/OCT.
 
 If you are trying to understand the project quickly:
 
-1. `README.md` for scope and disambiguation
-2. `TE_BOOTLOADER_v6_0_PROJECT.md` + `TE_CORE_v5.1.md` for the TE framework
-3. `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md` for the OCT research foundation
-4. `OCT/validation/` for empirical validation artifacts
+1. `START_HERE_FIRST_TIME.md`
+2. `SIMPLE_GLOSSARY.md`
+3. `SUPER_SIMPLE_FAQ.md`
+4. `README.md` for scope and disambiguation
+5. `TE_BOOTLOADER_v6_0_PROJECT.md` + `TE_CORE_v5.1.md` for the TE framework
+6. `OCT/START_HERE_OCT.md` and `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
+7. `OCT/validation/` for empirical validation artifacts
 
 ## Core Framework
 
