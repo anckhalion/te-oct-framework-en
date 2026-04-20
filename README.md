@@ -1,21 +1,50 @@
-# Technology of Expressions (TE) - English Publication Mirror
+# Technology of Expressions (TE) + Ordinative Category Theory (OCT)
 
-This folder is the complete English mirror of the TE/OCT framework for public dissemination.
+English public mirror of a research framework for AI reasoning protocols and formal theoretical work.
+
+## What This Repository Is
+
+This repository contains two connected layers:
+
+1. `TE` (Technology of Expressions): a documentation-first framework that defines operating principles, reasoning constraints, and modular analysis protocols for AI agents.
+2. `OCT` (Ordinative Category Theory): a formal research program extending classical category theory with ordinative validity operators and validation workflows.
+
+## Important Disambiguation
+
+`OCT` in this repository means **Ordinative Category Theory**.  
+It does **not** refer to optical coherence tomography (medical imaging).
+
+## What You Will Find
+
+- Core framework documents (`TE_BOOTLOADER`, `TE_CORE`, TE modules, `TE_OBSERVER`)
+- OCT manuscript and validation corpus in English (`./OCT`)
+- Reproducibility assets and benchmark outputs (`./datasets`)
+- Governance and contribution files for public collaboration
+
+## What This Repository Is Not
+
+- Not a model-weight repository
+- Not a turnkey productized AI system
+- Not a claim of verified machine sentience
+- Not a medical OCT project
+
+## Start Here (New Readers)
+
+If you are new, read in this order:
+
+1. `INDEX.md`
+2. `TE_BOOTLOADER_v6_0_PROJECT.md`
+3. `TE_CORE_v5.1.md`
+4. `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
+5. `OCT/validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
 
 ## Publication Scope
 
-- Canonical TE framework documents (Bootloader, Core, modules, Observer)
-- OCT corpus in English (`./OCT`)
-- Validation datasets/scripts/results used for OCT benchmarking (`./datasets`)
+- Canonical TE framework documents
+- OCT corpus in English
+- Validation datasets/scripts/results for OCT benchmarking
 - Governance and contribution documents
-
-## Recommended Upload Sources
-
-- GitHub: upload this full `FRAMEWORK_EN` folder content
-- Zenodo: archive this folder (release snapshot)
-- OSF: project component mirror from this folder
-- Hugging Face: derive dataset/model cards from `./OCT` and `./datasets`
 
 ## Exclusions
 
-- Private session dump and brainstorming drafts are intentionally excluded.
+Private session memory dumps and brainstorming drafts are intentionally excluded from this public mirror.

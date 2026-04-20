@@ -1,23 +1,23 @@
-# OCT_EN
+# OCT (Ordinative Category Theory)
 
-English mirror of `OCT_Theory_and_Theorems` for public dissemination.
+English OCT corpus for public dissemination and reproducible validation.
 
 ## Scope
 
-This folder contains the OCT materials translated from Italian to English for:
-- GitHub public repository content,
-- Zenodo deposits,
-- OSF deposits,
-- Hugging Face documentation/dataset cards.
+This folder contains the OCT research materials in English for:
+- GitHub public repository content
+- Zenodo deposits
+- OSF deposits
+- Hugging Face documentation/dataset cards
 
 ## Notes
 
-- Source of truth in Italian remains available in `OCT_Theory_and_Theorems`.
+- This is an English publication mirror of the OCT research corpus.
 - Translation was generated automatically and then normalized on key technical terminology.
 - A final human editorial pass is recommended before journal-level submission.
 
-## Translation provenance
+## Start Here
 
-- Pipeline script: `scripts_translate_oct_en.py`
-- Source folder: `OCT_Theory_and_Theorems`
-- Output folder: `OCT_EN`
+1. `OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
+2. `OCT_PREPRINT_METADATA_FINAL_v1_0.md`
+3. `validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
