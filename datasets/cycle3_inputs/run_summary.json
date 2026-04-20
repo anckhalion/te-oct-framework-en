@@ -1,0 +1,30 @@
+{
+  "D02": {
+    "rows": 180,
+    "summary_by_omega": {
+      "Omega_A": {
+        "n": 60,
+        "phi_zero_quota": 0.2833333333333333,
+        "phi_positive_quota": 0.7166666666666667
+      },
+      "Omega_B": {
+        "n": 60,
+        "phi_zero_quota": 0.31666666666666665,
+        "phi_positive_quota": 0.6833333333333333
+      },
+      "Omega_C": {
+        "n": 60,
+        "phi_zero_quota": 0.35,
+        "phi_positive_quota": 0.65
+      }
+    },
+    "intersection_phi_zero_all_omegas": 0.2833333333333333,
+    "var_phi_zero_quota": 0.0007407407407407405
+  },
+  "A01": {
+    "rows": 320
+  },
+  "D03": {
+    "rows": 260
+  }
+}

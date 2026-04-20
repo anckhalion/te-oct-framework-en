@@ -1,0 +1,321 @@
+task_id,split,omega,source1,source2,sentence1,sentence2,gold_score,gold_score_norm
+A01_0001,dev,Omega_A,none,none,A man with a hard hat is dancing.,A man wearing a hard hat is dancing.,5.0,1.0
+A01_0002,dev,Omega_B,none,none,A young child is riding a horse.,A child is riding a horse.,4.75,0.95
+A01_0003,dev,Omega_C,none,none,A man is feeding a mouse to a snake.,The man is feeding a mouse to the snake.,5.0,1.0
+A01_0004,dev,Omega_A,none,none,A woman is playing the guitar.,A man is playing guitar.,2.4,0.48
+A01_0005,dev,Omega_B,none,none,A woman is playing the flute.,A man is playing a flute.,2.75,0.55
+A01_0006,dev,Omega_C,none,none,A woman is cutting an onion.,A man is cutting onions.,2.615,0.523
+A01_0007,dev,Omega_A,none,none,A man is erasing a chalk board.,The man is erasing the chalk board.,5.0,1.0
+A01_0008,dev,Omega_B,none,none,A woman is carrying a boy.,A woman is carrying her baby.,2.333,0.4666
+A01_0009,dev,Omega_C,none,none,Three men are playing guitars.,Three men are on stage playing guitars.,3.75,0.75
+A01_0010,dev,Omega_A,none,none,A woman peels a potato.,A woman is peeling a potato.,5.0,1.0
+A01_0011,dev,Omega_B,none,none,People are playing cricket.,Men are playing cricket.,3.2,0.64
+A01_0012,dev,Omega_C,none,none,A man is playing a guitar.,A man is playing a flute.,1.583,0.3166
+A01_0013,dev,Omega_A,none,none,The cougar is chasing the bear.,A cougar is chasing a bear.,5.0,1.0
+A01_0014,dev,Omega_B,none,none,The man cut down a tree with an axe.,A man chops down a tree with an axe.,5.0,1.0
+A01_0015,dev,Omega_C,none,none,The man is playing the guitar.,A man is playing a guitar.,4.909,0.9818
+A01_0016,dev,Omega_A,none,none,A man is finding something.,A woman is slicing something.,0.8,0.16
+A01_0017,dev,Omega_B,none,none,The girl sang into a microphone.,The lady sang into the microphone.,2.4,0.48
+A01_0018,dev,Omega_C,none,none,A man is climbing a rope.,A man climbs a rope.,5.0,1.0
+A01_0019,dev,Omega_A,none,none,Kittens are eating food.,Kittens are eating from dishes.,4.0,0.8
+A01_0020,dev,Omega_B,none,none,A man is speaking.,A man is spitting.,0.636,0.1272
+A01_0021,dev,Omega_C,none,none,A woman is cooking eggs.,A woman is cooking something.,3.0,0.6
+A01_0022,dev,Omega_A,none,none,A man is playing a guitar.,A man is playing a trumpet.,1.714,0.3428
+A01_0023,dev,Omega_B,none,none,An animal is chewing on something.,An animal is chewing on a key chain.,3.2,0.64
+A01_0024,dev,Omega_C,none,none,A man is playing a flute.,A man is playing guitar.,2.167,0.4334
+A01_0025,dev,Omega_A,none,none,A man is playing soccer.,A man is playing flute.,1.0,0.2
+A01_0026,dev,Omega_B,none,none,A girl is riding a horse.,A girl is riding a bicycle.,1.917,0.3834
+A01_0027,dev,Omega_C,none,none,A man is lifting weights in a garage.,A man is lifting weights.,4.25,0.85
+A01_0028,dev,Omega_A,none,none,An animal is biting a persons finger.,A slow loris is biting a persons finger.,3.0,0.6
+A01_0029,dev,Omega_B,none,none,A woman is reading.,A woman is kneading dough.,1.0,0.2
+A01_0030,dev,Omega_C,none,none,A man is crying.,A woman is dancing.,0.6,0.12
+A01_0031,dev,Omega_A,none,none,The lady cracked an egg into a bowl.,The man is cracking eggs into a bowl.,2.6,0.52
+A01_0032,dev,Omega_B,none,none,A band is performing on a stage.,A band is playing onstage.,5.0,1.0
+A01_0033,dev,Omega_C,none,none,Elephants are walking down a trail.,A herd of elephants are walking along a trail.,4.6,0.92
+A01_0034,dev,Omega_A,none,none,A man is playing a guitar.,A man plays the guitar.,5.0,1.0
+A01_0035,dev,Omega_B,none,none,A man sitting on the floor plays a guitar.,A man sitting on the floor in a room is strumming a guitar.,4.8,0.96
+A01_0036,dev,Omega_C,none,none,A puppy plays with a plastic container.,The dog is playing with a plastic container.,3.8,0.76
+A01_0037,dev,Omega_A,none,none,A man plays the violin.,A man is playing violin.,5.0,1.0
+A01_0038,dev,Omega_B,none,none,A man plays the piano.,A man is playing a piano.,5.0,1.0
+A01_0039,dev,Omega_C,none,none,A man is eating food.,A man is eating something.,4.2,0.84
+A01_0040,dev,Omega_A,none,none,A man is playing a basketball.,A man is playing a piano.,1.4,0.28
+A01_0041,dev,Omega_B,none,none,A toddler walks down a hallway.,A little girl is walking down a hallway.,3.6,0.72
+A01_0042,dev,Omega_C,none,none,A plane is landing.,A animated airplane is landing.,2.8,0.56
+A01_0043,dev,Omega_A,none,none,A panda is climbing.,A man is climbing a rope.,1.6,0.32
+A01_0044,dev,Omega_B,none,none,Kids are dancing on stage.,Some people are dancing on stage.,3.0,0.6
+A01_0045,dev,Omega_C,none,none,A man plays a guitar.,A man plays the piano.,1.4,0.28
+A01_0046,dev,Omega_A,none,none,A woman is slicing a meat.,A woman is singing on stage.,0.25,0.05
+A01_0047,dev,Omega_B,none,none,A woman is taking a picture.,A man is playing a guitar.,0.25,0.05
+A01_0048,dev,Omega_C,none,none,The man is riding a horse.,A woman is using a hoe.,0.0,0.0
+A01_0049,dev,Omega_A,none,none,A man is drilling a hole in a board.,Someone is drilling a hole in a piece of wood.,4.0,0.8
+A01_0050,dev,Omega_B,none,none,A man is fitting silencer on a pistol.,A man is adding a silencer to a gun.,4.5,0.9
+A01_0051,dev,Omega_C,none,none,Two little girls are talking on the phone.,A little girl is walking down the street.,0.5,0.1
+A01_0052,dev,Omega_A,none,none,Someone is stirring chili in a kettle.,Someone is stirring a pot of chili with a spoon.,3.8,0.76
+A01_0053,dev,Omega_B,none,none,The woman is cracking eggs into a bowl.,The lady broke raw eggs into a bowl.,4.8,0.96
+A01_0054,dev,Omega_C,none,none,A woman puts flour on a piece of meat.,A woman is putting flour onto some meat.,5.0,1.0
+A01_0055,dev,Omega_A,none,none,A man is talking on a phone.,A man is singing to a woman.,0.25,0.05
+A01_0056,dev,Omega_B,none,none,A man is playing an electronic keyboard.,A man is playing a flute.,1.2,0.24
+A01_0057,dev,Omega_C,none,none,A man is playing a guitar.,A man is eating a banana.,0.6,0.12
+A01_0058,dev,Omega_A,none,none,A man is jumping into water.,A man is cutting paper.,0.8,0.16
+A01_0059,dev,Omega_B,none,none,A man is playing a guitar.,A guy is playing an instrument.,3.8,0.76
+A01_0060,dev,Omega_C,none,none,A young man is playing the piano.,A woman is peeling a prawn.,0.0,0.0
+A01_0061,dev,Omega_A,none,none,A woman is mixing ingrediants.,A woman is mixing food in a bowl.,3.5,0.7
+A01_0062,dev,Omega_B,none,none,Someone is shredding cabbage leaves with a knife.,Someone is chopping some cabbage leaves.,4.5,0.9
+A01_0063,dev,Omega_C,none,none,A slow lori walks around.,A animal is walking around.,2.8,0.56
+A01_0064,dev,Omega_A,none,none,A little boy is vacuuming the floor.,A boy is vacuuming.,3.8,0.76
+A01_0065,dev,Omega_B,none,none,A woman is applying eye liner to her eyelid using an eye pencil.,A woman is applying cosmetics to her eyelid.,3.8,0.76
+A01_0066,dev,Omega_C,none,none,A man is making a bed.,A woman is playing a guitar.,0.0,0.0
+A01_0067,dev,Omega_A,none,none,A man plays a keyboard.,A person is playing the keyboard.,4.0,0.8
+A01_0068,dev,Omega_B,none,none,A rabbit is playing with a toy rabbit.,A bunny is playing with a stuffed bunny.,4.25,0.85
+A01_0069,dev,Omega_C,none,none,A plane rides on a road.,An airplane moves along a runway.,2.812,0.5624
+A01_0070,dev,Omega_A,none,none,A man shoots a man.,A man with a pistol shoots another man.,4.25,0.85
+A01_0071,dev,Omega_B,none,none,A man plays the guitar.,The man sang and played his guitar.,3.0,0.6
+A01_0072,dev,Omega_C,none,none,A guy is playing hackysack,A man is playing a key-board.,1.0,0.2
+A01_0073,dev,Omega_A,none,none,One man is breaking cement on another man's chest.,A man breaks cinder blocks on another man.,3.75,0.75
+A01_0074,dev,Omega_B,none,none,A man is talking with other women on the beach.,A man is walking down the street.,0.0,0.0
+A01_0075,dev,Omega_C,none,none,The woman is dicing onions.,A woman is dancing in railway station.,0.4,0.08
+A01_0076,dev,Omega_A,none,none,A chef is preparing some food.,A chef prepared a meal.,4.0,0.8
+A01_0077,dev,Omega_B,none,none,The man talked to a girl over the internet camera.,A teenager talks to a girl over a webcam.,2.8,0.56
+A01_0078,dev,Omega_C,none,none,A turtle walks over the ground.,A large turtle crawls in the grass.,3.75,0.75
+A01_0079,dev,Omega_A,none,none,The lady cracked an egg for the mixer.,The lady sliced up the meat.,1.154,0.2308
+A01_0080,dev,Omega_B,none,none,Five kittens are eating out of five dishes.,Kittens are eating food on trays.,2.75,0.55
+A01_0081,dev,Omega_C,none,none,A woman is slicing some tuna.,A woman is cutting raw fish.,2.8,0.56
+A01_0082,dev,Omega_A,none,none,A man playing the guitar.,A woman is painting her lips.,0.0,0.0
+A01_0083,dev,Omega_B,none,none,A man is playing a flute.,A dog is barking at a fly.,0.0,0.0
+A01_0084,dev,Omega_C,none,none,A baby rhino is walking around his pen with his mother.,A baby rhino is following an adult rhino.,3.4,0.68
+A01_0085,dev,Omega_A,none,none,The man used a sword to slice a plastic bottle.,A man sliced a plastic bottle with a sword.,5.0,1.0
+A01_0086,dev,Omega_B,none,none,A man is cleaning a fish on a kitchen counter.,A man is playing a flute.,0.8,0.16
+A01_0087,dev,Omega_C,none,none,A person is chopping coriander leaves.,A woman is slicing up some green leaves.,2.25,0.45
+A01_0088,dev,Omega_A,none,none,A man is pressing microwave buttons.,A man turns on the microwave.,2.75,0.55
+A01_0089,dev,Omega_B,none,none,A girl is riding a horse.,The girl trotted the horse.,4.5,0.9
+A01_0090,dev,Omega_C,none,none,Batman and Robin fly a helicopter over water.,A helicopter flies over water.,2.6,0.52
+A01_0091,dev,Omega_A,none,none,A woman pours oil into a skillet from a plastic bottle while she is talking.,An older woman is pouring oil into a skillet on the stove.,3.8,0.76
+A01_0092,dev,Omega_B,none,none,A woman is cutting some herbs.,A woman is chopping cilantro.,2.8,0.56
+A01_0093,dev,Omega_C,none,none,The lady put the skewered shimp in the hot water.,The lady fried the breaded meat in hot oil.,1.6,0.32
+A01_0094,dev,Omega_A,none,none,A woman is riding on a horse.,A man is shooting off guns.,0.0,0.0
+A01_0095,dev,Omega_B,none,none,The boy is playing the piano.,A band is playing on stage.,1.333,0.2666
+A01_0096,dev,Omega_C,none,none,The cook is kneading the flour.,A woman is kneading tortilla dough.,2.6,0.52
+A01_0097,dev,Omega_A,none,none,A woman is riding a horse along a perimeter.,A dog is riding a skateboard.,0.6,0.12
+A01_0098,dev,Omega_B,none,none,A woman is putting her baby in a waste bin.,The woman is poking holes in the potato.,0.0,0.0
+A01_0099,dev,Omega_C,none,none,A cat is pouncing on a trampoline.,A man is slicing a tomato.,0.0,0.0
+A01_0100,dev,Omega_A,none,none,A man and woman are eating at a table.,A couple are eating a meal and talking.,3.0,0.6
+A01_0101,dev,Omega_B,none,none,A woman is riding on a horse.,A man is turning over tables in anger.,0.0,0.0
+A01_0102,dev,Omega_C,none,none,A man is screwing wood to a wall.,A man is giving a woman a massage.,0.2,0.04
+A01_0103,dev,Omega_A,none,none,A girl is playing a flute.,A girl plays a wind instrument.,3.2,0.64
+A01_0104,dev,Omega_B,none,none,A small baby is playing a guitar.,"A boy sits on a bed, sings and plays a guitar.",2.0,0.4
+A01_0105,dev,Omega_C,none,none,A woman is chopping onion.,A man is doing a card trick.,0.0,0.0
+A01_0106,dev,Omega_A,none,none,A man and a woman walk through the woods.,The man and woman are walking.,3.0,0.6
+A01_0107,dev,Omega_B,none,none,A child is playing a computer game.,A boy is playing a game on a laptop.,3.091,0.6182
+A01_0108,dev,Omega_C,none,none,Men are jumping into water from a bridge.,Men jump in a river.,2.75,0.55
+A01_0109,dev,Omega_A,none,none,A woman is peeling some fish.,A woman is pouring a yellow mixture on a frying pan.,1.2,0.24
+A01_0110,dev,Omega_B,none,none,People are playing baseball.,The cricket player hit the ball.,0.5,0.1
+A01_0111,dev,Omega_C,none,none,A person is boiling soup.,A woman is placing eggs into a pan.,0.25,0.05
+A01_0112,dev,Omega_A,none,none,A woman is dancing.,A man breaks a stick.,0.0,0.0
+A01_0113,dev,Omega_B,none,none,A ballet dancer is performing on stage.,The beaver is being petted.,0.0,0.0
+A01_0114,dev,Omega_C,none,none,A man shoots a basket.,A man is playing a guitar.,0.5,0.1
+A01_0115,dev,Omega_A,none,none,The elephants are bathing.,Two women are singing.,0.0,0.0
+A01_0116,dev,Omega_B,none,none,The man cut up an onion.,A man is dancing.,0.6,0.12
+A01_0117,dev,Omega_C,none,none,A woman puts cosmetics on her eyelid.,The woman is pencilling on eye shadow.,4.0,0.8
+A01_0118,dev,Omega_A,none,none,A woman and man are riding in a car.,A woman driving a car is talking to the man seated beside her.,3.4,0.68
+A01_0119,dev,Omega_B,none,none,A girl is dancing in a cage.,A onion is being chopped.,0.0,0.0
+A01_0120,dev,Omega_C,none,none,A cat is on a robot.,A man is eating bread.,0.0,0.0
+A01_0121,dev,Omega_A,none,none,The lady stirred up raw eggs in the bowl.,A woman is pouring eyes into a bowl.,1.0,0.2
+A01_0122,dev,Omega_B,none,none,A cow is eating grass.,A dog is pulling a girl down a hill.,0.0,0.0
+A01_0123,dev,Omega_C,none,none,The man stirred the sauce for the chicken.,The man is stirring oil.,2.4,0.48
+A01_0124,dev,Omega_A,none,none,A man jumping rope,A man is talking.,0.4,0.08
+A01_0125,dev,Omega_B,none,none,A woman is peeling an orange.,A woman cuts off a small piece of lemon rind.,1.8,0.36
+A01_0126,dev,Omega_C,none,none,Someone is beating an egg.,A woman stirs eggs in a bowl.,2.5,0.5
+A01_0127,dev,Omega_A,none,none,A man is cutting a potato.,A woman plays an electric guitar.,0.083,0.0166
+A01_0128,dev,Omega_B,none,none,A man is buttering a piece of bread.,A slow loris hanging on a cord.,0.0,0.0
+A01_0129,dev,Omega_C,none,none,A woman cuts up some vegetables.,A woman is placing skewered food onto a cooker.,1.0,0.2
+A01_0130,dev,Omega_A,none,none,The lady cut the tail and body of a shrimp.,A woman is cleaning a shrimp.,4.5,0.9
+A01_0131,dev,Omega_B,none,none,A man plays an acoustic guitar.,A woman and dog are walking together.,0.0,0.0
+A01_0132,dev,Omega_C,none,none,A person is peeling shrimp.,A person is preparing shrimp.,3.6,0.72
+A01_0133,dev,Omega_A,none,none,A woman is cutting broccoli.,A woman is slicing broccoli.,5.0,1.0
+A01_0134,dev,Omega_B,none,none,A small dog laying on the bed.,A small dog is laying on a bed.,5.0,1.0
+A01_0135,dev,Omega_C,none,none,The man is slicing a potato.,A man is slicing potato.,5.0,1.0
+A01_0136,dev,Omega_A,none,none,The man is slicing a potato.,A man is slicing potato.,5.0,1.0
+A01_0137,dev,Omega_B,none,none,A person is peeling shrimp.,A man is peeling shrimp.,3.8,0.76
+A01_0138,dev,Omega_C,none,none,A woman is putting on sun glasses.,A woman puts on sunglasses.,5.0,1.0
+A01_0139,dev,Omega_A,none,none,A woman is slicing a potato.,A woman is slicing carrot.,2.5,0.5
+A01_0140,dev,Omega_B,none,none,Women are running.,Two women are running.,3.824,0.7648
+A01_0141,dev,Omega_C,none,none,A man is playing a harp.,A woman is playing a guitar.,1.6,0.32
+A01_0142,dev,Omega_A,none,none,A man dives into a pool.,A man dives into a swimming pool.,5.0,1.0
+A01_0143,dev,Omega_B,none,none,The man is smashing garlic.,A man is smashing some garlic.,5.0,1.0
+A01_0144,dev,Omega_C,none,none,A man is cutting up a potato.,A man is cutting up carrots.,2.375,0.475
+A01_0145,dev,Omega_A,none,none,A man is slicing an onion.,A man slices an onion.,5.0,1.0
+A01_0146,dev,Omega_B,none,none,A man is dancing.,A man is singing.,1.25,0.25
+A01_0147,dev,Omega_C,none,none,A man is running.,A man is singing.,1.25,0.25
+A01_0148,dev,Omega_A,none,none,The man is hiking in the woods.,A man is tracking in the wood.,3.0,0.6
+A01_0149,dev,Omega_B,none,none,A man is playing a flute.,A man is playing guitar.,2.167,0.4334
+A01_0150,dev,Omega_C,none,none,A man is riding a bike.,A woman is riding a horse.,1.4,0.28
+A01_0151,dev,Omega_A,none,none,A woman is playing the guitar.,A person is playing a guitar.,4.0,0.8
+A01_0152,dev,Omega_B,none,none,A man is eating a pizza.,A man is eating a food.,3.6,0.72
+A01_0153,dev,Omega_C,none,none,A man is playing guitar.,A man plays a guitar.,4.857,0.9714
+A01_0154,dev,Omega_A,none,none,The man is buttering the bread.,The man is stirring the rice.,0.4,0.08
+A01_0155,dev,Omega_B,none,none,A woman is hitting a man.,A woman is taking a bath.,0.2,0.04
+A01_0156,dev,Omega_C,none,none,Three men are dancing.,Women are dancing.,1.3,0.26
+A01_0157,dev,Omega_A,none,none,A man is speaking.,A man is dancing.,1.2,0.24
+A01_0158,dev,Omega_B,none,none,A man is dancing.,A man is speaking.,1.2,0.24
+A01_0159,dev,Omega_C,none,none,A person is combing a cat hair.,A person is brushing a cat.,4.4,0.88
+A01_0160,dev,Omega_A,none,none,A man is playing the drums.,A man is playing guitar.,1.8,0.36
+A01_0161,dev,Omega_B,none,none,A man is peeling a banana.,A woman is peeling a potato.,1.4,0.28
+A01_0162,dev,Omega_C,none,none,A boy is riding a horse.,A monkey is riding a bus.,0.4,0.08
+A01_0163,dev,Omega_A,none,none,The puppy tried to get out of the tub.,A puppy is trying to get out of a bathtub.,4.4,0.88
+A01_0164,dev,Omega_B,none,none,A woman is peeling an onion.,The woman is slicing green onions.,3.25,0.65
+A01_0165,dev,Omega_C,none,none,A person is mixing a pot of rice.,A person is peeling a potato.,0.778,0.1556
+A01_0166,dev,Omega_A,none,none,A man is playing a guitar.,The girl is playing the guitar.,2.25,0.45
+A01_0167,dev,Omega_B,none,none,A lion cub tries to climb a fence.,A lion tries to climb over a wall.,2.75,0.55
+A01_0168,dev,Omega_C,none,none,A man is talking on a cell phone.,A guy is talking into a microphone.,2.0,0.4
+A01_0169,dev,Omega_A,none,none,A man is playing a guitar.,A man is cleaning a cd.,0.833,0.1666
+A01_0170,dev,Omega_B,none,none,Someone is pouring chicken broth into a pot.,The man is pouring broth into the pot.,3.75,0.75
+A01_0171,dev,Omega_C,none,none,A woman is chopping an onion.,A woman is chopping garlic with a knife.,1.8,0.36
+A01_0172,dev,Omega_A,none,none,The man is shaking hands with other men.,A man is shaking another mans hand.,4.333,0.8666
+A01_0173,dev,Omega_B,none,none,A target is being hit with gun fire.,The target was being shot with bullets.,4.214,0.8428
+A01_0174,dev,Omega_C,none,none,A woman is applying makeup.,A man is playing a guitar.,0.0,0.0
+A01_0175,dev,Omega_A,none,none,A woman is slicing a big pepper.,A person is cutting a green pepper.,3.4,0.68
+A01_0176,dev,Omega_B,none,none,A man puts some cheese on a pizza.,A man is sprinkling shredded cheese on a pizza.,4.2,0.84
+A01_0177,dev,Omega_C,none,none,A man is staring at a leaf.,A man is slicing a vegetable.,0.8,0.16
+A01_0178,dev,Omega_A,none,none,A person is picking a komodo dragon and putting it in a box.,A person is placing a baby komodo dragon into a container.,4.2,0.84
+A01_0179,dev,Omega_B,none,none,A person drops a camera down an escelator.,A man tosses a bag down an escalator.,2.75,0.55
+A01_0180,dev,Omega_C,none,none,The man is playing the keyboards.,A man is playing guitar.,2.2,0.44
+A01_0181,dev,Omega_A,none,none,A woman is applying eye shadow.,A woman is washing a bowl.,1.2,0.24
+A01_0182,dev,Omega_B,none,none,A woman is playing the flute.,A man is playing a keyboard.,1.0,0.2
+A01_0183,dev,Omega_C,none,none,A man is riding on a horse.,A woman is riding an elephant.,1.533,0.3066
+A01_0184,dev,Omega_A,none,none,A man is playing flute.,A man is dancing.,0.2,0.04
+A01_0185,dev,Omega_B,none,none,A tiger is walking around his cage.,A tiger walks around aimlessly.,3.0,0.6
+A01_0186,dev,Omega_C,none,none,A person pours cooking oil into a pot.,A person is pouring olive oil into a pot on the stove.,3.8,0.76
+A01_0187,dev,Omega_A,none,none,A woman is cutting potato.,A woman is riding a horse.,0.75,0.15
+A01_0188,dev,Omega_B,none,none,A parrot is talking.,A parrot is talking into a microphone.,3.0,0.6
+A01_0189,dev,Omega_C,none,none,A man is singing into a microphone.,A man is dancing in the rain.,0.4,0.08
+A01_0190,dev,Omega_A,none,none,A woman is exercising.,A woman lifts weights.,3.4,0.68
+A01_0191,dev,Omega_B,none,none,A child runs into and out of the ocean waves.,A young boy is running toward and from the ocean waves.,3.8,0.76
+A01_0192,dev,Omega_C,none,none,A man is playing the piano.,A man is playing a wooden flute.,1.4,0.28
+A01_0193,dev,Omega_A,none,none,A guy is riding a horse.,A man is riding a horse in the desert.,3.4,0.68
+A01_0194,dev,Omega_B,none,none,A dog is stealing food from a refrigerator.,The dog took something out of the refrigerator.,3.2,0.64
+A01_0195,dev,Omega_C,none,none,A person uses a blowtorch on two cameras.,A person is burning cameras.,2.333,0.4666
+A01_0196,dev,Omega_A,none,none,A man is putting a knife in a vice.,A man is getting into a car in a garage.,0.8,0.16
+A01_0197,dev,Omega_B,none,none,A woman is cooking meat.,A man is speaking.,0.0,0.0
+A01_0198,dev,Omega_C,none,none,A puppy is trying to come out from the sink.,The puppy tried to get out of the tub.,3.0,0.6
+A01_0199,dev,Omega_A,none,none,A person is folding a square paper piece.,A person folds a piece of paper.,3.75,0.75
+A01_0200,dev,Omega_B,none,none,The boy is playing the piano.,The woman is pouring oil into the pan.,0.0,0.0
+A01_0201,dev,Omega_C,none,none,A man is cutting a potato.,A woman is climbing a rock wall.,0.0,0.0
+A01_0202,dev,Omega_A,none,none,A woman is feeding a baby.,A man is adding water to pan.,0.0,0.0
+A01_0203,dev,Omega_B,none,none,A man is playing a guitar.,A woman is riding a horse.,0.5,0.1
+A01_0204,dev,Omega_C,none,none,A woman is mixing eggs.,The woman is eating.,0.5,0.1
+A01_0205,dev,Omega_A,none,none,A man is riding on a boat.,A man is tying in the machine.,0.4,0.08
+A01_0206,dev,Omega_B,none,none,A man is serving cake.,A man seasoning quail.,0.75,0.15
+A01_0207,dev,Omega_C,none,none,Someone is greating a carrot.,A woman is grating an orange food.,2.5,0.5
+A01_0208,dev,Omega_A,none,none,A man is standing on a roof top playing a violin.,A man is on a roof dancing.,1.8,0.36
+A01_0209,dev,Omega_B,none,none,A monkey is karate kicking a person.,A monkey pratices martial arts.,2.5,0.5
+A01_0210,dev,Omega_C,none,none,A man shappens a knife.,A man carries a women.,0.5,0.1
+A01_0211,dev,Omega_A,none,none,A woman is brushing her feet.,A woman is chopping an onion.,0.4,0.08
+A01_0212,dev,Omega_B,none,none,A woman is removing skin from some meat.,A woman is slicing a tomato.,1.2,0.24
+A01_0213,dev,Omega_C,none,none,A man is stirring ingredients in a bowl.,A man is beating two eggs in a bowl with a fork.,2.75,0.55
+A01_0214,dev,Omega_A,none,none,A woman is relaxing in a bath tub.,A woman is stabbing a potato with a fork.,0.4,0.08
+A01_0215,dev,Omega_B,none,none,A woman is adding oil on fishes.,The woman is cutting potatoes.,0.6,0.12
+A01_0216,dev,Omega_C,none,none,A woman is writing something.,A woman is chopping green onions.,0.8,0.16
+A01_0217,dev,Omega_A,none,none,A baby eats his food.,A baby is being fed peas.,3.0,0.6
+A01_0218,dev,Omega_B,none,none,A man is slicing a carrot by a machine.,A man is standing in the rain.,0.4,0.08
+A01_0219,dev,Omega_C,none,none,A man is playing a guitar and singing on a stage.,A man is playing the electric guitar.,3.2,0.64
+A01_0220,dev,Omega_A,none,none,A boy is playing a piano.,A man is singing and playing a guitar.,1.25,0.25
+A01_0221,dev,Omega_B,none,none,The person is starting a fire.,A person makes fire.,5.0,1.0
+A01_0222,dev,Omega_C,none,none,A woman is riding a horse on the beach.,A woman is washing a bowl.,0.2,0.04
+A01_0223,dev,Omega_A,none,none,A person is chopping an herb.,A man is finely chopping a green substance.,3.0,0.6
+A01_0224,dev,Omega_B,none,none,A woman is collecting tap water in a mug.,A boy is filling a pitcher with water.,1.4,0.28
+A01_0225,dev,Omega_C,none,none,A person is whisking eggs in a bowl.,A woman is beating two eggs in a bowl using a wire whisk.,3.8,0.76
+A01_0226,dev,Omega_A,none,none,The dog could not figure out how to get a stick out the doggy door.,A dog is trying to get through his dog door.,2.75,0.55
+A01_0227,dev,Omega_B,none,none,A woman is mixing eggs in the bowl.,A man is doing push ups.,0.0,0.0
+A01_0228,dev,Omega_C,none,none,The lady made some slices on the shrimp.,A chef is slicing a shrimp.,2.8,0.56
+A01_0229,dev,Omega_A,none,none,Someone is mixing a liquid.,A man is playing a guitar.,0.0,0.0
+A01_0230,dev,Omega_B,none,none,A woman is slicing big pepper.,A man is playing an instrument.,0.0,0.0
+A01_0231,dev,Omega_C,none,none,The animal with the big eyes is eating.,A slow loris is eating.,2.6,0.52
+A01_0232,dev,Omega_A,none,none,A baby is crawling happily.,A cat is walking on hardwood floor.,0.1,0.02
+A01_0233,dev,Omega_B,none,none,A tiger club is playing with a ball.,A person is chopping shrimp with a knife.,0.0,0.0
+A01_0234,dev,Omega_C,none,none,A woman is slicing fruit.,Two women are slicing some lemons.,2.0,0.4
+A01_0235,dev,Omega_A,none,none,The flag was moving in the air.,A flag is waving.,3.75,0.75
+A01_0236,dev,Omega_B,none,none,The baby laughed in his car seat.,A baby is laughing.,3.1,0.62
+A01_0237,dev,Omega_C,none,none,A dog knocks a boy into the water twice.,A dog pushes a toddler into a rain puddle.,2.692,0.5384
+A01_0238,dev,Omega_A,none,none,The bird is taking a bath under the faucet.,A bird is bathing in a sink.,4.429,0.8858
+A01_0239,dev,Omega_B,none,none,A man plays the guitar and sings.,A man is singing and playing a guitar.,5.0,1.0
+A01_0240,dev,Omega_C,none,none,Women are holding each other and dancing together.,Two men are playing table tennis.,0.0,0.0
+A01_0241,dev,Omega_A,none,none,The man is trying to feed the snake with a mouse.,A man is working on his laptop.,0.8,0.16
+A01_0242,dev,Omega_B,none,none,A tiger is playing with his trainer.,A tiger attacks a man.,1.333,0.2666
+A01_0243,dev,Omega_C,none,none,A cat is playing with a watermelon on a floor.,A man is pouring oil into a pan.,0.0,0.0
+A01_0244,dev,Omega_A,none,none,A cat retrieves an object out of a dish of water.,The cat tried to eat the corn on the cob.,0.6,0.12
+A01_0245,dev,Omega_B,none,none,A chef is slicing carrot.,A person is drawing a picture.,0.0,0.0
+A01_0246,dev,Omega_C,none,none,A woman is adding some mushrooms and liquid to a pot.,A young man is playing the guitar.,0.0,0.0
+A01_0247,dev,Omega_A,none,none,A man is passionately playing a guitar in front of an audience.,A woman is peeling a potato.,0.0,0.0
+A01_0248,dev,Omega_B,none,none,Someone drew on Washington's face on the dollar.,A person draws on a dollar bill.,3.4,0.68
+A01_0249,dev,Omega_C,none,none,The girl is slicing an onion.,A woman is chopping an onion into small pieces.,2.2,0.44
+A01_0250,dev,Omega_A,none,none,The man is aiming a gun.,A boy is playing on a toy phone.,0.0,0.0
+A01_0251,dev,Omega_B,none,none,A cat standing on tree branches.,A black and white cat is high up on tree branches.,3.6,0.72
+A01_0252,dev,Omega_C,none,none,The lamb is looking at the camera.,A small bird standing on a log at the waters edge.,0.0,0.0
+A01_0253,dev,Omega_A,none,none,A bull standing in the field.,A brown horse stands in a lush green field.,1.4,0.28
+A01_0254,dev,Omega_B,none,none,The black and white cows pause in front of the gate.,A black cow and a brown cow stands in a plain in front of an uprooted tree.,2.2,0.44
+A01_0255,dev,Omega_C,none,none,A group of four people in a dinner having cake.,Four people eating dessert around a table.,3.8,0.76
+A01_0256,dev,Omega_A,none,none,A group of people eat at a table outside.,A group of elderly people pose around a dining table.,2.6,0.52
+A01_0257,dev,Omega_B,none,none,Older man wearing beret with mountains in background.,A sheep in the morning mist with trees in the background.,0.4,0.08
+A01_0258,dev,Omega_C,none,none,The cows feed in the trough.,The brown and white cows are eating in the trough.,4.0,0.8
+A01_0259,dev,Omega_A,none,none,A small red and gray bird perched amongst the bare branches of a tree.,A red and brown bird is perched on branches.,2.25,0.45
+A01_0260,dev,Omega_B,none,none,A black and wood colored dining room set in a small apartment.,Black and brown table in living room setting.,3.2,0.64
+A01_0261,dev,Omega_C,none,none,A bag of cotton in front of a couch.,Calico cat sitting on step in front of a door.,0.0,0.0
+A01_0262,dev,Omega_A,none,none,Two horses standing in a field with trees in the background.,A black and white bird on a body of water with grass in the background.,0.4,0.08
+A01_0263,dev,Omega_B,none,none,Red double decker bus driving down a street.,A red two story bus driving along the street.,3.8,0.76
+A01_0264,dev,Omega_C,none,none,The lamb is looking at the camera.,A cat looking at the camera.,0.8,0.16
+A01_0265,dev,Omega_A,none,none,A red double decker bus on a crowded street.,A double decker bus on a city street.,4.2,0.84
+A01_0266,dev,Omega_B,none,none,A jockey riding a horse in a pen.,A jockey rides a horse at a gallop.,3.6,0.72
+A01_0267,dev,Omega_C,none,none,The udders of a dairy cow that is standing in a pasture near a large building.,The black and brown cow is standing on the green grass.,2.0,0.4
+A01_0268,dev,Omega_A,none,none,A woman posing by a pillar with a U2 sign.,"a woman is standing by a pillar where ""u2"" is written.",4.2,0.84
+A01_0269,dev,Omega_B,none,none,One Asian and one occasion woman in glasses smiling with their thumbs up.,Two women are posing for the camera and giving the thumbs up sign.,3.4,0.68
+A01_0270,dev,Omega_C,none,none,A black train moves down the tracks.,A mostly black train on a track.,3.0,0.6
+A01_0271,dev,Omega_A,none,none,The brown dog is resting his head on a white pillow.,A tan dog is lying on a couch and has its head on a white pillow.,3.4,0.68
+A01_0272,dev,Omega_B,none,none,The black and brown cow is looking at the camera.,The black and white bull is looking at the camera.,3.6,0.72
+A01_0273,dev,Omega_C,none,none,A smiling woman holding a small baby.,Two smiling women holding a baby.,3.0,0.6
+A01_0274,dev,Omega_A,none,none,Two airplanes in the sky.,A plane in the sky.,2.4,0.48
+A01_0275,dev,Omega_B,none,none,A coal train traveling down the tracks.,An old train sits idle on the tracks.,2.0,0.4
+A01_0276,dev,Omega_C,none,none,A cat looking at the camera.,"A grey, black, and white cat looking at the camera.",4.0,0.8
+A01_0277,dev,Omega_A,none,none,World news headlines displayed on a large screen.,A man dressed for a race relaxes.,0.0,0.0
+A01_0278,dev,Omega_B,none,none,Two women posing with a baby.,Two smiling women holding a baby.,4.0,0.8
+A01_0279,dev,Omega_C,none,none,A red and white plane flying on a sunny day.,Red and white plane flying through the air.,4.2,0.84
+A01_0280,dev,Omega_A,none,none,A black and white photo of an old train station.,A black and white photo of a cat sitting on a sofa.,0.8,0.16
+A01_0281,dev,Omega_B,none,none,A bicycle in front of some ruins.,A pink bicycle is in front of a building.,2.2,0.44
+A01_0282,dev,Omega_C,none,none,Red double decker bus on side of street.,A red double decker bus on a crowded street.,3.8,0.76
+A01_0283,dev,Omega_A,none,none,A bus drives down a busy road.,A green bus drives down a road.,3.2,0.64
+A01_0284,dev,Omega_B,none,none,An elderly Asian couple pose with a yawning baby at a dinner table.,An older Asian couple poses with a newborn baby at the dinner table.,4.4,0.88
+A01_0285,dev,Omega_C,none,none,Brown and white ducks walking on green grass.,A red and white plane flying on a sunny day.,0.0,0.0
+A01_0286,dev,Omega_A,none,none,People ride mopeds in an urban setting.,People riding horses in a fenced area.,1.4,0.28
+A01_0287,dev,Omega_B,none,none,Large silver locomotive engine in a shed.,The silver train is parked in a station.,2.6,0.52
+A01_0288,dev,Omega_C,none,none,Two people sitting on a large motorcycle.,Two eagles sitting on a long branch.,0.4,0.08
+A01_0289,dev,Omega_A,none,none,A scantily clad woman is standing next to a car.,A yellow and orange bird hold on to the side of a cage.,0.0,0.0
+A01_0290,dev,Omega_B,none,none,Several televisions are on the floor and stacked up on top of one another.,"Three televisions, on on the floor, the other two on a box.",3.2,0.64
+A01_0291,dev,Omega_C,none,none,Sheep are grazing in a grassy field near a stand of trees.,Sheep are grazing in the field in front of a line of trees.,4.6,0.92
+A01_0292,dev,Omega_A,none,none,The small dog protects its owner.,The back of the stop sign is adorned with stickers.,0.0,0.0
+A01_0293,dev,Omega_B,none,none,Children looking a sheep.,Child milking a cow outside.,0.6,0.12
+A01_0294,dev,Omega_C,none,none,A black-and-white photo of a loveseat.,A black and white photo of an old train station.,1.2,0.24
+A01_0295,dev,Omega_A,none,none,the back of a stop sign with many stickers on it.,The back of a sign with stickers on.,3.8,0.76
+A01_0296,dev,Omega_B,none,none,Living room or den with large screen television.,Living room with tan furniture and flat screen television.,3.2,0.64
+A01_0297,dev,Omega_C,none,none,Two women sitting in lawn chairs.,Two women are sitting in a cafe.,2.6,0.52
+A01_0298,dev,Omega_A,none,none,A doubly decker red bus driving down the road.,A red double decker bus driving down a street.,5.0,1.0
+A01_0299,dev,Omega_B,none,none,The black bird is sitting on the ground.,The back of a pig under a tree with a cow in the background.,0.0,0.0
+A01_0300,dev,Omega_C,none,none,A Das Air Cargo plane sits on the runway.,A passenger plane parked on a runway.,3.2,0.64
+A01_0301,dev,Omega_A,none,none,A cat sleeps on purple sheet.,A black and white cat sleeps on a purple blanket.,4.0,0.8
+A01_0302,dev,Omega_B,none,none,A close-up of a cat on a cream sofa.,A close-up of a horse.,1.2,0.24
+A01_0303,dev,Omega_C,none,none,A kitchen with wood cabinets and dining table.,A kitchen with wooden cabinets and furniture.,4.4,0.88
+A01_0304,dev,Omega_A,none,none,A motorcycles is parked near a wall covered with a graffiti scene of a cityscape.,A motorcycle is parked by a mural of a city in the evening.,3.4,0.68
+A01_0305,dev,Omega_B,none,none,Two boys sit facing one another at a table and one points at the other.,Two people sit facing each other at a table as one points at the other.,4.4,0.88
+A01_0306,dev,Omega_C,none,none,Two white dogs are swimming in the water.,The birds are swimming in the water.,0.8,0.16
+A01_0307,dev,Omega_A,none,none,Large white cruise ship floating on water.,Large cruise ship floating on the water.,4.6,0.92
+A01_0308,dev,Omega_B,none,none,Two bald eagles perched on a branch.,Two eagles are perched on a branch.,4.2,0.84
+A01_0309,dev,Omega_C,none,none,A backpack standing beside a train.,A social gathering of people in a restaurant.,0.0,0.0
+A01_0310,dev,Omega_A,none,none,The bird is sitting on the branch.,A red and brown bird is perched on branches.,3.2,0.64
+A01_0311,dev,Omega_B,none,none,A group of peoples posing in fur hats.,A group of cyclists in green and white with spectators looking on.,0.0,0.0
+A01_0312,dev,Omega_C,none,none,Black domestic cat lying on brown table.,A grey cat laying on a dining table.,1.4,0.28
+A01_0313,dev,Omega_A,none,none,Four children looking at barn animals.,Children looking a sheep.,3.2,0.64
+A01_0314,dev,Omega_B,none,none,A black and white cat playing with a wool basket.,A black and white cat lying on a blanket.,1.8,0.36
+A01_0315,dev,Omega_C,none,none,Two men on boat floating on the water.,A wooden yacht on the ocean.,1.8,0.36
+A01_0316,dev,Omega_A,none,none,A man doing a wheelie on a mountain bike.,A woman posing by a pillar with a U2 sign.,0.0,0.0
+A01_0317,dev,Omega_B,none,none,A woman equestrian riding a horse.,The woman is riding on the brown horse.,3.8,0.76
+A01_0318,dev,Omega_C,none,none,Train going down the tracks.,A black steam train traveling on the railroad tracks.,3.8,0.76
+A01_0319,dev,Omega_A,none,none,A white plane on the runway.,A white Swiss airplane approaches the runway.,4.0,0.8
+A01_0320,dev,Omega_B,none,none,The white ducks are standing on the ground.,A woman in a black hat is standing by the subway.,0.0,0.0

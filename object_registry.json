@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-03-08",
+  "objects": [
+    {
+      "id": "TE-BOOTLOADER-6.0",
+      "type": "bootloader",
+      "version": "6.0",
+      "lifecycle": "canonical",
+      "file": "TE_BOOTLOADER_v6_0_PROJECT.md",
+      "depends_on": []
+    },
+    {
+      "id": "TE-CORE-5.1",
+      "type": "core",
+      "version": "5.1",
+      "lifecycle": "canonical",
+      "file": "TE_CORE_v5.1.md",
+      "depends_on": ["TE-BOOTLOADER-6.0"]
+    },
+    {
+      "id": "TE-SVP-5.1",
+      "type": "module",
+      "version": "5.1",
+      "lifecycle": "canonical",
+      "file": "TE_MODULE_SVP_v5_1.md",
+      "depends_on": ["TE-CORE-5.1"]
+    },
+    {
+      "id": "TE-SCIMS-5.0",
+      "type": "module",
+      "version": "5.0",
+      "lifecycle": "canonical",
+      "file": "TE_MODULE_SCIMS_v5.0.md",
+      "depends_on": ["TE-SVP-5.1"]
+    },
+    {
+      "id": "TE-VERT-5.0",
+      "type": "module",
+      "version": "5.0",
+      "lifecycle": "canonical",
+      "file": "TE_MODULE_VERT_v5.0.md",
+      "depends_on": ["TE-SVP-5.1"]
+    },
+    {
+      "id": "TE-LENS-5.0",
+      "type": "module",
+      "version": "5.0",
+      "lifecycle": "canonical",
+      "file": "TE_MODULE_LENS_v5.0.md",
+      "depends_on": ["TE-SVP-5.1"]
+    },
+    {
+      "id": "TE-PPRO-5.1",
+      "type": "module",
+      "version": "5.1",
+      "lifecycle": "canonical",
+      "file": "TE_MODULE_PPRO_v5.1.md",
+      "depends_on": ["TE-SVP-5.1"]
+    },
+    {
+      "id": "TE-OBSERVER-1.0.1",
+      "type": "integrator",
+      "version": "1.0.1",
+      "lifecycle": "canonical",
+      "file": "TE_OBSERVER v1.0.1 Lyapunov XP.md",
+      "depends_on": [
+        "TE-SVP-5.1",
+        "TE-SCIMS-5.0",
+        "TE-VERT-5.0",
+        "TE-LENS-5.0",
+        "TE-PPRO-5.1"
+      ]
+    },
+    {
+      "id": "TE-CORE-5.0",
+      "type": "core",
+      "version": "5.0",
+      "lifecycle": "legacy",
+      "file": "TE_CORE_v5.0.md",
+      "depends_on": ["TE-BOOTLOADER-6.0"]
+    },
+    {
+      "id": "TE-CORE-PATCH-5.1",
+      "type": "patch",
+      "version": "5.1",
+      "lifecycle": "legacy",
+      "file": "TE_CORE_v5_1_PATCH.md",
+      "depends_on": ["TE-CORE-5.0"]
+    },
+    {
+      "id": "TE-OBSERVER-1.0",
+      "type": "integrator",
+      "version": "1.0",
+      "lifecycle": "legacy",
+      "file": "TE_OBSERVER v1.0.md",
+      "depends_on": ["TE-SVP-5.1"]
+    },
+    {
+      "id": "TE-SESSION-DUMP-2026-03-06-02",
+      "type": "session-log",
+      "version": null,
+      "lifecycle": "private",
+      "file": "SESSION_MEMORY_DUMP_2026_03_06_02.md",
+      "depends_on": []
+    }
+  ]
+}

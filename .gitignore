@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Temp / backup
+*.tmp
+*.bak
+*.swp
+
+# Local experimental notes
+SESSION_MEMORY_DUMP*.md
+*_DRAFT*.md
+notes_private/

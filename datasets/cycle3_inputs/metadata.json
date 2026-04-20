@@ -1,0 +1,15 @@
+{
+  "dataset_version": "cycle3_real_mix_v1",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "pipeline_version_cls": "cls_proxy_v1",
+  "pipeline_version_ord": "ord_proxy_v1",
+  "omega_contexts": [
+    "Omega_A",
+    "Omega_B",
+    "Omega_C"
+  ]
+}

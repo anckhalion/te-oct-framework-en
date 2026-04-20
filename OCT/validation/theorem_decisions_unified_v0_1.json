@@ -1,0 +1,31 @@
+{
+  "date": "2026-04-19",
+  "scope": [
+    "F03",
+    "F08",
+    "F10",
+    "D02",
+    "D03",
+    "D04",
+    "A01",
+    "A02",
+    "A03"
+  ],
+  "decisions": {
+    "F03": "revise",
+    "F08": "revise",
+    "F10": "revise",
+    "D02": "revise",
+    "D03": "revise",
+    "D04": "revise",
+    "A01": "revise",
+    "A02": "revise",
+    "A03": "revise"
+  },
+  "counts": {
+    "validated": 0,
+    "revise": 9,
+    "reject": 0
+  },
+  "note": "Unified baseline decision before OCT v1.0 formal freeze."
+}

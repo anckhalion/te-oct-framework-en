@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "run::datasets/cycle3_work/build_cycle3_inputs.py",
+      "passed": true
+    },
+    {
+      "name": "run::datasets/cycle3_work/run_cycle3_metrics.py",
+      "passed": true
+    },
+    {
+      "name": "run::datasets/cycle4_work/run_d03_revision_cycle4.py",
+      "passed": true
+    },
+    {
+      "name": "run::datasets/cycle4_work/run_d03_threshold_stress.py",
+      "passed": true
+    },
+    {
+      "name": "rows::D02==180",
+      "passed": true
+    },
+    {
+      "name": "rows::A01==320",
+      "passed": true
+    },
+    {
+      "name": "rows::D03==260",
+      "passed": true
+    },
+    {
+      "name": "A01::criteria_delta_pass",
+      "passed": true
+    },
+    {
+      "name": "A01::criteria_err_pass",
+      "passed": true
+    },
+    {
+      "name": "D03::S1_coexist_true",
+      "passed": true
+    },
+    {
+      "name": "D03::S1_ambiguous_lt_0.20",
+      "passed": true
+    },
+    {
+      "name": "D03::stress_has_valid_config",
+      "passed": true
+    }
+  ],
+  "runs": [
+    {
+      "script": "datasets/cycle3_work/build_cycle3_inputs.py",
+      "returncode": 0,
+      "stdout_tail": "{\n  \"D02\": {\n    \"rows\": 180,\n    \"summary_by_omega\": {\n      \"Omega_A\": {\n        \"n\": 60,\n        \"phi_zero_quota\": 0.2833333333333333,\n        \"phi_positive_quota\": 0.7166666666666667\n      },\n      \"Omega_B\": {\n        \"n\": 60,\n        \"phi_zero_quota\": 0.31666666666666665,\n        \"phi_positive_quota\": 0.6833333333333333\n      },\n      \"Omega_C\": {\n        \"n\": 60,\n        \"phi_zero_quota\": 0.35,\n        \"phi_positive_quota\": 0.65\n      }\n    },\n    \"intersection_phi_zero_all_omegas\": 0.2833333333333333,\n    \"var_phi_zero_quota\": 0.0007407407407407405\n  },\n  \"A01\": {\n    \"rows\": 320\n  },\n  \"D03\": {\n    \"rows\": 260\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "script": "datasets/cycle3_work/run_cycle3_metrics.py",
+      "returncode": 0,
+      "stdout_tail": "{\n  \"A01\": {\n    \"summary_by_omega\": {\n      \"Omega_A\": {\n        \"n\": 107,\n        \"delta_cum_ord\": 0.5549917385776266,\n        \"delta_cum_cls\": 0.6158774342706376,\n        \"err_sem_ord\": 0.2525361294821257,\n        \"err_sem_cls\": 0.2673946972011814\n      },\n      \"Omega_B\": {\n        \"n\": 107,\n        \"delta_cum_ord\": 0.5716532868511978,\n        \"delta_cum_cls\": 0.6281165706811667,\n        \"err_sem_ord\": 0.23532847676421068,\n        \"err_sem_cls\": 0.24801257079003092\n      },\n      \"Omega_C\": {\n        \"n\": 106,\n        \"delta_cum_ord\": 0.5781718425704274,\n        \"delta_cum_cls\": 0.634478754997623,\n        \"err_sem_ord\": 0.24292193011391125,\n        \"err_sem_cls\": 0.24630732223751095\n      }\n    },\n    \"criteria_pass_delta\": true,\n    \"criteria_pass_err\": true\n  },\n  \"D03\": {\n    \"summary_by_omega\": {\n      \"Omega_A\": {\n        \"n\": 87,\n        \"preservativo\": 0.0,\n        \"degenerativo\": 0.7011494252873564,\n        \"ambiguo\": 0.2988505747126437\n      },\n      \"Omega_B\": {\n        \"n\": 87,\n        \"preservativo\": 0.0,\n        \"degenerativo\": 0.632183908045977,\n        \"ambiguo\": 0.367816091954023\n      },\n      \"Omega_C\": {\n        \"n\": 86,\n        \"preservativo\": 0.0,\n        \"degenerativo\": 0.5930232558139535,\n        \"ambiguo\": 0.4069767441860465\n      }\n    },\n    \"total_counts\": {\n      \"degenerativo\": 167,\n      \"ambiguo\": 93\n    },\n    \"ambiguous_rate\": 0.3576923076923077,\n    \"coexisting_regimes_all_contexts\": false\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "script": "datasets/cycle4_work/run_d03_revision_cycle4.py",
+      "returncode": 0,
+      "stdout_tail": "{\n  \"S1_primary_fixed_band\": {\n    \"thresholds\": {\n      \"low\": 0.276,\n      \"high\": 0.284\n    },\n    \"total_counts\": {\n      \"degenerativo\": 158,\n      \"preservativo\": 74,\n      \"ambiguo\": 28\n    },\n    \"ambiguous_rate\": 0.1076923076923077,\n    \"coexisting_regimes_all_contexts\": true,\n    \"summary_by_omega\": {\n      \"Omega_A\": {\n        \"n\": 87,\n        \"preservativo\": 0.26436781609195403,\n        \"degenerativo\": 0.6551724137931034,\n        \"ambiguo\": 0.08045977011494253\n      },\n      \"Omega_B\": {\n        \"n\": 87,\n        \"preservativo\": 0.2988505747126437,\n        \"degenerativo\": 0.6091954022988506,\n        \"ambiguo\": 0.09195402298850575\n      },\n      \"Omega_C\": {\n        \"n\": 86,\n        \"preservativo\": 0.29069767441860467,\n        \"degenerativo\": 0.5581395348837209,\n        \"ambiguo\": 0.1511627906976744\n      }\n    }\n  },\n  \"S2_robust_wide_band\": {\n    \"thresholds\": {\n      \"low\": 0.274,\n      \"high\": 0.286\n    },\n    \"total_counts\": {\n      \"degenerativo\": 150,\n      \"preservativo\": 66,\n      \"ambiguo\": 44\n    },\n    \"ambiguous_rate\": 0.16923076923076924,\n    \"coexisting_regimes_all_contexts\": true,\n    \"summary_by_omega\": {\n      \"Omega_A\": {\n        \"n\": 87,\n        \"preservativo\": 0.22988505747126436,\n        \"degenerativo\": 0.6206896551724138,\n        \"ambiguo\": 0.14942528735632185\n      },\n      \"Omega_B\": {\n        \"n\": 87,\n        \"preservativo\": 0.27586206896551724,\n        \"degenerativo\": 0.5862068965517241,\n        \"ambiguo\": 0.13793103448275862\n      },\n      \"Omega_C\": {\n        \"n\": 86,\n        \"preservativo\": 0.2558139534883721,\n        \"degenerativo\": 0.5232558139534884,\n        \"ambiguo\": 0.22093023255813954\n      }\n    }\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "script": "datasets/cycle4_work/run_d03_threshold_stress.py",
+      "returncode": 0,
+      "stdout_tail": "ambiguo\": 0.13793103448275862\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.26436781609195403,\n        \"degenerativo\": 0.6091954022988506,\n        \"ambiguo\": 0.12643678160919541\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.1744186046511628,\n        \"degenerativo\": 0.5581395348837209,\n        \"ambiguo\": 0.26744186046511625\n      }\n    }\n  },\n  {\n    \"low\": 0.272,\n    \"high\": 0.286,\n    \"ambiguous_rate\": 0.2076923076923077,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 56,\n    \"total_degenerativo\": 150,\n    \"total_ambiguo\": 54,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.20689655172413793,\n        \"degenerativo\": 0.6206896551724138,\n        \"ambiguo\": 0.1724137931034483\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.26436781609195403,\n        \"degenerativo\": 0.5862068965517241,\n        \"ambiguo\": 0.14942528735632185\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.1744186046511628,\n        \"degenerativo\": 0.5232558139534884,\n        \"ambiguo\": 0.3023255813953488\n      }\n    }\n  },\n  {\n    \"low\": 0.272,\n    \"high\": 0.288,\n    \"ambiguous_rate\": 0.24615384615384617,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 56,\n    \"total_degenerativo\": 140,\n    \"total_ambiguo\": 64,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.20689655172413793,\n        \"degenerativo\": 0.5517241379310345,\n        \"ambiguo\": 0.2413793103448276\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.26436781609195403,\n        \"degenerativo\": 0.5517241379310345,\n        \"ambiguo\": 0.1839080459770115\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.1744186046511628,\n        \"degenerativo\": 0.5116279069767442,\n        \"ambiguo\": 0.313953488372093\n      }\n    }\n  },\n  {\n    \"low\": 0.274,\n    \"high\": 0.284,\n    \"ambiguous_rate\": 0.13846153846153847,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 66,\n    \"total_degenerativo\": 158,\n    \"total_ambiguo\": 36,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.22988505747126436,\n        \"degenerativo\": 0.6551724137931034,\n        \"ambiguo\": 0.11494252873563218\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.27586206896551724,\n        \"degenerativo\": 0.6091954022988506,\n        \"ambiguo\": 0.11494252873563218\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.2558139534883721,\n        \"degenerativo\": 0.5581395348837209,\n        \"ambiguo\": 0.18604651162790697\n      }\n    }\n  },\n  {\n    \"low\": 0.274,\n    \"high\": 0.286,\n    \"ambiguous_rate\": 0.16923076923076924,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 66,\n    \"total_degenerativo\": 150,\n    \"total_ambiguo\": 44,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.22988505747126436,\n        \"degenerativo\": 0.6206896551724138,\n        \"ambiguo\": 0.14942528735632185\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.27586206896551724,\n        \"degenerativo\": 0.5862068965517241,\n        \"ambiguo\": 0.13793103448275862\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.2558139534883721,\n        \"degenerativo\": 0.5232558139534884,\n        \"ambiguo\": 0.22093023255813954\n      }\n    }\n  },\n  {\n    \"low\": 0.274,\n    \"high\": 0.288,\n    \"ambiguous_rate\": 0.2076923076923077,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 66,\n    \"total_degenerativo\": 140,\n    \"total_ambiguo\": 54,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.22988505747126436,\n        \"degenerativo\": 0.5517241379310345,\n        \"ambiguo\": 0.21839080459770116\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.27586206896551724,\n        \"degenerativo\": 0.5517241379310345,\n        \"ambiguo\": 0.1724137931034483\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.2558139534883721,\n        \"degenerativo\": 0.5116279069767442,\n        \"ambiguo\": 0.23255813953488372\n      }\n    }\n  },\n  {\n    \"low\": 0.276,\n    \"high\": 0.284,\n    \"ambiguous_rate\": 0.1076923076923077,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 74,\n    \"total_degenerativo\": 158,\n    \"total_ambiguo\": 28,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.26436781609195403,\n        \"degenerativo\": 0.6551724137931034,\n        \"ambiguo\": 0.08045977011494253\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.2988505747126437,\n        \"degenerativo\": 0.6091954022988506,\n        \"ambiguo\": 0.09195402298850575\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.29069767441860467,\n        \"degenerativo\": 0.5581395348837209,\n        \"ambiguo\": 0.1511627906976744\n      }\n    }\n  },\n  {\n    \"low\": 0.276,\n    \"high\": 0.286,\n    \"ambiguous_rate\": 0.13846153846153847,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 74,\n    \"total_degenerativo\": 150,\n    \"total_ambiguo\": 36,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.26436781609195403,\n        \"degenerativo\": 0.6206896551724138,\n        \"ambiguo\": 0.11494252873563218\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.2988505747126437,\n        \"degenerativo\": 0.5862068965517241,\n        \"ambiguo\": 0.11494252873563218\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.29069767441860467,\n        \"degenerativo\": 0.5232558139534884,\n        \"ambiguo\": 0.18604651162790697\n      }\n    }\n  },\n  {\n    \"low\": 0.276,\n    \"high\": 0.288,\n    \"ambiguous_rate\": 0.17692307692307693,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 74,\n    \"total_degenerativo\": 140,\n    \"total_ambiguo\": 46,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.26436781609195403,\n        \"degenerativo\": 0.5517241379310345,\n        \"ambiguo\": 0.1839080459770115\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.2988505747126437,\n        \"degenerativo\": 0.5517241379310345,\n        \"ambiguo\": 0.14942528735632185\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.29069767441860467,\n        \"degenerativo\": 0.5116279069767442,\n        \"ambiguo\": 0.19767441860465115\n      }\n    }\n  },\n  {\n    \"low\": 0.278,\n    \"high\": 0.284,\n    \"ambiguous_rate\": 0.07692307692307693,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 82,\n    \"total_degenerativo\": 158,\n    \"total_ambiguo\": 20,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.28735632183908044,\n        \"degenerativo\": 0.6551724137931034,\n        \"ambiguo\": 0.05747126436781609\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.3218390804597701,\n        \"degenerativo\": 0.6091954022988506,\n        \"ambiguo\": 0.06896551724137931\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.3372093023255814,\n        \"degenerativo\": 0.5581395348837209,\n        \"ambiguo\": 0.10465116279069768\n      }\n    }\n  },\n  {\n    \"low\": 0.278,\n    \"high\": 0.286,\n    \"ambiguous_rate\": 0.1076923076923077,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 82,\n    \"total_degenerativo\": 150,\n    \"total_ambiguo\": 28,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.28735632183908044,\n        \"degenerativo\": 0.6206896551724138,\n        \"ambiguo\": 0.09195402298850575\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.3218390804597701,\n        \"degenerativo\": 0.5862068965517241,\n        \"ambiguo\": 0.09195402298850575\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.3372093023255814,\n        \"degenerativo\": 0.5232558139534884,\n        \"ambiguo\": 0.13953488372093023\n      }\n    }\n  },\n  {\n    \"low\": 0.278,\n    \"high\": 0.288,\n    \"ambiguous_rate\": 0.14615384615384616,\n    \"coexist_all_contexts\": true,\n    \"total_preservativo\": 82,\n    \"total_degenerativo\": 140,\n    \"total_ambiguo\": 38,\n    \"omega\": {\n      \"Omega_A\": {\n        \"preservativo\": 0.28735632183908044,\n        \"degenerativo\": 0.5517241379310345,\n        \"ambiguo\": 0.16091954022988506\n      },\n      \"Omega_B\": {\n        \"preservativo\": 0.3218390804597701,\n        \"degenerativo\": 0.5517241379310345,\n        \"ambiguo\": 0.12643678160919541\n      },\n      \"Omega_C\": {\n        \"preservativo\": 0.3372093023255814,\n        \"degenerativo\": 0.5116279069767442,\n        \"ambiguo\": 0.1511627906976744\n      }\n    }\n  }\n]\n",
+      "stderr_tail": ""
+    }
+  ]
+}
