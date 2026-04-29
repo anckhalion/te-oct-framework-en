@@ -11,8 +11,10 @@ If you are trying to understand the project quickly:
 3. `SUPER_SIMPLE_FAQ.md`
 4. `README.md` for scope and disambiguation
 5. `TE_BOOTLOADER_v6_0_PROJECT.md` + `TE_CORE_v5.1.md` for the TE framework
-6. `OCT/START_HERE_OCT.md` and `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
-7. `OCT/validation/` for empirical validation artifacts
+6. `OCT/START_HERE_OCT.md`
+7. `OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md`
+8. `OCT/OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
+9. `OCT/validation/` for empirical validation artifacts
 
 ## Core Framework
 
@@ -28,7 +30,8 @@ If you are trying to understand the project quickly:
 ## OCT Corpus (English)
 
 - `OCT/`
-- Key file: `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
+- Key starting file: `OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md`
+- Full single-file manuscript: `OCT/OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
 - Validation artifacts: `OCT/validation/`
 
 ## Data and Reproducibility

@@ -1,0 +1,762 @@
+\chapter{Capitolo 2 - Dalla cosa alla singolarità: base ontologica OCT}
+
+\section{1. Problema}
+
+Il Capitolo 1 ha fissato una distinzione necessaria: validità sintattica non coincide con validità ordinativa. Questa distinzione, tuttavia, resta incompleta se non viene chiarita la domanda ontologica di base: \textbf{che cosa è un ``oggetto'' quando la teoria deve descrivere sistemi reali dinamici, storici e ad alta dipendenza relazionale?}
+
+Nel lessico classico, l'oggetto categoriale è un nodo astratto: non richiede struttura interna esplicita, e viene compreso attraverso la rete di morfismi che lo collega agli altri oggetti. Questa scelta ha una forza enorme, perché massimizza generalità e trasferibilità. Ma quando il quadro viene applicato a sistemi operativi concreti, emerge un limite ricorrente: il nodo astratto tende a nascondere differenze interne che, nel tempo, decidono persistenza o collasso.
+
+In altri termini: due ``cose'' possono occupare la stessa posizione in una struttura formale e produrre esiti radicalmente diversi in presenza di perturbazioni, vincoli di risorsa, attriti semantici o mismatch di scala. Il formalismo classico registra correttamente la forma della composizione; non è progettato, da solo, per decidere la fecondità reale della composizione.
+
+La conseguenza scientifica è netta. Se vogliamo che OCT entri nella grammatica della scienza umana, non basta aggiungere metriche a valle; serve una riformulazione a monte del referente ontologico. Non partiamo più dalla ``cosa'' come unità estensionale implicita, ma dalla \textbf{singolarità} come unità relazionale-funzionale esplicitamente situata in un contesto osservativo \texttt{Omega}.
+
+Con ``cosa'' intendiamo qui un'entità trattata prevalentemente come supporto di proprietà e appartenenze. Con ``singolarità'' intendiamo un nodo la cui identità dipende da:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  profilo relazionale attivo;
+\item
+  capacità di mantenere coerenza interna sotto trasformazione;
+\item
+  funzione emergente non riducibile alla somma dei componenti;
+\item
+  traiettoria storica nel tempo osservato.
+\end{enumerate}
+
+Il passaggio non è lessicale, ma metodologico. Nel regime estensionale, la domanda è ``che cos'è questa entità?''. Nel regime ordinativo, la domanda diventa ``come questa singolarità mantiene identità e funzione in relazione ad altre singolarità, in \texttt{Omega}, lungo una traiettoria?''.
+
+\subsection{1.1 Perché la nozione di ``cosa'' diventa insufficiente}
+
+La nozione di cosa non è falsa; è insufficiente in domini dove:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  le relazioni cambiano la natura operativa dei nodi;
+\item
+  la storia delle interazioni modifica la risposta futura;
+\item
+  la funzionalità dipende da configurazioni collettive, non da attributi isolati.
+\end{enumerate}
+
+In tali domini, due entità con uguale descrizione estensionale possono divergere in modo irreversibile. Esempio astratto: due sistemi con lo stesso inventario di componenti e la stessa topologia iniziale possono differire nella qualità delle interfacce, nella sequenza di attivazione o nel grado di allineamento semantico; il risultato è che uno converge e l'altro degenera.
+
+Questa divergenza non viene catturata da un'ontologia che privilegia l'enumerazione di proprietà statiche. Serve un'ontologia che assuma la relazione come costitutiva e non accessoria.
+
+\subsection{1.2 Vincolo epistemico: evitare metafore ontologiche vaghe}
+
+Il rischio opposto è usare ``singolarità'' in modo poetico o metafisico. Questo capitolo impone il vincolo contrario: la singolarità è definita solo se accompagnata da operatori osservabili, criteri di identità e condizioni di composizione.
+
+In OCT non è accettabile dire che una singolarità ``esiste'' senza dichiarare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  in quale \texttt{Omega} è valutata;
+\item
+  con quale metrica di coerenza;
+\item
+  con quale misura di funzione emergente;
+\item
+  con quale regime di stabilità temporale.
+\end{enumerate}
+
+Questa disciplina impedisce derive retoriche e tiene la teoria in un perimetro scientificamente falsificabile.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi del capitolo è articolata in sei enunciati coordinati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Tesi di rifondazione del referente}: l'unità ontologica primaria di OCT non è la cosa estensionale, ma la singolarità relazionale-funzionale.
+\item
+  \textbf{Tesi di identità situata}: l'identità di una singolarità non è assoluta; è definita rispetto a un contesto osservativo \texttt{Omega} e a una finestra temporale dichiarata.
+\item
+  \textbf{Tesi di irriducibilità funzionale}: una singolarità è scientificamente rilevante solo se mostra \texttt{Phi\_Omega\ !=\ 0}, cioè emergenza non banale.
+\item
+  \textbf{Tesi di persistenza}: la continuità identitaria richiede coerenza minima non degenerativa (\texttt{Coh\_Omega\ \textgreater{}=\ tau}) sotto trasformazioni ammissibili.
+\item
+  \textbf{Tesi di composizione responsabile}: composizioni sintatticamente corrette ma ordinativamente degradanti non devono essere trattate come equivalenti alle composizioni feconde.
+\item
+  \textbf{Tesi di continuità con il classico}: il passaggio a singolarità non abroga l'oggetto categoriale classico; ne introduce una interpretazione tipizzata più ricca per domini reali complessi.
+\end{enumerate}
+
+Queste tesi preparano il terreno per il Capitolo 3, in cui la categoria ordinativa verrà definita assiomaticamente (O1-O7). Senza una base ontologica esplicita, gli assiomi resterebbero sintatticamente eleganti ma semanticamente indeterminati.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+Per rendere operativo il passaggio ontologico, introduciamo un nucleo definitorio minimo.
+
+\subsection{Definizione 1 (Singolarità ordinativa)}
+
+Una \textbf{singolarità ordinativa} \texttt{sigma} in contesto \texttt{Omega} è una tupla tipizzata:
+
+\texttt{sigma\ :=\ \textless{}x,\ R\_Omega(x),\ H\_t(x),\ Pi\_Omega(x)\textgreater{}}
+
+dove:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{x} è il supporto identificativo minimo;
+\item
+  \texttt{R\_Omega(x)} è il profilo relazionale attivo in \texttt{Omega};
+\item
+  \texttt{H\_t(x)} è la traccia storica osservata in intervallo \texttt{t};
+\item
+  \texttt{Pi\_Omega(x)} è il potenziale ordinativo corrente.
+\end{itemize}
+
+Commento operativo:
+
+\begin{itemize}
+\tightlist
+\item
+  la singolarità non si riduce a \texttt{x};
+\item
+  \texttt{x} senza \texttt{R}, \texttt{H}, \texttt{Pi} è solo un indice tecnico.
+\end{itemize}
+
+\subsection{Definizione 2 (Profilo relazionale attivo)}
+
+\texttt{R\_Omega(x)} è l'insieme tipizzato delle relazioni effettivamente operative per \texttt{x} in \texttt{Omega}, con pesi/qualità associati.
+
+Commento:
+
+\begin{itemize}
+\tightlist
+\item
+  non tutte le relazioni possibili contano; solo quelle attive nel protocollo osservativo;
+\item
+  il profilo può cambiare con scala, regime temporale e perturbazioni.
+\end{itemize}
+
+\subsection{Definizione 3 (Potenziale ordinativo)}
+
+\texttt{Pi\_Omega(x)} è la capacità di \texttt{x} di partecipare a composizioni che mantengono \texttt{Coh\_Omega} sopra soglia e generano \texttt{Phi\_Omega\ !=\ 0}.
+
+Commento:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Pi} non misura prestazione assoluta;
+\item
+  misura predisposizione alla fecondità compositiva in un dominio dato.
+\end{itemize}
+
+\subsection{Definizione 4 (Identità situata)}
+
+Due istanze \texttt{x\_a}, \texttt{x\_b} condividono la stessa identità situata in \texttt{Omega}, denotata \texttt{x\_a\ \textasciitilde{}\_Omega\ x\_b}, se e solo se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  appartengono alla stessa classe tipologica minima;
+\item
+  preservano invarianti relazionali critici;
+\item
+  mantengono funzione emergente equivalente entro tolleranza dichiarata;
+\item
+  non mostrano divergenza degenerativa oltre soglia in finestra \texttt{t}.
+\end{enumerate}
+
+Commento:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{\textasciitilde{}\_Omega} è più forte della mera equivalenza di etichetta;
+\item
+  è più debole della identità assoluta metafisica.
+\end{itemize}
+
+\subsection{Definizione 5 (Soglia di persistenza)}
+
+Dato \texttt{tau\ in\ (0,1{]}}, una singolarità \texttt{sigma} è persistente in \texttt{Omega} su intervallo \texttt{t} se:
+
+\texttt{inf\_t\ Coh\_Omega(sigma,\ t)\ \textgreater{}=\ tau}
+
+e
+
+\texttt{Phi\_Omega(sigma,\ t)} non collassa a zero su tutto l'intervallo.
+
+Commento:
+
+\begin{itemize}
+\tightlist
+\item
+  la persistenza non richiede immobilità;
+\item
+  richiede stabilità non degenerativa.
+\end{itemize}
+
+\subsection{Definizione 6 (Degenerazione identitaria)}
+
+Si ha degenerazione identitaria quando una singolarità conserva etichetta esterna ma perde le condizioni minime di coerenza e funzione che ne sostenevano il ruolo in \texttt{Omega}.
+
+Indicatore minimo:
+
+\texttt{Deg\_id\_Omega(sigma)\ :=\ 1} se \texttt{(Coh\ \textless{}\ tau)\ OR\ (Phi\ =\ 0)} su finestra critica.
+
+\subsection{Definizione 7 (Morfismo ordinativamente ammissibile tra singolarità)}
+
+Un morfismo \texttt{f:\ sigma\_i\ -\textgreater{}\ sigma\_j} è ordinativamente ammissibile se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  è sintatticamente ben tipizzato;
+\item
+  non induce perdita di coerenza oltre soglia dichiarata;
+\item
+  preserva o incrementa \texttt{Phi\_Omega} in regime previsto;
+\item
+  rende esplicite le condizioni di fallimento.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Dal nodo astratto al nodo tipizzato}
+
+Nel lessico classico, un oggetto è spesso trattato come punto senza interno. Questo permette una notevole economia teorica. In OCT, per domini reali, adottiamo una rappresentazione intermedia:
+
+\texttt{Obj\_OCT\ :=\ \textless{}carrier,\ rel\_profile,\ history,\ ord\_potential\textgreater{}}
+
+La rappresentazione è minima ma sufficiente a evitare ambiguità ricorrenti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  confondere identità nominale con persistenza funzionale;
+\item
+  confondere connettività con integrazione;
+\item
+  confondere esistenza formale con capacità generativa.
+\end{enumerate}
+
+Questa mossa non appesantisce inutilmente il formalismo: introduce solo i gradi di liberta necessari per rendere testabile la nozione di ``reale compositivo''.
+
+\subsection{4.2 Criterio di realtà compositiva}
+
+Sia \texttt{D} un diagramma di singolarità in \texttt{Omega}. Definiamo:
+
+\texttt{Real\_OCT(D,\ Omega)\ :=\ Syntactic(D)\ AND\ Coh\_Omega(D)\ \textgreater{}=\ tau\ AND\ Phi\_Omega(D)\ !=\ 0}
+
+Osservazione chiave:
+
+\begin{itemize}
+\tightlist
+\item
+  il criterio non elimina nessuna costruzione classica;
+\item
+  classifica quali costruzioni sono ontologicamente operative nel contesto.
+\end{itemize}
+
+Il criterio può essere raffinato con vincoli di robustezza:
+
+\texttt{Robust\_OCT(D,\ Omega,\ Eps)\ :=\ Real\_OCT(D,\ Omega)\ AND\ Coh\_Omega(D\ +\ eps)\ \textgreater{}=\ tau\textquotesingle{}}
+
+dove \texttt{eps} rappresenta perturbazioni compatibili con il dominio.
+
+\subsection{4.3 Identità come traiettoria, non come istante}
+
+Una fragilità dell'approccio estensionale applicato ai sistemi dinamici è la fissazione istantanea dell'identità. OCT assume invece un criterio di traiettoria:
+
+\texttt{Id\_Omega(sigma)\ =\ stable\ if\ forall\ t\ in\ I,\ Coh\_Omega(sigma,t)\ \textgreater{}=\ tau\ and\ Phi\_Omega(sigma,t)\ sustains}
+
+La forma precisa di ``sustains'' dipende dal dominio (continuità, media mobile, quantile minimo, ecc.), ma il principio resta:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  identità senza durata è un'etichetta;
+\item
+  identità con durata è una proprietà scientifica testabile.
+\end{enumerate}
+
+\subsection{4.4 Equivalenza classica e equivalenza ordinativa}
+
+Siano \texttt{A}, \texttt{B} oggetti classici isomorfi (\texttt{A\ \textasciitilde{}=\ B} in senso strutturale). In OCT introduciamo:
+
+\texttt{A\ \textasciitilde{}\_ord,Omega\ B} se le rispettive singolarizzazioni mantengono coerenza e funzione comparabili in \texttt{Omega}.
+
+Ne segue:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{A\ \textasciitilde{}=\ B} non implica necessariamente \texttt{A\ \textasciitilde{}\_ord,Omega\ B};
+\item
+  \texttt{A\ \textasciitilde{}\_ord,Omega\ B} richiede verifica empirico-formale contestualizzata.
+\end{enumerate}
+
+Questa asimmetria è il cuore dell'estensione ordinativa: preservare la correttezza algebrica e aggiungere discriminazione ontologica.
+
+\subsection{4.5 Operatore di singolarizzazione}
+
+Per connettere direttamente il classico con OCT introduciamo un operatore concettuale:
+
+\texttt{S\_Omega:\ Obj\_class\ -\textgreater{}\ Sing\_OCT}
+
+che associa a ogni oggetto classico \texttt{x} la singolarità \texttt{sigma} valutabile in \texttt{Omega}.
+
+Requisiti minimi di \texttt{S\_Omega}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  compatibilità tipologica (nessuna violazione di tipo);
+\item
+  esplicitazione del profilo relazionale rilevante;
+\item
+  dichiarazione della finestra storica osservata;
+\item
+  stima iniziale del potenziale ordinativo.
+\end{enumerate}
+
+\texttt{S\_Omega} non è unico in assoluto: varia con il protocollo osservativo. Questa dipendenza non è difetto, ma trasparenza metodologica.
+
+\subsection{4.6 Regimi di perdita informativa}
+
+Nel passaggio da sistemi reali a modellazione formale avvengono perdite di informazione. OCT distingue tre regimi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{perdita neutra}: riduzione che non altera coerenza/funzione rilevanti;
+\item
+  \textbf{perdita tollerabile}: riduzione che altera margini ma non cambia esito di validità;
+\item
+  \textbf{perdita critica}: riduzione che induce falsa equivalenza o falsa stabilità.
+\end{enumerate}
+
+Solo il terzo regime è inaccettabile scientificamente. Per questo ogni capitolo successivo dovrà dichiarare i passaggi di astrazione e il relativo rischio di perdita critica.
+
+\subsection{4.7 Principio di non-indifferenza relazionale}
+
+In ontologia ordinativa, non tutte le relazioni sono intercambiabili. Due architetture con stessa cardinalità relazionale possono avere qualità compositiva opposta.
+
+Definiamo un principio metodologico:
+
+\textbf{Principio NI (Non-Indifferenza)}\\
+Se una variazione relazionale modifica sistematicamente \texttt{Coh\_Omega} o \texttt{Phi\_Omega}, tale variazione è ontologicamente rilevante e non può essere compressa in mera differenza notazionale.
+
+Il principio NI protegge la teoria da semplificazioni che rendono invisibili i punti di rottura reali.
+
+\subsection{4.8 Implicazione per la modellazione scientifica}
+
+Con il passaggio alla singolarità:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i dataset non sono solo collezioni di oggetti, ma campi di traiettorie relazionali;
+\item
+  i benchmark non valutano solo correttezza, ma tenuta ordinativa;
+\item
+  i protocolli devono includere stress test di coerenza e misura di emergenza.
+\end{enumerate}
+
+Questo spostamento è cruciale per la pubblicabilità interdisciplinare: rende esplicito come OCT traduce una posizione ontologica in una metodologia verificabile.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 2.1 (Insufficienza della sola identità estensionale)}
+
+Enunciato: esistono coppie di sistemi \texttt{X}, \texttt{Y} con descrizione estensionale equivalente tali che \texttt{X} è ordinativamente persistente in \texttt{Omega} mentre \texttt{Y} non lo è.
+
+Intuizione:
+
+\begin{itemize}
+\tightlist
+\item
+  equivalenza estensionale può ignorare differenze nel profilo relazionale attivo e nella traiettoria storica;
+\item
+  tali differenze sono sufficienti a produrre esiti divergenti su \texttt{Coh} e \texttt{Phi}.
+\end{itemize}
+
+Conseguenza:
+
+\begin{itemize}
+\tightlist
+\item
+  la sola identità estensionale non è criterio sufficiente di realtà compositiva.
+\end{itemize}
+
+Stato: \texttt{in\_proof} (programma di dimostrazione tramite controesempi costruttivi multi-dominio).
+
+\subsection{Proposizione 2.2 (Necessità del profilo relazionale tipizzato)}
+
+Enunciato: senza esplicitazione di \texttt{R\_Omega(x)}, la classificazione di validità ordinativa non è decidibile in generale.
+
+Intuizione:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Coh\_Omega} dipende dalla qualità delle relazioni, non solo dalla presenza di connessioni;
+\item
+  senza \texttt{R\_Omega}, il valore di \texttt{Coh\_Omega} è sottodeterminato.
+\end{itemize}
+
+Conseguenza:
+
+\begin{itemize}
+\tightlist
+\item
+  ogni oggetto OCT deve essere accompagnato da un profilo relazionale minimo dichiarato.
+\end{itemize}
+
+Stato: \texttt{validated} a livello metodologico (\texttt{S1}), da elevare con formalizzazione completa nel Capitolo 9.
+
+\subsection{Teorema 2.3 (Condizione minima di persistenza identitaria)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{sigma} è una singolarità in \texttt{Omega};
+\item
+  esiste \texttt{tau\ \textgreater{}\ 0} tale che \texttt{Coh\_Omega(sigma,t)\ \textgreater{}=\ tau} per ogni \texttt{t} in intervallo \texttt{I};
+\item
+  \texttt{Phi\_Omega(sigma,t)} non è identicamente nulla su \texttt{I}.
+\end{enumerate}
+
+Tesi:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{sigma} mantiene identità ordinativa su \texttt{I} (nel senso di Definizione 5).
+\end{itemize}
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dall'ipotesi 2 segue assenza di collasso coerentivo persistente;
+\item
+  dall'ipotesi 3 segue presenza di funzione emergente non triviale;
+\item
+  combinando 1 e 2 otteniamo le condizioni di persistenza definite in modo canonico.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{itemize}
+\tightlist
+\item
+  la persistenza è verificabile con criteri minimi computabili;
+\item
+  l'identità ordinativa diventa proprietà operativa, non assunzione.
+\end{itemize}
+
+Stato: \texttt{in\_proof} (chiusura formale prevista in blocco teorematico F01-F10).
+
+\subsection{Teorema 2.4 (Non-equivalenza tra isomorfismo e equivalenza ordinativa piena)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{A\ \textasciitilde{}=\ B} (isomorfismo classico);
+\item
+  esiste contesto \texttt{Omega} in cui le singolarizzazioni \texttt{S\_Omega(A)}, \texttt{S\_Omega(B)} mostrano profili relazionali non allineabili rispetto a criterio NI;
+\item
+  differenza di profilo induce \texttt{Coh} o \texttt{Phi} non equivalenti oltre soglia.
+\end{enumerate}
+
+Tesi:
+
+\begin{itemize}
+\tightlist
+\item
+  non vale \texttt{A\ \textasciitilde{}\_ord,Omega\ B}.
+\end{itemize}
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  l'isomorfismo garantisce intercambiabilità strutturale nel quadro classico;
+\item
+  il criterio ordinativo richiede anche allineamento su coerenza/funzione;
+\item
+  per ipotesi tale allineamento manca, quindi equivalenza ordinativa decade.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{itemize}
+\tightlist
+\item
+  OCT è un'estensione conservativa ma non banale della teoria classica;
+\item
+  serve doppia verifica: algebrica e ordinativa.
+\end{itemize}
+
+Stato: \texttt{revise} (richiede formalizzazione completa di \texttt{\textasciitilde{}\_ord,Omega} nel Capitolo 3 e validazione nei casi studio).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+Le definizioni del capitolo hanno impatti immediati su ricerca, ingegneria e validazione.
+
+\subsection{6.1 Progettazione di modelli}
+
+Un modello OCT-compatibile deve dichiarare, per ogni unità analitica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  supporto identificativo (\texttt{x});
+\item
+  profilo relazionale osservato (\texttt{R\_Omega});
+\item
+  finestra storica (\texttt{H\_t});
+\item
+  ipotesi sul potenziale ordinativo (\texttt{Pi\_Omega}).
+\end{enumerate}
+
+Senza questi quattro elementi, il modello resta nel regime descrittivo classico e non può sostenere claim ordinativi forti.
+
+\subsection{6.2 Disegno dei benchmark}
+
+I benchmark devono essere riformulati per catturare non solo accuratezza locale ma tenuta compositiva:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  test di coerenza sotto perturbazione;
+\item
+  misura della persistenza di funzione emergente;
+\item
+  tracciamento della degenerazione identitaria.
+\end{enumerate}
+
+In pratica, un benchmark OCT non chiede solo ``funziona?'', ma ``continua a funzionare senza collasso di coerenza quando il contesto cambia entro i limiti dichiarati?''.
+
+\subsection{6.3 Pipeline di pubblicazione e audit}
+
+Per pubblicabilità su GitHub/Zenodo/OSF e piattaforme analoghe, il capitolo suggerisce una disciplina minima:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dichiarare il contesto \texttt{Omega} nei metadati di ogni esperimento;
+\item
+  allegare protocollo di misura per \texttt{Coh/Phi/Delta};
+\item
+  classificare i claim con \texttt{S0-S3};
+\item
+  includere limiti e failure mode espliciti.
+\end{enumerate}
+
+Questa disciplina riduce ambiguità interpretative e migliora replicabilità internazionale.
+
+\subsection{6.4 Impatto su sistemi AI ordinativi}
+
+Per agenti AI ispirati al framework TE/OCT, il passaggio da cosa a singolarità implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  rappresentazioni interne orientate a traiettorie e relazioni, non solo stati statici;
+\item
+  controllo decisionale che penalizza composizioni degradanti anche se formalmente lecite;
+\item
+  governance del ciclo di vita basata su segnali di degenerazione precoce.
+\end{enumerate}
+
+L'obiettivo non è antropomorfizzare il sistema, ma evitare modelli che ottimizzano metriche locali producendo collasso globale.
+
+\subsection{6.5 Interoperabilità con la teoria classica}
+
+Per evitare fratture inutili con la letteratura esistente, ogni costrutto OCT deve indicare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  equivalente classico di partenza;
+\item
+  limite classico rilevante;
+\item
+  estensione ordinativa introdotta.
+\end{enumerate}
+
+Questa tripla è fondamentale per un dialogo serio con la comunità matematica e con le scienze applicate.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Questo capitolo introduce una base ontologica operativa, ma non pretende più di quanto può dimostrare in questa fase.
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  non viene ancora fornita una assiomatizzazione completa della categoria ordinativa (rimandata al Capitolo 3);
+\item
+  non viene ancora chiusa una prova completa dei teoremi 2.3 e 2.4;
+\item
+  non è ancora fissata una metrica universale di \texttt{Phi\_Omega} valida per tutti i domini;
+\item
+  la nozione di identità situata dipende da soglie e protocolli dominio-specifici.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  soglie \texttt{tau} mal calibrate possono produrre falsi positivi/negativi di persistenza;
+\item
+  profili relazionali incompleti possono simulare stabilità inesistente;
+\item
+  finestre temporali troppo corte possono mascherare degenerazioni lente.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che la nozione classica di oggetto sia errata;
+\item
+  che ogni divergenza empirica richieda nuova ontologia;
+\item
+  che OCT abbia già chiuso tutte le prove formali necessarie.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C2.1 & La nozione estensionale di ``cosa'' è insufficiente per discriminare persistenza in sistemi dinamici complessi & interpretativo-metodologico & S1 & validated \\
+C2.2 & L'unità primaria OCT deve essere la singolarità \texttt{sigma\ :=\ \textless{}x,R,H,Pi\textgreater{}} & formale-programmatico & S2 & revise \\
+C2.3 & Senza \texttt{R\_Omega} la validità ordinativa non è decidibile in generale & formale & S1 & validated \\
+C2.4 & Isomorfismo classico non implica equivalenza ordinativa piena in \texttt{Omega} & formale & S2 & in\_review \\
+C2.5 & Persistenza identitaria richiede congiuntamente soglia di coerenza e funzione emergente non nulla & formale & S2 & in\_proof \\
+C2.6 & Benchmark OCT devono includere stress test di coerenza e tracciamento degenerativo & operativo & S1 & validated \\
+C2.7 & Il passaggio alla singolarità migliora la replicabilità inter-dominio se accompagnato da metadati \texttt{Omega} espliciti & metodologico & S1 & in\_review \\
+C2.8 & Non esiste, in questo stadio, una misura unica universale di \texttt{Phi\_Omega} & epistemico & S0 & validated \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 3}
+
+Il Capitolo 2 ha stabilito il referente ontologico minimo di OCT: non la cosa estensionale, ma la singolarità relazionale-funzionale situata in \texttt{Omega}.
+
+Con questa base possiamo compiere il passaggio successivo: formulare la \textbf{Categoria Ordinativa} in senso stretto. Il Capitolo 3 introdurrà:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dominio degli oggetti-singolarità e dei morfismi ordinativamente ammissibili;
+\item
+  assiomi O1-O7 per composizione, identità, coerenza, emergenza e non-degenerazione;
+\item
+  prime conseguenze strutturali per limiti, equivalenze e funtorialità in quadro OCT.
+\end{enumerate}
+
+In termini operativi, il passaggio è questo:
+
+\begin{itemize}
+\tightlist
+\item
+  Capitolo 1: perché la validità classica non basta nei domini reali;
+\item
+  Capitolo 2: quale ontologia minima serve per colmare il gap;
+\item
+  Capitolo 3: come trasformare questa ontologia in teoria categoriale formalizzata.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_CLASSICAL\_TO\_ORDINATIVE\_MAP\_v0\_1.md}.
+\item
+  \texttt{OCT\_THEOREM\_PROGRAM\_v0\_1.md}.
+\item
+  \texttt{OCT\_TYPED\_FORMAL\_SPEC\_v0\_1.md}.
+\end{enumerate}
+
+Riferimenti primari (contesto disciplinare):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Eilenberg, S., Mac Lane, S. (1945). General Theory of Natural Equivalences.
+\item
+  Mac Lane, S. (1998). Categories for the Working Mathematician.
+\item
+  Spivak, D. (2014). Category Theory for the Sciences.
+\end{enumerate}

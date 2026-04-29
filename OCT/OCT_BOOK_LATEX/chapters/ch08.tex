@@ -1,0 +1,1016 @@
+\chapter{\texorpdfstring{Capitolo 8 - Invarianti ordinativi e spazio di validità (\texttt{Coh}, \texttt{Phi}, \texttt{Delta})}{Capitolo 8 - Invarianti ordinativi e spazio di validità (Coh, Phi, Delta)}}
+
+\section{1. Problema}
+
+Con i Capitoli 1-3 abbiamo costruito il nucleo ontologico e assiomatico di OCT. Abbiamo stabilito che:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la validità sintattica classica è necessaria ma non sufficiente;
+\item
+  l'unità primaria operativa è la singolarità contestualizzata in \texttt{Omega};
+\item
+  l'ammissibilità ordinativa richiede gate su coerenza, emergenza e non-degenerazione.
+\end{enumerate}
+
+Manca però ancora un passaggio decisivo per rendere OCT una teoria scientificamente utilizzabile su larga scala: definire uno \textbf{spazio di validità} comune, in cui i risultati possano essere confrontati, auditati e falsificati in modo uniforme.
+
+Senza questo spazio, il linguaggio \texttt{Coh\_Omega}, \texttt{Phi\_Omega}, \texttt{Delta\_Omega} rischia di restare una notazione locale non interoperabile tra capitoli, domini e gruppi di ricerca. Con questo spazio, invece, gli enunciati diventano traducibili in condizioni verificabili.
+
+Il problema del capitolo può essere formulato così:
+
+\textbf{come definire invarianti ordinativi minimi che mantengano la generalità del quadro teorico e, allo stesso tempo, consentano decisioni operative robuste su ammissibilità, sterilità e degenerazione?}
+
+La difficoltà è doppia:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  se gli invarianti sono troppo deboli, non discriminano stati strutturalmente diversi;
+\item
+  se sono troppo rigidi, trasformano OCT in uno schema dominio-specifico e perdono trasferibilità.
+\end{enumerate}
+
+Per questo il capitolo propone un impianto a due strati:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  uno spazio di validità minimale, comune a tutti i domini;
+\item
+  invarianti ordinativi contestuali, espliciti ma parametrici.
+\end{enumerate}
+
+\subsection{1.1 Perché servono invarianti e non solo metriche}
+
+Una metrica fornisce un valore. Un invariante fornisce una regola di persistenza sotto trasformazioni ammesse. In OCT non basta misurare: bisogna sapere quali proprietà devono restare stabili affinché una composizione resti scientificamente accettabile.
+
+In termini pratici:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Coh} da sola non distingue automaticamente stabilità utile da stabilità sterile;
+\item
+  \texttt{Phi} da sola non distingue automaticamente emergenza robusta da picco transitorio;
+\item
+  \texttt{Delta} da sola non distingue automaticamente rumore locale da degenerazione strutturale.
+\end{enumerate}
+
+Gli invarianti servono proprio a integrare queste misure in un criterio unico di giudizio.
+
+\subsection{1.2 Posizionamento rispetto al programma teorematico}
+
+Questo capitolo non chiude ancora i teoremi fondativi globali (Capitolo 9), ma prepara la loro base. In particolare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definisce le coordinate minime del dominio di validità;
+\item
+  fissa condizioni necessarie per ammissibilità ordinativa;
+\item
+  introduce margini decisionali utili per prove, controesempi e benchmark.
+\end{enumerate}
+
+In questo senso, il Capitolo 8 è il ponte tra l'assiomatica (Capitolo 3) e la teorematica completa (Capitoli 9-10) con critica dei limiti (Capitolo 11).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi del capitolo è articolata in otto enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Esiste uno spazio di validità ordinativo minimale \texttt{V\_Omega} coordinato da \texttt{Coh}, \texttt{Phi}, \texttt{Delta}.
+\item
+  Lo spazio di validità può essere partizionato in regioni operative con semantica scientifica esplicita.
+\item
+  L'ammissibilità ordinativa minima richiede congiuntamente soglia di coerenza e non-sterilità emergente.
+\item
+  La degenerazione ordinativa è un regime classificabile e non un semplice errore numerico.
+\item
+  Gli invarianti ordinativi devono essere definiti come proprietà di persistenza, non come valori puntuali.
+\item
+  Le decisioni robuste richiedono margini di sicurezza e gestione dell'incertezza.
+\item
+  Nessuna singola metrica scalare può sostituire integralmente la triade (\texttt{Coh}, \texttt{Phi}, \texttt{Delta}) senza perdita informativa critica.
+\item
+  Il quadro proposto è sufficiente per sostenere il ciclo di prove/controesempi dei capitoli successivi.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 8.1 (Stato di validità ordinativo)}
+
+Dato un diagramma o processo \texttt{D} in contesto \texttt{Omega}, definiamo lo stato di validità:
+
+\texttt{V\_Omega(D)\ :=\ \textless{}Coh\_Omega(D),\ Phi\_Omega(D),\ Delta\_Omega(D)\textgreater{}}
+
+con:
+
+\texttt{Delta\_Omega(D)\ =\ 1\ -\ Coh\_Omega(D)}.
+
+\subsection{Definizione 8.2 (Normalizzazione emergenziale)}
+
+Per comparare domini eterogenei introduciamo una normalizzazione contestuale:
+
+\texttt{PhiHat\_Omega(D)\ in\ {[}0,1{]}}
+
+ottenuta tramite regola dichiarata ex ante (es. min-max robusto, quantile clipping, trasformazione logaritmica normalizzata).
+
+Commento operativo:
+
+\begin{itemize}
+\tightlist
+\item
+  la scelta della normalizzazione è dominio-dipendente;
+\item
+  deve essere esplicitata nel protocollo (O7).
+\end{itemize}
+
+\subsection{Definizione 8.3 (Spazio di validità minimale)}
+
+Lo spazio minimale è:
+
+\texttt{S\_Omega\ :=\ {[}0,1{]}\ x\ {[}0,1{]}}
+
+con coordinate \texttt{(Coh\_Omega,\ PhiHat\_Omega)}, mentre \texttt{Delta\_Omega} resta variabile derivata.
+
+Interpretazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  asse \texttt{x}: tenuta coerentiva;
+\item
+  asse \texttt{y}: potenza emergenziale normalizzata.
+\end{enumerate}
+
+\subsection{Definizione 8.4 (Regione di ammissibilità minima)}
+
+Fissata soglia \texttt{tau\ in\ (0,1{]}}, definiamo:
+
+\texttt{R\_A(Omega,tau)\ :=\ \{D\ \textbar{}\ Coh\_Omega(D)\ \textgreater{}=\ tau\ and\ PhiHat\_Omega(D)\ \textgreater{}\ 0\}}.
+
+Questa è la regione OCT-minima di realtà compositiva.
+
+\subsection{Definizione 8.5 (Regione di sterilità)}
+
+\texttt{R\_S(Omega,tau)\ :=\ \{D\ \textbar{}\ Coh\_Omega(D)\ \textgreater{}=\ tau\ and\ PhiHat\_Omega(D)\ =\ 0\}}.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  struttura stabile ma emergenzialmente piatta;
+\item
+  utile come controesempio di sufficienza della sola coerenza.
+\end{itemize}
+
+\subsection{Definizione 8.6 (Regione di degenerazione)}
+
+\texttt{R\_D(Omega,tau)\ :=\ \{D\ \textbar{}\ Coh\_Omega(D)\ \textless{}\ tau\}}.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  perdita di coerenza sotto soglia;
+\item
+  può coesistere con valori \texttt{Phi} non nulli ma non affidabili come validità robusta.
+\end{itemize}
+
+\subsection{Definizione 8.7 (Margine di validità)}
+
+Definiamo il margine:
+
+\texttt{m\_Omega(D)\ :=\ Coh\_Omega(D)\ -\ tau}.
+
+Se \texttt{m\_Omega(D)\ \textgreater{}\ 0}, la distanza dal bordo di degenerazione è positiva.
+
+\subsection{Definizione 8.8 (Invariante di persistenza ordinativa)}
+
+Sia \texttt{Gamma\ =\ \{D\_t\}} una traiettoria in intervallo \texttt{I}. Una proprietà \texttt{I\_k} è invariante ordinativa su \texttt{Gamma} se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  è verificata in \texttt{t0};
+\item
+  resta verificata per ogni \texttt{t\ in\ I} sotto perturbazioni ammesse.
+\end{enumerate}
+
+In forma sintetica:
+
+\texttt{Inv\_k(Gamma,Omega)\ :=\ forall\ t\ in\ I,\ P\_k(D\_t,Omega)}.
+
+\subsection{Definizione 8.9 (Vicinato contestuale ammissibile)}
+
+\texttt{N\_epsilon(Omega)} è la famiglia di contesti perturbati compatibili con le ipotesi sperimentali.
+
+Serve per valutare robustezza locale:
+
+\texttt{Rob\_Omega(D)\ :=\ forall\ omega\textquotesingle{}\ in\ N\_epsilon(Omega),\ D\ in\ R\_A(omega\textquotesingle{},tau\textquotesingle{})}.
+
+\subsection{Definizione 8.10 (Indice composito ausiliario)}
+
+Per scopi diagnostici (non sostitutivi), si può introdurre:
+
+\texttt{Q\_Omega(D)\ :=\ alpha*Coh\_Omega(D)\ +\ beta*PhiHat\_Omega(D)\ -\ gamma*Delta\_Omega(D)}
+
+con \texttt{alpha,beta,gamma\ \textgreater{}=\ 0}.
+
+Nota:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Q} è strumento ausiliario per ranking;
+\item
+  non sostituisce la decisione logica basata sulle regioni.
+\end{itemize}
+
+\subsection{Definizione 8.11 (Istanziazione costruttiva minima su benchmark fisico)}
+
+Per evitare che la triade resti puramente lessicale, definiamo una istanziazione minima calcolabile sul benchmark fisico standing-wave.
+
+Indicatori grezzi normalizzati in \texttt{{[}0,1{]}}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{g\_geom}: deviazione geometrica media rispetto alla configurazione di riferimento;
+\item
+  \texttt{p\_phase}: persistenza della controfase osservata;
+\item
+  \texttt{n\_global}: globalita del pattern nodale.
+\end{enumerate}
+
+Mappatura operativa proposta:
+
+\texttt{Coh\_Omega(D)\ :=\ 1\ -\ g\_geom(D)}
+
+\texttt{PhiHat\_Omega(D)\ :=\ clip(\ w\_p\ *\ p\_phase(D)\ +\ w\_n\ *\ n\_global(D),\ 0,\ 1\ )}
+
+con pesi \texttt{w\_p,w\_n\ \textgreater{}=\ 0} e \texttt{w\_p\ +\ w\_n\ =\ 1}.
+
+\texttt{Delta\_Omega(D)\ :=\ 1\ -\ Coh\_Omega(D)}
+
+Note:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  questa istanziazione e dominio-specifica e non pretende universalita;
+\item
+  il valore scientifico sta nella tracciabilita completa del mapping;
+\item
+  ogni benchmark successivo deve dichiarare un mapping analogo.
+\end{enumerate}
+
+\subsection{Definizione 8.12 (Regola anti-circolarita operativa)}
+
+In OCT, un operatore e considerato ``operativo'' in un dominio solo se esiste:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definizione semantica;
+\item
+  mapping costruttivo da variabili osservabili;
+\item
+  procedura di calcolo replicabile;
+\item
+  soglia decisionale preregistrata.
+\end{enumerate}
+
+Senza questi quattro elementi, lo stato corretto del claim resta \texttt{in\_review} o \texttt{revise}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{\texorpdfstring{4.1 Geometria operativa dello spazio \texttt{S\_Omega}}{4.1 Geometria operativa dello spazio S\_Omega}}
+
+Lo spazio \texttt{S\_Omega} consente una lettura geometrica semplice ma potente.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  bordo verticale \texttt{Coh=tau}: frontiera di degenerazione;
+\item
+  bordo orizzontale \texttt{PhiHat=0}: frontiera di sterilità;
+\item
+  quadrante superiore destro oltre \texttt{tau}: area ordinativamente ammissibile.
+\end{enumerate}
+
+Questa geometria evita ambiguità ricorrenti nella pratica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  alta coerenza non implica automaticamente emergenza;
+\item
+  emergenza apparente non compensa coerenza sotto soglia;
+\item
+  la valutazione richiede congiunzione logica, non media intuitiva.
+\end{enumerate}
+
+\subsection{4.2 Partizione minima e semantica scientifica}
+
+La partizione \texttt{R\_A}, \texttt{R\_S}, \texttt{R\_D} introduce tre semantiche:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Ammissibile (\texttt{R\_A})}: candidata a sviluppo teorico e applicativo;
+\item
+  \textbf{Sterile (\texttt{R\_S})}: candidata a controesempio o riprogettazione;
+\item
+  \textbf{Degenerativa (\texttt{R\_D})}: candidata a esclusione o revisione strutturale.
+\end{enumerate}
+
+Questa partizione è già sufficiente per un primo ciclo di audit.
+
+\subsection{4.3 Invarianti ordinativi proposti (I1-I5)}
+
+Definiamo cinque invarianti minimi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{I1 - Invariante di soglia coerentiva}\\
+  Se \texttt{D} è ammesso, allora \texttt{Coh\textgreater{}=tau} resta vero lungo traiettoria valida.
+\item
+  \textbf{I2 - Invariante di non-sterilità}\\
+  Se \texttt{D} è ammesso, allora \texttt{PhiHat\textgreater{}0} non collassa a zero in regime operativo ordinario.
+\item
+  \textbf{I3 - Invariante di margine}\\
+  Il margine \texttt{m\_Omega(D)} non deve oscillare sotto zero oltre frequenza tollerata dichiarata.
+\item
+  \textbf{I4 - Invariante di robustezza locale}\\
+  L'appartenenza a \texttt{R\_A} resta stabile su \texttt{N\_epsilon(Omega)} entro bande dichiarate.
+\item
+  \textbf{I5 - Invariante di tracciabilità}\\
+  Ogni transizione di regione deve essere registrabile con log causale e metadati.
+\end{enumerate}
+
+I1-I5 non sono ridondanti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  I1-I2 governano il gate logico;
+\item
+  I3-I4 governano la stabilità dinamica;
+\item
+  I5 governa la validità epistemica e auditabile.
+\end{enumerate}
+
+\subsection{4.4 Regola di ammissibilità forte}
+
+Oltre alla regola minima, introduciamo una variante forte:
+
+\texttt{AdmStrong\_Omega(D)\ :=\ (D\ in\ R\_A)\ and\ (m\_Omega(D)\ \textgreater{}=\ eta)\ and\ Rob\_Omega(D)}
+
+con \texttt{eta\textgreater{}0} margine di sicurezza dominio-specifico.
+
+Interpretazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  non basta stare ``appena'' sopra soglia;
+\item
+  serve distanza dal bordo e tenuta sotto perturbazione.
+\end{enumerate}
+
+Questa regola è cruciale per ridurre falsi positivi in sistemi rumorosi.
+
+\subsection{4.5 Dinamica delle traiettorie ordinative}
+
+Per sequenze temporali \texttt{D\_t} distinguiamo tre profili tipici:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Traiettoria stabile}: resta in \texttt{R\_A} con margine positivo;
+\item
+  \textbf{Traiettoria fragile}: alterna \texttt{R\_A} e bordo di soglia;
+\item
+  \textbf{Traiettoria collassante}: attraversa verso \texttt{R\_D} in modo persistente.
+\end{enumerate}
+
+L'analisi traiettoriale evita errori da fotografia istantanea:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  uno stato puntuale ammissibile può essere transitorio;
+\item
+  una breve escursione non implica necessariamente collasso strutturale.
+\end{enumerate}
+
+\subsection{4.6 Gestione dell'incertezza}
+
+In pratica, \texttt{Coh} e \texttt{Phi} non sono valori perfetti. Introduciamo stime intervallari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Coh\ in\ {[}Coh\^{}-\ ,\ Coh\^{}+{]}};
+\item
+  \texttt{PhiHat\ in\ {[}Phi\^{}-\ ,\ Phi\^{}+{]}}.
+\end{enumerate}
+
+Criterio conservativo minimo:
+
+\texttt{D} è ammesso solo se \texttt{Coh\^{}-\ \textgreater{}=\ tau} e \texttt{Phi\^{}-\ \textgreater{}\ 0}.
+
+Questa scelta privilegia robustezza su ottimismo, coerentemente con l'uso scientifico.
+
+\subsection{4.7 Perché la triade non è comprimibile in un unico scalare}
+
+È naturale cercare un solo punteggio \texttt{Q}. Tuttavia, la compressione completa produce perdita informativa in almeno due casi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  due stati con uguale \texttt{Q} ma uno sterile e uno non sterile;
+\item
+  due stati con uguale \texttt{Q} ma uno vicino al bordo degenerativo e l'altro robusto.
+\end{enumerate}
+
+Quindi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Q} può ordinare;
+\item
+  solo la triade con regioni logiche può decidere in modo affidabile.
+\end{enumerate}
+
+\subsection{4.8 Matrice decisionale A/B/C/D}
+
+Introduciamo una matrice operativa standard:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{A}: \texttt{Syn=vero}, \texttt{Coh\textgreater{}=tau}, \texttt{Phi\textgreater{}0};
+\item
+  \textbf{B}: \texttt{Syn=vero}, \texttt{Coh\textgreater{}=tau}, \texttt{Phi=0};
+\item
+  \textbf{C}: \texttt{Syn=vero}, \texttt{Coh\textless{}tau};
+\item
+  \textbf{D}: \texttt{Syn=falso}.
+\end{enumerate}
+
+Uso:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  stato A -\textgreater{} pipeline principale;
+\item
+  stati B-C -\textgreater{} analisi controesempi/riprogettazione;
+\item
+  stato D -\textgreater{} errore formale preliminare.
+\end{enumerate}
+
+\subsection{4.9 Relazione con gli assiomi O1-O7}
+
+Lo spazio di validità è pienamente coerente con il kernel assiomatico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  O1 corrisponde al filtro tra D e A/B/C;
+\item
+  O2 corrisponde alla frontiera \texttt{Coh\textgreater{}=tau};
+\item
+  O3 corrisponde alla frontiera \texttt{Phi\textgreater{}0};
+\item
+  O4 richiede verifica di regione sulla composta;
+\item
+  O5 usa persistenza locale dell'identità nel dominio A;
+\item
+  O6 è catturato da \texttt{Rob\_Omega};
+\item
+  O7 è implementato da I5 e dalla matrice tracciabile.
+\end{enumerate}
+
+Questa corrispondenza rende il passaggio da teoria ad applicazione lineare e verificabile.
+
+\subsection{4.10 Esempio astratto di separazione}
+
+Consideriamo tre trasformazioni sintatticamente valide:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{h1}: \texttt{Coh=0.83}, \texttt{PhiHat=0.41}, \texttt{tau=0.70} -\textgreater{} regione A;
+\item
+  \texttt{h2}: \texttt{Coh=0.86}, \texttt{PhiHat=0.00}, \texttt{tau=0.70} -\textgreater{} regione B;
+\item
+  \texttt{h3}: \texttt{Coh=0.62}, \texttt{PhiHat=0.37}, \texttt{tau=0.70} -\textgreater{} regione C.
+\end{enumerate}
+
+Osservazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{h2} e \texttt{h3} falliscono per motivi diversi;
+\item
+  la distinzione è indispensabile perché guida interventi differenti:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    B: problema di funzione emergente;
+  \item
+    C: problema di coerenza strutturale.
+  \end{itemize}
+\end{enumerate}
+
+\subsection{4.10-bis Esempio numerico completo (dal dato grezzo alla decisione)}
+
+Fissiamo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{tau\ =\ 0.70};
+\item
+  pesi \texttt{w\_p\ =\ 0.6}, \texttt{w\_n\ =\ 0.4}.
+\end{enumerate}
+
+Tre istanze osservate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{u1}: \texttt{g\_geom=0.12}, \texttt{p\_phase=0.84}, \texttt{n\_global=0.78};
+\item
+  \texttt{u2}: \texttt{g\_geom=0.10}, \texttt{p\_phase=0.02}, \texttt{n\_global=0.03};
+\item
+  \texttt{u3}: \texttt{g\_geom=0.42}, \texttt{p\_phase=0.66}, \texttt{n\_global=0.59}.
+\end{enumerate}
+
+Calcolo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \texttt{u1}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Coh\ =\ 1\ -\ 0.12\ =\ 0.88}
+  \item
+    \texttt{PhiHat\ =\ 0.6*0.84\ +\ 0.4*0.78\ =\ 0.816}
+  \item
+    \texttt{Delta\ =\ 0.12}
+  \item
+    Regione: \texttt{A} (\texttt{Coh\textgreater{}=tau} e \texttt{PhiHat\textgreater{}0})
+  \end{itemize}
+\item
+  \texttt{u2}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Coh\ =\ 1\ -\ 0.10\ =\ 0.90}
+  \item
+    \texttt{PhiHat\ =\ 0.6*0.02\ +\ 0.4*0.03\ =\ 0.024}
+  \item
+    \texttt{Delta\ =\ 0.10}
+  \item
+    Regione: \texttt{A} minima ma con emergenza quasi nulla
+  \item
+    Policy forte: caso da \texttt{rework} se si impone soglia emergenziale addizionale \texttt{PhiHat\textgreater{}=0.05}
+  \end{itemize}
+\item
+  \texttt{u3}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Coh\ =\ 1\ -\ 0.42\ =\ 0.58}
+  \item
+    \texttt{PhiHat\ =\ 0.6*0.66\ +\ 0.4*0.59\ =\ 0.632}
+  \item
+    \texttt{Delta\ =\ 0.42}
+  \item
+    Regione: \texttt{C} (\texttt{Coh\textless{}tau})
+  \end{itemize}
+\end{enumerate}
+
+Risultato metodologico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la pipeline distingue in modo non ambiguo coerenza bassa da emergenza bassa;
+\item
+  la policy forte (\texttt{AdmStrong}) evita falsi positivi su casi quasi sterili;
+\item
+  l'intero processo e replicabile da un team esterno usando gli stessi indicatori.
+\end{enumerate}
+
+\subsection{4.11 Condizione di trasferibilità tra contesti}
+
+Per evitare frammentazione, introduciamo un criterio di trasporto:
+
+una classificazione è trasferibile da \texttt{Omega\_1} a \texttt{Omega\_2} se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  mapping delle variabili rilevanti è esplicito;
+\item
+  normalizzazione di \texttt{Phi} è dichiarata in entrambi i contesti;
+\item
+  le regioni A/B/C/D restano consistenti entro tolleranze definite.
+\end{enumerate}
+
+Questo criterio non impone universalità assoluta, ma rende comparabili risultati tra domini.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 8.1 (Partizione minima dello spazio di validità)}
+
+Enunciato:
+Per ogni \texttt{D} sintatticamente valido, lo stato appartiene esattamente a una tra \texttt{R\_A}, \texttt{R\_S}, \texttt{R\_D}.
+
+Intuizione:
+Le condizioni su \texttt{Coh} e \texttt{Phi} definiscono insiemi disgiunti e coprenti nel dominio sintatticamente valido.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 8.2 (Necessità della doppia condizione)}
+
+Enunciato:
+La sola condizione \texttt{Coh\textgreater{}=tau} non è sufficiente per ammissibilità ordinativa.
+
+Intuizione:
+Gli elementi di \texttt{R\_S} mostrano controesempi espliciti: coerenza alta, emergenza nulla.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 8.3 (Criterio minimo di ammissibilità)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Syn(D)=vero};
+\item
+  \texttt{Coh\_Omega(D)\textgreater{}=tau};
+\item
+  \texttt{PhiHat\_Omega(D)\textgreater{}0}.
+\end{enumerate}
+
+Tesi:
+\texttt{D\ in\ R\_A(Omega,tau)}.
+
+Proof sketch:
+La tesi segue direttamente dalla definizione di \texttt{R\_A} come congiunzione delle tre condizioni.
+
+Conseguenze:
+fornisce un test decisionale minimo, ripetibile e dominio-agnostico.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 8.4 (Stabilità robusta con margine positivo)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{D\ in\ R\_A};
+\item
+  \texttt{m\_Omega(D)\textgreater{}=eta\textgreater{}0};
+\item
+  le perturbazioni in \texttt{N\_epsilon(Omega)} alterano \texttt{Coh} al massimo di \texttt{eps\_c\textless{}eta} e non annullano \texttt{Phi}.
+\end{enumerate}
+
+Tesi:
+\texttt{D} resta in \texttt{R\_A} nel vicinato perturbato.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  da \texttt{m\textgreater{}=eta} e \texttt{eps\_c\textless{}eta}, segue \texttt{Coh} ancora sopra soglia;
+\item
+  da non-annullamento di \texttt{Phi}, resta \texttt{Phi\textgreater{}0};
+\item
+  quindi la classificazione resta invariata.
+\end{enumerate}
+
+Conseguenze:
+fornisce la base formale per \texttt{AdmStrong\_Omega}.
+
+Stato: \texttt{in\_proof} (dipende da specifica completa dei modelli di perturbazione).
+
+\subsection{Proposizione 8.5 (Non comprimibilità decisionale della triade)}
+
+Enunciato:
+Non esiste in generale un singolo scalare \texttt{Q} che preservi tutte le decisioni logiche A/B/C/D senza perdita.
+
+Intuizione:
+Esistono stati con stesso \texttt{Q} e diversa appartenenza regionale.
+
+Stato: \texttt{revise} (chiusura completa nel Capitolo 9).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per il programma teorematico (Capitoli 9-10)}
+
+Il capitolo fornisce la grammatica necessaria per enunciare e testare i teoremi F01-F10 e D01-D05:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dominio di definizione comune;
+\item
+  condizioni di ammissibilità esplicite;
+\item
+  margini e robustezza formalizzati.
+\end{enumerate}
+
+\subsection{6.2 Per la progettazione dei benchmark}
+
+Ogni benchmark OCT dovrebbe includere almeno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  stima di \texttt{Coh}, \texttt{Phi}, \texttt{Delta};
+\item
+  classificazione A/B/C/D per ogni istanza;
+\item
+  analisi di sensibilità sulle soglie;
+\item
+  tracciamento delle transizioni di regione nel tempo.
+\end{enumerate}
+
+Senza questi blocchi, il benchmark misura prestazione locale ma non validità ordinativa.
+
+\subsection{6.3 Per audit trail e governance}
+
+L'uso operativo di I5 implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  log della soglia usata;
+\item
+  versione della normalizzazione \texttt{Phi};
+\item
+  motivazione delle variazioni contestuali;
+\item
+  storico delle decisioni di ammissione/rigetto.
+\end{enumerate}
+
+Questo rende i risultati verificabili anche da team indipendenti.
+
+\subsection{6.4 Per sistemi AI ordinativi}
+
+In pipeline agentiche, la triade consente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  filtro pre-decisione (evitare output strutturalmente degenerativi);
+\item
+  monitoraggio online di drift verso regioni B o C;
+\item
+  trigger automatici di revisione quando il margine \texttt{m} scende sotto allerta.
+\end{enumerate}
+
+\subsection{6.5 Per comunicazione scientifica pubblicabile}
+
+La chiarezza di \texttt{S\_Omega}, regioni e invarianti riduce l'ambiguità interpretativa nei review process:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ciò che è dimostrato;
+\item
+  ciò che è solo plausibile;
+\item
+  ciò che è falsificabile con protocollo esplicito.
+\end{enumerate}
+
+\subsection{6.6 Per interoperabilità tra repository e release}
+
+Poiché il progetto è distribuito su più canali (manoscritto, repository tecnici, dataset), questo capitolo suggerisce una regola pratica: ogni release dovrebbe includere una tabella sintetica con \texttt{tau}, normalizzazione \texttt{Phi}, percentuale di casi A/B/C/D e policy di incertezza usata.\\
+Questa tabella rende comparabili versioni successive, evita regressioni silenziose e consente a revisori esterni di verificare se il miglioramento dichiarato è strutturale o solo parametrico.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo non fornisce una metrica universale unica per \texttt{Phi};
+\item
+  non dimostra ancora la forma più generale degli invarianti su categorie avanzate;
+\item
+  non chiude la prova completa di non comprimibilità per tutti i possibili \texttt{Q};
+\item
+  la robustezza dipende dalla qualità del modello perturbativo in \texttt{N\_epsilon(Omega)};
+\item
+  l'uso delle soglie resta sensibile alla qualità del protocollo empirico.
+\item
+  l'istanziazione costruttiva mostrata e esemplificativa e non sostituisce una calibrazione laboratorio-specifica.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  normalizzazione \texttt{Phi} mal definita -\textgreater{} falsi passaggi in A;
+\item
+  soglia \texttt{tau} troppo bassa -\textgreater{} ammissione di casi borderline instabili;
+\item
+  soglia \texttt{tau} troppo alta -\textgreater{} rigetto eccessivo di casi funzionali;
+\item
+  stime troppo rumorose -\textgreater{} oscillazione artificiale tra regioni;
+\item
+  audit incompleto -\textgreater{} impossibilità di replicare classificazioni.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che \texttt{Coh}, \texttt{Phi}, \texttt{Delta} siano già misure definitive in ogni dominio;
+\item
+  che l'appartenenza a regione A garantisca automaticamente successo applicativo;
+\item
+  che la parte empirica dei benchmark sia sostituibile da sola formalizzazione.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C8.1 & Esiste uno spazio minimo di validità ordinativa \texttt{S\_Omega} coordinato da \texttt{Coh} e \texttt{PhiHat} con \texttt{Delta} derivata & formale & S2 & in\_review \\
+C8.2 & La partizione A/B/C permette una semantica decisionale non ambigua su ammissibilità, sterilità, degenerazione & formale-operativo & S1 & validated \\
+C8.3 & La sola coerenza non è sufficiente per validità ordinativa & formale & S1 & validated \\
+C8.4 & Il margine \texttt{m\_Omega} è necessario per decisioni robuste vicino alla soglia & metodologico & S1 & in\_review \\
+C8.5 & \texttt{AdmStrong\_Omega} riduce falsi positivi in contesti rumorosi rispetto al solo gate minimo & metodologico & S2 & revise \\
+C8.6 & La triade (\texttt{Coh},\texttt{Phi},\texttt{Delta}) non è pienamente comprimibile in un singolo scalare senza perdita decisionale & metateorico & S2 & in\_proof \\
+C8.7 & La gestione conservativa dell'incertezza migliora l'affidabilità delle classificazioni & metodologico & S1 & validated \\
+C8.8 & Gli invarianti I1-I5 costituiscono un nucleo sufficiente per avviare il programma teorematico F01-F10 & programmatico & S2 & in\_review \\
+C8.9 & Una istanziazione costruttiva benchmark-specifica della triade e possibile con pipeline trasparente e replicabile & metodologico & S1 & candidate \\
+C8.10 & La policy forte con soglia emergenziale addizionale riduce falsi positivi vicino alla sterilita pratica & metodologico & S2 & in\_review \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 9}
+
+Con questo capitolo abbiamo definito:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  coordinate minime dello spazio di validità;
+\item
+  regioni logiche A/B/C;
+\item
+  invarianti I1-I5;
+\item
+  criteri di robustezza e margine.
+\end{enumerate}
+
+Il Capitolo 9 userà questa base per formalizzare i teoremi fondativi F01-F10, con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  enunciati in forma tipizzata;
+\item
+  proof sketch coerenti con O1-O7 e con lo spazio \texttt{S\_Omega};
+\item
+  conseguenze teoriche e operative con classificazione \texttt{S0-S3}.
+\end{enumerate}
+
+In sintesi: il Capitolo 8 costruisce il ``piano cartesiano'' di OCT; il Capitolo 9 ne dimostra le leggi strutturali.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_THEOREM\_PROGRAM\_v0\_1.md}.
+\item
+  \texttt{OCT\_TYPED\_FORMAL\_SPEC\_v0\_1.md}.
+\item
+  \texttt{OCT\_CLASSICAL\_TO\_ORDINATIVE\_MAP\_v0\_1.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}.
+\item
+  Riehl, E. (2016). \emph{Category Theory in Context}.
+\item
+  Spivak, D. (2014). \emph{Category Theory for the Sciences}.
+\item
+  Shannon, C. E. (1948). \emph{A Mathematical Theory of Communication} (per il quadro metodologico su informazione e misura).
+\end{enumerate}

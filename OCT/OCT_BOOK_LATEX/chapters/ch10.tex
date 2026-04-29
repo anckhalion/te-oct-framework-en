@@ -1,0 +1,842 @@
+\chapter{Capitolo 10 - Teoremi differenziali D01-D05 e applicativi A01-A03}
+
+\section{1. Problema}
+
+Il Capitolo 9 ha fissato il blocco fondativo F01-F10. Con questo capitolo cambiamo prospettiva: non chiediamo più soltanto ``quali leggi di base reggono la teoria?'', ma ``quanto la teoria riesce a discriminare differenze reali in casi dove il classico tende a collassare distinzioni operative?''.
+
+Questo è il ruolo dei teoremi differenziali D01-D05:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  separare strutture formalmente simili ma ordinativamente divergenti;
+\item
+  classificare perdite informative e simmetrie non universali;
+\item
+  mostrare il confine tra dualità formale e validità reale.
+\end{enumerate}
+
+A valle, i teoremi applicativi A01-A03 traducono la differenza teorica in protocolli valutabili su pipeline IA, ricostruzione strutturale e sistemi narrativi complessi.
+
+Il problema centrale del capitolo è quindi:
+
+\textbf{come trasformare la non-ridondanza teorica di OCT in capacità discriminante misurabile e replicabile?}
+
+La difficoltà è pratica e metodologica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  un risultato differenziale può essere formalmente elegante ma empiricamente fragile;
+\item
+  un risultato applicativo può essere empiricamente suggestivo ma teoricamente ambiguo.
+\end{enumerate}
+
+Per questo il capitolo adotta una regola unitaria: ogni teorema D/A deve mantenere un ponte esplicito tra forma, metrica e criterio di fallimento.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi è articolata in sette punti.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  I teoremi D01-D05 mostrano che OCT distingue classi di fenomeni che il quadro classico tende a identificare.
+\item
+  La differenza ordinativa emerge soprattutto in presenza di sterilità emergenziale, perdita informativa e dipendenza contestuale.
+\item
+  Le simmetrie formali rilevanti nel classico diventano condizionate in OCT.
+\item
+  I teoremi applicativi A01-A03 sono estensioni operative dei teoremi fondativi/differenziali e non moduli indipendenti.
+\item
+  Ogni teorema applicativo richiede protocollo, metrica e criterio di confutazione esplicito.
+\item
+  Il capitolo non chiude definitivamente tutte le prove, ma stabilisce una forma canonicamente validabile.
+\item
+  Il blocco D/A è sufficiente per aprire il Capitolo 11 su controesempi, limiti e falsificabilità globale.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 10.1 (Differenza strutturale forte)}
+
+Due strutture \texttt{X} e \texttt{Y} hanno differenza strutturale forte in \texttt{Omega} se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  risultano equivalenti o indistinguibili secondo criteri classici selezionati;
+\item
+  divergono su almeno un invariante ordinativo chiave oltre soglia.
+\end{enumerate}
+
+\subsection{Definizione 10.2 (Perdita ontologica)}
+
+Data una trasformazione dimenticante \texttt{U}, la perdita è:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{preservativa} se non altera classificazione A/B/C in \texttt{S\_Omega};
+\item
+  \textbf{degenerativa} se induce passaggio verso sterilità o degenerazione.
+\end{enumerate}
+
+\subsection{Definizione 10.3 (Simmetria condizionata)}
+
+Una simmetria è condizionata quando vale solo su sottofamiglie di contesti \texttt{Omega} e non in modo universale.
+
+\subsection{Definizione 10.4 (Dualità condizionata)}
+
+La dualizzazione formale è condizionata ordinativamente quando non preserva automaticamente \texttt{OCT\_Valid\_Omega}.
+
+\subsection{Definizione 10.5 (Protocollo applicativo minimo)}
+
+Un teorema applicativo è in stato forte solo se include:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dataset o benchmark dichiarati;
+\item
+  metrica ordinativa esplicita (\texttt{Coh}, \texttt{Phi}, \texttt{Delta});
+\item
+  baseline comparativa;
+\item
+  criterio di accettazione e criterio di fallimento.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 D01 - Teorema di differenza strutturale forte}
+
+\textbf{Enunciato.}\\
+Esistono strutture indistinguibili nel quadro classico ma distinguibili in OCT.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  coppia \texttt{X,Y} con equivalenza classica sul profilo selezionato;
+\item
+  disponibilità di invarianti ordinativi comparabili;
+\item
+  soglia di divergenza dichiarata.
+\end{enumerate}
+
+Tesi:
+\texttt{Eq\_class(X,Y)} non implica \texttt{Eq\_ord,Omega(X,Y)}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  costruzione di una coppia classically-equivalent;
+\item
+  calcolo invarianti \texttt{Coh/Phi/Delta};
+\item
+  verifica divergenza oltre tolleranza su almeno un asse.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  concretizza F01/F07 in forma differenziale;
+\item
+  fornisce template per test di non-ridondanza su domini diversi.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.2 D02 - Teorema di commutatività non produttiva}
+
+\textbf{Enunciato.}\\
+Esistono diagrammi commutativi classici con \texttt{Phi=0}.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  diagramma commutativo \texttt{D};
+\item
+  composizione formalmente corretta;
+\item
+  misura emergenziale su output compositivo.
+\end{enumerate}
+
+Tesi:
+commutatività classica non implica produttività ordinativa.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  selezione di diagramma formalmente commutativo;
+\item
+  verifica \texttt{Phi\_Omega(D)=0};
+\item
+  classificazione in regione B (sterilità).
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  smonta l'inferenza ``commutativo quindi fecondo'';
+\item
+  rafforza il gate anti-sterilità F08.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.3 D03 - Teorema di perdita ontologica dei funtori dimenticanti}
+
+\textbf{Enunciato.}\\
+La perdita informativa dei funtori dimenticanti è classificabile in preservativa versus degenerativa.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  funtore dimenticante \texttt{U} tra strutture con layer ordinativo;
+\item
+  criterio di confronto pre/post trasformazione su \texttt{S\_Omega}.
+\end{enumerate}
+
+Tesi:
+la perdita non è monolitica: alcune riduzioni preservano validità, altre la degradano.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definizione di indici di perdita su \texttt{Coh} e \texttt{Phi};
+\item
+  partizione dei casi in preservativi e degenerativi;
+\item
+  verifica su esempi differenziati.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  fornisce tassonomia tecnica della perdita ontologica;
+\item
+  guida progettazione di pipeline che usano proiezioni o compressioni.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.4 D04 - Teorema di simmetria condizionata}
+
+\textbf{Enunciato.}\\
+La simmetria monoidale ordinativa è dominio-dipendente e non universalmente imponibile.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  classe di domini con vincoli asimmetrici;
+\item
+  struttura monoidale formalmente definita;
+\item
+  valutazione ordinativa pre/post simmetrizzazione.
+\end{enumerate}
+
+Tesi:
+la simmetria formale può rompere validità ordinativa in domini con direzionalità causale o funzionale.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  esibizione di famiglia di domini asimmetrici;
+\item
+  confronto tra versione simmetrica e non simmetrica;
+\item
+  verifica di perdita su \texttt{Coh} o \texttt{Phi} nella versione simmetrica.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  limita l'estensione indiscriminata di intuizioni monoidali classiche;
+\item
+  introduce un criterio di ammissibilità della simmetria.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.5 D05 - Teorema di dualità condizionata}
+
+\textbf{Enunciato.}\\
+La dualizzazione formale non preserva sempre validità ordinativa.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  struttura \texttt{C} e duale \texttt{C\^{}op};
+\item
+  metrica ordinativa coerente su entrambe;
+\item
+  criterio di confronto su invarianti.
+\end{enumerate}
+
+Tesi:
+\texttt{Dual\_formale(C)} non implica \texttt{Dual\_ord,Omega(C)}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  costruzione di caso in cui inversione dei morfismi resta lecita sintatticamente;
+\item
+  osservazione di divergenza ordinativa su composizioni dualizzate;
+\item
+  classificazione della dualità come condizionata.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  evita inferenze automatiche da proprietà duali classiche;
+\item
+  prepara la discussione dei limiti metateorici nel Capitolo 11.
+\end{enumerate}
+
+Stato: \texttt{revise}.
+
+\subsection{4.6 A01 - Teorema di stabilità ordinativa in pipeline IA}
+
+\textbf{Enunciato.}\\
+Pipeline compositive con coerenza ordinativa alta mostrano minore degenerazione semantica rispetto a pipeline solo formalmente corrette.
+
+Dipendenze principali:
+F03, D03.
+
+Protocollo minimo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  benchmark multi-step di trasformazione semantica;
+\item
+  confronto tra pipeline baseline classica e pipeline con gate ordinativo;
+\item
+  misure su \texttt{Coh}, \texttt{Phi}, drift semantico, errore cumulativo.
+\end{enumerate}
+
+Tesi operativa:
+con \texttt{Coh} mantenuta sopra soglia e controllo perdita ontologica, il drift cresce più lentamente.
+
+Criterio di fallimento:
+se la pipeline ordinativa non mostra vantaggio rispetto a baseline su almeno due metriche principali.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.7 A02 - Teorema di ricostruzione strutturale da proiezioni linguistiche}
+
+\textbf{Enunciato.}\\
+In condizioni di aggiunzione controllata, è possibile recuperare struttura ordinativa da output linguistico meglio del baseline classico.
+
+Dipendenze principali:
+F05, F06.
+
+Protocollo minimo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  task di inversione testo-\textgreater struttura su dataset annotato;
+\item
+  stima fedeltà strutturale e consistenza inter-osservatore;
+\item
+  confronto con ricostruzione classica non ordinativa.
+\end{enumerate}
+
+Tesi operativa:
+l'uso del gate ordinativo in fase di ricostruzione riduce soluzioni formalmente plausibili ma funzionalmente sterili.
+
+Criterio di fallimento:
+assenza di miglioramento statisticamente robusto su fedeltà e consistenza.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.8 A03 - Teorema di degenerazione nei sistemi sociali narrativi}
+
+\textbf{Enunciato.}\\
+Sistemi narrativamente coerenti ma con \texttt{Phi} nulla mostrano dinamiche di controllo/degrado prevedibili.
+
+Dipendenze principali:
+F08, D02.
+
+Protocollo minimo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  analisi longitudinale di reti discorsive;
+\item
+  misura della divergenza tra coerenza retorica e funzione emergente;
+\item
+  tracciamento di indicatori di irrigidimento/chiusura sistemica.
+\end{enumerate}
+
+Tesi operativa:
+alta coerenza narrativa senza emergenza funzionale è segnale precoce di degenerazione.
+
+Criterio di fallimento:
+assenza di relazione sistematica tra sterilità emergenziale e pattern degenerativi osservati.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.9 Coerenza del blocco D/A}
+
+Il blocco differenziale/applicativo è coerente se vale la seguente catena:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  F01-F10 stabiliscono il quadro;
+\item
+  D01-D05 stressano il quadro su differenze strutturali;
+\item
+  A01-A03 trasferiscono la differenza in protocolli empirici.
+\end{enumerate}
+
+Questa progressione impedisce due derive:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  applicazioni senza fondazione;
+\item
+  fondazione senza conseguenze verificabili.
+\end{enumerate}
+
+\subsection{4.10 Matrice di maturità}
+
+Stato attuale sintetico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{in\_proof}: D01, D02, D03, D04, A01, A02, A03;
+\item
+  \texttt{revise}: D05;
+\item
+  \texttt{validated}: nessuno nel blocco D/A in forma completa.
+\end{enumerate}
+
+Interpretazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il blocco è avanzato ma ancora in fase di consolidamento;
+\item
+  il valore del capitolo è fissare forma canonica, non dichiarare chiusure premature.
+\end{enumerate}
+
+\subsection{4.11 Criteri di confutazione per il blocco D/A}
+
+Per evitare che i teoremi differenziali e applicativi restino solo descrittivi, fissiamo criteri di confutazione sintetici.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{D01 è confutato} se ogni coppia classically-equivalent risulta anche ordinativamente equivalente senza eccezioni rilevanti.
+\item
+  \textbf{D02 è confutato} se non si trova alcun diagramma commutativo con \texttt{Phi=0}.
+\item
+  \textbf{D03 è confutato} se tutte le perdite da funtori dimenticanti risultano sempre preservative.
+\item
+  \textbf{D04 è confutato} se la simmetria monoidale risulta ordinativamente valida in ogni dominio testato senza condizioni.
+\item
+  \textbf{D05 è confutato} se la dualizzazione preserva sempre validità ordinativa in ogni classe rilevante.
+\item
+  \textbf{A01 è confutato} se la pipeline ordinativa non migliora rispetto al baseline su metriche chiave.
+\item
+  \textbf{A02 è confutato} se la ricostruzione ordinativa non supera il baseline in fedeltà e consistenza.
+\item
+  \textbf{A03 è confutato} se non emerge relazione tra sterilità emergenziale e dinamiche degenerative.
+\end{enumerate}
+
+Questa sezione non pretende di esaurire tutti i casi di confutazione, ma fornisce una base comune per progettare benchmark orientati a falsificazione e non solo a conferma.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 10.1 (Dipendenza non arbitraria dei teoremi applicativi)}
+
+Enunciato:
+Ogni teorema applicativo Axx dipende da almeno un teorema fondativo o differenziale esplicito.
+
+Intuizione:
+A01 dipende da F03/D03, A02 da F05/F06, A03 da F08/D02.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 10.2 (Sufficienza della metrica triadica per il blocco D/A)}
+
+Enunciato:
+La triade (\texttt{Coh},\texttt{Phi},\texttt{Delta}) è sufficiente come base minima di misura per i teoremi D/A.
+
+Intuizione:
+consente di distinguere stabilità, sterilità e degenerazione senza imporre metriche dominio-specifiche uniche.
+
+Stato: \texttt{in\_review}.
+
+\subsection{Teorema 10.3 (Trasferibilità operativa condizionata)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  due domini con mapping contestuale esplicito;
+\item
+  protocolli metrici compatibili;
+\item
+  criteri di soglia dichiarati.
+\end{enumerate}
+
+Tesi:
+I risultati D/A sono trasferibili in forma condizionata, non automaticamente universale.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la trasferibilità richiede coerenza semantica delle variabili osservate;
+\item
+  con mapping esplicito, la classificazione A/B/C/D resta confrontabile;
+\item
+  senza mapping, i risultati non sono direttamente trasferibili.
+\end{enumerate}
+
+Conseguenze:
+fornisce regola di prudenza per generalizzazioni inter-dominio.
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per il Capitolo 11}
+
+Il Capitolo 11 dovrà usare D01-D05 e A01-A03 come base per:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  costruire controesempi realistici, non solo astratti;
+\item
+  esplicitare limiti teorici e limiti empirici separatamente;
+\item
+  definire confini di falsificabilità robusti.
+\end{enumerate}
+
+\subsection{6.2 Per la pipeline di validazione}
+
+Ogni teorema D/A può essere associato a un pacchetto di test dedicato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Dxx\_tests} per controesempi strutturali;
+\item
+  \texttt{Axx\_tests} per benchmark applicativi;
+\item
+  report con stato e motivazione di transizione.
+\end{enumerate}
+
+Questo approccio rende il programma cumulativo e auditabile.
+
+\subsection{6.3 Per pubblicazione e release note}
+
+Nelle release pubbliche conviene includere una tabella standard:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  teorema;
+\item
+  stato;
+\item
+  ultima evidenza aggiunta;
+\item
+  gap residuo per \texttt{validated}.
+\end{enumerate}
+
+In questo modo, il lettore non confonde maturità editoriale del capitolo con maturità completa dei singoli teoremi.
+
+\subsection{6.4 Per uso interdisciplinare}
+
+Il blocco D/A facilità il dialogo tra matematica, IA e scienze sociali perché fornisce:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  formalismo comune;
+\item
+  protocolli osservabili;
+\item
+  linguaggio dei limiti esplicito.
+\end{enumerate}
+
+La condizione è mantenere la distinzione tra:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  prova formale;
+\item
+  evidenza empirica;
+\item
+  interpretazione di dominio.
+\end{enumerate}
+
+\subsection{6.5 Piano immediato di consolidamento}
+
+Ordine consigliato di consolidamento:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  D02 e A01 (priorità alta per impatto dimostrativo);
+\item
+  D03 e A03 (perdita ontologica e degenerazione narrativa);
+\item
+  D01, D04, D05, A02 (raffinamenti strutturali e trasferibilità).
+\end{enumerate}
+
+Questa sequenza massimizza il rendimento scientifico nel breve periodo e prepara bene il passaggio a \texttt{v1.2} completa.
+
+\subsection{\texorpdfstring{6.6 Criteri minimi per passaggio D/A a \texttt{validated}}{6.6 Criteri minimi per passaggio D/A a validated}}
+
+Per coerenza con il capitolo precedente, proponiamo cinque requisiti minimi anche per D01-D05 e A01-A03.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  enunciato formalmente non ambiguo, con ipotesi dichiarate;
+\item
+  proof sketch riproducibile o protocollo applicativo completo;
+\item
+  almeno un controesempio limite o test di fallimento esplicito;
+\item
+  confronto con baseline classica documentato;
+\item
+  aggiornamento claim ledger con motivazione del cambio di stato.
+\end{enumerate}
+
+Nei teoremi applicativi aggiungiamo un requisito ulteriore: disponibilità dei dati o del manifesto benchmark necessario alla replica indipendente.
+
+Questo vincolo è fondamentale per mantenere allineamento tra qualità teorica del manoscritto e qualità scientifica della sua disseminazione pubblica.
+
+In assenza di questi criteri, lo stato \texttt{validated} perde significato cumulativo e diventa una semplice etichetta editoriale. L'obiettivo, invece, è costruire una progressione verificabile nel tempo, compatibile con audit esterni e con eventuali revisioni critiche della teoria.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo non contiene prove complete chiuse per l'intero blocco D/A;
+\item
+  le metriche applicative richiedono ancora taratura per domini specifici;
+\item
+  D05 necessità ulteriore formalizzazione su categorie opposte in contesti non simmetrici;
+\item
+  A01-A03 sono in stato pre-consolidamento empirico.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  confondere correlazione empirica con dimostrazione teorematica;
+\item
+  usare benchmark troppo omogenei e sovrastimare trasferibilità;
+\item
+  dichiarare generalizzazioni cross-domain senza mapping contestuale;
+\item
+  ignorare i criteri di fallimento e riportare solo risultati positivi.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che il blocco D/A sia già completamente validato;
+\item
+  che ogni applicazione OCT mostri automaticamente vantaggi rispetto al classico;
+\item
+  che i protocolli qui descritti sostituiscano il lavoro di replica indipendente.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C10.1 & D01-D05 estendono in modo non ridondante il blocco fondativo su scenari differenziali & formale & S2 & in\_review \\
+C10.2 & D02 mostra la possibilità di commutatività classica non produttiva & formale & S2 & in\_proof \\
+C10.3 & D03 consente una tassonomia operativa della perdita ontologica & formale-operativo & S2 & in\_proof \\
+C10.4 & D04 e D05 limitano l'uso indiscriminato di simmetria e dualità formali & metateorico & S2 & revise \\
+C10.5 & A01-A03 traducono il differenziale teorico in protocolli empirico-formali replicabili & metodologico & S1 & in\_review \\
+C10.6 & La triade (\texttt{Coh},\texttt{Phi},\texttt{Delta}) è base minima sufficiente per il monitoraggio del blocco D/A & metodologico & S1 & in\_review \\
+C10.7 & La trasferibilità inter-dominio è condizionata e richiede mapping contestuale esplicito & epistemico & S1 & validated \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 11}
+
+Il Capitolo 10 ha trasformato il blocco fondativo in differenziale operativo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ha mostrato dove il classico e OCT divergono in modo misurabile;
+\item
+  ha fissato protocolli applicativi con criteri di fallimento;
+\item
+  ha chiarito lo stato di maturità reale del programma D/A.
+\end{enumerate}
+
+Il Capitolo 11 userà questo materiale per chiudere il triangolo critico della teoria:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  controesempi sistematici;
+\item
+  limiti strutturali ed empirici;
+\item
+  criteri di falsificabilità forti e condizioni di revisione.
+\end{enumerate}
+
+In sintesi: il Capitolo 10 misura la capacità discriminante di OCT; il Capitolo 11 ne prova la tenuta critica.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_THEOREM\_PROGRAM\_v0\_1.md}.
+\item
+  \texttt{OCT\_TYPED\_FORMAL\_SPEC\_v0\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_09\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}.
+\item
+  Riehl, E. (2016). \emph{Category Theory in Context}.
+\item
+  Spivak, D. (2014). \emph{Category Theory for the Sciences}.
+\end{enumerate}

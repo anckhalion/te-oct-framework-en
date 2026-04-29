@@ -1,0 +1,1089 @@
+\chapter{Capitolo 7 - Monoidali, enriched, fibrations, topos e dinamiche categoriali}
+
+\section{1. Problema}
+
+Con i Capitoli 4-6 abbiamo completato la transizione dai mattoni locali della teoria (oggetti, morfismi, composizione, identità) al livello trasformazionale (funtori, naturali, aggiunzioni, monadi/comonadi). Resta ora il passaggio verso le strutture categoriali avanzate che, nel corpus classico, consentono di modellare sistemi complessi multilivello:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  categorie monoidali;
+\item
+  categorie arricchite;
+\item
+  fibrations;
+\item
+  topos.
+\end{enumerate}
+
+Nel quadro classico queste strutture estendono potenza espressiva e generalità. In OCT dobbiamo aggiungere una condizione ulteriore: la complessità strutturale non deve diventare opacità ordinativa. Una struttura più ricca è utile solo se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  resta interpretabile in termini di \texttt{Coh/Phi/Delta};
+\item
+  mantiene robustezza sotto variazioni contestuali;
+\item
+  non nasconde degenerazioni dietro simmetrie formali.
+\end{enumerate}
+
+Il problema del capitolo è quindi:
+
+\textbf{come estendere le strutture avanzate della category theory mantenendo insieme rigore classico, selettività ordinativa e tracciabilità operativa?}
+
+La difficoltà è concreta:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  strutture monoidali possono imporre simmetrie non sostenibili in dominio reale;
+\item
+  arricchimenti possono aumentare espressività ma anche amplificare rumore;
+\item
+  fibrations possono modellare dipendenze verticali ma introdurre perdita tra base e fibra;
+\item
+  topos possono offrire quadro logico interno potente ma non garantire, da soli, validità ordinativa.
+\end{enumerate}
+
+Questo capitolo fornisce quindi una grammatica avanzata, ma disciplinata da un principio unico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ogni estensione strutturale deve dichiarare il proprio costo ordinativo.
+\end{enumerate}
+
+\subsection{\texorpdfstring{1.1 Perché questo capitolo chiude la milestone \texttt{v1.3}}{1.1 Perché questo capitolo chiude la milestone v1.3}}
+
+La milestone \texttt{v1.3} mira a espandere sistematicamente il corpus classico in chiave OCT (Capitoli 4-7). Il Capitolo 7 è il punto di chiusura perché affronta i costrutti dove la complessità teorica diventa maggiore e dove il rischio di ``equivalenza apparente'' cresce.
+
+Se il capitolo regge:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il ponte verso protocollo, benchmark e governance (\texttt{v1.4}) diventa naturale;
+\item
+  la teoria può passare da fondazione/estensione a standard operativo.
+\end{enumerate}
+
+\subsection{1.2 Obiettivo tecnico}
+
+Obiettivo minimo del capitolo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definire criteri ordinativi per monoidali, enriched, fibrations, topos;
+\item
+  mostrare casi tipici in cui la struttura classica resta valida ma l'uso ordinativo richiede restrizioni;
+\item
+  fissare regole di accettazione per strutture avanzate in scenari reali.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi è articolata in dieci enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  La struttura monoidale classica è necessaria ma non sempre sufficiente in contesti ordinativi asimmetrici.
+\item
+  Le categorie arricchite diventano ordinativamente utili solo se l'arricchimento non distrugge margine coerentivo.
+\item
+  Le fibrations sono strumenti potenti per stratificare contesti, ma richiedono controllo esplicito del trasporto verticale.
+\item
+  Un topos può fornire logica interna forte senza garantire automaticamente realtà ordinativa dei costrutti.
+\item
+  Esiste una nozione di ``coerenza multilivello'' che collega base, fibre e dinamica globale.
+\item
+  Le simmetrie e dualità avanzate restano condizionate dal dominio osservativo.
+\item
+  La complessità strutturale deve essere accompagnata da criteri di fallimento tracciabili.
+\item
+  Le strutture avanzate possono essere classificate con la stessa grammatica A/B/C se si esplicitano i mapping.
+\item
+  L'estensione proposta resta compatibile con recupero classico.
+\item
+  Il capitolo prepara direttamente il passaggio metodologico dei Capitoli 12-14.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 7.1 (Categoria monoidale ordinativa)}
+
+Una categoria monoidale ordinativa è una categoria monoidale classica \texttt{(C,\ tensor,\ I)} con vincolo aggiuntivo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  le operazioni \texttt{tensor} su oggetti/morfismi rilevanti non devono produrre caduta sistematica sotto soglia su \texttt{Coh};
+\item
+  la composizione monoidale deve preservare \texttt{Phi} non nulla su classi operative dichiarate.
+\end{enumerate}
+
+\subsection{Definizione 7.2 (Simmetria monoidale condizionata)}
+
+La simmetria \texttt{sigma\_\{A,B\}:\ A\ tensor\ B\ -\textgreater{}\ B\ tensor\ A} è ordinativamente ammissibile solo se il cambio di ordine non altera in modo critico invarianti ordinativi del dominio.
+
+\subsection{Definizione 7.3 (Categoria arricchita ordinativa)}
+
+Una categoria arricchita ordinativa è una categoria arricchita classica in cui l'oggetto-hom arricchito incorpora anche indicatori ordinativi minimi (coerenza, emergenza, margine).
+
+\subsection{Definizione 7.4 (Fibration ordinativa)}
+
+Una fibration ordinativa \texttt{p:\ E-\textgreater{}B} è una fibration classica in cui:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il sollevamento cartesiano non introduce perdita ordinativa non dichiarata;
+\item
+  la relazione base-fibra mantiene coerenza multilivello su classi test.
+\end{enumerate}
+
+\subsection{Definizione 7.5 (Coerenza multilivello)}
+
+Dato un oggetto fibrato, la coerenza multilivello è la compatibilità tra:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  coerenza nel livello base;
+\item
+  coerenza nel livello fibra;
+\item
+  coerenza delle mappe di passaggio.
+\end{enumerate}
+
+\subsection{Definizione 7.6 (Topos ordinativo)}
+
+Un topos ordinativo è un topos classico usato in contesto OCT con vincolo che i costrutti logici interni impiegati in inferenze operative siano validati anche in termini ordinativi.
+
+\subsection{Definizione 7.7 (Dinamica categoriale ordinativa)}
+
+Una dinamica categoriale ordinativa è una evoluzione temporale di strutture/funtori in cui:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i passaggi temporali restano formalmente leciti;
+\item
+  l'evoluzione non produce deriva sistematica verso sterilità/degenerazione.
+\end{enumerate}
+
+\subsection{Definizione 7.8 (Costo di complessità strutturale)}
+
+Definiamo costo sintetico di complessità:
+
+\texttt{Cost\_str\ :=\ c1*Instab\ +\ c2*Loss\_tr\ +\ c3*Opac}
+
+dove \texttt{Opac} misura perdita di leggibilità causale del sistema al crescere della stratificazione.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Monoidali: potenza compositiva e asimmetria reale}
+
+La struttura monoidale classica permette di modellare composizioni parallele o tensoriali. In OCT questa potenza è preziosa, ma va gestita con prudenza:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  in domini simmetrici il tensor può preservare bene \texttt{Coh/Phi};
+\item
+  in domini direzionali la simmetrizzazione può distruggere informazione funzionale.
+\end{enumerate}
+
+Da qui una regola operativa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{tensor} è ammesso sempre formalmente;
+\item
+  è ammesso in senso ordinativo solo dopo test di simmetria condizionata.
+\end{enumerate}
+
+Errore evitato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  imporre simmetria per eleganza algebrica quando il dominio è strutturalmente orientato.
+\end{enumerate}
+
+\subsection{4.2 Arricchimento: espressività contro opacità}
+
+Arricchire una categoria significa dare struttura più ricca agli hom. In OCT questo può essere vantaggioso perché:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  rende espliciti gradi di qualità relazionale;
+\item
+  consente metriche più fini su trasporto e composizione.
+\end{enumerate}
+
+Ma c'è un rischio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  over-arricchimento che aumenta parametri e riduce stabilità inferenziale.
+\end{enumerate}
+
+Per questo proponiamo un criterio di arricchimento sobrio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  introdurre solo componenti che migliorano decisione A/B/C;
+\item
+  evitare componenti decorative senza impatto diagnostico.
+\end{enumerate}
+
+\subsection{4.3 Fibrations: verticalità controllata}
+
+Le fibrations permettono di separare livelli di descrizione (base/fibra). In OCT sono utili per modellare contesti multilivello, ma possono introdurre perdita verticale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  informazioni mantenute in fibra ma non nella base;
+\item
+  coerenza locale alta in fibra con incoerenza globale in base;
+\item
+  trasporto verticale formalmente corretto ma ordinativamente dissipativo.
+\end{enumerate}
+
+Serve quindi un controllo bilanciato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  test di coerenza interna alle fibre;
+\item
+  test di coerenza tra fibre e base;
+\item
+  test di stabilità dei lift sotto perturbazione contestuale.
+\end{enumerate}
+
+\subsection{4.4 Topos: logica interna e validità ordinativa}
+
+Un topos fornisce ambiente logico potente (subobject classifier, exponentials, ecc.). In OCT questo non viene negato. Tuttavia:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  validità logica interna non equivale automaticamente a validità ordinativa esterna;
+\item
+  inferenze interne devono essere collegate a criteri di \texttt{Coh/Phi} quando usate per decisioni operative.
+\end{enumerate}
+
+Ne segue una distinzione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  verità interna al topos;
+\item
+  accettabilità ordinativa nel dominio osservato.
+\end{enumerate}
+
+Questa distinzione evita che la ricchezza logica mascheri fragilità dinamiche.
+
+\subsection{4.5 Dinamiche categoriali: dal statico al processo}
+
+Molte strutture avanzate sono presentate staticamente. In applicazioni reali, però, categorie/funtori cambiano nel tempo. OCT richiede quindi una nozione dinamica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  sequenze di strutture \texttt{C\_t};
+\item
+  transizioni \texttt{T\_t:\ C\_t\ -\textgreater{}\ C\_\{t+1\}};
+\item
+  monitoraggio di deriva su invarianti globali.
+\end{enumerate}
+
+Punto chiave:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  una struttura può essere ordinativamente valida a \texttt{t0} e non esserlo a \texttt{t1};
+\item
+  la validazione deve quindi includere traiettoria, non solo istanti.
+\end{enumerate}
+
+\subsection{4.6 Interazione tra monoidali e arricchimenti}
+
+Quando si combinano tensor e arricchimento aumentano le interazioni non lineari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il tensor può amplificare rumore dei valori arricchiti;
+\item
+  un arricchimento utile localmente può diventare instabile in composizione tensoriale.
+\end{enumerate}
+
+Serve un test combinato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  validità di \texttt{tensor} su oggetti semplici;
+\item
+  validità su oggetti arricchiti;
+\item
+  confronto differenziale tra i due regimi.
+\end{enumerate}
+
+\subsection{4.7 Interazione tra fibrations e topos}
+
+In sistemi complessi è frequente usare logica interna (stile topos) su strutture stratificate (stile fibration). Qui il rischio maggiore è la disconnessione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  coerenza logica locale alta;
+\item
+  incoerenza di trasporto tra livelli.
+\end{enumerate}
+
+Per evitarla proponiamo il principio di allineamento verticale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ogni inferenza interna usata operativamente deve avere tracciamento su livello base/fibra.
+\end{enumerate}
+
+\subsection{4.8 Criterio di accettazione per strutture avanzate}
+
+Una struttura avanzata (\texttt{monoidal}, \texttt{enriched}, \texttt{fibration}, \texttt{topos}) è ordinativamente accettabile se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definita e verificata classicamente;
+\item
+  testata su invarianti ordinativi minimi;
+\item
+  robusta su variazioni contestuali rilevanti;
+\item
+  dotata di mappa fallimenti specifica.
+\end{enumerate}
+
+Questa regola unifica i quattro blocchi in una policy comune.
+
+\subsection{4.9 Mappa fallimenti specifica del capitolo}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{F-Mon2}: tensor formalmente corretto con simmetria ordinativamente distruttiva.
+\item
+  \textbf{F-Enr1}: arricchimento informativo ma instabile su composizione.
+\item
+  \textbf{F-Fib1}: lift cartesiano con perdita verticale critica.
+\item
+  \textbf{F-Fib2}: coerenza di fibra alta, coerenza di base bassa.
+\item
+  \textbf{F-Top1}: inferenza interna valida, ma non trasferibile operativamente.
+\item
+  \textbf{F-Dyn1}: validità puntuale alta, deriva temporale verso classe C.
+\end{enumerate}
+
+Questa tipologia è utile per collegare teoria avanzata e benchmark dedicati.
+
+\subsection{4.10 Controllo di complessità: quando fermarsi}
+
+Una lezione pratica del capitolo è che più struttura non significa sempre più scienza. Se \texttt{Cost\_str} cresce senza migliorare decisione o robustezza, l'estensione va ridotta.
+
+Regola pragmatica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  aggiungere complessità solo se migliora almeno uno tra:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    precisione diagnostica;
+  \item
+    robustezza;
+  \item
+    trasferibilità.
+  \end{itemize}
+\end{enumerate}
+
+Se nessun miglioramento è misurabile, la complessità è epistemicamente ingiustificata.
+
+\subsection{4.11 Compatibilità con recupero classico}
+
+Anche qui vale F10:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  disattivando il layer ordinativo, restano monoidali/enriched/fibrations/topos classici;
+\item
+  attivando il layer, si ottiene filtro di realtà compositiva senza negazione del quadro classico.
+\end{enumerate}
+
+\subsection{4.12 Condizione di non-ridondanza del capitolo}
+
+Il capitolo è non ridondante se esiste almeno un caso in cui:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la struttura avanzata classica è valida;
+\item
+  la stessa struttura fallisce in senso ordinativo per motivi tracciabili.
+\end{enumerate}
+
+Questa condizione è soddisfatta dai pattern F-Mon2/F-Fib1/F-Top1/D04/D05 e dai casi applicativi ad alta stratificazione.
+
+\subsection{4.13 Matrice stratificata di validazione avanzata}
+
+Per mantenere confrontabili analisi diverse, proponiamo una matrice di validazione a tre strati:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Strato Formale (SF)}: verifica classica della struttura avanzata;
+\item
+  \textbf{Strato Ordinativo (SO)}: verifica su \texttt{Coh/Phi/Delta}, margine e robustezza;
+\item
+  \textbf{Strato Dinamico (SD)}: verifica della stabilità temporale su evoluzioni non banali.
+\end{enumerate}
+
+Decisione proposta:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{accepted\_strong} solo se SF, SO e SD sono positivi;
+\item
+  \texttt{accepted\_limited} se SF e SO positivi ma SD incompleto (uso limitato e monitorato);
+\item
+  \texttt{revise} se SF positivo ma SO o SD negativi;
+\item
+  \texttt{reject} se SF negativo o fallimenti ordinativi non recuperabili.
+\end{enumerate}
+
+Questa matrice evita un problema frequente: strutture avanzate formalmente corrette promosse troppo presto senza evidenza dinamica.
+
+\subsection{4.14 Coupling tra tensor e arricchimento}
+
+In molte applicazioni, monoidalità e arricchimento vengono usati insieme. Il coupling tra i due livelli può produrre effetti non lineari.
+
+Proponiamo di monitorare:
+
+\texttt{Kappa\_enr\_tensor\ :=\ Sens\_tensor(Enr)\ +\ Sens\_enr(tensor)}.
+
+Interpretazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Kappa} basso: interazione controllata;
+\item
+  \texttt{Kappa} medio: interazione utile ma sensibile;
+\item
+  \texttt{Kappa} alto: rischio di instabilità con piccole variazioni di configurazione.
+\end{enumerate}
+
+Azioni consigliate quando \texttt{Kappa} è alto:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ridurre dimensionalità dell'arricchimento;
+\item
+  restringere classe di oggetti su cui applicare \texttt{tensor};
+\item
+  introdurre normalizzazione intermedia.
+\end{enumerate}
+
+Questo blocco migliora la diagnosi preventiva: invece di reagire al collasso, si monitorano indicatori che lo anticipano.
+
+\subsection{4.15 Regola di trasporto base-fibra nei sistemi fibrati}
+
+Per le fibrations in contesti reali proponiamo una regola di trasporto in due fasi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Fase fibra}: validazione locale dei costrutti e delle inferenze;
+\item
+  \textbf{Fase base}: validazione dell'impatto aggregato sul livello superiore.
+\end{enumerate}
+
+Solo il passaggio congiunto delle due fasi autorizza inferenze operative forti.\\
+Questo impedisce due errori classici:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  assumere che ``vero in fibra'' implichi ``robusto in base'';
+\item
+  imporre vincoli di base che annullano informazione utile delle fibre.
+\end{enumerate}
+
+La regola rende esplicita la responsabilità di ogni livello nella tenuta complessiva.
+
+\subsection{4.16 Protocollo minimo avanzato (PMA-7)}
+
+Per standardizzare la verifica di strutture avanzate proponiamo un protocollo in sette passi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definire struttura classica e dominio d'uso;
+\item
+  dichiarare \texttt{Omega}, soglie e invarianti critici;
+\item
+  verificare SF (assiomi classici della struttura);
+\item
+  verificare SO (metriche ordinative);
+\item
+  verificare SD (stabilità temporale);
+\item
+  classificare fallimenti secondo F-Mon/F-Enr/F-Fib/F-Top/F-Dyn;
+\item
+  assegnare stato finale con motivazione e limiti dichiarati.
+\end{enumerate}
+
+Il PMA-7 non sostituisce prove matematiche complete, ma uniforma la fase di validazione comparativa e prepara direttamente i capitoli metodologici successivi.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 7.1 (Simmetria monoidale condizionata)}
+
+Enunciato:
+La simmetria monoidale è ordinativamente ammissibile solo su domini che non perdono informazione funzionale sotto scambio.
+
+Intuizione:
+domini direzionali possono violare stabilità pur mantenendo validità classica.
+
+Stato: \texttt{in\_review}.
+
+\subsection{Proposizione 7.2 (Necessità di coerenza multilivello nelle fibrations)}
+
+Enunciato:
+La sola correttezza del lift cartesiano non garantisce affidabilità ordinativa della stratificazione.
+
+Intuizione:
+serve compatibilità simultanea base-fibra-passaggio.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 7.3 (Vincolo di allineamento verticale)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  sistema fibrato con inferenze interne operative;
+\item
+  tracciamento completo base/fibra;
+\item
+  assenza di perdita verticale critica.
+\end{enumerate}
+
+Tesi:
+Le inferenze stratificate sono ordinativamente affidabili nel dominio dichiarato.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il tracciamento elimina ambiguità di livello;
+\item
+  l'assenza di perdita critica preserva coerenza multilivello;
+\item
+  segue affidabilità operativa dell'inferenza.
+\end{enumerate}
+
+Conseguenze:
+criterio pratico per usare fibrations in pipeline reali.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Teorema 7.4 (Deriva dinamica di strutture avanzate)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  sequenza temporale \texttt{C\_t} con transizioni \texttt{T\_t};
+\item
+  monitoraggio su invarianti globali;
+\item
+  presenza di accumulo negativo oltre soglia.
+\end{enumerate}
+
+Tesi:
+Una struttura avanzata può passare da ordinativamente valida a non valida pur restando formalmente lecita.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  validità classica è puntuale e sintattica;
+\item
+  accumulo dinamico può degradare margine ordinativo;
+\item
+  la dinamica produce crossing verso classe B/C.
+\end{enumerate}
+
+Conseguenze:
+necessità di validazione temporale, non solo statica.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Proposizione 7.5 (Topos non implica realtà ordinativa)}
+
+Enunciato:
+La ricchezza logica interna di un topos non implica automaticamente robustezza ordinativa dei costrutti usati.
+
+Intuizione:
+verità interna e operatività esterna sono livelli distinti.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 7.6 (Criterio minimo di accettazione per strutture avanzate)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  validità classica della struttura;
+\item
+  test ordinativo su invarianti;
+\item
+  robustezza contestuale;
+\item
+  mappa fallimenti specifica disponibile.
+\end{enumerate}
+
+Tesi:
+La struttura può essere accettata per uso operativo ordinativo.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  requisito classico garantisce correttezza formale;
+\item
+  requisiti ordinativi garantiscono realtà compositiva;
+\item
+  la mappa fallimenti garantisce falsificabilità.
+\end{enumerate}
+
+Conseguenze:
+fornisce standard unico per monoidali/enriched/fibrations/topos.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Proposizione 7.7 (Utilità della matrice SF/SO/SD)}
+
+Enunciato:
+La matrice stratificata SF/SO/SD riduce errori di attribuzione causale nei fallimenti di strutture avanzate.
+
+Intuizione:
+separando forma, validità ordinativa e dinamica, si evita di confondere errori assiomatici con instabilità applicative.
+
+Stato: \texttt{in\_review}.
+
+\subsection{Teorema 7.8 (Necessità del controllo dinamico per accettazione forte)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  struttura avanzata con SF e SO positivi;
+\item
+  dominio con evoluzione temporale rilevante;
+\item
+  assenza di verifica SD.
+\end{enumerate}
+
+Tesi:
+Non è possibile dichiarare \texttt{accepted\_strong} senza controllo dinamico.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  SF e SO descrivono correttezza e affidabilità locale;
+\item
+  in domini dinamici può emergere deriva non osservabile staticamente;
+\item
+  quindi SD è condizione necessaria per accettazione forte.
+\end{enumerate}
+
+Conseguenze:
+formalizza il passaggio da validazione statica a validazione evolutiva.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Proposizione 7.9 (Monitoraggio del coupling come prevenzione)}
+
+Enunciato:
+Il monitoraggio di \texttt{Kappa\_enr\_tensor} riduce il rischio di instabilità non lineari in strutture monoidali arricchite.
+
+Intuizione:
+la sensibilità incrociata alta è spesso un segnale precoce di collasso su catene compositive complesse.
+
+Stato: \texttt{in\_review}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per progettazione di architetture complesse}
+
+Quando si introducono strutture avanzate, è utile decidere in anticipo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  quale guadagno diagnostico ci si aspetta;
+\item
+  quale costo strutturale è accettabile;
+\item
+  quale criterio farà scattare revisione o rollback.
+\end{enumerate}
+
+\subsection{6.2 Per benchmark dedicati}
+
+È consigliato preparare suite specifiche:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{MON\_SUITE} per test tensor/simmetria;
+\item
+  \texttt{ENR\_SUITE} per stabilità arricchita;
+\item
+  \texttt{FIB\_SUITE} per coerenza multilivello;
+\item
+  \texttt{TOP\_SUITE} per trasferibilità inferenze interne;
+\item
+  \texttt{DYN\_SUITE} per deriva temporale.
+\end{enumerate}
+
+\subsection{6.3 Per reporting scientifico}
+
+Ogni risultato su strutture avanzate dovrebbe riportare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definizione classica usata;
+\item
+  vincolo ordinativo applicato;
+\item
+  classe di fallimento osservata (se presente);
+\item
+  stato finale con motivazione.
+\end{enumerate}
+
+\subsection{\texorpdfstring{6.4 Per continuità con \texttt{v1.4}}{6.4 Per continuità con v1.4}}
+
+Il capitolo fornisce già i mattoni metodologici dei Capitoli 12-14:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  metrica multilivello;
+\item
+  design benchmark orientato a fallimenti reali;
+\item
+  governance del costo di complessità.
+\end{enumerate}
+
+\subsection{6.5 Per uso interdisciplinare}
+
+In contesti non puramente matematici, questa parte aiuta a evitare due estremi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  riduzionismo formale (solo eleganza strutturale);
+\item
+  empirismo scollegato (solo risultato numerico senza struttura).
+\end{enumerate}
+
+La combinazione di entrambi è il contributo operativo di OCT in strutture avanzate.
+
+\subsection{6.6 Per manutenzione del manoscritto}
+
+Ogni modifica a questo capitolo dovrebbe propagare controlli almeno su:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  claim ledger dei Capitoli 6-7;
+\item
+  protocollo di validazione del Capitolo 12;
+\item
+  checklist benchmark del Capitolo 13.
+\end{enumerate}
+
+Questo evita disallineamenti tra teoria avanzata e infrastruttura metodologica.
+
+\subsection{6.7 Per policy di rilascio progressivo}
+
+In progetti applicativi è utile adottare una policy a maturità progressiva:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  fase esplorativa: strutture con stato \texttt{in\_review} ammesse solo in sandbox;
+\item
+  fase pre-rilascio: richiesti SF+SO positivi con limiti espliciti;
+\item
+  fase critica: richiesti SF+SO+SD con margine ordinativo minimo garantito.
+\end{enumerate}
+
+Questa policy riduce il rischio di rilasciare strutture eleganti ma non robuste.
+
+\subsection{6.8 Per documentazione e peer review}
+
+Per aumentare chiarezza è consigliabile allegare, per ogni struttura avanzata:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  tabella SF/SO/SD;
+\item
+  classe di fallimento prevalente;
+\item
+  stato finale (\texttt{accepted\_limited}, \texttt{accepted\_strong}, \texttt{revise}, \texttt{reject});
+\item
+  azione correttiva proposta.
+\end{enumerate}
+
+Questo formato aiuta revisori con background diversi a convergere su valutazioni comparabili.
+Inoltre rende più trasparente il rapporto tra eleganza formale e robustezza operativa.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo non contiene prove complete chiuse per tutte le varianti avanzate;
+\item
+  la metrica \texttt{Cost\_str} è proposta in forma minima, da specializzare per dominio;
+\item
+  la trattazione dei topos ordinativi è intenzionalmente prudente e non esaustiva.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  introdurre arricchimento senza guadagno misurabile;
+\item
+  usare fibrations senza controllo base-fibra;
+\item
+  assumere simmetria monoidale in domini direzionali;
+\item
+  validare strutture statiche ignorando deriva temporale;
+\item
+  usare logica interna del topos senza test di trasferibilità operativa.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che ogni struttura avanzata classica debba avere un corrispettivo ordinativo utile;
+\item
+  che la complessità strutturale sia di per sé un valore scientifico;
+\item
+  che i criteri qui proposti sostituiscano validazione empirica indipendente.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C7.1 & Le strutture monoidali richiedono simmetria condizionata in domini asimmetrici & formale & S2 & in\_review \\
+C7.2 & Le fibrations richiedono coerenza multilivello esplicita & formale-operativo & S1 & validated \\
+C7.3 & La validità logica interna di un topos non implica validità ordinativa esterna & metateorico & S1 & validated \\
+C7.4 & Le strutture avanzate possono mostrare deriva temporale pur restando formalmente lecite & formale-operativo & S2 & in\_proof \\
+C7.5 & \texttt{Cost\_str} è utile come indicatore di controllo della complessità strutturale & metodologico & S1 & in\_review \\
+C7.6 & Il criterio minimo di accettazione avanzata unifica monoidali/enriched/fibrations/topos & metodologico & S2 & in\_proof \\
+C7.7 & Il capitolo chiude l'espansione classica \texttt{v1.3} in forma coerente con i blocchi precedenti & programmatico & S1 & in\_review \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 12}
+
+Con questo capitolo si chiude la milestone \texttt{v1.3}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 4: mattoni locali;
+\item
+  Capitolo 5: costrutti universali;
+\item
+  Capitolo 6: livello trasformazionale;
+\item
+  Capitolo 7: strutture avanzate e dinamiche categoriali.
+\end{enumerate}
+
+Il prossimo passaggio (\texttt{v1.4}) non aggiunge solo nuova teoria, ma standardizza il metodo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 12 - protocollo scientifico OCT;
+\item
+  Capitolo 13 - benchmark e replicabilità;
+\item
+  Capitolo 14 - governance epistemica e quality gates.
+\end{enumerate}
+
+In sintesi: i capitoli 4-7 hanno esteso il linguaggio; i capitoli 12-14 ne definiranno la pratica scientifica condivisibile.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_06\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_08\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_11\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}.
+\item
+  Riehl, E. (2016). \emph{Category Theory in Context}.
+\item
+  Spivak, D. (2014). \emph{Category Theory for the Sciences}.
+\item
+  Borceux, F. (1994). \emph{Handbook of Categorical Algebra}.
+\end{enumerate}

@@ -1,0 +1,844 @@
+\chapter{Capitolo 13 - Benchmark, disegno sperimentale, replicabilità multi-dominio}
+
+\section{1. Problema}
+
+Il Capitolo 12 ha definito la grammatica metodologica della validazione OCT. Ma un protocollo, da solo, non garantisce prova robusta: serve un disegno benchmark che produca evidenza comparabile nel tempo, nei team e nei domini.
+
+Nel lavoro ordinativo il rischio principale e doppio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  benchmark troppo facili, che confermano qualsiasi ipotesi già favorita;
+\item
+  benchmark non comparabili, che impediscono di distinguere progresso reale da variazione accidentale.
+\end{enumerate}
+
+Per questo il problema del capitolo e preciso:
+
+\textbf{come costruire un sistema benchmark multi-dominio che renda misurabile la differenza tra performance locale e validazione trasferibile, senza collassare la teoria in una pura ottimizzazione numerica?}
+
+\subsection{1.1 Dal protocollo all'infrastruttura}
+
+Il protocollo (Capitolo 12) risponde a ``come decidere''. Il benchmark design risponde a ``su cosa decidere''. La tenuta scientifica richiede entrambi.
+
+Senza infrastruttura benchmark:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i claim restano narrativi;
+\item
+  le repliche sono episodiche;
+\item
+  la decisione \texttt{validated} resta fragile.
+\end{enumerate}
+
+Con infrastruttura benchmark:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i claim sono testati in condizioni comparabili;
+\item
+  le repliche indipendenti diventano obbligatorie, non opzionali;
+\item
+  la curva di evidenza può essere monitorata per versione.
+\end{enumerate}
+
+\subsection{\texorpdfstring{1.2 Scope della milestone \texttt{v1.4}}{1.2 Scope della milestone v1.4}}
+
+Il Capitolo 13 ha funzione ponte tra metodo e governance:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  implementa la PV-8 in benchmark reali;
+\item
+  definisce la nozione operativa di indipendenza benchmark;
+\item
+  prepara il Capitolo 14 su audit trail, gate e versioning epistemico.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi e articolata in dieci enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Un claim OCT e robusto solo se supera benchmark indipendenti per costruzione, non solo per nome.
+\item
+  L'indipendenza benchmark richiede separazione di dati, seed policy, tuning e log namespace.
+\item
+  La replicabilità multi-dominio e criterio strutturale, non supplemento statistico.
+\item
+  Le metriche canoniche (\texttt{Coh}, \texttt{Phi}, \texttt{Delta}) devono convivere con metriche specifiche per task.
+\item
+  La stratificazione dei casi e necessaria per evitare conferme trainate da sottogruppi facili.
+\item
+  L'analisi di sensibilità e parte del test principale, non appendice facoltativa.
+\item
+  Il fallimento parziale e informazione scientifica e va pubblicato con stessa disciplina dei successi.
+\item
+  Ogni benchmark deve includere policy di replay e criteri di rerun tracciati.
+\item
+  Un pacchetto benchmark senza manifest e hash non e considerato riproducibile oltre livello \texttt{R1}.
+\item
+  Il disegno proposto e sufficiente per sostenere la governance epistemica del Capitolo 14.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 13.1 (Benchmark indipendente)}
+
+Due benchmark \texttt{B\_i}, \texttt{B\_j} sono indipendenti se valgono simultaneamente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{D\_i\ \ inter\ \ D\_j} trascurabile rispetto a soglia preregistrata;
+\item
+  seed policy distinta;
+\item
+  assenza di tuning trasversale post-freeze;
+\item
+  log namespace separato e auditabile;
+\item
+  shift di distribuzione dichiarato e verificabile.
+\end{enumerate}
+
+\subsection{Definizione 13.2 (Asse di dominio)}
+
+Un asse di dominio \texttt{A\_k} e una famiglia coerente di contesti osservativi \texttt{Omega} che condividono:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  tipo di oggetti/morfismi osservati;
+\item
+  regime di rumore dominante;
+\item
+  criteri semantici di errore.
+\end{enumerate}
+
+Esempi operativi per OCT:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{A\_struct}: strutture compositive e diagrammatiche;
+\item
+  \texttt{A\_pipeline}: processi multi-step di trasformazione;
+\item
+  \texttt{A\_social}: dinamiche narrative longitudinali.
+\end{enumerate}
+
+\subsection{Definizione 13.3 (Pacchetto benchmark minimo)}
+
+\texttt{PB\_min\ :=\ \textless{}Manifest,\ Dataset,\ Script,\ Config,\ Hash,\ Report,\ DecisionTable\textgreater{}}.
+
+Un benchmark e considerato pubblicabile solo se il pacchetto minimo e completo.
+
+\subsection{Definizione 13.4 (Replicabilità multi-dominio)}
+
+Un claim e multi-dominio replicabile se la conferma si osserva in almeno due assi \texttt{A\_k} con contesti non equivalenti banalmente.
+
+\subsection{Definizione 13.5 (Stress strutturale)}
+
+Stress strutturale: perturbazione controllata che aumenta difficolta compositiva mantenendo il significato del claim.
+
+\subsection{Definizione 13.6 (Indice di trasferibilità)}
+
+Per claim \texttt{C}:
+
+\texttt{T\_C\ :=\ mean\_k(score\_k)\ -\ penalty\_var}
+
+con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{score\_k} performance ordinativa su asse \texttt{A\_k};
+\item
+  \texttt{penalty\_var} penalità per variabilità eccessiva cross-dominio.
+\end{enumerate}
+
+\texttt{T\_C} alto indica robustezza trasferibile; \texttt{T\_C} basso indica risultato locale.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Architettura benchmark in tre livelli}
+
+Proponiamo un'architettura a tre livelli.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Livello L1 (core test)}: verifica diretta del claim su benchmark principale.
+\item
+  \textbf{Livello L2 (indipendenza)}: replica su benchmark \#2 con shift esplicito.
+\item
+  \textbf{Livello L3 (stress/audit)}: sensibilità a soglie, ablation, replay indipendente.
+\end{enumerate}
+
+La regola e semplice:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  L1 senza L2 produce solo evidenza preliminare;
+\item
+  L1+L2 senza L3 produce evidenza promettente ma incompleta;
+\item
+  L1+L2+L3 e condizione standard per decisione forte.
+\end{enumerate}
+
+\subsection{4.2 Disegno degli assi di dominio}
+
+Il framework OCT ha già evidenziato tre famiglie di test rilevanti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  D02 (commutatività non produttiva) su asse strutturale;
+\item
+  A01 (stabilità pipeline IA) su asse operativo-procedurale;
+\item
+  D03 (perdita ontologica forgetting) su asse misto strutturale-operativo.
+\end{enumerate}
+
+Questa triade e utile perché copre:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  differenza puramente compositiva;
+\item
+  utilità pratica su pipeline reali;
+\item
+  perdita di struttura sotto trasformazioni canoniche.
+\end{enumerate}
+
+Il capitolo impone che ogni nuova campagna espliciti a priori quale asse copre e quale resta non coperto.
+
+\subsection{4.3 Criteri operativi di indipendenza}
+
+L'indipendenza non può essere dichiarata genericamente. Va verificata con checklist.
+
+Checklist minima:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{NO} riuso campioni dal benchmark precedente oltre soglia consentita;
+\item
+  split dati congelato prima del run;
+\item
+  separazione delle seed rispetto al ciclo precedente;
+\item
+  divieto di tuning post-freeze;
+\item
+  motivazione obbligatoria per rerun con hash log.
+\end{enumerate}
+
+Questi criteri sono coerenti con il manifest Cycle 3 e con la policy di execution lock già adottata.
+
+\subsection{4.4 Stratificazione campionaria e copertura}
+
+Ogni benchmark deve esplicitare stratificazione su tre assi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  complessità strutturale;
+\item
+  livello di rumore;
+\item
+  ambiguità contestuale.
+\end{enumerate}
+
+Se uno strato e sottocampionato, il claim non può essere generalizzato. In pratica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  risultati aggregati senza breakdown di strato sono considerati incompleti;
+\item
+  la decisione può al massimo restare in \texttt{revise}.
+\end{enumerate}
+
+\subsection{4.5 Piano statistico minimo}
+
+Senza imporre un unico paradigma statistico, fissiamo cinque obblighi minimi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ipotesi nulla/alternativa dichiarate;
+\item
+  soglia \texttt{alpha} preregistrata;
+\item
+  misura di effetto oltre al p-value;
+\item
+  intervalli di confidenza o stima di incertezza equivalente;
+\item
+  criterio di successo aggregato multi-contesto.
+\end{enumerate}
+
+Il capitolo privilegia inferenza trasparente rispetto a ottimizzazione retorica di singole metriche.
+
+\subsection{4.6 Potenza e numerosità campionaria}
+
+La numerosità non può essere scelta solo per convenienza computazionale. Deve essere giustificata da:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  variabilità attesa;
+\item
+  effetto minimo di interesse;
+\item
+  livello di confidenza richiesto per decisione.
+\end{enumerate}
+
+Se la potenza e insufficiente, un esito ``non significativo'' non autorizza rigetto del claim; autorizza solo revisione del disegno.
+
+\subsection{4.7 Multi-contesto e regola 2/3}
+
+In continuità con i cicli già eseguiti, adottiamo una regola pragmatica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  conferma minima in almeno \texttt{2/3} contesti preregistrati;
+\item
+  il terzo contesto può fallire solo con analisi causale esplicita.
+\end{enumerate}
+
+La regola evita due estremi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  rigidità eccessiva (richiedere successo perfetto in ogni micro-variante);
+\item
+  permissività eccessiva (accettare successo in un solo contesto favorevole).
+\end{enumerate}
+
+\subsection{4.8 Instrumentation e audit trail}
+
+La replicabilità dipende più dai log che dalle intenzioni. Ogni run deve produrre:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  manifest versione dati e script;
+\item
+  checksum artefatti;
+\item
+  parametri runtime;
+\item
+  output metrici raw e aggregati;
+\item
+  decision trace leggibile.
+\end{enumerate}
+
+Senza questa catena, il risultato resta al massimo \texttt{R1} e non supporta validazione forte.
+
+\subsection{4.9 Tassonomia degli errori}
+
+Per evitare diagnosi vaghe introduciamo una tassonomia minima degli errori benchmark:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{E\_data}: incoerenza o leakage nei dati;
+\item
+  \texttt{E\_model}: instabilità del mapping o della pipeline;
+\item
+  \texttt{E\_metric}: mismatch tra metrica e significato del claim;
+\item
+  \texttt{E\_context}: trasferimento improprio tra domini;
+\item
+  \texttt{E\_decision}: applicazione incoerente della matrice decisionale.
+\end{enumerate}
+
+Ogni errore va classificato in severità (\texttt{low}, \texttt{medium}, \texttt{high}) e associato ad azione correttiva.
+
+\subsection{4.10 Policy di rerun e freezing}
+
+Il rerun e lecito solo se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  motivazione tecnica documentata;
+\item
+  stessa preregistrazione o nuova preregistrazione versionata;
+\item
+  dichiarazione esplicita di cosa cambia e cosa resta invariato.
+\end{enumerate}
+
+Il freezing conclude una fase sperimentale e blocca la retro-modifica opportunistica dei criteri.
+
+\subsection{4.11 Disegno per pubblicazione aperta}
+
+Un benchmark scientificamente utile e anche pubblicabile in forma verificabile.
+
+Pacchetto raccomandato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  repository operativo (GitHub) con script e manifest;
+\item
+  snapshot DOI (Zenodo) della release validata;
+\item
+  workspace progettuale (OSF) con preregistrazioni e materiale intermedio;
+\item
+  eventuale mirror dataset (Hugging Face) con dataset card metodologica.
+\end{enumerate}
+
+La chiave non e moltiplicare piattaforme, ma preservare coerenza di versione tra piattaforme.
+
+\subsection{4.12 Condizione di sufficienza del capitolo}
+
+Il capitolo e metodologicamente sufficiente se produce tre risultati:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definizione operativa di benchmark indipendente;
+\item
+  schema di replicabilità multi-dominio con criteri espliciti;
+\item
+  pipeline pubblicabile e auditabile end-to-end.
+\end{enumerate}
+
+Questa condizione e soddisfatta dalle definizioni 13.1-13.6 e dai blocchi 4.1-4.11.
+
+\subsection{\texorpdfstring{4.13 Indice di qualità benchmark \texttt{Q\_B}}{4.13 Indice di qualità benchmark Q\_B}}
+
+Per confrontare campagne diverse introduciamo un indicatore sintetico:
+
+\texttt{Q\_B\ :=\ a*Ind\ +\ b*Rep\ +\ c*Trace\ +\ d*Stress\ -\ e*Leak}
+
+dove:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Ind} misura l'indipendenza effettiva tra benchmark;
+\item
+  \texttt{Rep} misura il tasso di repliche riuscite;
+\item
+  \texttt{Trace} misura la completezza dell'audit trail;
+\item
+  \texttt{Stress} misura copertura e severità dei test di sensibilità;
+\item
+  \texttt{Leak} penalizza leakage dati e tuning opportunistico.
+\end{enumerate}
+
+Vincoli operativi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  coefficienti \texttt{a,b,c,d,e\ \textgreater{}=\ 0};
+\item
+  \texttt{a+b+c+d+e\ =\ 1};
+\item
+  soglia minima preregistrata per rilascio esterno.
+\end{enumerate}
+
+\texttt{Q\_B} non sostituisce la decisione teorica sul claim, ma decide la prontezza metodologica del pacchetto benchmark.
+
+\subsection{4.14 Protocollo di replica indipendente}
+
+Per dichiarare una replica realmente indipendente proponiamo il seguente protocollo minimo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  team esecutore differente da quello del benchmark originario;
+\item
+  ambiente ricostruito da zero usando solo artefatti pubblici;
+\item
+  verifica hash di dataset/script prima del run;
+\item
+  esecuzione senza modifica dei criteri decisionali preregistrati;
+\item
+  report finale con confronto puntuale tra esito originario e replica.
+\end{enumerate}
+
+La replica indipendente non e una formalità: e il passaggio che trasforma un risultato interno in conoscenza affidabile per la comunità.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 13.1 (Insufficienza del benchmark nominalmente diverso)}
+
+Enunciato:
+Due benchmark con nomi differenti ma senza separazione di dati/seed/tuning non forniscono evidenza indipendente.
+
+Intuizione:
+l'indipendenza e proprietà del processo, non dell'etichetta.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 13.2 (Necessità della stratificazione)}
+
+Enunciato:
+Senza stratificazione esplicita, la performance aggregata può sovrastimare la robustezza di un claim.
+
+Intuizione:
+la media può nascondere collassi locali ad alta rilevanza teorica.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 13.3 (Valore informativo del fallimento)}
+
+Enunciato:
+Nel contesto OCT, un fallimento tracciato e classificato aumenta informazione metodologica più di un successo non auditabile.
+
+Intuizione:
+il fallimento ben localizzato orienta revisione teorica e disegno successivo.
+
+Stato: \texttt{in\_review}.
+
+\subsection{Teorema 13.4 (Sufficienza operativa del disegno L1-L2-L3)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  benchmark L1 con preregistrazione completa;
+\item
+  benchmark L2 indipendente secondo Def. 13.1;
+\item
+  stress/audit L3 con report riproducibile.
+\end{enumerate}
+
+Tesi:
+Il claim testato dispone di evidenza metodologicamente sufficiente per decisione \texttt{validated/revise/reject} non arbitraria.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  L1 fornisce test diretto del claim;
+\item
+  L2 limita overfitting al benchmark iniziale;
+\item
+  L3 misura robustezza a perturbazioni e integrità della catena di prova.
+\end{enumerate}
+
+Conseguenze:
+fornisce standard minimo per promozione di stato in catalogo teorematico OCT.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Teorema 13.5 (Necessità della replicabilità multi-dominio)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  claim confermato solo su un asse di dominio;
+\item
+  assenza di repliche su asse indipendente;
+\item
+  elevata variabilità potenziale tra contesti.
+\end{enumerate}
+
+Tesi:
+La conferma mono-dominio non e sufficiente per inferenza generale in OCT.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la semantica ordinativa dipende da \texttt{Omega};
+\item
+  cambi di dominio alterano distribuzioni e vincoli compositivi;
+\item
+  senza replica multi-asse non si distingue effetto teorico da compatibilità locale.
+\end{enumerate}
+
+Conseguenze:
+legittima la regola di replicazione minima su assi multipli.
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per il Capitolo 14 (governance epistemica)}
+
+Il capitolo consegna a \texttt{v1.4} tre oggetti che il Capitolo 14 dovra governare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  versioni benchmark e relativi freeze;
+\item
+  audit trail dei rerun;
+\item
+  criteri di accettazione legati a livelli di riproducibilità.
+\end{enumerate}
+
+\subsection{6.2 Per il programma di validazione teoremi}
+
+La struttura L1-L2-L3 permette di ordinare i teoremi in priorità:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  teoremi ad alto impatto con percorso completo immediato;
+\item
+  teoremi esplorativi con L1 rapido e ingresso in coda L2/L3;
+\item
+  teoremi in conflitto con focus su stress e ablation prima del rilascio.
+\end{enumerate}
+
+\subsection{6.3 Per pubblicazione e revisione esterna}
+
+Un revisore esterno deve poter rispondere a tre domande senza ambiguità:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che cosa e stato testato;
+\item
+  come e stato testato;
+\item
+  perché la decisione finale e giustificata.
+\end{enumerate}
+
+Il capitolo offre una struttura che rende queste risposte ispezionabili.
+
+\subsection{6.4 Per roadmap 2026-2030}
+
+La replicabilità multi-dominio e il criterio che separa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  risultati locali da risultati fondativi;
+\item
+  prototipi interni da standard scientifici pubblicabili.
+\end{enumerate}
+
+Quindi la roadmap non dovrebbe contare solo ``numero di teoremi testati'', ma ``numero di teoremi con L1-L2-L3 completo''.
+
+\subsection{6.5 Per onboarding di nuovi laboratori}
+
+Un laboratorio esterno può entrare nel programma OCT senza conoscere tutta la storia del progetto, se riceve un kit standardizzato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  guida iniziale con lessico minimo condiviso;
+\item
+  pacchetto \texttt{PB\_min} di un claim campione;
+\item
+  checklist di replica indipendente;
+\item
+  template report con sezione errori obbligatoria.
+\end{enumerate}
+
+Questo riduce la barriera d'ingresso e aumenta la probabilità di validazioni indipendenti reali.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo definisce una baseline metodologica, non l'unica possibile;
+\item
+  alcuni domini richiedono metriche ausiliarie altamente specializzate;
+\item
+  la regola 2/3 e pragmatica, non dogmatica, e può richiedere adattamento motivato.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  benchmark formalmente indipendenti ma semanticamente ridondanti;
+\item
+  stress test costruiti troppo deboli per mettere in crisi il claim;
+\item
+  rerun usati per ``cercare'' un esito desiderato;
+\item
+  scarsa documentazione dei casi falliti.
+\end{enumerate}
+
+Contromisure raccomandate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  revisione indipendente del manifest prima dell'esecuzione;
+\item
+  quota minima di casi ``difficili'' in ogni strato;
+\item
+  obbligo di pubblicazione dei fallimenti di severità \texttt{high};
+\item
+  audit periodico su coerenza tra preregistrazione e report finale.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che ogni claim debba superare tutti i domini possibili;
+\item
+  che la significatività statistica da sola determini la validità teorica;
+\item
+  che un benchmark ben progettato sostituisca la necessità di formalizzazione matematica.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C13.1 & L'indipendenza benchmark richiede separazione di dati, seed, tuning e log & metodologico & S1 & validated \\
+C13.2 & La stratificazione e necessaria per evitare sovrastima della robustezza & statistico-metodologico & S1 & validated \\
+C13.3 & Il disegno L1-L2-L3 e sufficiente come baseline per decisioni non arbitrarie & metodologico-formale & S2 & in\_proof \\
+C13.4 & La replicabilità multi-dominio e condizione necessaria per inferenza generale OCT & epistemico & S2 & in\_proof \\
+C13.5 & La pubblicazione dei fallimenti migliora la qualità cumulativa del programma & operativo & S1 & in\_review \\
+C13.6 & Il pacchetto benchmark minimo \texttt{PB\_min} supporta rilascio multi-piattaforma coerente & infrastrutturale & S1 & in\_review \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 14}
+
+Il Capitolo 13 ha stabilito come progettare benchmark indipendenti e replicabili, e come trasformare il protocollo in infrastruttura sperimentale.
+
+Il Capitolo 14 completera la milestone \texttt{v1.4} introducendo la governance epistemica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  regole di versioning dei claim;
+\item
+  audit trail decisionale;
+\item
+  quality gate per release pubbliche;
+\item
+  politica di manutenzione del corpus teorematico.
+\end{enumerate}
+
+In breve: il Capitolo 13 costruisce la macchina sperimentale; il Capitolo 14 ne definisce la costituzione operativa.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_VALIDATION\_PROTOCOL\_v0\_1.md}.
+\item
+  \texttt{OCT\_Theory\_and\_Theorems/validation/CYCLE\_3\_2026-04-18/BENCHMARK\_MANIFEST\_cycle3\_v0\_1.md}.
+\item
+  \texttt{OCT\_Theory\_and\_Theorems/validation/CYCLE\_4\_2026-04-19/CYCLE\_4\_REPORT.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_12\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Popper, K. (1959). \emph{The Logic of Scientific Discovery}.
+\item
+  Lakatos, I. (1978). \emph{The Methodology of Scientific Research Programmes}.
+\item
+  Nosek, B. et al. (2018). \emph{The preregistration revolution}.
+\item
+  Goodman, S., Fanelli, D., Ioannidis, J. (2016). \emph{What does research reproducibility mean?}.
+\end{enumerate}

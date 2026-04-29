@@ -1,0 +1,938 @@
+\chapter{Capitolo 1 - Crisi dell'ontologia estensionale e problema della validità}
+
+\section{1. Problema}
+
+La teoria delle categorie classica ha prodotto uno dei linguaggi più potenti della matematica contemporanea. Il suo punto di forza è noto: non descrive gli oggetti ``in sé'', ma le loro relazioni strutturali e le regole di composizione che rendono trasferibili risultati da un dominio all'altro. Questa astrazione ha reso possibile una unificazione profonda tra algebra, topologia, logica, geometria e informatica teorica.
+
+Tuttavia, lo stesso gesto che rende la teoria straordinariamente generale introduce una domanda che qui prendiamo come problema fondativo: \textbf{quando una struttura sia formalmente ben composta sia ontologicamente valida come struttura reale?}
+
+In sintesi, il problema non riguarda la correttezza sintattica della category theory, che resta intatta, ma la sua neutralità rispetto a tre aspetti che diventano decisivi quando si passa da domini puramente formali a sistemi vivi, storici, cognitivi o socio-tecnici:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la differenza tra composizione possibile e composizione feconda;
+\item
+  la differenza tra equivalenza formale e equivalenza funzionale;
+\item
+  la differenza tra universalità strutturale e capacità generativa.
+\end{enumerate}
+
+Se due costruzioni sono isomorfe nel senso classico, la teoria ha pieno titolo per trattarle come ``le stesse'' ai fini della struttura. Ma in molti domini empirici questa identificazione è troppo forte: sistemi isomorfi in una proiezione possono divergere radicalmente nella stabilità, nella robustezza, nella capacità emergente e nella traiettoria dinamica.
+
+Il punto non è negare la validità del classico. Il punto è riconoscere un \textbf{deficit di discriminazione ontologica} quando il linguaggio classico viene usato come grammatica di sistemi reali complessi.
+
+Da qui la tesi metodologica del capitolo: occorre distinguere in modo esplicito tra:
+
+\begin{itemize}
+\tightlist
+\item
+  validità sintattica (ben-tipizzazione, commutatività, universalità, equivalenza strutturale);
+\item
+  validità ordinativa (coerenza interna non degenerativa + emergenza funzionale non nulla in contesto osservativo esplicito).
+\end{itemize}
+
+Questa distinzione apre il campo della Ordinative Category Theory (OCT): un'estensione conservativa della sintassi categoriale classica tramite uno strato di validazione ontologica.
+
+\subsection{1.1 Posizionamento storico minimo del problema}
+
+Il problema non nasce in astratto. Ogni grande formalismo passa attraverso una fase in cui la sua forza tecnica produce un effetto collaterale: tende a essere usato oltre il proprio mandato originario.
+
+Per la teoria delle categorie, il mandato originario è chiarissimo: descrivere invarianti di struttura e trasformazioni naturali tra strutture. In questo mandato, il formalismo è difficilmente superabile. Ma quando lo stesso strumento viene trasposto in domini dove la differenza tra ``funziona in teoria'' e ``regge nel reale'' è decisiva, emerge un varco metodologico.
+
+Questo varco è visibile in molti contesti contemporanei:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  in architetture computazionali formalmente corrette ma instabili su distribuzioni reali;
+\item
+  in modelli sociali coerenti in simulazione ma non robusti in campo;
+\item
+  in pipeline semantiche con ottima composizione locale ma collasso globale di senso.
+\end{enumerate}
+
+Nessuno di questi esempi invalida la categoria classica. Mostra solo che la domanda scientifica si è ampliata:
+
+\begin{itemize}
+\tightlist
+\item
+  non solo ``qual è la forma?'',
+\item
+  ma anche ``quale forma resta operativa sotto stress di realtà?''.
+\end{itemize}
+
+OCT assume questo ampliamento come punto di avvio e non come critica ideologica.
+
+\subsection{1.2 Perché ``estensionale'' qui è una nozione tecnica}
+
+Nel capitolo, ``estensionale'' non è usato come etichetta polemica. Indica una postura in cui l'identità viene principalmente stabilità da criteri di equivalenza/sostituibilità strutturale.
+
+Questa postura ha tre virtu:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  pulizia formale;
+\item
+  trasferibilità dei risultati;
+\item
+  forte economia concettuale.
+\end{enumerate}
+
+Ma in sistemi ad alta dipendenza relazionale ha anche un costo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  tende a comprimere differenze di stato interno che diventano decisive nel tempo;
+\item
+  rende opaco il passaggio tra ``possibile'' e ``sostenibile'';
+\item
+  non dispone, per progetto, di un criterio interno di non-degenerazione.
+\end{enumerate}
+
+L'estensione ordinativa non elimina il regime estensionale. Lo completa con un regime di valutazione che esplicita la dimensione di persistenza funzionale.
+
+\subsection{1.3 Cosa significa ``validità'' in un testo OCT}
+
+Nel resto del libro, la parola ``validità'' è sempre usata in senso stratificato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{validità formale}: la costruzione è corretta nel suo sistema di regole;
+\item
+  \textbf{validità ordinativa}: la costruzione preserva coerenza e non collassa la funzione emergente nel contesto dichiarato;
+\item
+  \textbf{validità scientifica}: il claim associato alla costruzione è sostenuto da evidenza classificata e protocollo riproducibile.
+\end{enumerate}
+
+La mancata distinzione tra questi tre livelli è la prima fonte di confusione nella discussione pubblica delle teorie complesse. Questo capitolo imposta la distinzione come regola permanente di lettura.
+
+\subsection{1.4 Percorsi di lettura (ingresso rapido e percorso completo)}
+
+Per ridurre la soglia di ingresso senza indebolire il rigore, il libro adotta due percorsi ufficiali.
+
+Percorso rapido (orientamento in 1-2 sessioni):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 1 (problema e tesi);
+\item
+  Capitolo 3 (assiomi O1-O7);
+\item
+  Capitolo 8 (spazio di validita e triade metrica);
+\item
+  Capitoli 15-17 (case study + agenda scientifica).
+\end{enumerate}
+
+Percorso completo (validazione piena):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitoli 1-3 (fondazione ontologica e assiomatica);
+\item
+  Capitoli 4-7 (estensione sistematica del corpus classico);
+\item
+  Capitoli 8-14 (metrica, teoremi, protocollo, benchmark, governance);
+\item
+  Capitoli 15-17 (casi studio e chiusura strategica).
+\end{enumerate}
+
+Regola di uso:
+
+\begin{itemize}
+\tightlist
+\item
+  il percorso rapido serve per capire ``cosa propone OCT'';
+\item
+  il percorso completo serve per valutare ``se e quanto OCT regge''.
+\end{itemize}
+
+\subsection{1.5 Stato formale degli operatori in v1.x (anti-circolarita esplicita)}
+
+Per evitare ambiguita metodologiche, fissiamo qui lo stato formale dei tre operatori.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Livello assiomatico (gia attivo):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Coh\_Omega}, \texttt{Phi\_Omega}, \texttt{Delta\_Omega} sono definiti semanticamente e inseriti in regole decisionali esplicite.
+  \end{itemize}
+\item
+  Livello costruttivo benchmark-specifico (attivo in forma iniziale):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    il Capitolo 8 introduce istanziazioni calcolabili su benchmark con pipeline dichiarata.
+  \end{itemize}
+\item
+  Livello universale cross-dominio (in consolidamento):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    non e ancora chiuso in forma unica; resta oggetto di programma teorematico e validazione.
+  \end{itemize}
+\end{enumerate}
+
+Conseguenza epistemica:
+
+\begin{itemize}
+\tightlist
+\item
+  in \texttt{v1.x} OCT non dichiara ``metriche universali definitive'';
+\item
+  dichiara invece un criterio robusto: definizione semantica + istanziazione costruttiva per dominio + stato di evidenza tracciato.
+\end{itemize}
+
+Questa scelta impedisce circolarita: la teoria non si auto-convalida per lessico, ma richiede mapping operativo e benchmark espliciti.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi di questo capitolo è articolata in quattro enunciati:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Tesi di conservazione}: la category theory classica non va sostituita; va mantenuta come infrastruttura sintattica.
+\item
+  \textbf{Tesi di insufficienza}: la sola correttezza strutturale non basta per decidere la realtà operativa di una composizione.
+\item
+  \textbf{Tesi di estensione}: serve uno strato ordinativo esplicito definito da tre operatori minimi (\texttt{Coh\_Omega}, \texttt{Phi\_Omega}, \texttt{Delta\_Omega}).
+\item
+  \textbf{Tesi di scientificità}: l'estensione OCT deve restare falsificabile, con claim graduati (\texttt{S0-S3}) e protocolli di validazione riproducibili.
+\end{enumerate}
+
+Questa tesi non è una dichiarazione metaforica. È un programma tecnico: spostare la domanda da ``questa struttura è formalmente lecita?'' a ``questa struttura mantiene coerenza e genera funzione nel contesto osservato?''.
+
+Il passaggio è minimale sul piano sintattico ma forte sul piano epistemico:
+
+\texttt{Classical\ validity} -\textgreater{} \texttt{Classical\ validity\ +\ Ordinative\ validity}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+Per evitare ambiguità, introduciamo un lessico minimale usato in tutto il libro.
+
+\subsection{Definizione 1 (Validità sintattica)}
+
+Una costruzione categoriale è sintatticamente valida se soddisfa i vincoli classici del quadro in cui è definita (tipi, composizione, identità, universalità, ecc.).
+
+Commento:
+
+\begin{itemize}
+\tightlist
+\item
+  questa definizione coincide con lo standard classico;
+\item
+  non contiene ancora alcuna ipotesi su vitalità, emergenza o degenerazione.
+\end{itemize}
+
+\subsection{Definizione 2 (Contesto osservativo)}
+
+\texttt{Omega} è il contesto osservativo esplicito in cui viene valutata una struttura: scala, variabili, protocollo di misura, vincoli di dominio, criteri di accettazione.
+
+Commento:
+
+\begin{itemize}
+\tightlist
+\item
+  OCT rifiuta valutazioni decontestualizzate;
+\item
+  ogni claim ontologico è indicizzato a un \texttt{Omega}.
+\end{itemize}
+
+\subsection{Definizione 3 (Coerenza ordinativa)}
+
+\texttt{Coh\_Omega(D)} è una funzione di coerenza del diagramma/composizione \texttt{D} nel contesto \texttt{Omega}, normalizzata in \texttt{{[}0,1{]}}.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  valori prossimi a \texttt{1}: composizione stabile e internamente consistente;
+\item
+  valori prossimi a \texttt{0}: incoerenza strutturale o perdita di integrazione.
+\end{itemize}
+
+\subsection{Definizione 4 (Funzione emergente)}
+
+\texttt{Phi\_Omega(D)} misura la funzione emergente non riducibile alla mera somma dei componenti di \texttt{D}, valutata in \texttt{Omega}.
+
+Condizione minima:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Phi\_Omega(D)\ !=\ 0} indica presenza di funzione emergente;
+\item
+  \texttt{Phi\_Omega(D)\ =\ 0} indica sterilità emergente (struttura formalmente corretta ma funzionalmente piatta).
+\end{itemize}
+
+\subsection{Definizione 5 (Degenerazione ordinativa)}
+
+\texttt{Delta\_Omega(D)\ =\ 1\ -\ Coh\_Omega(D)}.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Delta} non è un errore sintattico;
+\item
+  è la misura del collasso ordinativo interno.
+\end{itemize}
+
+\subsection{Definizione 6 (Validità ordinativa minima)}
+
+Dato un valore soglia \texttt{tau\ in\ (0,1{]}}, \texttt{D} è OCT-valido in \texttt{Omega} se e solo se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Coh\_Omega(D)\ \textgreater{}=\ tau}
+\item
+  \texttt{Phi\_Omega(D)\ !=\ 0}
+\end{enumerate}
+
+Questa è la prima forma operativa della distinzione tra ``struttura lecita'' e ``struttura reale''.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Dove il classico eccelle}
+
+Prima di estendere, fissiamo il punto: il classico funziona in modo eccellente su:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  trasporto strutturale tra domini (funtorialità);
+\item
+  controllo di composizione (associatività, identità);
+\item
+  nozioni universali robuste (limiti, colimiti, aggiunzioni);
+\item
+  gerarchie di astrazione (2-categorie, arricchimenti, topos).
+\end{enumerate}
+
+In OCT, tutto questo viene preservato.
+
+\subsection{4.2 Dove il classico è ontologicamente neutro}
+
+La neutralità diventa criticità in tre scenari ricorrenti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Equivalenza sterile}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    due sistemi equivalenti per struttura locale;
+  \item
+    esito operativo divergente su stabilità o capacità generativa.
+  \end{itemize}
+\item
+  \textbf{Composizione degenerativa}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    composizione legalmente tipizzata;
+  \item
+    risultato interno disallineato, con degradazione progressiva.
+  \end{itemize}
+\item
+  \textbf{Universalità vuota}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    limite/colimite formalmente esistente;
+  \item
+    nessun aumento di funzione emergente.
+  \end{itemize}
+\end{enumerate}
+
+Questi tre casi non falsificano il classico. Mostrano che il classico non intendeva rispondere a quella domanda.
+
+\subsection{4.3 Dalla ontologia estensionale alla ontologia relazionale-funzionale}
+
+L'ontologia estensionale privilegia l'appartenenza e la sostituibilità. In domini dinamici, questa grammatica è necessaria ma non sufficiente, perché:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la singolarità funzionale non è interamente catturata dalla classe di equivalenza;
+\item
+  la relazione non è solo connettivo, ma meccanismo generativo;
+\item
+  la funzione emergente non si deduce automaticamente dalla forma sintattica.
+\end{enumerate}
+
+OCT propone quindi un passaggio controllato:
+
+\begin{itemize}
+\tightlist
+\item
+  dall'oggetto come entità estensionale;
+\item
+  alla singolarità come nodo relazionale-funzionale.
+\end{itemize}
+
+\subsection{4.4 Principio di non-identificazione automatica}
+
+In quadro classico:
+
+\begin{itemize}
+\tightlist
+\item
+  isomorfismo implica intercambiabilità strutturale rispetto alle proprietà invarianti.
+\end{itemize}
+
+In quadro OCT:
+
+\begin{itemize}
+\tightlist
+\item
+  isomorfismo resta valido;
+\item
+  ma non implica automaticamente equivalenza ordinativa piena.
+\end{itemize}
+
+Questa è una restrizione epistemica, non una negazione algebrica.
+
+\subsection{4.5 Schema minimo di valutazione}
+
+Dato un diagramma \texttt{D}, OCT introduce un gate in due stadi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  gate classico: verifica sintattica;
+\item
+  gate ordinativo: verifica \texttt{Coh/Phi}.
+\end{enumerate}
+
+Formalmente:
+
+\texttt{Admissible\_OCT(D,\ Omega)\ :=\ Syntactic(D)\ AND\ (Coh\_Omega(D)\ \textgreater{}=\ tau)\ AND\ (Phi\_Omega(D)\ !=\ 0)}
+
+Il valore di \texttt{tau} è dominio-dipendente e va dichiarato nel protocollo.
+
+\subsection{4.6 Conseguenza metodologica}
+
+La domanda centrale cambia:
+
+\begin{itemize}
+\tightlist
+\item
+  classico: ``la struttura esiste?''
+\item
+  OCT: ``la struttura esiste e resta reale/feconda nel contesto \texttt{Omega}?''
+\end{itemize}
+
+Questo cambio è il punto di ingresso della teoria nella grammatica della scienza umana: non basta l'esistenza formale, serve una metrica di persistenza funzionale.
+
+\subsection{4.7 Esempio astratto controllato (per chiarire la separazione)}
+
+Consideriamo due pipeline astratte \texttt{P\_A} e \texttt{P\_B} rappresentate dallo stesso schema tipizzato:
+
+\texttt{X\ -\textgreater{}\ Y\ -\textgreater{}\ Z}.
+
+Nel quadro classico, se le frecce rispettano dominio/codominio e composizione, entrambe le pipeline sono formalmente ammissibili. Supponiamo ora che:
+
+\begin{itemize}
+\tightlist
+\item
+  in \texttt{P\_A}, la seconda freccia preservi la stabilità relazionale introdotta dalla prima;
+\item
+  in \texttt{P\_B}, la seconda freccia amplifichi rumore interno e riduca l'integrazione del sistema.
+\end{itemize}
+
+Dal solo punto di vista sintattico non c'è differenza decisiva: stessa forma, stesso schema compositivo, stessa legalità strutturale.
+
+Nel quadro OCT, invece, il risultato è distinguibile:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Coh\_Omega(P\_A)} resta sopra soglia;
+\item
+  \texttt{Coh\_Omega(P\_B)} scende sotto soglia dopo iterazione;
+\item
+  \texttt{Phi\_Omega(P\_A)} resta non nulla;
+\item
+  \texttt{Phi\_Omega(P\_B)} tende a zero.
+\end{enumerate}
+
+Quindi:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{P\_A} è formalmente valida e ordinativamente valida;
+\item
+  \texttt{P\_B} è formalmente valida ma ordinativamente invalida.
+\end{itemize}
+
+Il valore dell'esempio non è empirico, ma logico-metodologico: mostra che la differenza introdotta da OCT non è un dettaglio terminologico, ma un criterio decisionale aggiuntivo che il classico non intende fornire.
+
+\subsection{4.8 Tre famiglie di errore inferenziale che OCT vuole evitare}
+
+Per evitare fraintendimenti nella lettura dell'opera, fissiamo tre errori tipici che il layer ordinativo corregge.
+
+\textbf{Errore A - Identità per sola forma}
+
+\begin{itemize}
+\tightlist
+\item
+  Forma: ``se due strutture sono isomorfe, allora sono anche equivalenti in esito''.
+\item
+  Problema: confonde equivalenza strutturale con equivalenza dinamico-funzionale.
+\item
+  Correzione OCT: l'isomorfismo resta, ma non chiude da solo la questione dell'esito.
+\end{itemize}
+
+\textbf{Errore B - Ottimismo compositivo automatico}
+
+\begin{itemize}
+\tightlist
+\item
+  Forma: ``se una composizione è ben tipizzata, allora produce progresso funzionale''.
+\item
+  Problema: ignora la possibilità di composizione degenerativa.
+\item
+  Correzione OCT: ogni composizione è sottoposta a controllo \texttt{Coh/Phi}.
+\end{itemize}
+
+\textbf{Errore C - Universalità come garanzia di fecondità}
+
+\begin{itemize}
+\tightlist
+\item
+  Forma: ``se esiste un limite/colimite, allora esiste anche un guadagno operativo''.
+\item
+  Problema: scambia proprietà universale con valore emergente.
+\item
+  Correzione OCT: universalità è necessaria ma non sufficiente.
+\end{itemize}
+
+Queste tre correzioni non alterano la grammatica classica. Introducono solo una disciplina inferenziale aggiuntiva quando il target non è un universo puramente formale ma un sistema con comportamento osservabile.
+
+\subsection{4.9 Criterio di compatibilità con la teoria classica}
+
+Per non generare una falsa antitesi, definiamo esplicitamente il criterio di compatibilità.
+
+Compatibilità forte significa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ogni risultato classico resta vero nel suo dominio;
+\item
+  OCT non revoca teoremi classici;
+\item
+  OCT aggiunge condizioni di accettazione per usi ontologici/operativi.
+\end{enumerate}
+
+In pratica:
+
+\begin{itemize}
+\tightlist
+\item
+  se il problema è interno alla matematica pura, il layer ordinativo può essere irrilevante;
+\item
+  se il problema riguarda sistemi reali, il layer ordinativo diventa informativamente decisivo.
+\end{itemize}
+
+Questa distinzione evita due estremi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  imperialismo formale (tutto è ridotto alla forma);
+\item
+  anti-formalismo debole (la forma non conta).
+\end{enumerate}
+
+OCT cerca una terza posizione: formalismo forte + validazione ontologica esplicita.
+
+\subsection{4.10 Primo principio di prudenza epistemica}
+
+Il libro adotta fin dal Capitolo 1 una regola di prudenza:
+
+\begin{itemize}
+\tightlist
+\item
+  nessuna inferenza sul reale senza passaggio per protocollo;
+\item
+  nessun protocollo senza dichiarazione di contesto;
+\item
+  nessun contesto senza inventario dei limiti.
+\end{itemize}
+
+Questa regola può sembrare editoriale, ma è parte della struttura teorica. Una teoria che non distingue i propri livelli di evidenza produce inevitabilmente overclaiming. L'overclaiming non è un problema retorico: è un problema strutturale, perché rende impossibile distinguere avanzamento reale da espansione narrativa.
+
+Da qui la scelta di adottare già in questo capitolo il \texttt{Claim\ Ledger} come dispositivo di controllo interno.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 1.1 (Insufficienza della sola validità sintattica in domini dinamici)}
+
+Enunciato:
+in un dominio dinamico con variabili di stabilità ed emergenza osservabili, la sola validità sintattica non determina univocamente la validità operativa.
+
+Intuizione:
+due composizioni possono rispettare la stessa grammatica ma divergere in robustezza interna.
+
+Stato:
+
+\begin{itemize}
+\tightlist
+\item
+  claim teorico forte, da validare per classi di dominio (\texttt{S1/S2} a seconda del dataset).
+\end{itemize}
+
+\subsection{Proposizione 1.2 (Necessità del contesto osservativo)}
+
+Enunciato:
+ogni valutazione di validità ordinativa è indicizzata da un contesto \texttt{Omega}; non esiste valore assoluto decontestualizzato di \texttt{Coh} e \texttt{Phi}.
+
+Intuizione:
+la stessa architettura può risultare coerente a una scala e degenerativa a un'altra.
+
+Stato:
+
+\begin{itemize}
+\tightlist
+\item
+  principio metodologico (\texttt{S1}).
+\end{itemize}
+
+\subsection{Teorema locale 1.3 (Separazione dei livelli di validità)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{D} è sintatticamente valido in una categoria \texttt{C}.
+\item
+  Esiste un contesto \texttt{Omega} in cui \texttt{Coh\_Omega(D)\ \textless{}\ tau} oppure \texttt{Phi\_Omega(D)\ =\ 0}.
+\end{enumerate}
+
+Tesi:
+\texttt{D} è formalmente ammissibile ma non OCT-valido in \texttt{Omega}.
+
+Proof sketch:
+dal punto 1 segue l'ammissibilità classica.
+dal punto 2 segue la violazione della definizione di validità ordinativa minima.
+la congiunzione richiede entrambi i gate; quindi il gate ordinativo fallisce.
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la validità classica è necessaria ma non sufficiente;
+\item
+  OCT non contraddice il classico, lo rifinisce con una condizione additiva.
+\end{enumerate}
+
+Stato:
+
+\begin{itemize}
+\tightlist
+\item
+  teorema locale definizionale (\texttt{in\_proof}, orientato a \texttt{S1} su casi testati).
+\end{itemize}
+
+\subsection{Corollario 1.4 (Non-ridondanza della OCT rispetto alla teoria classica)}
+
+Se esiste almeno una famiglia non vuota di diagrammi sintatticamente validi ma ordinativamente invalidi, allora l'estensione OCT non è ridondante rispetto al quadro classico.
+
+Commento:
+questo corollario definisce la condizione minima di senso dell'intero progetto.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+Le implicazioni immediate del capitolo sono sei.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Design teorico}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ogni capitolo successivo deve esplicitare cosa conserva del classico e cosa filtra/estende.
+  \end{itemize}
+\item
+  \textbf{Design sperimentale}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ogni caso studio deve dichiarare \texttt{Omega}, metrica \texttt{Coh}, criterio di \texttt{Phi}.
+  \end{itemize}
+\item
+  \textbf{Design editoriale}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    nessun enunciato resta in forma ``assoluta'': va sempre indicato livello di evidenza.
+  \end{itemize}
+\item
+  \textbf{Design comparativo}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    confronto classico/OCT effettuato su coppie di casi:
+
+    \begin{enumerate}
+    \def\labelenumii{\arabic{enumii}.}
+    \tightlist
+    \item
+      stesso statuto sintattico;
+    \item
+      differenza su coerenza/emergenza.
+    \end{enumerate}
+  \end{itemize}
+\item
+  \textbf{Design teorematico}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    teoremi futuri devono specificare se sono:
+
+    \begin{enumerate}
+    \def\labelenumii{\arabic{enumii}.}
+    \tightlist
+    \item
+      conservativi (traslano risultati classici),
+    \item
+      differenziali (impossibili senza layer ordinativo),
+    \item
+      applicativi (testabili su benchmark).
+    \end{enumerate}
+  \end{itemize}
+\item
+  \textbf{Design di governance scientifica}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    i claim non validati restano \texttt{revise};
+  \item
+    la teoria cresce per cicli di validazione, non per accumulo retorico.
+  \end{itemize}
+\end{enumerate}
+
+\subsection{6.1 Protocollo minimo applicabile già dal Capitolo 2}
+
+Per rendere il lavoro cumulativo, introduciamo un protocollo minimo in séi passi che verrà riusato nei capitoli successivi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Definire l'unità strutturale analizzata (\texttt{D}).
+\item
+  Dichiarare il contesto osservativo \texttt{Omega}.
+\item
+  Esplicitare la soglia \texttt{tau} con motivazione.
+\item
+  Stimare \texttt{Coh\_Omega(D)} con metrica dichiarata.
+\item
+  Stimare \texttt{Phi\_Omega(D)} con criterio di non-sterilità.
+\item
+  Classificare esito:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{accepted} se passa entrambi i gate;
+  \item
+    \texttt{rework} se passa il gate sintattico ma fallisce quello ordinativo;
+  \item
+    \texttt{rejected} se fallisce anche i vincoli formali.
+  \end{itemize}
+\end{enumerate}
+
+Il protocollo non sostituisce i metodi dominio-specifici. Serve a garantire che ogni estensione OCT sia confrontabile e auditabile.
+
+\subsection{6.2 Valore operativo per la stesura dell'intero libro}
+
+Il Capitolo 1 impone una disciplina che influenza direttamente la scrittura del testo completo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ogni capitolo dovrà distinguere ``estensione definizionale'' da ``validazione effettiva'';
+\item
+  ogni caso studio dovrà dichiarare cosa è \texttt{S0}, cosa è \texttt{S1}, cosa resta \texttt{S2/S3};
+\item
+  ogni proposta forte dovrà includere almeno un failure mode plausibile.
+\end{enumerate}
+
+In assenza di questa disciplina, il libro rischierebbe di oscillare tra manifesto teorico e report tecnico senza stabilire una grammatica unica. Con questa disciplina, invece, il testo può mantenere una voce scientifica coerente lungo tutte le 50.000 parole.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Questo capitolo non dimostra:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che \texttt{Coh\_Omega} abbia già una metrica unica universale valida per tutti i domini;
+\item
+  che \texttt{Phi\_Omega} sia già calibrata in modo definitivo nei casi sociali/cognitivi;
+\item
+  che ogni divergenza empirica tra sistemi isomorfi richieda necessariamente un framework ordinativo;
+\item
+  che la sola introduzione di \texttt{Coh/Phi/Delta} risolva automaticamente i problemi di causalità complessa;
+\item
+  che i casi studio già disponibili abbiano status \texttt{validated} definitivo su tutta la pipeline.
+\end{enumerate}
+
+Ulteriore limite:
+
+\begin{itemize}
+\tightlist
+\item
+  qui è stata definita una soglia minima di validità ordinativa (\texttt{tau}), ma non una teoria completa di scelta ottima di \texttt{tau} per dominio. Questa scelta resta metodologica e va motivata in capitoli successivi.
+\end{itemize}
+
+Non-claim esplicito:
+
+\begin{itemize}
+\tightlist
+\item
+  OCT non è presentata come alternativa antagonista alla category theory classica;
+\item
+  OCT è presentata come estensione conservativa con gate ontologico aggiuntivo.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C1.1 & La validità sintattica da sola è insufficiente in domini dinamici & teorico-metodologico & S1 & revise \\
+C1.2 & Serve indicizzare la validità a un contesto osservativo \texttt{Omega} & metodologico & S1 & candidate \\
+C1.3 & La distinzione classico/OCT può essere formalizzata come doppio gate & formale & S1 & in\_proof \\
+C1.4 & L'estensione OCT è non ridondante se esistono casi classically-valid ma OCT-invalid & metateorico & S2 & revise \\
+C1.5 & \texttt{Coh}, \texttt{Phi}, \texttt{Delta} costituiscono la triade minima di validazione ordinativa & architetturale & S2 & candidate \\
+C1.6 & In \texttt{v1.x} la triade e usabile senza circolarita solo se accompagnata da istanziazioni costruttive benchmark-specifiche & metodologico & S1 & candidate \\
+\end{longtable}
+}
+
+Note:
+
+\begin{itemize}
+\tightlist
+\item
+  in questo capitolo \texttt{S0} non compare, perché non sono introdotti nuovi dataset empirici;
+\item
+  la promozione a \texttt{validated} richiede benchmark espliciti nei capitoli metodologici.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 2}
+
+Capitolo 1 ha introdotto il problema e il criterio minimo di validità ordinativa.
+Capitolo 2 affronta la transizione ontologica completa: dalla ``cosa'' alla ``singolarità''.
+
+Obiettivo del Capitolo 2:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  mostrare perché l'identità ordinativa non collassa nella sola equivalenza estensionale;
+\item
+  formalizzare la nozione di singolarità funzionale;
+\item
+  derivare il primo set di invarianti relazionali che preparano la definizione piena di categoria ordinativa nel Capitolo 3.
+\end{enumerate}
+
+In termini operativi:
+se il Capitolo 1 ha definito \textbf{quando} una composizione è valida,
+il Capitolo 2 definira \textbf{che cosa} viene composto in OCT.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \emph{TE\_CORE v5.1: Technology of Expressions - Core Ontology and Axioms}.
+\item
+  Ghioni, F. (2026). \emph{Ordinative Set Theory (OST): Concise Operational Guide for AI, v2.1}.
+\item
+  Ghioni, F. (2026). \emph{OCT Typed Formal Specification v0.1}.
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician} (2nd ed.).
+\item
+  Riehl, E. (2016). \emph{Category Theory in Context}.
+\item
+  Awodey, S. (2010). \emph{Category Theory} (2nd ed.).
+\end{enumerate}

@@ -1,0 +1,1188 @@
+\chapter{Capitolo 6 - Funtori, naturali, aggiunzioni, monadi/comonadi}
+
+\section{1. Problema}
+
+Dopo aver esteso in chiave ordinativa oggetti, morfismi, composizione, identità, isomorfismi, equivalenze, limiti e colimiti, resta da affrontare il livello trasformazionale che rende davvero potente la category theory:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  funtori;
+\item
+  trasformazioni naturali;
+\item
+  aggiunzioni;
+\item
+  monadi e comonadi.
+\end{enumerate}
+
+Nel quadro classico, questi costrutti sono il motore del trasferimento di struttura tra domini diversi. In OCT dobbiamo rispondere a una domanda più severa: non solo ``il trasferimento è formalmente corretto?'', ma ``il trasferimento preserva o degrada la validità ordinativa nel contesto osservativo?''.
+
+Il problema del capitolo è quindi:
+
+\textbf{come estendere il livello trasformazionale classico in modo che il trasporto di struttura non cancelli informazione ordinativa critica né introduca falsa equivalenza operativa?}
+
+La difficoltà è strutturale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  un funtore può preservare composizione e identità classiche ma deteriorare coerenza o emergenza;
+\item
+  una naturalità formalmente impeccabile può essere ordinativamente sterile;
+\item
+  un'aggiunzione può apparire elegante ma non robusta su domini reali;
+\item
+  una monade può stabilizzare il flusso sintattico e contemporaneamente amplificare degenerazione funzionale.
+\end{enumerate}
+
+Per questo il capitolo adotta una regola metodologica unica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  conservazione classica come prerequisito;
+\item
+  preservazione ordinativa come condizione d'uso reale.
+\end{enumerate}
+
+\subsection{1.1 Perché il livello trasformazionale è decisivo}
+
+Se OCT restasse confinata a proprietà interne di una singola categoria, il suo impatto sarebbe limitato. La scienza contemporanea vive invece di traduzioni:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  da teoria a implementazione;
+\item
+  da dominio a dominio;
+\item
+  da rappresentazione a rappresentazione.
+\end{enumerate}
+
+Il livello funtoriale e naturale è il luogo in cui queste traduzioni avvengono. Se il capitolo non chiarisce come misurare la qualità ordinativa del trasporto, il rischio è alto:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  formalismi impeccabili con applicazioni fragili;
+\item
+  applicazioni convincenti senza fondazione trasferibile.
+\end{enumerate}
+
+\subsection{1.2 Obiettivo tecnico del capitolo}
+
+L'obiettivo non è riscrivere tutta la teoria classica delle trasformazioni, ma costruire un layer ordinativo minimo e riusabile che specifichi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  quando un funtore è ordinativamente ammissibile;
+\item
+  quando una naturalezza è anche ordinativamente significativa;
+\item
+  quando una aggiunzione è operativamente reale;
+\item
+  quando una monade/comonade produce accumulo costruttivo e non deriva degenerativa.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi è articolata in dieci enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Un funtore ordinativo preserva struttura classica e mantiene condizioni minime su \texttt{Coh/Phi}.
+\item
+  Le trasformazioni naturali devono essere valutate anche per coerenza ordinativa del quadrato naturale.
+\item
+  La naturalità classica non implica automaticamente naturalità ordinativa.
+\item
+  Le aggiunzioni ordinative richiedono controllo del trasporto in entrambe le direzioni.
+\item
+  Monadi e comonadi ordinative sono valide solo se l'iterazione non produce deriva sistematica verso sterilità o degenerazione.
+\item
+  La distinzione tra preservazione formale e preservazione ordinativa è non ridondante.
+\item
+  Esiste una nozione utile di ``funtore dimenticante ordinativamente sicuro''.
+\item
+  Il criterio locale sui singoli morfismi non basta: serve controllo di traiettorie trasformazionali composte.
+\item
+  Le nozioni introdotte sono compatibili con il recupero classico.
+\item
+  Il capitolo prepara direttamente il Capitolo 7 su monoidali/enriched/fibrations/topos.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 6.1 (Funtore ordinativamente ammissibile)}
+
+Sia \texttt{F:\ C\_Omega\ -\textgreater{}\ D\_Omega\textquotesingle{}} un funtore classico. Diciamo che \texttt{F} è ordinativamente ammissibile se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  preserva composizione e identità classiche;
+\item
+  per la famiglia di oggetti/morfismi rilevanti, la mappa indotta non viola soglie minime di coerenza;
+\item
+  non annulla sistematicamente la funzione emergente su classi operative dichiarate.
+\end{enumerate}
+
+\subsection{Definizione 6.2 (Indice di preservazione ordinativa funtoriale)}
+
+Definiamo un indice sintetico:
+
+\texttt{Pres\_F\ :=\ \textless{}DeltaCoh\_F,\ DeltaPhi\_F,\ Drift\_F\textgreater{}}
+
+dove:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{DeltaCoh\_F} misura variazione media di coerenza pre/post trasporto;
+\item
+  \texttt{DeltaPhi\_F} misura variazione emergenziale;
+\item
+  \texttt{Drift\_F} misura tendenza di lungo periodo a spostare stati verso B/C.
+\end{enumerate}
+
+\subsection{Definizione 6.3 (Trasformazione naturale ordinativa)}
+
+Data \texttt{eta:\ F\ =\textgreater{}\ G}, la trasformazione è ordinativamente valida se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  è naturale in senso classico;
+\item
+  i quadrati naturali coinvolti restano in classe A o in banda di robustezza dichiarata;
+\item
+  non introducono perdita emergenziale critica lungo i componenti di \texttt{eta}.
+\end{enumerate}
+
+\subsection{Definizione 6.4 (Aggiunzione ordinativa)}
+
+Una aggiunzione \texttt{F\ ⊣\ G} è ordinativa se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  l'aggiunzione classica è valida;
+\item
+  unità e counità risultano ordinativamente non-degenerative;
+\item
+  il ciclo avanti-indietro non produce accumulo di perdita oltre soglia.
+\end{enumerate}
+
+\subsection{Definizione 6.5 (Monade ordinativa)}
+
+Data monade \texttt{T=(T,eta,mu)}, diciamo che è ordinativa se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i dati monadici classici sono soddisfatti;
+\item
+  l'iterazione di \texttt{T} non induce deriva sistematica su \texttt{Coh/Phi} oltre limiti dichiarati;
+\item
+  i punti fissi operativi non collassano in sterilità generalizzata.
+\end{enumerate}
+
+\subsection{Definizione 6.6 (Comonade ordinativa)}
+
+Data comonade \texttt{W=(W,epsilon,delta)}, diciamo che è ordinativa se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i dati comonadici classici sono soddisfatti;
+\item
+  il processo di coestrazione/duplicazione preserva margine ordinativo;
+\item
+  non introduce rumore strutturale che annulli funzione emergente.
+\end{enumerate}
+
+\subsection{Definizione 6.7 (Funtore dimenticante sicuro)}
+
+Un funtore dimenticante è ordinativamente sicuro su classe \texttt{K} se la perdita informativa indotta è preservativa e non cambia classificazione A/B/C oltre una soglia di tolleranza dichiarata.
+
+\subsection{Definizione 6.8 (Catena trasformazionale)}
+
+Una catena trasformazionale è una composizione di funtori e naturali:
+
+\texttt{Xi\ =\ H\_n\ \ o\ \ ...\ \ o\ \ H\_1} con naturali intermedie.
+
+La catena è ordinativamente affidabile se ogni prefisso mantiene margine positivo e robustezza minima.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Funtori: preservare forma non basta}
+
+Nel classico un funtore è definito da:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  mappa su oggetti;
+\item
+  mappa su morfismi;
+\item
+  preservazione di composizione e identità.
+\end{enumerate}
+
+In OCT questa definizione resta necessaria ma non sufficiente. Due funtori possono essere entrambi validi classicamente e differire drasticamente su qualità ordinativa del trasporto.
+
+Per questo introduciamo il criterio duale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{validità funtoriale classica} (\texttt{Fun\_class});
+\item
+  \textbf{validità funtoriale ordinativa} (\texttt{Fun\_ord}).
+\end{enumerate}
+
+Solo la congiunzione \texttt{Fun\_class\ \ AND\ \ Fun\_ord} autorizza uso forte del trasporto in inferenze operative.
+
+\subsection{4.2 Naturali: quadrato commutativo vs quadrato fertile}
+
+Una trasformazione naturale classica garantisce commutazione dei quadrati. In OCT aggiungiamo una domanda:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i quadrati commutano preservando anche qualità ordinativa?
+\end{enumerate}
+
+Possibile anomalia:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il quadrato commuta formalmente;
+\item
+  uno dei percorsi produce perdita emergenziale critica;
+\item
+  il risultato è ``naturale'' ma non affidabile in senso ordinativo.
+\end{enumerate}
+
+Da qui il criterio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  naturalità classica necessaria;
+\item
+  naturalità ordinativa verificata su classi di casi rilevanti.
+\end{enumerate}
+
+\subsection{4.3 Aggiunzioni: simmetria utile o ciclo dissipativo}
+
+L'aggiunzione \texttt{F\ ⊣\ G} è spesso letta come equilibrio elegante tra due direzioni di traduzione. In OCT questo equilibrio può essere apparente se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{F} preserva bene \texttt{Coh} ma degrada \texttt{Phi};
+\item
+  \texttt{G} recupera forma ma accumula drift su iterazioni.
+\end{enumerate}
+
+Per questo valutiamo unità e counità non solo come dati formali, ma come circuiti operativi. Un ciclo di round-trip deve essere controllato per:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  perdita coerentiva cumulativa;
+\item
+  perdita emergenziale cumulativa;
+\item
+  stabilità su vicinato contestuale.
+\end{enumerate}
+
+\subsection{4.4 Monadi: potere compositivo e rischio di deriva}
+
+Le monadi sono dispositivi di composizione potente. In contesti applicativi possono:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  organizzare pipeline;
+\item
+  incapsulare effetti;
+\item
+  semplificare leggi di composizione.
+\end{enumerate}
+
+In OCT la domanda è: la composizione iterata resta ordinativamente sana?
+
+Pattern di rischio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ogni passo monadico è localmente accettabile;
+\item
+  dopo molte iterazioni emerge drift verso B/C;
+\item
+  la pipeline resta ``ben fatta'' formalmente ma perde funzione reale.
+\end{enumerate}
+
+Per questo proponiamo test su iterazioni:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{T\^{}1,\ T\^{}2,\ ...,\ T\^{}k};
+\item
+  monitoraggio di \texttt{m\_comp} e classe A/B/C;
+\item
+  criterio di soglia per arresto o revisione.
+\end{enumerate}
+
+\subsection{4.5 Comonadi: estrazione di contesto e rischio di rumore}
+
+Le comonadi modellano contesto e coestrazione. In OCT sono preziose quando:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il contesto esplicito migliora diagnosi;
+\item
+  la duplicazione strutturale non esplode in rumore.
+\end{enumerate}
+
+Rischio tipico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la duplicazione contestuale cresce più rapidamente della capacità coerentiva;
+\item
+  il sistema mantiene forma ma perde leggibilità operativa.
+\end{enumerate}
+
+Serve quindi una metrica di ``costo contestuale'' da affiancare a \texttt{Coh/Phi}.
+
+\subsection{4.6 Composizione di funtori e preservazione cumulativa}
+
+Come per i morfismi del Capitolo 4, anche per i funtori vale la distinzione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  preservazione locale del singolo funtore;
+\item
+  preservazione globale della catena.
+\end{enumerate}
+
+Una catena \texttt{H\_n\ o\ ...\ o\ H\_1} può fallire pur avendo elementi singolarmente buoni, per effetto di interfacce trasformazionali deboli.
+
+Criterio pratico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  testare prefissi della catena;
+\item
+  identificare primo punto di caduta sotto soglia;
+\item
+  classificare il fallimento come:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    perdita coerentiva;
+  \item
+    sterilità emergenziale;
+  \item
+    instabilità contestuale.
+  \end{itemize}
+\end{enumerate}
+
+\subsection{4.7 Funtori dimenticanti: quando la semplificazione è legittima}
+
+Il funtore dimenticante è spesso indispensabile per ridurre complessità. In OCT non è ``buono'' o ``cattivo'' in astratto:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  è sicuro su alcune classi;
+\item
+  è degenerativo su altre.
+\end{enumerate}
+
+La regola proposta:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dichiarare in anticipo la classe su cui il dimenticante è usato;
+\item
+  misurare perdita pre/post;
+\item
+  rifiutare il trasporto forte se la perdita supera soglia critica.
+\end{enumerate}
+
+Questo evita che semplificazioni tecniche diventino riduzioni ontologiche implicite.
+
+\subsection{4.8 Naturali tra funtori non equivalenti ordinativamente}
+
+È possibile avere naturali ben definite tra funtori che non sono equivalenti ordinativamente. Questo scenario è importante perché:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la presenza di naturali può dare falsa impressione di compatibilità profonda;
+\item
+  in realtà può esistere divergenza sistemica su robustezza.
+\end{enumerate}
+
+Conclusione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  naturalezza non è certificato di equivalenza ordinativa.
+\end{enumerate}
+
+\subsection{4.9 Regola di accettazione per costrutti trasformazionali}
+
+Proponiamo una regola minima comune a funtori, naturali, aggiunzioni, monadi/comonadi:
+
+un costrutto è ``ordinativamente affidabile'' se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  validità classica verificata;
+\item
+  test ordinativo puntuale superato;
+\item
+  robustezza su catena o iterazione superata;
+\item
+  log di fallimenti e limiti pubblicato.
+\end{enumerate}
+
+Questa regola unifica formalismo e governance operativa.
+
+\subsection{4.10 Pattern tipici di fallimento nel capitolo}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{F-Fun1}: funtore formalmente corretto ma con drift ordinativo alto.
+\item
+  \textbf{F-Nat1}: naturale commutativa con perdita emergenziale lungo un lato del quadrato.
+\item
+  \textbf{F-Adj1}: aggiunzione con ciclo round-trip dissipativo.
+\item
+  \textbf{F-Mon1}: monade con deriva iterativa verso sterilità.
+\item
+  \textbf{F-Com1}: comonade con proliferazione contestuale degenerativa.
+\item
+  \textbf{F-Chain1}: catena trasformazionale con interfaccia debole non individuata.
+\end{enumerate}
+
+Questa tipologia favorisce debugging teorico e sperimentale coerente.
+
+\subsection{4.11 Compatibilità con i capitoli precedenti}
+
+Il capitolo è coerente con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 4: distinzione locale/globale;
+\item
+  Capitolo 5: scarto tra equivalenza classica e ordinativa;
+\item
+  Capitolo 8: spazio A/B/C e invarianti;
+\item
+  Capitolo 11: criteri di falsificabilità.
+\end{enumerate}
+
+Questa compatibilità evita ``isole teoriche'' e mantiene un'unica grammatica del progetto.
+
+\subsection{4.12 Condizione di non-ridondanza del capitolo}
+
+Il capitolo è non ridondante se esiste almeno un caso per ciascuna coppia:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  funtore classico valido / funtore ordinativamente non affidabile;
+\item
+  naturale classica valida / naturale ordinativamente fragile;
+\item
+  aggiunzione classica valida / aggiunzione operativamente dissipativa;
+\item
+  monade classica valida / monade con deriva iterativa;
+\item
+  comonade classica valida / comonade con costo contestuale degenerativo.
+\end{enumerate}
+
+Il programma D03, D04, D05 e i casi applicativi A01-A03 forniscono la base per soddisfare questa condizione.
+
+\subsection{4.13 Pattern di perdita nelle aggiunzioni}
+
+Le aggiunzioni sono spesso usate per costruire ponti eleganti tra descrizioni diverse dello stesso fenomeno. In OCT è utile distinguere almeno tre pattern di perdita nel ciclo aggiuntivo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{P-Adj1 (perdita simmetrica lieve)}\\
+  andata e ritorno degradano poco e in modo bilanciato; il ciclo resta in area A con margine ridotto.
+\item
+  \textbf{P-Adj2 (perdita asimmetrica)}\\
+  una direzione è robusta, l'altra produce caduta stabile di \texttt{Phi}; il ciclo non è neutro.
+\item
+  \textbf{P-Adj3 (perdita cumulativa)}\\
+  singolo round-trip accettabile, iterazione ripetuta con deriva verso B/C.
+\end{enumerate}
+
+Questa classificazione aiuta a evitare un errore comune:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  valutare l'aggiunzione solo su un passo singolo e non sulla sua dinamica iterata.
+\end{enumerate}
+
+\subsection{4.14 Diagnostica duale monade/comonade}
+
+Monadi e comonadi vengono spesso trattate come duali eleganti. In contesti ordinativi la dualità formale non garantisce dualità di stabilità.
+
+Proponiamo una diagnostica duale in quattro controlli:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{controllo di crescita}: come varia il margine su iterazione/coespansione;
+\item
+  \textbf{controllo di rumore}: quanto costo contestuale viene introdotto;
+\item
+  \textbf{controllo di recupero}: quanto bene il sistema recupera dopo perturbazione;
+\item
+  \textbf{controllo di saturazione}: se il sistema converge a punto fisso fertile o sterile.
+\end{enumerate}
+
+Esito possibile:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  monade stabile / comonade fragile;
+\item
+  comonade stabile / monade derivante;
+\item
+  entrambe stabili;
+\item
+  entrambe instabili.
+\end{enumerate}
+
+La teoria guadagna precisione perché evita di inferire proprietà operative da sola simmetria sintattica.
+
+\subsection{4.15 Protocollo minimo per validazione trasformazionale}
+
+Per standardizzare la validazione di funtori, naturali, aggiunzioni e (co)monadi, proponiamo un protocollo minimo in sette passi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dichiarazione del dominio e del contesto \texttt{Omega};
+\item
+  verifica classica del costrutto;
+\item
+  definizione dei set di test rappresentativi;
+\item
+  misura di \texttt{Coh/Phi/Delta} su elementi e immagini;
+\item
+  stress su perturbazioni controllate;
+\item
+  classificazione dei fallimenti (F-Fun/F-Nat/F-Adj/F-Mon/F-Com/F-Chain);
+\item
+  decisione finale con stato (\texttt{validated}, \texttt{in\_proof}, \texttt{revise}, \texttt{reject}).
+\end{enumerate}
+
+Questo protocollo consente confronto coerente tra gruppi, versioni e domini, riducendo l'ambiguità dei risultati.
+
+\subsection{4.16 Trasporto naturale e conservazione del margine}
+
+Un punto tecnico spesso sottovalutato è la conservazione del margine ordinativo lungo una trasformazione naturale.
+
+Dato \texttt{eta:\ F=\textgreater{}G}, introduciamo:
+
+\texttt{Delta\_m\_eta(X)\ :=\ m\_Omega(GX)\ -\ m\_Omega(FX)}.
+
+Interpretazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Delta\_m\_eta\ \textgreater{}=\ 0} su classe test: trasporto conservativo o migliorativo;
+\item
+  \texttt{Delta\_m\_eta\ \textless{}\ 0} sistematico: trasporto dissipativo.
+\end{enumerate}
+
+Questo indicatore non sostituisce la verifica completa, ma offre una metrica rapida per individuare naturali che sembrano buone formalmente e risultano deboli operativamente.
+
+\subsection{4.17 Composizione di naturali e propagazione di instabilità}
+
+Se \texttt{eta:\ F=\textgreater{}G} e \texttt{theta:\ G=\textgreater{}H}, la composta naturale \texttt{theta\ o\ eta} può introdurre propagazione non lineare dell'instabilità.
+
+Caso tipico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{eta} induce perdita lieve;
+\item
+  \texttt{theta} induce perdita lieve;
+\item
+  la composta supera soglia critica.
+\end{enumerate}
+
+Ne segue una regola pratica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  testare sempre anche le composte di naturali, non solo i componenti singoli.
+\end{enumerate}
+
+\subsection{4.18 Criterio di accettazione forte per catene trasformazionali}
+
+Oltre alla regola minima, definiamo una versione forte:
+
+una catena \texttt{Xi} è \textbf{fortemente affidabile} se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  nessun prefisso cade in B/C;
+\item
+  il margine minimo resta sopra \texttt{eta\_chain\ \textgreater{}\ 0};
+\item
+  la varianza del margine resta sotto soglia dichiarata;
+\item
+  i fallimenti osservati sono classificabili e recuperabili senza modifica assiomatica.
+\end{enumerate}
+
+Questo criterio è utile in scenari ad alta criticità (pipeline lunghe, sistemi con feedback, applicazioni cross-domain).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 6.1 (Necessità del criterio di preservazione ordinativa funtoriale)}
+
+Enunciato:
+La sola preservazione classica di composizione/identità non garantisce preservazione ordinativa.
+
+Intuizione:
+il funtore può trasportare forma e perdere qualità operativa.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 6.2 (Naturalità ordinativa non automatica)}
+
+Enunciato:
+La naturalità classica di \texttt{eta:\ F=\textgreater{}G} non implica naturalità ordinativa.
+
+Intuizione:
+quadrati commutativi possono essere ordinativamente asimmetrici per perdita su uno dei percorsi.
+
+Stato: \texttt{in\_review}.
+
+\subsection{Teorema 6.3 (Vincolo di round-trip per aggiunzioni ordinative)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{F\ ⊣\ G} classica;
+\item
+  test su unità/counità in \texttt{Omega};
+\item
+  controllo accumulo perdita su iterazioni limitate.
+\end{enumerate}
+
+Tesi:
+L'aggiunzione è ordinativamente valida solo se il round-trip resta entro margine dichiarato.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la struttura classica garantisce compatibilità di base;
+\item
+  il round-trip misura stabilità operativa del trasporto bidirezionale;
+\item
+  superata la soglia di perdita, l'aggiunzione resta formale ma non affidabile.
+\end{enumerate}
+
+Conseguenze:
+fornisce criterio operativo per usare aggiunzioni in pipeline reali.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Teorema 6.4 (Deriva iterativa monadica)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  monade \texttt{T} classica;
+\item
+  esiste catena \texttt{T\^{}k} su classe operativa;
+\item
+  monitoraggio di \texttt{Coh/Phi} per \texttt{k} crescente.
+\end{enumerate}
+
+Tesi:
+È possibile classificare \texttt{T} come ordinativamente stabile o derivante in base a trend di margine.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la monade definisce dinamica iterativa naturale;
+\item
+  il trend del margine compositivo distingue stabilità da deriva;
+\item
+  la classificazione è indipendente dal singolo passo isolato.
+\end{enumerate}
+
+Conseguenze:
+introduce controllo longitudinale per monadi in contesti applicativi.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Proposizione 6.5 (Sicurezza condizionata dei funtori dimenticanti)}
+
+Enunciato:
+Un funtore dimenticante può essere sicuro su classi specifiche e degenerativo su altre.
+
+Intuizione:
+la perdita informativa non è uniforme; dipende dal tipo di struttura ``dimenticata''.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 6.6 (Stabilità di catena trasformazionale)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  catena \texttt{Xi\ =\ H\_n\ \ o\ \ ...\ \ o\ \ H\_1};
+\item
+  controllo di preservazione su prefissi;
+\item
+  assenza di interfacce trasformazionali deboli oltre soglia.
+\end{enumerate}
+
+Tesi:
+\texttt{Xi} è ordinativamente affidabile sul dominio dichiarato.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la verifica su prefissi evita masking del fallimento finale;
+\item
+  l'assenza di interfacce deboli impedisce accumulo nascosto;
+\item
+  segue affidabilità globale della catena.
+\end{enumerate}
+
+Conseguenze:
+fissa un criterio pratico per architetture multi-funtoriali.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Proposizione 6.7 (Non-equivalenza tra dualità formale e dualità di stabilità)}
+
+Enunciato:
+La dualità formale tra monade e comonade non implica dualità di comportamento ordinativo.
+
+Intuizione:
+la simmetria algebrica può coesistere con asimmetria dei costi contestuali e della deriva.
+
+Stato: \texttt{in\_review}.
+
+\subsection{Teorema 6.8 (Conservazione condizionata del margine naturale)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{eta:\ F=\textgreater{}G} naturale classica;
+\item
+  esiste classe di test \texttt{K};
+\item
+  \texttt{Delta\_m\_eta(X)\ \textgreater{}=\ -eps\_m} per ogni \texttt{X\ in\ K}, con \texttt{eps\_m} sotto soglia critica.
+\end{enumerate}
+
+Tesi:
+Il trasporto naturale \texttt{eta} è ordinativamente accettabile su \texttt{K}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la naturalità classica garantisce coerenza diagrammatica;
+\item
+  il controllo su \texttt{Delta\_m\_eta} limita dissipazione operativa;
+\item
+  la soglia \texttt{eps\_m} esplicita il margine tollerabile.
+\end{enumerate}
+
+Conseguenze:
+fornisce un criterio verificabile per approvare naturali in pipeline reali.
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per progettazione di traduzioni tra modelli}
+
+Ogni traduzione funtoriale dovrebbe esplicitare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  cosa preserva formalmente;
+\item
+  cosa preserva ordinativamente;
+\item
+  dove introduce perdita controllata.
+\end{enumerate}
+
+\subsection{6.2 Per review di trasformazioni naturali}
+
+È utile affiancare al diagramma commutativo una tabella con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  classe A/B/C per ciascun percorso;
+\item
+  differenza di \texttt{Coh/Phi} tra i lati;
+\item
+  decisione finale (\texttt{accepted}, \texttt{revise}, \texttt{reject}).
+\end{enumerate}
+
+\subsection{6.3 Per applicazioni con aggiunzioni}
+
+Nelle applicazioni è consigliato testare round-trip su casi non banali:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  casi nominali;
+\item
+  casi al bordo;
+\item
+  casi rumorosi.
+\end{enumerate}
+
+Solo così si evita di validare aggiunzioni ``pulite'' ma non robuste.
+
+\subsection{6.4 Per monadi/comonadi in pipeline iterative}
+
+Serve monitoraggio a finestra:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  trend su \texttt{k} iterazioni;
+\item
+  allerta su deriva progressiva;
+\item
+  trigger automatico di revisione al superamento di soglia.
+\end{enumerate}
+
+\subsection{6.5 Per continuità col Capitolo 7}
+
+Le nozioni introdotte qui saranno usate in Capitolo 7 per:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  strutture monoidali ordinarie e condizionate;
+\item
+  categorie arricchite con metrica ordinativa;
+\item
+  fibrations e topos con vincoli di robustezza trasformazionale.
+\end{enumerate}
+
+\subsection{6.6 Per governance editoriale}
+
+Ogni release dovrebbe mantenere una sezione ``trasporto trasformazionale'' con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  funtori principali usati;
+\item
+  stato di affidabilità ordinativa;
+\item
+  fallimenti noti e condizioni di uso.
+\end{enumerate}
+
+Questo riduce regressioni e migliora leggibilità del manoscritto evolutivo.
+
+\subsection{6.7 Per integrazione con benchmark futuri}
+
+Nel disegno dei benchmark dei Capitoli 12-13 è utile introdurre suite dedicate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{FUN\_SUITE}: preservazione funtoriale;
+\item
+  \texttt{NAT\_SUITE}: coerenza dei quadrati naturali con margine;
+\item
+  \texttt{ADJ\_SUITE}: round-trip e perdita cumulativa;
+\item
+  \texttt{MONCOM\_SUITE}: deriva iterativa e costo contestuale.
+\end{enumerate}
+
+Questa segmentazione rende più semplice attribuire cause e responsabilità dei fallimenti.
+
+\subsection{6.8 Per comunicazione dei risultati}
+
+Per evitare ambiguità, ogni risultato trasformazionale dovrebbe riportare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  costrutto classico coinvolto;
+\item
+  classe di test usata;
+\item
+  indicatori di preservazione (\texttt{DeltaCoh}, \texttt{DeltaPhi}, \texttt{Drift}, \texttt{Delta\_m});
+\item
+  stato finale e motivazione.
+\end{enumerate}
+
+Questo formato consente lettura rapida da parte di matematici, ingegneri e revisori interdisciplinari.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo non chiude tutte le prove complete su aggiunzioni e monadi/comonadi;
+\item
+  la metrica di costo contestuale per comonadi è introdotta in forma minima;
+\item
+  la stabilità di catene lunghe richiede campagne di benchmark dedicate.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  confondere preservazione classica con preservazione ordinativa;
+\item
+  validare naturalità senza analisi dei due percorsi;
+\item
+  usare monadi iterative senza controllo di deriva;
+\item
+  assumere sicurezza dei funtori dimenticanti fuori dalla classe validata;
+\item
+  estendere risultati di un dominio a un altro senza mapping contestuale.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che ogni funtore classico debba diventare ordinativamente ammissibile;
+\item
+  che ogni aggiunzione utile teoricamente sia automaticamente utile operativamente;
+\item
+  che monadi/comonadi classiche siano sempre stabili in scenari reali iterativi.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C6.1 & La preservazione funtoriale classica è necessaria ma non sufficiente per affidabilità ordinativa & formale & S1 & validated \\
+C6.2 & Naturalità classica e naturalità ordinativa possono divergere & formale & S2 & in\_review \\
+C6.3 & Le aggiunzioni richiedono test di round-trip ordinativo per uso forte & formale-operativo & S2 & in\_proof \\
+C6.4 & Le monadi richiedono analisi di deriva su iterazione, non solo verifica locale & formale-operativo & S2 & in\_proof \\
+C6.5 & I funtori dimenticanti sono sicuri solo su classi dichiarate & metodologico & S1 & validated \\
+C6.6 & La stabilità di catene trasformazionali richiede controllo su prefissi e interfacce & formale-operativo & S2 & in\_proof \\
+C6.7 & Il capitolo fornisce il ponte tecnico necessario verso monoidali/enriched/fibrations/topos ordinativi & programmatico & S1 & in\_review \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 7}
+
+Il Capitolo 6 ha esteso il livello trasformazionale della teoria:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  funtori e naturali con vincolo ordinativo;
+\item
+  aggiunzioni con controllo di round-trip;
+\item
+  monadi/comonadi con monitoraggio di deriva e costo contestuale.
+\end{enumerate}
+
+Il Capitolo 7 porterà questa estensione a strutture categoriali avanzate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  monoidali;
+\item
+  arricchite;
+\item
+  fibrations;
+\item
+  topos e dinamiche categoriali.
+\end{enumerate}
+
+In sintesi: il Capitolo 6 stabilisce come trasportare la validità ordinativa; il Capitolo 7 mostrerà come farla vivere in strutture ad alta complessità.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_04\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_05\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_08\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_09\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}.
+\item
+  Riehl, E. (2016). \emph{Category Theory in Context}.
+\item
+  Spivak, D. (2014). \emph{Category Theory for the Sciences}.
+\end{enumerate}

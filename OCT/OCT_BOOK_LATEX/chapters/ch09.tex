@@ -1,0 +1,1273 @@
+\chapter{Capitolo 9 - Teoremi fondativi F01-F10: enunciati, proof sketch, conseguenze}
+
+\section{1. Problema}
+
+I capitoli precedenti hanno costruito il telaio teorico di OCT:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  crisi della sola validità sintattica;
+\item
+  passaggio ontologico da cosa a singolarità;
+\item
+  assiomatica O1-O7 della categoria ordinativa;
+\item
+  spazio di validità \texttt{S\_Omega} con regioni A/B/C e invarianti I1-I5.
+\end{enumerate}
+
+Questo non basta ancora per una fondazione completa. Una teoria non entra nella grammatica della scienza solo perché possiede un lessico elegante o una struttura assiomatica coerente. Diventa scienza quando produce enunciati teorematici che:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  sono formalmente tracciabili;
+\item
+  distinguono casi reali da casi apparenti;
+\item
+  guidano protocolli di prova e controprova.
+\end{enumerate}
+
+Il compito del capitolo è quindi fissare i \textbf{dieci teoremi fondativi F01-F10} in forma sufficientemente stabile da sostenere:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il programma differenziale (Capitolo 10);
+\item
+  la critica dei limiti e dei controesempi (Capitolo 11);
+\item
+  la validazione empirico-formale dei capitoli metodologici successivi.
+\end{enumerate}
+
+La difficoltà è metodologica oltre che formale. Se i teoremi vengono espressi in forma troppo forte rispetto all'evidenza disponibile, la teoria degrada in overclaiming. Se sono espressi in forma troppo prudente, non generano avanzamento. Il capitolo adotta quindi una disciplina esplicita:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  enunciato formale;
+\item
+  ipotesi dichiarate;
+\item
+  proof sketch verificabile;
+\item
+  conseguenze teorico-operative;
+\item
+  stato di maturità (\texttt{validated}, \texttt{in\_proof}, \texttt{revise}).
+\end{enumerate}
+
+\subsection{1.1 Obiettivo del blocco fondativo}
+
+L'obiettivo non è ``chiudere definitivamente'' l'intera teorematica OCT in un singolo passaggio, ma stabilire un blocco fondativo abbastanza forte da rendere non ridondante l'estensione ordinativa rispetto al classico.
+
+In termini sintetici, i teoremi F01-F10 devono garantire tre risultati:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{separazione}: esistono casi classically-valid ma non OCT-valid;
+\item
+  \textbf{chiusura condizionata}: la composizione ordinativa è governata da regole esplicite;
+\item
+  \textbf{conservatività}: il classico è recuperabile come caso limite.
+\end{enumerate}
+
+\subsection{1.2 Vincolo editoriale del capitolo}
+
+Per coerenza con il template del libro, ogni teorema viene presentato in forma uniforme. Le prove complete saranno sviluppate nei cicli successivi di validazione. Qui fissiamo la versione canonica per uso nel manoscritto fondativo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi del capitolo è articolata in sei enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  I teoremi F01-F10 costituiscono un blocco fondativo coerente con O1-O7.
+\item
+  Il blocco dimostra che OCT non è una ridenominazione del classico, ma un'estensione conservativa selettiva.
+\item
+  La selettività ordinativa emerge da tre criteri congiunti: coerenza, emergenza, robustezza contestuale.
+\item
+  I teoremi fondativi producono conseguenze operative dirette su composizione, equivalenza, limiti, colimiti e osservazione.
+\item
+  Lo stato di maturità dei singoli teoremi è esplicito e tracciabile; nessun enunciato viene presentato come già chiuso quando non lo è.
+\item
+  Il blocco F01-F10 è sufficiente per sostenere il passaggio ai teoremi differenziali D01-D05 e applicativi A01-A03.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+Prima degli enunciati, fissiamo il lessico minimo del capitolo.
+
+\subsection{Definizione 9.1 (Validità ordinativa)}
+
+\texttt{OCT\_Valid\_Omega(D)} vale se e solo se:
+
+\texttt{Syn(D)\ and\ Coh\_Omega(D)\ \textgreater{}=\ tau\ and\ Phi\_Omega(D)\ !=\ 0}.
+
+\subsection{Definizione 9.2 (Equivalenza ordinativa)}
+
+Due oggetti o strutture sono ordinativamente equivalenti in \texttt{Omega} se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  sono correlabili da morfismi ammissibili in entrambe le direzioni;
+\item
+  preservano invarianti ordinativi rilevanti entro tolleranze dichiarate.
+\end{enumerate}
+
+\subsection{Definizione 9.3 (Composizione coerente)}
+
+Una composizione \texttt{g\ o\ f} è coerente in \texttt{Omega} se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  è sintatticamente definita;
+\item
+  soddisfa il gate ordinativo su \texttt{Coh} e \texttt{Phi};
+\item
+  resta stabile su vicinato contestuale ammissibile.
+\end{enumerate}
+
+\subsection{Definizione 9.4 (Controesempio ordinativo)}
+
+Un controesempio ordinativo è un caso con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  validità classica soddisfatta;
+\item
+  violazione almeno di una condizione ordinativa.
+\end{enumerate}
+
+\subsection{Definizione 9.5 (Recupero classico)}
+
+Il recupero classico è la riduzione in cui i vincoli ordinativi vengono disattivati o resi trivialmente veri, mostrando che OCT contiene il quadro classico come caso limite.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Architettura dei teoremi F01-F10}
+
+Il blocco fondativo è organizzato in quattro famiglie.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Differenza ontologica}: F01, F02, F07.
+\item
+  \textbf{Struttura compositiva}: F03, F04.
+\item
+  \textbf{Universalità selettiva}: F05, F06.
+\item
+  \textbf{Meta-struttura contestuale e riduzione}: F08, F09, F10.
+\end{enumerate}
+
+Questa architettura evita dispersione: ogni teorema copre un nodo critico del confronto classico/OCT.
+
+\subsection{4.2 Teorema F01 - Non-collasso della singolarità}
+
+\textbf{Teorema F01 (Non-collasso della singolarità).}\\
+L'isomorfismo categoriale classico non implica, in generale, equivalenza ordinativa di funzione singolare in \texttt{Omega}.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{A} e \texttt{B} sono isomorfi nel senso classico;
+\item
+  esiste singolarizzazione \texttt{S\_Omega} su \texttt{A} e \texttt{B};
+\item
+  almeno un invariante funzionale ordinativo differisce oltre soglia.
+\end{enumerate}
+
+Tesi:
+\texttt{A\ \ \textasciitilde{}=\ \ B} non implica \texttt{A\ \textasciitilde{}ord,Omega\ B}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  l'isomorfismo garantisce preservazione di struttura classica;
+\item
+  la funzione singolare può dipendere da profilo relazionale e traiettoria storica non catturati dall'isomorfismo;
+\item
+  se gli invarianti ordinativi divergono oltre tolleranza, l'equivalenza ordinativa decade.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  blocca il collasso ``isomorfo = uguale in tutto'' nei domini reali complessi;
+\item
+  giustifica l'esistenza di un livello ordinativo distinto.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.3 Teorema F02 - Ammissibilità generativa dei morfismi}
+
+\textbf{Teorema F02 (Ammissibilità generativa dei morfismi).}\\
+Esistono morfismi formalmente ben tipizzati che non sono OCT-validi.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{f:\ A-\textgreater{}B} è ben tipizzato;
+\item
+  \texttt{Coh\_Omega(f)} o \texttt{Phi\_Omega(f)} viola il gate.
+\end{enumerate}
+
+Tesi:
+\texttt{Syn(f)} non implica \texttt{OCT\_Valid\_Omega(f)}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  O1 assicura che il criterio ordinativo non contraddice la tipizzazione;
+\item
+  O2-O3 introducono vincoli aggiuntivi indipendenti dalla sola correttezza sintattica;
+\item
+  basta un caso con \texttt{Phi=0} o \texttt{Coh\textless{}tau} per ottenere il controesempio.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dimostra che la tipizzazione è necessaria ma non sufficiente;
+\item
+  fonda il concetto di filtro ordinativo.
+\end{enumerate}
+
+Stato: \texttt{validated} (in forma logica), con estensione empirica in corso.
+
+\subsection{4.4 Teorema F03 - Chiusura compositiva coerente}
+
+\textbf{Teorema F03 (Chiusura compositiva coerente).}\\
+Sotto stabilità di coerenza locale, la composizione di morfismi OCT-validi resta OCT-valida.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{f:\ A-\textgreater{}B}, \texttt{g:\ B-\textgreater{}C} sono OCT-validi;
+\item
+  il gate sulla composta \texttt{g\ o\ f} è soddisfatto;
+\item
+  le perturbazioni locali non spingono la composta sotto soglia.
+\end{enumerate}
+
+Tesi:
+\texttt{OCT\_Valid\_Omega(f)\ and\ OCT\_Valid\_Omega(g)} implica \texttt{OCT\_Valid\_Omega(g\ o\ f)}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dalla composizione classica otteniamo definibilità sintattica;
+\item
+  dalla stabilità di coerenza locale otteniamo persistenza di \texttt{Coh\textgreater{}=tau};
+\item
+  dalla non-sterilità emergenziale otteniamo \texttt{Phi!=0} sulla composta.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  rende possibile la costruzione di pipeline ordinative lunghe;
+\item
+  fornisce base per i risultati su sistemi modulari.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.5 Teorema F04 - Neutralità ordinativa dell'identità}
+
+\textbf{Teorema F04 (Neutralità ordinativa dell'identità).}\\
+\texttt{id\_A} è ordinativamente neutra solo se preserva la funzione singolare in \texttt{Omega}.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{id\_A} è identità classica;
+\item
+  esiste misura ordinativa su stato prima/dopo identità.
+\end{enumerate}
+
+Tesi:
+neutralità ordinativa richiede assenza di degradazione su \texttt{Coh} e \texttt{Phi}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la neutralità classica è tautologica sul piano sintattico;
+\item
+  sul piano ordinativo serve mostrare che l'auto-applicazione non induce perdita funzionale;
+\item
+  se si osserva decremento sistematico, l'identità non è neutra nel senso ordinativo.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  raffina il concetto di identità per sistemi dinamici reali;
+\item
+  abilità diagnostica precoce su degenerazione interna.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.6 Teorema F05 - Universalità selettiva dei limiti}
+
+\textbf{Teorema F05 (Universalità selettiva dei limiti).}\\
+Non ogni limite classico è limite ordinativo reale.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  esistenza di limite classico \texttt{Lim(D)} per un diagramma \texttt{D};
+\item
+  disponibilità di misura ordinativa sul cono universale.
+\end{enumerate}
+
+Tesi:
+\texttt{Lim(D)} è ordinativamente accettabile solo se soddisfa il gate \texttt{Coh/Phi}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la proprietà universale classica garantisce fattorizzazione strutturale;
+\item
+  la fattorizzazione può essere emergenzialmente sterile o coerentivamente fragile;
+\item
+  il filtro ordinativo seleziona solo limiti con funzione reale non degenerativa.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  evita uso automatico di limiti formalmente corretti ma operativamente vuoti;
+\item
+  prepara la nozione di limite ordinativo nei capitoli 4-7.
+\end{enumerate}
+
+Stato: \texttt{revise}.
+
+\subsection{4.7 Teorema F06 - Universalità selettiva dei colimiti}
+
+\textbf{Teorema F06 (Universalità selettiva dei colimiti).}\\
+Non ogni colimite classico preserva validità ordinativa.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  esistenza di \texttt{Colim(D)} in senso classico;
+\item
+  valutazione ordinativa dell'aggregazione risultante.
+\end{enumerate}
+
+Tesi:
+\texttt{Colim(D)} è ordinativamente valido solo in presenza di coerenza sopra soglia ed emergenza non nulla.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il colimite classico aggrega attraverso coconi universali;
+\item
+  alcune aggregazioni possono aumentare connessione ma annullare funzione emergente;
+\item
+  il criterio ordinativo distingue aggregazione strutturale da integrazione reale.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  introduce selettività nell'uso di colimiti in sistemi complessi;
+\item
+  riduce falsi positivi di ``integrazione'' dovuti a sola connettività.
+\end{enumerate}
+
+Stato: \texttt{revise}.
+
+\subsection{4.8 Teorema F07 - Equivalenza ordinativa vincolata}
+
+\textbf{Teorema F07 (Equivalenza ordinativa vincolata).}\\
+Equivalenza classica di categorie non implica equivalenza ordinativa.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  due categorie \texttt{C1}, \texttt{C2} sono equivalenti in senso classico;
+\item
+  esiste confronto di invarianti ordinativi su famiglie di oggetti/morfismi corrispondenti;
+\item
+  almeno un invariante chiave diverge oltre tolleranza.
+\end{enumerate}
+
+Tesi:
+\texttt{C1\ \ \textasciitilde{}=\ \ C2} non implica \texttt{C1\ \ \textasciitilde{}=\ ord\ C2}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  l'equivalenza classica preserva struttura fino a isomorfismo naturale;
+\item
+  gli invarianti ordinativi dipendono da stabilità contestuale e funzione emergente;
+\item
+  divergenze sistematiche su tali invarianti negano equivalenza ordinativa.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  rafforza la non-ridondanza di OCT su scala categoriale globale;
+\item
+  giustifica benchmark comparativi tra architetture formalmente equivalenti.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.9 Teorema F08 - Non-degenerazione minimale}
+
+\textbf{Teorema F08 (Non-degenerazione minimale).}\\
+Un diagramma non vuoto con \texttt{Phi\_Omega(D)=0} non è OCT-reale.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{D} è sintatticamente non vuoto e ben composto;
+\item
+  \texttt{Phi\_Omega(D)=0}.
+\end{enumerate}
+
+Tesi:
+\texttt{OCT\_Valid\_Omega(D)} è falso.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la definizione di validità ordinativa include \texttt{Phi!=0} come condizione necessaria;
+\item
+  la violazione di questa condizione nega direttamente l'ammissibilità;
+\item
+  dunque il diagramma è classificato in regione di sterilità.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  stabilisce il criterio minimo anti-sterilità;
+\item
+  fornisce base per controesempi D02 e applicativo A03.
+\end{enumerate}
+
+Stato: \texttt{validated} (nella forma assiomatica minimale).
+
+\subsection{4.10 Teorema F09 - Osservatore interno}
+
+\textbf{Teorema F09 (Osservatore interno).}\\
+La realtà ordinativa è invariabile per cambio di notazione equivalente, non per cambio arbitrario di contesto osservativo.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  trasformazione notazionale \texttt{N} che preserva struttura e protocollo;
+\item
+  trasformazione contestuale \texttt{T} che altera variabili osservative sostanziali.
+\end{enumerate}
+
+Tesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{N} preserva classificazione ordinativa;
+\item
+  \texttt{T} può alterarla in modo legittimo.
+\end{enumerate}
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  l'invarianza sintattica garantisce equivalenza descrittiva;
+\item
+  il contesto osservativo entra nella definizione stessa di \texttt{Coh} e \texttt{Phi};
+\item
+  cambiare \texttt{Omega} senza regole di trasporto equivale a cambiare il problema.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  chiarisce il ruolo epistemico del contesto;
+\item
+  impedisce l'uso improprio di confronti cross-domain non normalizzati.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.11 Teorema F10 - Recupero classico}
+
+\textbf{Teorema F10 (Recupero classico).}\\
+La category theory classica si recupera come caso limite di OCT quando i vincoli ordinativi sono disattivati.
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  struttura OCT con componente classica intatta;
+\item
+  vincoli ordinativi resi triviali o inattivi (\texttt{tau} minimale, gating non restrittivo in regime formale astratto).
+\end{enumerate}
+
+Tesi:
+il comportamento strutturale risultante coincide con il quadro classico.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  O1 garantisce conservazione sintattica;
+\item
+  rimuovendo il potere selettivo di O2-O7 resta la sola grammatica classica;
+\item
+  ne segue riduzione conservativa.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  esclude la lettura di OCT come rottura antitetica;
+\item
+  stabilisce continuità teorica e compatibilità didattica.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\subsection{4.12 Coerenza interna del blocco F01-F10}
+
+Il blocco presenta una progressione logica controllata:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  F01-F02 dimostrano differenza locale tra validità classica e validità ordinativa;
+\item
+  F03-F04 governano composizione e identità in chiave non-degenerativa;
+\item
+  F05-F06 estendono la selettività a limiti e colimiti;
+\item
+  F07 scala la differenza al livello di equivalenza categoriale;
+\item
+  F08 fornisce criterio minimo anti-sterilità;
+\item
+  F09 controlla il ruolo dell'osservazione;
+\item
+  F10 chiude con riduzione conservativa al classico.
+\end{enumerate}
+
+Questa sequenza è intenzionale: evita sia frammentazione teorematica sia sovrapposizione ridondante.
+
+\subsection{4.13 Matrice di maturità teorematica}
+
+Per rendere auditabile lo stato attuale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{validated}: F02 (forma logica), F08 (forma assiomatica minima);
+\item
+  \texttt{in\_proof}: F01, F03, F04, F07, F09, F10;
+\item
+  \texttt{revise}: F05, F06.
+\end{enumerate}
+
+Questa distribuzione è coerente con la strategia editoriale del libro: dichiarare chiaramente dove la teoria è già forte e dove richiede ulteriore chiusura.
+
+\subsection{4.14 Mappa dipendenze e ordine logico di dimostrazione}
+
+Per evitare salti inferenziali, riportiamo una mappa di dipendenze operative, utile sia per la lettura sia per la validazione.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{F01} dipende da O1, M01, M05: apre la separazione isomorfismo/funzione singolare.
+\item
+  \textbf{F02} dipende da O2, M02: introduce la frattura tipizzazione/ammissibilità.
+\item
+  \textbf{F03} dipende da O3, M03: formalizza la chiusura compositiva condizionata.
+\item
+  \textbf{F04} dipende da O1, O3, M04: raffina la nozione di identità in senso dinamico.
+\item
+  \textbf{F05} dipende da O3, O5, M08: seleziona limiti classici tramite gate ordinativo.
+\item
+  \textbf{F06} dipende da O3, O5, M09: seleziona colimiti tramite controllo di emergenza.
+\item
+  \textbf{F07} dipende da O1, O5, O7, M06: scala la differenza al livello di equivalenza categoriale.
+\item
+  \textbf{F08} dipende da O6, M07, M27: formalizza la non-degenerazione minima.
+\item
+  \textbf{F09} dipende da O7, M23, M24: distingue invarianza notazionale da invarianza contestuale.
+\item
+  \textbf{F10} dipende da O1-O7, M30: chiude con riduzione conservativa al classico.
+\end{enumerate}
+
+Da questa lista emerge un ordine tecnico consigliato per la chiusura formale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  chiudere prima F03/F08/F10 (nucleo di coerenza globale);
+\item
+  consolidare F01/F02/F07 (dimostrazione di non-ridondanza);
+\item
+  rifinire F04/F05/F06/F09 (estensioni strutturali e contestuali).
+\end{enumerate}
+
+Razionale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  senza F03 e F08 la nozione di ammissibilità resta fragile;
+\item
+  senza F10 la conservatività resta implicita;
+\item
+  senza F01/F07 la differenza col classico rischia di apparire solo retorica.
+\end{enumerate}
+
+Questa gerarchia non è un vincolo assoluto, ma una strategia che minimizza lavoro ridondante nei cicli di validazione.
+
+\subsection{4.15 Schemi di confutazione per F01-F10}
+
+Per mantenere il capitolo falsificabile, ogni teorema deve avere almeno un criterio di confutazione esplicito.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{F01 fallisce} se si dimostra che ogni isomorfismo classico preserva sempre tutti gli invarianti ordinativi rilevanti.
+\item
+  \textbf{F02 fallisce} se non esiste alcun morfismo ben tipizzato che violi gate \texttt{Coh/Phi}.
+\item
+  \textbf{F03 fallisce} se si produce una composta che soddisfa ipotesi e tuttavia perde validità ordinativa.
+\item
+  \textbf{F04 fallisce} se un'identità con perdita misurabile su \texttt{Phi} resta comunque neutra per definizione formale adottata.
+\item
+  \textbf{F05 fallisce} se ogni limite classico risulta sempre ordinativamente valido senza eccezioni.
+\item
+  \textbf{F06 fallisce} se ogni colimite classico preserva sempre coerenza ed emergenza sopra soglia.
+\item
+  \textbf{F07 fallisce} se ogni equivalenza classica di categorie induce sempre equivalenza ordinativa.
+\item
+  \textbf{F08 fallisce} se esiste un diagramma con \texttt{Phi=0} classificabile comunque come OCT-reale.
+\item
+  \textbf{F09 fallisce} se il cambio arbitrario di contesto non altera mai classificazione ordinativa.
+\item
+  \textbf{F10 fallisce} se la disattivazione dei vincoli ordinativi non restituisce il comportamento classico.
+\end{enumerate}
+
+Questi criteri hanno una funzione precisa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  impedire che i teoremi diventino enunciati non falsificabili;
+\item
+  guidare la progettazione dei benchmark in modo mirato;
+\item
+  rendere trasparente il passaggio \texttt{in\_proof\ -\textgreater{}\ validated}.
+\end{enumerate}
+
+In termini di metodo, OCT non richiede che ogni criterio di confutazione sia già osservato empiricamente, ma richiede che sia dichiarabile in forma controllata. La teoria resta così aperta alla revisione senza perdere struttura.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 9.1 (Copertura del nucleo assiomatico)}
+
+Enunciato:
+Ogni assioma O1-O7 è utilizzato da almeno un teorema del blocco F01-F10.
+
+Intuizione:
+Il programma fondativo non lascia assiomi ``decorativi'': ogni assioma produce conseguenze.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 9.2 (Non-ridondanza locale minima)}
+
+Enunciato:
+Esiste almeno una coppia di teoremi \texttt{Fi}, \texttt{Fj} con classi di conseguenze non equivalenti.
+
+Intuizione:
+Per esempio, F03 governa chiusura compositiva, F09 governa invarianza osservativa: non sono riducibili l'uno all'altro.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 9.3 (Sufficienza strutturale del blocco fondativo)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  validità di F01-F04 e F08-F10 in forma operativa;
+\item
+  revisione controllata di F05-F06.
+\end{enumerate}
+
+Tesi:
+Il blocco è sufficiente per fondare il passaggio ai teoremi differenziali D01-D05 senza incoerenze strutturali.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la differenza classico/OCT è già dimostrata localmente e globalmente;
+\item
+  la composizione e l'identità ordinative sono regolate;
+\item
+  la dimensione contestuale è formalmente inclusa;
+\item
+  il recupero classico impedisce contraddizioni di base.
+\end{enumerate}
+
+Conseguenze:
+fornisce la base per il Capitolo 10.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Teorema 9.4 (Compatibilità con lo spazio di validità del Capitolo 8)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  adozione di regioni A/B/C e invarianti I1-I5;
+\item
+  interpretazione dei teoremi F01-F10 tramite \texttt{Coh}, \texttt{Phi}, \texttt{Delta}.
+\end{enumerate}
+
+Tesi:
+Ogni teorema fondativo ammette una traduzione in criteri classificativi nello spazio \texttt{S\_Omega}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  F02/F08 mappano direttamente alla separazione tra A e B/C;
+\item
+  F03/F04 usano dinamica e persistenza in A;
+\item
+  F05-F07 distinguono universalità/ equivalenza con gate ordinativo;
+\item
+  F09-F10 governano trasporto contestuale e riduzione limite.
+\end{enumerate}
+
+Conseguenze:
+chiude il circuito assiomi-metriche-teoremi.
+
+Stato: \texttt{validated} (a livello di schema).
+
+\subsection{Teorema 9.5 (Tracciabilità necessaria della maturità teorematica)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  per ogni teorema \texttt{Fxx} è disponibile stato (\texttt{validated}, \texttt{in\_proof}, \texttt{revise});
+\item
+  esiste claim ledger con mappatura evidenza \texttt{S0-S3};
+\item
+  ogni variazione di stato è accompagnata da motivazione e riferimento a nuove prove o controprove.
+\end{enumerate}
+
+Tesi:
+La maturità del blocco F01-F10 è auditabile in modo inter-soggettivo.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la tracciabilità degli stati rende esplicito il grado di fiducia corrente;
+\item
+  la mappatura \texttt{S0-S3} lega forma teorica e qualità dell'evidenza;
+\item
+  la motivazione delle transizioni impedisce salti non giustificati;
+\item
+  segue che la maturità non dipende da autorità implicita, ma da log verificabile.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  migliora la qualità della revisione tra pari;
+\item
+  riduce il rischio di regressioni silenziose nelle versioni successive;
+\item
+  favorisce integrazione con pipeline pubbliche (GitHub/Zenodo/OSF/HF) senza perdita di contesto.
+\end{enumerate}
+
+Stato: \texttt{validated}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per la stesura dei capitoli 10 e 11}
+
+Il blocco F01-F10 fornisce una traccia precisa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i teoremi differenziali dovranno mostrare scarti strutturali misurabili;
+\item
+  i controesempi del Capitolo 11 dovranno riferirsi esplicitamente a una violazione di ipotesi Fxx.
+\end{enumerate}
+
+In questo modo, la narrativa resta controllata da logica teorematica.
+
+\subsection{6.2 Per la validazione empirico-formale}
+
+Ogni teorema con stato \texttt{in\_proof} o \texttt{revise} dovrebbe avere:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  un set minimo di casi positivi;
+\item
+  un set minimo di controesempi;
+\item
+  criterio esplicito di fallimento.
+\end{enumerate}
+
+Questa disciplina accelera il passaggio da manoscritto a preprint tecnico robusto.
+
+\subsection{6.3 Per la governance delle release}
+
+Per ogni release del framework OCT è consigliato allegare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  tabella F01-F10 con stato aggiornato;
+\item
+  modifiche di ipotesi o soglie;
+\item
+  evidenze nuove che motivano il cambio di stato.
+\end{enumerate}
+
+Questo rende trasparente l'evoluzione teorica e riduce ambiguità tra versioni.
+
+\subsection{6.4 Per i benchmark su repository pubblici}
+
+La pubblicazione su GitHub/Zenodo/OSF/HF beneficia di una convenzione uniforme:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  benchmark etichettati con riferimento al teorema target (\texttt{F03}, \texttt{F08}, ecc.);
+\item
+  output classificato in termini A/B/C/D;
+\item
+  report con claim ledger coerente con \texttt{S0-S3}.
+\end{enumerate}
+
+Così il lettore esterno collega immediatamente risultato empirico e nodo teorico.
+
+\subsection{6.5 Per la comunicazione interdisciplinare}
+
+Il blocco F01-F10 è utile anche oltre la matematica pura, perché:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  traduce differenze ontologiche in criteri operativi;
+\item
+  permette dialogo con scienze computazionali, sociali e cognitive senza perdere formalità.
+\end{enumerate}
+
+La condizione è mantenere sempre separati:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  enunciato formale;
+\item
+  interpretazione dominio-specifica;
+\item
+  evidenza empirica.
+\end{enumerate}
+
+\subsection{6.6 Piano di chiusura operativo per F01-F10}
+
+Per portare il blocco verso stato preprint-ready è utile una procedura in tre cicli.
+
+\textbf{Ciclo A - Chiusura nucleo}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  chiusura formale di F03, F08, F10;
+\item
+  definizione univoca dei modelli di perturbazione per robustezza locale;
+\item
+  validazione incrociata su almeno due famiglie di benchmark indipendenti.
+\end{enumerate}
+
+\textbf{Ciclo B - Chiusura differenziale}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  consolidamento F01, F02, F07 con controesempi costruttivi tracciati;
+\item
+  misurazione esplicita della divergenza tra equivalenza classica e ordinativa;
+\item
+  report comparativo con matrix A/B/C/D.
+\end{enumerate}
+
+\textbf{Ciclo C - Chiusura universale e contestuale}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  revisione tecnica di F04, F05, F06, F09;
+\item
+  stress test su limiti/colimiti e trasporto tra contesti;
+\item
+  decisione finale di stato (\texttt{validated} o \texttt{revise}) con giustificazione pubblica.
+\end{enumerate}
+
+Questa sequenza è pensata per massimizzare affidabilità e minimizzare conflitti interpretativi.
+
+\subsection{\texorpdfstring{6.7 Criteri minimi di accettazione per passaggio a \texttt{validated}}{6.7 Criteri minimi di accettazione per passaggio a validated}}
+
+Per uniformità editoriale, proponiamo che un teorema Fxx passi a \texttt{validated} solo se rispetta cinque condizioni.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  enunciato in forma tipizzata e non ambigua;
+\item
+  proof sketch riproducibile da revisore indipendente;
+\item
+  almeno un controesempio limite discusso;
+\item
+  relazione esplicita con almeno un assioma O1-O7 e con lo spazio \texttt{S\_Omega};
+\item
+  aggiornamento coerente di claim ledger e changelog teorico.
+\end{enumerate}
+
+Il vantaggio è doppio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  qualità formale più alta;
+\item
+  governance più trasparente su release successive del manoscritto.
+\end{enumerate}
+
+\subsection{6.8 Indicatore sintetico di avanzamento del blocco fondativo}
+
+Per monitorare il progresso in modo semplice, proponiamo un indicatore editoriale:
+
+\texttt{Prog\_F\ :=\ (N\_validated\ +\ 0.5*N\_in\_proof)\ /\ 10}.
+
+Interpretazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Prog\_F=1} indica blocco fondativo completamente chiuso;
+\item
+  valori intermedi indicano avanzamento parziale con peso ridotto per i teoremi non ancora validati;
+\item
+  il valore non sostituisce il giudizio scientifico, ma aiuta a comunicare lo stato del progetto a revisori e collaboratori.
+\end{enumerate}
+
+Nello stato corrente, l'indicatore va letto insieme alla distribuzione degli stati per evitare semplificazioni: un progresso numerico alto con teoremi critici ancora \texttt{revise} richiede comunque prudenza editoriale.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti del capitolo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  molte prove sono in stato di proof sketch e non ancora chiusura completa;
+\item
+  F05 e F06 richiedono ulteriore raffinamento tecnico sui casi limite;
+\item
+  la parte quantitativa di robustezza contestuale richiede specifiche dominio-dipendenti;
+\item
+  la matrice di maturità non sostituisce validazione indipendente.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  confondere \texttt{in\_proof} con \texttt{validated};
+\item
+  usare F10 (recupero classico) per minimizzare il valore selettivo di F01-F09;
+\item
+  applicare F09 senza protocollo di trasporto contestuale;
+\item
+  dichiarare equivalenze ordinative senza controllo invarianti.
+\item
+  promuovere a \texttt{validated} teoremi che non hanno ancora criteri di confutazione espliciti.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che tutti i teoremi F01-F10 siano già definitivamente dimostrati;
+\item
+  che ogni dominio richieda lo stesso set di soglie e normalizzazioni;
+\item
+  che la sola formalizzazione sostituisca il ciclo di benchmark e revisione indipendente.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C9.1 & Il blocco F01-F10 è coerente con il kernel O1-O7 & formale & S2 & in\_review \\
+C9.2 & Esistono casi classically-valid ma non OCT-valid (F02/F08) & formale & S1 & validated \\
+C9.3 & L'isomorfismo classico non implica equivalenza ordinativa (F01) & formale & S2 & in\_proof \\
+C9.4 & La chiusura compositiva ordinativa è condizionata, non automatica (F03) & formale & S2 & in\_proof \\
+C9.5 & Limiti e colimiti classici richiedono filtro selettivo ordinativo (F05/F06) & formale & S2 & revise \\
+C9.6 & L'equivalenza categoriale classica non garantisce equivalenza ordinativa (F07) & formale & S2 & in\_proof \\
+C9.7 & La realtà ordinativa dipende da \texttt{Omega} in modo formalmente controllato (F09) & epistemico-formale & S2 & in\_proof \\
+C9.8 & Il quadro classico è recuperabile come caso limite (F10) & metateorico & S2 & in\_proof \\
+C9.9 & Il blocco F01-F10 è sufficiente ad avviare il programma D01-D05 & programmatico & S2 & in\_review \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 10}
+
+Il Capitolo 9 ha fissato il cuore teorematico fondativo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  differenza formale tra validità classica e validità ordinativa;
+\item
+  regole su composizione, identità, universalità selettiva;
+\item
+  ruolo del contesto osservativo e recupero classico.
+\end{enumerate}
+
+Il Capitolo 10 svilupperà i teoremi differenziali D01-D05 e applicativi A01-A03 come test di stress del blocco fondativo, con attenzione a:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  casi di distinzione forte tra strutture formalmente simili;
+\item
+  perdita ontologica e dualità condizionata;
+\item
+  impatto su pipeline IA e sistemi narrativi complessi.
+\end{enumerate}
+
+In sintesi: se il Capitolo 9 stabilisce le leggi di base, il Capitolo 10 ne misura la capacità discriminante in scenari concreti e comparativi.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_THEOREM\_PROGRAM\_v0\_1.md}.
+\item
+  \texttt{OCT\_TYPED\_FORMAL\_SPEC\_v0\_1.md}.
+\item
+  \texttt{OCT\_CLASSICAL\_TO\_ORDINATIVE\_MAP\_v0\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_08\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Eilenberg, S., Mac Lane, S. (1945). \emph{General Theory of Natural Equivalences}.
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}.
+\item
+  Riehl, E. (2016). \emph{Category Theory in Context}.
+\item
+  Spivak, D. (2014). \emph{Category Theory for the Sciences}.
+\end{enumerate}

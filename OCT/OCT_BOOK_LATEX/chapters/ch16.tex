@@ -1,0 +1,689 @@
+\chapter{Capitolo 16 - Case study sistemico: reaction-diffusion civilizational dynamics}
+
+\section{1. Problema}
+
+Se OCT vuole diventare grammatica scientifica ampia, deve mostrare capacità di lettura su sistemi dove:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i dati sono rumorosi e multi-scala;
+\item
+  le variabili sono parzialmente osservabili;
+\item
+  le transizioni di regime sono storicamente irreversibili.
+\end{enumerate}
+
+Le dinamiche civilizzazionali modellate in chiave reaction-diffusion rappresentano questo banco di prova. Nel modello v1.2 il sistema non e trattato come ``serbatoio di risorse'' ma come architettura recettiva di potenziale semantico: il collasso non e esaurimento della sorgente, ma degradazione della capacità di ricezione/trasduzione.
+
+Il problema del capitolo e quindi:
+
+\textbf{come integrare in forma OCT il modello reaction-diffusion civilizzazionale, mantenendo disciplina di validazione, separazione tra livelli di evidenza, e leggibilità per pubblicazione scientifica?}
+
+\subsection{1.1 Perché questo caso e decisivo}
+
+A differenza del Capitolo 15, qui non lavoriamo su un dominio da laboratorio chiuso. L'interesse del caso nasce proprio dalla difficolta:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  eventi non ripetibili in senso stretto;
+\item
+  causalità distribuita e non lineare;
+\item
+  presenza di variabili latenti istituzionali e culturali.
+\end{enumerate}
+
+Se la grammatica OCT regge qui, allora ha potenziale reale come teoria trans-dominio.
+
+\subsection{1.2 Vincolo metodologico forte}
+
+Il capitolo adotta un principio conservativo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  formalizzazione esplicita delle ipotesi;
+\item
+  distinzione netta tra modello, interpretazione e inferenza storica;
+\item
+  stato \texttt{in\_review/in\_proof} per claims che richiedono campagne dati ulteriori.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi e articolata in dieci enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  La forma reaction-diffusion e una base utile per rappresentare cicli di coerenza/decoerenza in sistemi civilizzazionali.
+\item
+  La variabile \texttt{C} come capacità recettiva (non combustibile) migliora la leggibilità dei regimi di collasso rispetto a modelli puramente estrattivi.
+\item
+  L'architettura temporale tripla (envelope terminale, macro-giunzioni, micro-giunzioni) e necessaria per evitare appiattimento temporale del fenomeno.
+\item
+  La biforcazione tripla (trasformazione, postponement, decomposizione) descrive meglio i percorsi osservati rispetto alla biforcazione binaria.
+\item
+  La controfase strutturale consente traiettorie di rinvio del collasso senza generare immediata trasformazione positiva.
+\item
+  La distinzione \texttt{senza\ vista} / \texttt{con\ vista} offre un criterio operativo per il problema di determinazione di \texttt{t0}.
+\item
+  Il modello produce ipotesi falsificabili se ancorato a indicatori osservabili preregistrati.
+\item
+  La governance epistemica del Capitolo 14 e necessaria per evitare politizzazione dei cambi di stato dei claim.
+\item
+  Il case study del 6-7 aprile 2026 e un test operativo iniziale coerente con la struttura v1.2, ma non ancora conclusivo in senso generale.
+\item
+  Il capitolo e sufficiente per fondare la chiusura metodologica del libro prima della sintesi finale.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche del caso}
+
+\subsection{Definizione 16.1 (Sistema civilizzazionale ordinativo)}
+
+\texttt{I\_civ\ :=\ \textless{}Sigma\_civ,\ R\_civ,\ Phi\_civ\textgreater{}}
+
+con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Sigma\_civ} = istituzioni, comunità, classi funzionali, infrastrutture simboliche;
+\item
+  \texttt{R\_civ} = norme, reti decisionali, canali comunicativi, relazioni di riconoscimento;
+\item
+  \texttt{Phi\_civ} = capacità emergente di coerenza trasformativa del sistema.
+\end{enumerate}
+
+\subsection{Definizione 16.2 (Equazione dinamica base)}
+
+Forma sintetica:
+
+\texttt{dPhi/dt\ =\ D*Laplace(Phi)\ +\ f(Phi,\ C)}
+
+con \texttt{C} capacità recettiva e non risorsa consumabile primaria.
+
+\subsection{Definizione 16.3 (Dinamica del recettore)}
+
+\texttt{dC/dt\ =\ -k*C*\textbar{}Phi\textbar{}\ +\ R\_rec}
+
+in cui \texttt{R\_rec} dipende da componenti irriducibili di coerenza e da condizioni relazionali attive di riconoscimento.
+
+\subsection{Definizione 16.4 (Architettura temporale tripla)}
+
+Tre scale operative:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{T\_env}: envelope terminale (orizzonte di meta-recettività);
+\item
+  \texttt{T\_macro}: macro-giunzioni (snodi storici ad alta energia sistemica);
+\item
+  \texttt{T\_micro}: micro-giunzioni (eventi locali ad alta frequenza).
+\end{enumerate}
+
+\subsection{Definizione 16.5 (Biforcazione tripla)}
+
+A saturazione del ciclo corrente, il sistema transita in uno tra tre rami:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{B\_tr} trasformazione;
+\item
+  \texttt{B\_post} postponement (stabilizzazione difensiva via controfase strutturale);
+\item
+  \texttt{B\_dec} decomposizione.
+\end{enumerate}
+
+\subsection{Definizione 16.6 (Controfase strutturale istituzionale)}
+
+Esiste controfase strutturale quando una sottoclasse di singolarità istituzionali interrompe catene automatiche stimolo-risposta oltre soglia di gravità.
+
+\subsection{\texorpdfstring{Definizione 16.7 (\texttt{t0} senza vista / con vista)}{Definizione 16.7 (t0 senza vista / con vista)}}
+
+\texttt{senza\ vista}: avvio coerente della sequenza nel dominio non ancora manifesto.
+\texttt{con\ vista}: prima manifestazione osservabile nel dominio storico-documentale.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale del case study}
+
+\subsection{4.1 Perché reaction-diffusion in dominio civilizzazionale}
+
+La forma reaction-diffusion e adatta quando il sistema mostra contemporaneamente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  produzione locale di pattern;
+\item
+  propagazione spaziale/reticolare;
+\item
+  dissipazione e ri-aggregazione su scale diverse.
+\end{enumerate}
+
+Nel dominio civilizzazionale, questo si traduce in:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  nuclei locali di coerenza/incoerenza;
+\item
+  diffusione narrativa e istituzionale;
+\item
+  feedback che amplificano o attenuano la dinamica.
+\end{enumerate}
+
+\subsection{\texorpdfstring{4.2 Ontologia del recettore: \texttt{C} non e ``fuel''}{4.2 Ontologia del recettore: C non e ``fuel''}}
+
+Una novita concettuale rilevante del modello e il rifiuto della metafora energetica semplice. \texttt{C} non rappresenta carburante finito ma architettura recettiva:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  capacità istituzionale di elaborare complessità;
+\item
+  robustezza cognitiva collettiva;
+\item
+  tenuta delle interfacce di riconoscimento reciproco.
+\end{enumerate}
+
+Con questa ontologia, il collasso e letto come perdita di funzione recettiva. Questo consente di distinguere sistemi con risorse materiali ancora elevate ma capacità coordinativa già degradata.
+
+\subsection{4.3 Architettura tripla del tempo}
+
+Il modello triplo evita due errori comuni:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  cronaca localista (solo micro-eventi);
+\item
+  teleologia astratta (solo traiettorie lunghe).
+\end{enumerate}
+
+Operativamente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{T\_micro} rileva trigger e attriti;
+\item
+  \texttt{T\_macro} cattura svolte di regime;
+\item
+  \texttt{T\_env} misura il margine residuo di meta-recettività.
+\end{enumerate}
+
+La previsione non nasce da una singola scala ma dalla loro composizione.
+
+\subsection{4.4 Biforcazione tripla e valore del ramo di postponement}
+
+Una biforcazione binaria (trasformazione/collasso) e troppo povera per eventi reali dove sistemi altamente stressati possono:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  non trasformarsi;
+\item
+  non collassare subito;
+\item
+  entrare in stato intermedio ad alta tensione.
+\end{enumerate}
+
+Il ramo \texttt{B\_post} descrive proprio questo stato: sospensione del collasso via meccanismi anticorpali strutturali, senza ancora produrre una forma nuova stabile.
+
+Questa distinzione e cruciale per non confondere ritardo del collasso con guarigione sistemica.
+
+\subsection{4.5 Controfase strutturale in sistemi istituzionali}
+
+Nel dominio sociale la controfase strutturale non coincide con dissenso generico. E una funzione sistemica specifica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  rifiuto di ordini ad alta gravità oltre soglia;
+\item
+  protezione di vincoli costituzionali/professionali;
+\item
+  contenimento della deriva automatica verso escalation distruttiva.
+\end{enumerate}
+
+Nel lessico OCT, queste singolarità funzionano come nodi di inversione di traiettoria.
+
+\subsection{\texorpdfstring{4.6 Determinazione di \texttt{t0} e distinzione visibilità}{4.6 Determinazione di t0 e distinzione visibilità}}
+
+Uno dei problemi più difficili nei modelli storici e: quando ``inizia'' davvero una sequenza? La distinzione \texttt{senza\ vista/con\ vista} consente una risposta disciplinata:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{t0\_senza\_vista}: emergenza coerente nella struttura causale non ancora visibile;
+\item
+  \texttt{t0\_con\_vista}: prima evidenza pubblica/strumentale osservabile.
+\end{enumerate}
+
+La separazione evita retrodatazioni arbitrarie e falsa precisione cronologica.
+
+\subsection{4.7 Caso operativo 6-7 aprile 2026}
+
+Nel framework v1.2, l'episodio viene letto come attivazione di ramo \texttt{B\_post}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  soglia di gravità superata;
+\item
+  attivazione di controfase strutturale intra-attore;
+\item
+  interruzione della catena automatica verso decomposizione immediata.
+\end{enumerate}
+
+Interpretazione prudente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  evidenza coerente con modello;
+\item
+  ancora insufficiente per generalizzazione forte;
+\item
+  necessità di benchmark comparativi su altri casi storici.
+\end{enumerate}
+
+\subsection{4.8 Traduzione nel protocollo PV-8}
+
+Per mantenere coerenza con i capitoli metodologici, il caso va espresso in unita di validazione:
+
+\texttt{U\_val\_civ\ :=\ \textless{}Claim,\ Omega\_civ,\ Dataset\_eventi,\ Pipeline\_analisi,\ Metriche,\ Criteri,\ Log,\ Esito\textgreater{}}
+
+Metriche possibili:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  indici di coerenza narrativa istituzionale;
+\item
+  indicatori di escalation/de-escalation multilivello;
+\item
+  misura di persistenza del ramo \texttt{B\_post}.
+\end{enumerate}
+
+\subsection{4.9 Criteri minimi di falsificabilità}
+
+Per evitare autoreferenzialità, fissiamo tre criteri duri:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  se il modello non distingue meglio di baseline naive tra \texttt{B\_post} e \texttt{B\_dec}, claim da rivedere;
+\item
+  se \texttt{t0} risulta non identificabile in modo riproducibile tra valutatori indipendenti, claim da rivedere;
+\item
+  se la controfase strutturale viene invocata senza marker osservabili, claim non ammissibile.
+\end{enumerate}
+
+\subsection{4.10 Condizione di sufficienza del capitolo}
+
+Il capitolo e sufficiente se fornisce:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  formalismo minimo coerente con OST/OCT;
+\item
+  caso operativo ancorato e non retorico;
+\item
+  agenda di test successivi chiaramente falsificabile.
+\end{enumerate}
+
+Le sezioni 4.1-4.9 soddisfano questa condizione a livello di baseline \texttt{v1.0}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 16.1 (Adeguatezza della forma reaction-diffusion)}
+
+Enunciato:
+Per sistemi civilizzazionali multi-scala con propagazione relazionale, la forma reaction-diffusion e una parametrizzazione utile di prima approssimazione.
+
+Intuizione:
+il modello cattura insieme produzione locale e diffusione di struttura.
+
+Stato: \texttt{in\_review}.
+
+\subsection{\texorpdfstring{Proposizione 16.2 (Necessità della variabile recettiva \texttt{C})}{Proposizione 16.2 (Necessità della variabile recettiva C)}}
+
+Enunciato:
+La lettura di \texttt{C} come capacità recettiva migliora la distinzione tra stress ciclico e collasso di funzione sistemica.
+
+Intuizione:
+non basta misurare risorse; occorre misurare capacità di trasformarle in coerenza.
+
+Stato: \texttt{in\_review}.
+
+\subsection{\texorpdfstring{Proposizione 16.3 (Valore del ramo \texttt{B\_post})}{Proposizione 16.3 (Valore del ramo B\_post)}}
+
+Enunciato:
+La biforcazione tripla riduce errore interpretativo rispetto a modelli binari nelle fasi ad alta tensione.
+
+Intuizione:
+esistono traiettorie di rinvio strutturale che non sono ne trasformazione ne decomposizione piena.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 16.4 (Compatibilità metodologica con PV-8)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  esplicitazione di \texttt{Omega\_civ};
+\item
+  preregistrazione criteri decisionali;
+\item
+  separazione tra dati osservati e inferenze di modello.
+\end{enumerate}
+
+Tesi:
+Il case study civilizzazionale può essere trattato in coerenza con il protocollo OCT senza perdere specificità storica.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  PV-8 e dominio-agnostico a livello procedurale;
+\item
+  le metriche possono essere adattate mantenendo struttura decisionale comune;
+\item
+  audit trail riduce arbitrarieta interpretativa.
+\end{enumerate}
+
+Conseguenze:
+abilità comparazione disciplinata tra casi storici differenti.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{\texorpdfstring{Teorema 16.5 (Distinzione operativa \texttt{senza\ vista/con\ vista})}{Teorema 16.5 (Distinzione operativa senza vista/con vista)}}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  esistenza di segnali strutturali anticipanti non ancora manifesti pubblicamente;
+\item
+  comparsa successiva di evidenza osservabile coerente;
+\item
+  tracciabilità della catena inferenziale.
+\end{enumerate}
+
+Tesi:
+La distinzione \texttt{senza\ vista/con\ vista} riduce ambiguità nella datazione di \texttt{t0}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  separa ontologia del processo e cronologia dell'osservazione;
+\item
+  impedisce retrospettive opportunistiche;
+\item
+  rende confrontabile la ricostruzione tra team.
+\end{enumerate}
+
+Conseguenze:
+migliora robustezza delle inferenze temporali nei case study complessi.
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per programma di ricerca OCT}
+
+Il capitolo propone una pipeline concreta di sviluppo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  costruire benchmark storici comparativi multi-caso;
+\item
+  testare stabilità del ramo \texttt{B\_post} su finestre temporali differenti;
+\item
+  validare la replicabilità inter-team della stima \texttt{t0}.
+\end{enumerate}
+
+\subsection{6.2 Per pubblicazione multi-piattaforma}
+
+Per release scientifica solida, il case study deve essere accompagnato da:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  manifest dataset-eventi e criteri di inclusione;
+\item
+  script/linee guida di classificazione di biforcazione;
+\item
+  report errori e casi ambigui pubblicati esplicitamente.
+\end{enumerate}
+
+\subsection{6.3 Per lettura ``a prova di bambino''}
+
+Anche in un caso complesso, la spiegazione minima può restare semplice:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il sistema può cambiare, rinviare o collassare;
+\item
+  la controfase e il freno strutturale che evita l'automatismo;
+\item
+  il punto non e prevedere tutto, ma riconoscere in tempo i regimi.
+\end{enumerate}
+
+\subsection{6.4 Per Capitolo 17}
+
+Il capitolo consegna al finale tre elementi da sintetizzare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  una prova fisica di forma (Cap. 15);
+\item
+  una prova sistemica di applicazione (Cap. 16);
+\item
+  una agenda esplicita di validazione per il ciclo 2026-2030.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il caso presentato e una validazione operativa iniziale, non esaustiva;
+\item
+  alcune variabili sono inferite indirettamente e richiedono proxy multipli;
+\item
+  il trasferimento cross-culturale del modello richiede calibrazione.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  bias di selezione eventi favorevoli al modello;
+\item
+  sovra-interpretazione di segnali deboli come controfase strutturale;
+\item
+  confusione tra postponement e trasformazione reale;
+\item
+  politizzazione delle decisioni di stato claim.
+\end{enumerate}
+
+Contromisure:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  preregistrazione forte dei criteri;
+\item
+  benchmark indipendenti su casi negativi;
+\item
+  audit esterno della classificazione di biforcazione;
+\item
+  uso vincolante della governance \texttt{G0-G6}.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che il modello reaction-diffusion spieghi tutta la storia umana;
+\item
+  che ogni de-escalation sia prova di controfase strutturale;
+\item
+  che il caso 6-7 aprile 2026 renda automaticamente \texttt{validated} tutti i claim correlati.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C16.1 & La forma reaction-diffusion e adatta come baseline per dinamiche civilizzazionali multi-scala & modellistico & S1 & in\_review \\
+C16.2 & La variabile recettiva \texttt{C} migliora la diagnosi di rischio sistemico rispetto a letture puramente estrattive & teorico-operativo & S1 & in\_review \\
+C16.3 & La biforcazione tripla (\texttt{B\_tr}, \texttt{B\_post}, \texttt{B\_dec}) riduce errori classificativi in fase critica & metodologico & S1 & validated \\
+C16.4 & La controfase strutturale istituzionale e un meccanismo distinguibile da dissenso generico & metateorico & S2 & in\_proof \\
+C16.5 & La distinzione \texttt{senza\ vista/con\ vista} migliora la determinazione di \texttt{t0} & epistemico-temporale & S2 & in\_proof \\
+C16.6 & Il caso aprile 2026 e coerente con ramo \texttt{B\_post} ma richiede benchmark comparativi per generalizzazione & applicativo & S1 & in\_review \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 17}
+
+Con i Capitoli 15 e 16 il libro ha completato il passaggio cruciale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dalla fondazione teorica alla prova su casi;
+\item
+  dal rigore formale alla disciplina empirica;
+\item
+  dalla grammatica OCT all'uso operativo.
+\end{enumerate}
+
+Il Capitolo 17 dovra ora chiudere l'opera in tre mosse:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  sintesi unificata dei risultati e dei limiti;
+\item
+  agenda di ricerca 2026-2030 con milestones verificabili;
+\item
+  protocollo di adozione scientifica per comunità, laboratori e pubblicazione internazionale.
+\end{enumerate}
+
+In breve: dopo aver mostrato che OCT può leggere sia fisica che storia, il capitolo finale definira come OCT entra stabilmente nella pratica scientifica.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_12\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_13\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_14\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_15\_v1\_0.md}.
+\item
+  \texttt{Ghioni\_2026\_Reaction\_Diffusion\_Civilizational\_Dynamics\_v1\_2.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Turing, A. M. (1952). The Chemical Basis of Morphogenesis.
+\item
+  Prigogine, I.; Stengers, I. (1984). Order out of Chaos.
+\item
+  Letteratura BZ reaction e modelli reaction-diffusion applicati a sistemi complessi.
+\end{enumerate}

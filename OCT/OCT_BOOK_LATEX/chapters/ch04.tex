@@ -1,0 +1,1049 @@
+\chapter{Capitolo 4 - Oggetti, morfismi, composizione, identità in estensione OCT}
+
+\section{1. Problema}
+
+Con i Capitoli 1-3 abbiamo costruito:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la motivazione epistemica dell'estensione ordinativa;
+\item
+  la base ontologica della singolarità;
+\item
+  il kernel assiomatico O1-O7.
+\end{enumerate}
+
+Con i Capitoli 8-11 abbiamo consolidato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  lo spazio di validità \texttt{S\_Omega};
+\item
+  il blocco teorematico fondativo e differenziale;
+\item
+  la grammatica di controesempi, limiti e falsificabilità.
+\end{enumerate}
+
+Ora inizia la fase \texttt{v1.3}: espansione sistematica del corpus categoriale classico in quadro OCT. Il primo passo è apparentemente semplice ma in realtà decisivo: ridefinire \textbf{oggetti, morfismi, composizione e identità} in forma compatibile con il classico ma dotata di selettività ordinativa.
+
+Il problema specifico del capitolo è:
+
+\textbf{come preservare la potenza della sintassi categoriale classica evitando, allo stesso tempo, che entità formalmente lecite ma ordinativamente sterili o degenerative vengano trattate come equivalenti?}
+
+La difficoltà emerge su due fronti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  se l'estensione è troppo debole, non aggiunge discriminazione reale;
+\item
+  se l'estensione è troppo invasiva, rompe la continuità con la teoria classica.
+\end{enumerate}
+
+La strategia adottata qui è conservativa-selettiva:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  conservativa sul piano strutturale;
+\item
+  selettiva sul piano ordinativo.
+\end{enumerate}
+
+In altre parole:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  non cambiamo il significato classico di composizione e identità;
+\item
+  introduciamo un livello di ammissibilità che decide quando la stessa struttura è operativamente reale in \texttt{Omega}.
+\end{enumerate}
+
+\subsection{1.1 Perché questo capitolo viene dopo la fase 8-11}
+
+Ordine non lineare ma intenzionale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  prima abbiamo fissato lo spazio di validità e i teoremi;
+\item
+  ora torniamo alla micro-struttura classica con criteri già stabilizzati.
+\end{enumerate}
+
+Il vantaggio è metodologico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  le definizioni qui introdotte non sono ``promesse'', ma già agganciate a metriche e criteri di fallimento;
+\item
+  ogni scelta locale su oggetto/morfismo/composizione/identità può essere testata contro il quadro critico del Capitolo 11.
+\end{enumerate}
+
+\subsection{1.2 Obiettivo tecnico del capitolo}
+
+L'obiettivo non è riscrivere da zero la teoria degli oggetti e dei morfismi, ma esplicitare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  qual è il corrispettivo OCT di ogni nozione classica;
+\item
+  quali condizioni aggiuntive servono per ammissibilità ordinativa;
+\item
+  quali errori di inferenza sono evitati dalla riformulazione.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi del capitolo è articolata in otto enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  L'oggetto ordinativo è una singolarizzazione contestuale di un oggetto classico, non una sostituzione antagonista.
+\item
+  Il morfismo ordinativo è un morfismo classico ben tipizzato più vincolo di ammissibilità \texttt{Coh/Phi}.
+\item
+  La composizione ordinativa è chiusa solo condizionatamente (gate sulla composta).
+\item
+  L'identità ordinativa richiede neutralità non-degenerativa, non sola tautologia sintattica.
+\item
+  La struttura classica è preservata dal funtore di oblio, ma non vale il viceversa in generale.
+\item
+  Le quattro nozioni classiche restano formalmente intatte e vengono rafforzate da criteri operativi.
+\item
+  La distinzione tra validità locale e validità composita è obbligatoria in OCT.
+\item
+  Il capitolo prepara direttamente limiti/colimiti/equivalenze del Capitolo 5.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 4.1 (Oggetto ordinativo)}
+
+Dato un oggetto classico \texttt{A}, definiamo l'oggetto ordinativo in \texttt{Omega}:
+
+\texttt{A\_Omega\ :=\ S\_Omega(A)\ =\ \textless{}A,\ R\_Omega(A),\ H\_t(A),\ Pi\_Omega(A)\textgreater{}}.
+
+Commento:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{A} resta il supporto strutturale;
+\item
+  \texttt{R\_Omega}, \texttt{H\_t}, \texttt{Pi\_Omega} introducono la specificazione relazionale-funzionale minima.
+\end{enumerate}
+
+\subsection{Definizione 4.2 (Morfismo ordinativamente ammissibile)}
+
+Per \texttt{f:\ A\_Omega\ -\textgreater{}\ B\_Omega}:
+
+\texttt{Adm\_Omega(f)\ :=\ Syn(f)\ and\ Coh\_Omega(f)\ \textgreater{}=\ tau\_f\ and\ Phi\_Omega(f)\ !=\ 0}.
+
+Commento:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Syn(f)} è requisito necessario;
+\item
+  \texttt{Coh/Phi} sono requisiti selettivi.
+\end{enumerate}
+
+\subsection{Definizione 4.3 (Composizione ordinativa)}
+
+Per \texttt{f:\ A\_Omega-\textgreater{}B\_Omega}, \texttt{g:\ B\_Omega-\textgreater{}C\_Omega}:
+
+\texttt{g\ \ o\ \_Omega\ f} è ammessa se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{g\ o\ f} è definita in senso classico;
+\item
+  \texttt{Adm\_Omega(f)} e \texttt{Adm\_Omega(g)};
+\item
+  \texttt{Adm\_Omega(g\ o\ f)}.
+\end{enumerate}
+
+\subsection{Definizione 4.4 (Identità ordinativa)}
+
+\texttt{id\_A\^{}Omega:\ A\_Omega\ -\textgreater{}\ A\_Omega} è identità ordinativa se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  coincide con identità classica sul supporto \texttt{A};
+\item
+  non induce degradazione oltre soglia su coerenza/funzione in auto-applicazione.
+\end{enumerate}
+
+\subsection{Definizione 4.5 (Classe di composizione sterile)}
+
+Una composizione è sterile se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  è sintatticamente lecita;
+\item
+  mantiene coerenza sopra soglia;
+\item
+  ma \texttt{Phi\_Omega=0}.
+\end{enumerate}
+
+Questa classe è distinta dalla degenerazione pura (\texttt{Coh\textless{}tau}).
+
+\subsection{Definizione 4.6 (Funtore di oblio ordinativo)}
+
+\texttt{U\_Omega:\ OrdCat\_Omega\ -\textgreater{}\ Cat\_class}
+
+rimuove il layer ordinativo mantenendo oggetti, morfismi e leggi classiche.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Oggetti: dal nodo astratto al nodo tipizzato}
+
+Nel quadro classico, un oggetto è identificato dal suo ruolo in una rete di morfismi. Questa impostazione resta valida in OCT, ma viene resa operativa con un vincolo contestuale.
+
+Passaggio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  classico: \texttt{A};
+\item
+  ordinativo: \texttt{A\_Omega\ =\ \textless{}A,R,H,Pi\textgreater{}}.
+\end{enumerate}
+
+Questa estensione non altera le leggi classiche. Introduce però una differenza cruciale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  due oggetti possono essere formalmente equivalenti in un livello astratto;
+\item
+  ma divergere ordinativamente per profilo relazionale, storia e funzione emergente.
+\end{enumerate}
+
+Errore evitato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  assumere che identità simbolica o equivalenza strutturale basti per identità operativa.
+\end{enumerate}
+
+\subsection{4.2 Morfismi: tipizzazione più generatività}
+
+In category theory classica, la validità del morfismo è primariamente tipologica. In OCT questo resta il primo filtro, ma non l'ultimo.
+
+Schema:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  filtro 1: \texttt{Syn(f)} (classico);
+\item
+  filtro 2: \texttt{Coh\_Omega(f)\textgreater{}=tau\_f};
+\item
+  filtro 3: \texttt{Phi\_Omega(f)!=0}.
+\end{enumerate}
+
+Ne segue una distinzione esplicita:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  morfismi leciti ma sterili;
+\item
+  morfismi leciti ma degenerativi;
+\item
+  morfismi ordinativamente ammissibili.
+\end{enumerate}
+
+Questa tripartizione migliora la diagnosi locale e prepara la composizione controllata.
+
+\subsection{4.3 Composizione: chiusura condizionata}
+
+La legge classica \texttt{g\ o\ f} resta intatta. Quello che cambia è la nozione di ``chiusura utile''.
+
+In OCT:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  non basta che \texttt{f} e \texttt{g} siano ammissibili singolarmente;
+\item
+  serve test ordinativo sulla composta.
+\end{enumerate}
+
+Questo evita inferenze lineari errate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ``due passi validi implicano sempre traiettoria valida''.
+\end{enumerate}
+
+Controesempio tipico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{f} preserva coerenza locale;
+\item
+  \texttt{g} preserva coerenza locale;
+\item
+  \texttt{g\ o\ f} amplifica incompatibilità latenti e cade sotto soglia.
+\end{enumerate}
+
+Conclusione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la composizione ordinativa è una legge con gate, non solo una concatenazione.
+\end{enumerate}
+
+\subsection{4.4 Identità: neutralità condizionata}
+
+Nel classico, \texttt{id\_A} è neutra per definizione strutturale. In OCT la neutralità è anche una proprietà misurabile.
+
+Richiesta minima:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  auto-applicazione non produce deriva sistematica su \texttt{Coh/Phi}.
+\end{enumerate}
+
+Perché è necessario:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  in sistemi dinamici reali, un'operazione formalmente neutra può attivare costi nascosti, attriti di sincronizzazione o perdita funzionale.
+\end{enumerate}
+
+Errore evitato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  confondere neutralità simbolica con neutralità operativa.
+\end{enumerate}
+
+\subsection{4.5 Composizione locale vs composizione globale}
+
+Distinzione obbligatoria:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  validità locale: test su singolo morfismo;
+\item
+  validità globale: test su catena compositiva.
+\end{enumerate}
+
+In OCT entrambe sono necessarie:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la sola validità locale non garantisce tenuta globale;
+\item
+  la sola validità globale senza tracciamento locale rende opaca la diagnosi di fallimento.
+\end{enumerate}
+
+Questa distinzione è fondamentale per pipeline modulari e sistemi multi-stadio.
+
+\subsection{4.6 Oggetti e morfismi come coppia inseparabile}
+
+Nel quadro ordinativo, non ha senso valutare un oggetto senza dinamica morfismica, né un morfismo senza contesto oggettuale singolarizzato.
+
+Principio operativo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{A\_Omega} determina condizioni di ammissibilità dei morfismi uscenti/entranti;
+\item
+  l'insieme dei morfismi ammissibili retro-definisce lo stato operativo di \texttt{A\_Omega}.
+\end{enumerate}
+
+Ne deriva una co-definizione dinamica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  oggetti e morfismi sono analiticamente distinguibili ma operativamente co-determinati.
+\end{enumerate}
+
+\subsection{4.7 Stabilità di composizione in vicinato contestuale}
+
+Per prevenire fragilità da fitting locale, la composizione va valutata anche su \texttt{N\_epsilon(Omega)}.
+
+Richiesta minima:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Adm\_Omega(g\ o\ f)} deve restare stabile entro perturbazioni ammesse.
+\end{enumerate}
+
+In assenza di questa condizione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  si ottengono composizioni ``formalmente vincenti'' ma non replicabili.
+\end{enumerate}
+
+\subsection{4.8 Relazione con la matrice A/B/C/D}
+
+Oggetti e morfismi in OCT possono essere classificati tramite la matrice standard:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A: ammissibile pieno;
+\item
+  B: lecito ma sterile;
+\item
+  C: lecito ma degenerativo;
+\item
+  D: non lecito sintatticamente.
+\end{enumerate}
+
+Nel Capitolo 4 questa matrice è utile per:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  qualificare rapidamente lo stato di un morfismo;
+\item
+  spiegare perché una composizione viene accettata o rifiutata.
+\end{enumerate}
+
+\subsection{4.9 Recupero classico come controllo di coerenza}
+
+Il capitolo conserva esplicitamente la riduzione classica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  se il layer ordinativo è disattivato, restano oggetti/morfismi/composizione/identità classici.
+\end{enumerate}
+
+Questo punto impedisce due letture sbagliate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  OCT come negazione del classico;
+\item
+  OCT come lessico alternativo senza nuove regole.
+\end{enumerate}
+
+\subsection{4.10 Mappa errori tipici evitati dal capitolo}
+
+Errori classici in applicazione ingenua:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ``tipizzato quindi valido'';
+\item
+  ``composto quindi robusto'';
+\item
+  ``identità quindi neutro in ogni senso'';
+\item
+  ``equivalenza locale quindi equivalenza globale''.
+\end{enumerate}
+
+Il capitolo fornisce, per ciascun errore, un criterio di controllo operativo.
+
+\subsection{4.11 Composizione lunga e accumulo di rischio ordinativo}
+
+Una catena compositiva lunga \texttt{f\_n\ \ o\ \ ...\ \ o\ \ f\_1} introduce un problema che il controllo locale non risolve da solo: l'accumulo di rischio.
+
+Anche quando ogni \texttt{f\_i} soddisfa il gate locale, il sistema può mostrare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  drift progressivo di coerenza;
+\item
+  compressione della funzione emergente;
+\item
+  amplificazione di perdite marginali in punti di interfaccia.
+\end{enumerate}
+
+Per questo proponiamo un criterio di monitoraggio a due scale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{scala locale}: \texttt{Adm\_Omega(f\_i)} per ogni passo;
+\item
+  \textbf{scala cumulativa}: \texttt{Adm\_Omega(F\_k)} per ogni prefisso \texttt{F\_k\ =\ f\_k\ \ o\ \ ...\ \ o\ \ f\_1}.
+\end{enumerate}
+
+Il vantaggio è diagnostico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  si individua il punto in cui la catena passa da robusta a fragile;
+\item
+  si evita di attribuire il collasso solo all'ultimo morfismo osservato.
+\end{enumerate}
+
+Questa analisi è particolarmente importante per pipeline IA multi-step e trasformazioni semantiche iterabili.
+
+\subsection{4.12 Criterio di margine compositivo}
+
+Oltre al gate binario (ammesso/non ammesso), introduciamo un margine compositivo:
+
+\texttt{m\_comp(F\_k)\ :=\ Coh\_Omega(F\_k)\ -\ tau\_chain}.
+
+Uso operativo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{m\_comp\ \textgreater{}\textgreater{}\ 0}: catena robusta;
+\item
+  \texttt{m\_comp\ \textgreater{}\ 0} ma piccolo: catena fragile, da monitorare;
+\item
+  \texttt{m\_comp\ \textless{}=\ 0}: catena degenerativa.
+\end{enumerate}
+
+Il margine permette decisioni più fini:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  non tutte le composizioni ammesse hanno la stessa affidabilità;
+\item
+  il valore di margine guida priorità di revisione e strategie di riprogettazione.
+\end{enumerate}
+
+In assenza di margine, si rischia una logica ``on/off'' che non cattura la dinamica di prossimità al collasso.
+
+\subsection{4.13 Interfacce tra morfismi: punto critico nascosto}
+
+Molti fallimenti globali non nascono dal singolo morfismo, ma dalla giunzione tra morfismi consecutivi. In termini pratici, la compatibilità tipologica non garantisce compatibilità ordinativa di interfaccia.
+
+Definiamo quindi il concetto di \textbf{interfaccia ordinativa} tra \texttt{f} e \texttt{g}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  allineamento semantico delle uscite/ingressi;
+\item
+  assenza di perdita sistematica di coerenza al passaggio;
+\item
+  mantenimento della funzione emergente in transizione.
+\end{enumerate}
+
+Un criterio minimo è:
+
+\texttt{Int\_Omega(g,f)\ =\ true} se il passaggio \texttt{B\_f\ -\textgreater{}\ B\_g} non introduce delta critico su \texttt{Coh} o annullamento su \texttt{Phi}.
+
+Conseguenze operative:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  debug mirato su confini di modulo;
+\item
+  migliore separazione tra errore ``di modulo'' ed errore ``di integrazione''.
+\end{enumerate}
+
+\subsection{4.14 Tipologia dei fallimenti su oggetti e morfismi}
+
+Per rendere il capitolo utilizzabile nei cicli di validazione, proponiamo una tipologia minima dei fallimenti.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{F-Obj1 (Oggetto sottospecificato)}\\
+  \texttt{A\_Omega} non ha profilo relazionale sufficiente per test affidabile.
+\item
+  \textbf{F-Mor1 (Morfismo sterile)}\\
+  \texttt{Syn} e \texttt{Coh} validi, ma \texttt{Phi=0}.
+\item
+  \textbf{F-Mor2 (Morfismo degenerativo)}\\
+  \texttt{Syn} valido, ma \texttt{Coh\textless{}tau}.
+\item
+  \textbf{F-Comp1 (Composta fragile)}\\
+  passi locali validi, composta al bordo di soglia.
+\item
+  \textbf{F-Comp2 (Composta collassata)}\\
+  composta in classe degenerativa.
+\item
+  \textbf{F-Id1 (Identità non neutra)}\\
+  auto-applicazione con drift ordinativo misurabile.
+\end{enumerate}
+
+Questa tipologia ha tre vantaggi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  uniforma il lessico nei report di test;
+\item
+  collega direttamente tipo di fallimento e strategia di correzione;
+\item
+  riduce conflitti interpretativi tra team.
+\end{enumerate}
+
+\subsection{4.15 Criterio minimo di accettazione per modulo compositivo}
+
+Proponiamo una regola di accettazione pratica per moduli OCT-based:
+
+un modulo può essere dichiarato ``ordinativamente affidabile'' solo se soddisfa contemporaneamente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  assenza di fallimenti F-Mor2 su suite primaria;
+\item
+  frequenza F-Mor1 sotto soglia dichiarata;
+\item
+  nessun caso F-Comp2 su scenari di carico nominale;
+\item
+  margine compositivo medio positivo sopra valore minimo dichiarato;
+\item
+  log completo delle interfacce critiche.
+\end{enumerate}
+
+Questa regola non pretende universalità assoluta, ma fornisce un baseline replicabile per sviluppo e pubblicazione tecnica.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 4.1 (Conservazione sintattica degli oggetti)}
+
+Enunciato:
+La singolarizzazione \texttt{S\_Omega} non distrugge la tipizzazione classica dell'oggetto.
+
+Intuizione:
+\texttt{A\_Omega} contiene \texttt{A} come supporto strutturale, con estensione relazionale-funzionale.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 4.2 (Necessità del gate morfismico)}
+
+Enunciato:
+Esistono morfismi \texttt{Syn(f)} veri ma \texttt{Adm\_Omega(f)} falsi.
+
+Intuizione:
+controesempi con \texttt{Phi=0} o \texttt{Coh\textless{}tau} rendono il gate indispensabile.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 4.3 (Chiusura condizionata della composizione)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Adm\_Omega(f)} e \texttt{Adm\_Omega(g)};
+\item
+  composizione classica definita;
+\item
+  \texttt{Adm\_Omega(g\ o\ f)} verificata.
+\end{enumerate}
+
+Tesi:
+\texttt{g\ o\ \_Omega\ f} è composizione ordinativa valida.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la definibilità classica garantisce coerenza sintattica;
+\item
+  il gate sulla composta garantisce non-degenerazione e non-sterilità;
+\item
+  dunque la composta è ammessa in \texttt{OrdCat\_Omega}.
+\end{enumerate}
+
+Conseguenze:
+stabilisce il meccanismo operativo per catene compositive affidabili.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Teorema 4.4 (Neutralità ordinativa condizionata dell'identità)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{id\_A} classica su \texttt{A};
+\item
+  test ordinativo su auto-applicazione in \texttt{Omega};
+\item
+  assenza di degradazione oltre soglia.
+\end{enumerate}
+
+Tesi:
+\texttt{id\_A\^{}Omega} è neutra in senso ordinativo.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la neutralità sintattica è data;
+\item
+  la neutralità ordinativa richiede stabilità su \texttt{Coh/Phi};
+\item
+  soddisfatte entrambe, l'identità è pienamente neutra.
+\end{enumerate}
+
+Conseguenze:
+evita uso improprio dell'identità in domini dinamici ad attrito.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Proposizione 4.5 (Non equivalenza locale-globale)}
+
+Enunciato:
+Validità ordinativa locale dei morfismi non implica validità ordinativa globale della catena.
+
+Intuizione:
+la composta può introdurre incompatibilità emergenti non visibili localmente.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 4.6 (Accumulo non lineare del rischio compositivo)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  catena compositiva \texttt{F\_n\ =\ f\_n\ \ o\ \ ...\ \ o\ \ f\_1} con \texttt{Adm\_Omega(f\_i)} veri;
+\item
+  esiste almeno un sottoinsieme di interfacce con \texttt{Int\_Omega} debole;
+\item
+  il contributo di rischio di interfaccia è non nullo e persistente.
+\end{enumerate}
+
+Tesi:
+La validità locale uniforme non garantisce, in generale, margine compositivo globale stabile.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ogni \texttt{f\_i} può rispettare il gate locale;
+\item
+  le interfacce deboli introducono perdite incrementali;
+\item
+  le perdite possono accumularsi oltre il bordo di sicurezza della catena;
+\item
+  ne segue che il margine globale può diventare fragile o negativo.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  giustifica monitoraggio su prefissi compositivi;
+\item
+  fonda la necessità di metriche di interfaccia oltre le metriche di modulo.
+\end{enumerate}
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per implementazione di pipeline compositive}
+
+Ogni pipeline OCT dovrebbe verificare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  gate locale su ogni morfismo;
+\item
+  gate globale su composte critiche;
+\item
+  classificazione A/B/C/D per diagnosticare i fallimenti.
+\end{enumerate}
+
+\subsection{6.2 Per la documentazione di progetto}
+
+È utile che ogni modulo espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  oggetti singolarizzati coinvolti;
+\item
+  morfismi ammessi e non ammessi;
+\item
+  ragione del rifiuto (sterilità vs degenerazione).
+\end{enumerate}
+
+Questo rende tracciabile il comportamento del sistema e accelera revisione.
+
+\subsection{6.3 Per la validazione empirica}
+
+I test dovrebbero includere:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  casi positivi di composizione robusta;
+\item
+  casi negativi di composizione fragile;
+\item
+  stress su identità in presenza di perturbazioni leggere.
+\end{enumerate}
+
+\subsection{6.4 Per il passaggio al Capitolo 5}
+
+Limiti, colimiti, equivalenze e isomorfismi del Capitolo 5 useranno direttamente le nozioni qui fissate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  oggetto ordinativo;
+\item
+  morfismo ammissibile;
+\item
+  composizione con gate;
+\item
+  identità non-degenerativa.
+\end{enumerate}
+
+\subsection{6.5 Per la governance editoriale}
+
+Ogni nuova versione dovrebbe mantenere coerenza su questi quattro blocchi. Se cambia uno, devono essere riesaminati anche gli altri per evitare incoerenze interne nel manoscritto.
+
+Inoltre, è consigliabile mantenere un changelog locale per oggetti, morfismi, composizioni e identità, così da collegare ogni modifica teorica a effetti misurabili sui benchmark.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo non chiude ancora la formalizzazione completa dei casi enriched/2-categoriali;
+\item
+  la scelta delle soglie resta dominio-dipendente;
+\item
+  la neutralità ordinativa dell'identità richiede protocolli di misura robusti;
+\item
+  la distinzione locale-globale è formalizzata in versione minima, da estendere.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  sovra-ottimizzare i gate su dati specifici;
+\item
+  confondere casi sterili con casi degenerativi;
+\item
+  applicare il gate globale senza diagnosi locale;
+\item
+  dichiarare neutralità identitaria senza test ordinativo.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che ogni struttura classica debba essere automaticamente reinterpretata in OCT;
+\item
+  che il gate ordinativo elimini la necessità di prove matematiche classiche;
+\item
+  che l'ammissibilità ordinativa locale sia sufficiente per garantire robustezza sistemica.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C4.1 & L'oggetto ordinativo conserva il supporto classico e aggiunge specificazione relazionale-funzionale & formale & S2 & in\_review \\
+C4.2 & Il morfismo ordinativo richiede gate \texttt{Syn+Coh+Phi} & formale & S1 & validated \\
+C4.3 & La composizione ordinativa è chiusa in modo condizionato e non automatico & formale & S2 & in\_proof \\
+C4.4 & L'identità ordinativa richiede neutralità non-degenerativa verificata & formale & S2 & in\_proof \\
+C4.5 & La validità locale non implica validità globale & formale-operativo & S1 & validated \\
+C4.6 & La matrice A/B/C/D migliora la diagnosi operativa su oggetti e morfismi & metodologico & S1 & in\_review \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 5}
+
+Il Capitolo 4 ha stabilito la grammatica micro-strutturale dell'estensione OCT:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  cosa sono gli oggetti in forma singolarizzata;
+\item
+  cosa rende un morfismo ammissibile;
+\item
+  quando una composizione è realmente valida;
+\item
+  cosa significa identità in senso non-degenerativo.
+\end{enumerate}
+
+Il Capitolo 5 userà questa base per affrontare il livello successivo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  isomorfismi ed equivalenze;
+\item
+  limiti e colimiti;
+\item
+  selettività ordinativa delle costruzioni universali.
+\end{enumerate}
+
+In sintesi: il Capitolo 4 fissa i mattoni; il Capitolo 5 valuterà la stabilità delle architetture costruite con quei mattoni.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_03\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_08\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_09\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_11\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Eilenberg, S., Mac Lane, S. (1945). \emph{General Theory of Natural Equivalences}.
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}.
+\item
+  Riehl, E. (2016). \emph{Category Theory in Context}.
+\item
+  Spivak, D. (2014). \emph{Category Theory for the Sciences}.
+\end{enumerate}

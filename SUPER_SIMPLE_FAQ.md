@@ -25,7 +25,11 @@ Start from:
 
 ## 6) Where is the main OCT text?
 
-`OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
+Start from:
+`OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md`
+
+Single-file full version:
+`OCT/OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
 
 ## 7) Where are validation results?
 

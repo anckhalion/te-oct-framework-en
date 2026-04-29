@@ -1,0 +1,570 @@
+\chapter{Capitolo 11 - Controesempi, limiti del modello, criteri di falsificabilità}
+
+\section{1. Problema}
+
+I Capitoli 8-10 hanno fornito metrica, teoremi fondativi e differenziali, più una prima architettura applicativa. A questo punto il rischio più serio non è l'assenza di materiale teorico, ma l'illusione di completezza: una teoria può sembrare robusta finché viene testata solo su casi favorevoli.
+
+Per questo il Capitolo 11 introduce il passaggio critico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  costruire controesempi sistematici;
+\item
+  distinguere limiti intrinseci da limiti contingenti;
+\item
+  definire criteri espliciti di falsificabilità.
+\end{enumerate}
+
+Senza questo passaggio, OCT resterebbe una teoria ``forte per conferma'' ma debole per confutazione. Con questo passaggio, OCT entra nella dinamica scientifica piena: può essere corretta, raffinata o respinta in modo tracciabile.
+
+Il problema del capitolo è quindi:
+
+\textbf{come progettare una grammatica della confutazione che sia coerente con O1-O7, con lo spazio \texttt{S\_Omega} e con il programma teorematico F/D/A senza ridurre la teoria a un insieme arbitrario di eccezioni?}
+
+La difficoltà è duplice:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  troppi controesempi non tipizzati generano rumore e paralisi metodologica;
+\item
+  criteri di falsificazione troppo deboli trasformano ogni anomalia in ``caso speciale''.
+\end{enumerate}
+
+Questo capitolo risolve la tensione con una struttura a tre livelli:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  tassonomia dei controesempi;
+\item
+  mappa dei limiti del modello;
+\item
+  regole decisionali di falsificazione/revisione.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi è articolata in sette enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Una teoria ordinativa è scientificamente valida solo se include controesempi tipizzati e criteri di fallimento espliciti.
+\item
+  I controesempi utili non negano la teoria in blocco: localizzano assiomi, soglie o mapping contestuali che richiedono revisione.
+\item
+  I limiti del modello devono essere separati in limiti strutturali, limiti metrici e limiti di osservazione.
+\item
+  La falsificabilità in OCT non coincide con il solo errore numerico; riguarda anche perdita di coerenza epistemica e invalidità del trasporto contestuale.
+\item
+  La distinzione \texttt{reject} vs \texttt{revise} è decisiva: non ogni fallimento locale implica rigetto globale.
+\item
+  Una matrice decisionale unica riduce arbitrarietà nelle revisioni successive.
+\item
+  Il capitolo fornisce la base metodologica per i Capitoli 12-14 (protocollo, benchmark, governance).
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 11.1 (Controesempio ordinativo)}
+
+Un controesempio ordinativo è un caso \texttt{X} in cui:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  le ipotesi di un enunciato OCT sono soddisfatte;
+\item
+  la tesi dichiarata non si verifica;
+\item
+  il fallimento è riproducibile sotto protocollo dichiarato.
+\end{enumerate}
+
+\subsection{Definizione 11.2 (Controesempio strutturale)}
+
+Controesempio che colpisce la forma logica dell'enunciato o la dipendenza da assiomi O1-O7.
+
+\subsection{Definizione 11.3 (Controesempio contestuale)}
+
+Controesempio in cui il risultato cambia per variazione di \texttt{Omega} non coperta da regole di trasporto esplicite.
+
+\subsection{Definizione 11.4 (Controesempio metrico)}
+
+Controesempio dovuto a instabilità o ambiguità nelle metriche \texttt{Coh}, \texttt{Phi}, \texttt{Delta}, non risolvibile da semplice rumore statistico.
+
+\subsection{Definizione 11.5 (Limite strutturale del modello)}
+
+Vincolo non eliminabile senza modificare assiomi o architettura teorica di base.
+
+\subsection{Definizione 11.6 (Limite operativo)}
+
+Vincolo pratico dovuto a protocollo, dati, strumenti o granularità osservativa, in principio migliorabile senza rifondazione assiomatica.
+
+\subsection{Definizione 11.7 (Falsificazione forte)}
+
+Si ha falsificazione forte quando un controesempio riproducibile invalida un enunciato nel suo dominio dichiarato e non è riassorbibile tramite riformulazione conservativa.
+
+\subsection{Definizione 11.8 (Revisione conservativa)}
+
+Aggiornamento di soglie, condizioni o dominio di applicazione che preserva il nucleo teorico senza contraddizioni interne.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Tassonomia minima dei controesempi (CEx1-CEx6)}
+
+Proponiamo sei classi operative.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{CEx1 - Classically-valid / OCT-invalid}\\
+  Casi che confermano la selettività ordinativa (utile per F02/F08).
+\item
+  \textbf{CEx2 - Isomorfismo sterile}\\
+  Casi isomorfi classici con divergenza su funzione singolare (utile per F01/F07).
+\item
+  \textbf{CEx3 - Composizione fragile}\\
+  Casi in cui morfismi locali validi producono composta degenerativa (stress su F03).
+\item
+  \textbf{CEx4 - Universalità vuota}\\
+  Limiti/colimiti classici senza emergenza ordinativa (stress su F05/F06).
+\item
+  \textbf{CEx5 - Trasporto contestuale fallito}\\
+  Risultati non stabili sotto mapping \texttt{Omega\_1\ -\textgreater{}\ Omega\_2} (stress su F09, D/A).
+\item
+  \textbf{CEx6 - Dualità/simmetria non conservativa}\\
+  Dualizzazioni o simmetrizzazioni formalmente lecite ma ordinativamente degradanti (stress su D04/D05).
+\end{enumerate}
+
+Questa tassonomia consente di mappare ogni fallimento a una zona specifica della teoria, evitando critiche indistinte.
+
+\subsection{4.2 Mappa dei limiti del modello}
+
+Distinguamo quattro famiglie di limiti.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{L1 - Limiti assiomatici}\\
+  Dipendono da O1-O7 (es. robustezza non completamente caratterizzata).
+\item
+  \textbf{L2 - Limiti metrici}\\
+  Dipendono da normalizzazione \texttt{Phi}, scelta soglie \texttt{tau}, sensibilità a perturbazioni.
+\item
+  \textbf{L3 - Limiti di osservazione}\\
+  Dipendono da definizione di \texttt{Omega}, granularità temporale e qualità dei dati.
+\item
+  \textbf{L4 - Limiti di trasferibilità}\\
+  Dipendono da mapping contestuali non equivalenti o incompleti.
+\end{enumerate}
+
+La distinzione è essenziale perché ogni famiglia richiede interventi diversi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  revisione teorica (L1);
+\item
+  calibrazione metodologica (L2);
+\item
+  miglioramento protocollo/dataset (L3);
+\item
+  formalizzazione del trasporto (L4).
+\end{enumerate}
+
+\subsection{4.3 Criteri di falsificabilità (K1-K7)}
+
+Proponiamo sette criteri minimi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{K1 - Riproducibilità}: il fallimento deve essere replicabile da team indipendente.
+\item
+  \textbf{K2 - Localizzazione}: deve essere identificato il punto teorico colpito (assioma, teorema, soglia, mapping).
+\item
+  \textbf{K3 - Persistenza}: il fallimento non deve sparire con micro-variazioni irrilevanti.
+\item
+  \textbf{K4 - Tracciabilità}: log, metadati e configurazione devono essere completi.
+\item
+  \textbf{K5 - Controfattualità}: deve esistere confronto con baseline o variante di controllo.
+\item
+  \textbf{K6 - Non-ambiguità}: il caso non deve dipendere da definizioni circolari.
+\item
+  \textbf{K7 - Decisione}: il fallimento deve portare a esito formale (\texttt{validated}/\texttt{revise}/\texttt{reject}).
+\end{enumerate}
+
+Senza K7 la falsificazione resta narrativa; con K7 entra nella governance scientifica.
+
+\subsection{4.4 Matrice decisionale post-fallimento}
+
+Quando un controesempio è confermato, proponiamo la seguente decisione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Esito A - Conferma della teoria}\\
+  Il caso era fuori dominio dichiarato o mal specificato.
+\item
+  \textbf{Esito B - Revisione locale (\texttt{revise})}\\
+  Servono aggiustamenti conservativi (soglie, ipotesi, restrizioni esplicite).
+\item
+  \textbf{Esito C - Revisione strutturale}\\
+  Serve modificare definizioni o dipendenze assiomatiche.
+\item
+  \textbf{Esito D - Rigetto (\texttt{reject})}\\
+  L'enunciato non è recuperabile nel dominio dichiarato.
+\end{enumerate}
+
+La matrice impedisce due errori frequenti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  negare fallimenti reali trattandoli come rumore;
+\item
+  rigettare l'intero impianto per fallimenti locali.
+\end{enumerate}
+
+\subsection{4.5 Esempio sintetico di applicazione della matrice}
+
+Caso ipotetico: un benchmark mostra \texttt{D} commutativo con \texttt{Phi=0} in condizioni replicate.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  se il protocollo è incompleto -\textgreater{} non si decide (manca K4);
+\item
+  se il protocollo è completo ma il caso è fuori dominio -\textgreater{} Esito A;
+\item
+  se il caso è nel dominio e riproducibile -\textgreater{} Esito B o D a seconda della recuperabilità.
+\end{enumerate}
+
+In questo modo la teoria resta criticabile ma non arbitraria.
+
+\subsection{4.6 Falsificabilità dei blocchi F/D/A}
+
+Per coerenza generale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i teoremi \textbf{F} richiedono confutazione primariamente strutturale;
+\item
+  i teoremi \textbf{D} richiedono confutazione strutturale + metrica;
+\item
+  i teoremi \textbf{A} richiedono confutazione strutturale + metrica + protocollo empirico.
+\end{enumerate}
+
+Questo schema evita la falsa equivalenza tra:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dimostrazione formale incompleta;
+\item
+  benchmark empirico negativo;
+\item
+  errore di implementazione.
+\end{enumerate}
+
+\subsection{4.7 Condizione di maturità critica}
+
+Una teoria raggiunge maturità critica quando:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i controesempi sono attivamente cercati, non evitati;
+\item
+  i limiti sono pubblicati con la stessa visibilità dei risultati positivi;
+\item
+  le decisioni di revisione sono versionate e motivate.
+\end{enumerate}
+
+Questa condizione è parte del contenuto scientifico, non solo della forma editoriale.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 11.1 (Necessità dei controesempi tipizzati)}
+
+Enunciato:
+Senza una tassonomia di controesempi, il ciclo di revisione OCT non è decidibile in modo non arbitrario.
+
+Intuizione:
+Le anomalie non tipizzate producono discussioni non confrontabili e impediscono decisioni stabili.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 11.2 (Separazione tra limite strutturale e limite operativo)}
+
+Enunciato:
+La mancata separazione L1-L4 porta sistematicamente a errori di diagnosi teorica.
+
+Intuizione:
+Problemi di protocollo possono essere scambiati per errori assiomatici, e viceversa.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 11.3 (Sufficienza decisionale K1-K7)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  un controesempio soddisfa K1-K6;
+\item
+  esiste matrice decisionale A-D con criteri pubblici.
+\end{enumerate}
+
+Tesi:
+È possibile assegnare in modo tracciabile un esito teorico non arbitrario (\texttt{validated}/\texttt{revise}/\texttt{reject}).
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  K1-K6 garantiscono qualità minima dell'evidenza;
+\item
+  la matrice A-D forza una decisione esplicita;
+\item
+  la tracciabilità consente audit indipendente dell'esito.
+\end{enumerate}
+
+Conseguenze:
+fornisce il meccanismo operativo di falsificabilità del programma OCT.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Teorema 11.4 (Non-collasso del giudizio globale)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  esiste almeno un controesempio forte su un enunciato locale;
+\item
+  il resto del blocco teorico non dipende logicamente da quel punto in modo totale.
+\end{enumerate}
+
+Tesi:
+Un fallimento locale non implica automaticamente rigetto globale della teoria.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la dipendenza tra enunciati è parziale e tracciata;
+\item
+  la matrice A-D consente revisione locale o strutturale;
+\item
+  il rigetto globale è riservato a fallimenti non recuperabili del nucleo.
+\end{enumerate}
+
+Conseguenze:
+preserva rigore critico evitando sia dogmatismo sia nichilismo teorico.
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per il protocollo scientifico (Capitolo 12)}
+
+Il Capitolo 12 dovrà incorporare K1-K7 come checklist obbligatoria prima di accettare risultati come evidenza forte.
+
+\subsection{6.2 Per benchmark e disegno sperimentale (Capitolo 13)}
+
+I benchmark dovranno essere progettati anche per generare controesempi, non solo per massimizzare performance.
+
+\subsection{6.3 Per governance epistemica (Capitolo 14)}
+
+Ogni cambio di stato teorema dovrà riportare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  tipo di controesempio;
+\item
+  famiglia di limite coinvolta;
+\item
+  decisione A-D e motivazione.
+\end{enumerate}
+
+\subsection{6.4 Per pubblicazione e replica}
+
+È raccomandato pubblicare in parallelo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  risultati positivi;
+\item
+  fallimenti significativi;
+\item
+  revisioni di ipotesi.
+\end{enumerate}
+
+Questa pratica aumenta affidabilità e credibilità del framework.
+
+\subsection{6.5 Per roadmap editoriale}
+
+Con il presente capitolo si chiude la milestone \texttt{v1.2} su basi critiche, non solo costruttive. Questo migliora la qualità del passaggio successivo (Capitoli 4-7), perché l'espansione del corpus classico avverrà con un filtro di falsificabilità già definito.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo definisce la grammatica della confutazione, ma non esaurisce tutti i controesempi possibili;
+\item
+  K1-K7 sono criteri minimi: domini specifici possono richiedere vincoli aggiuntivi;
+\item
+  la matrice A-D richiede disciplina editoriale costante per restare efficace.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  classificare come ``fuori dominio'' casi che in realtà confutano il modello;
+\item
+  introdurre revisioni ad hoc non tracciate;
+\item
+  usare criteri di prova diversi per risultati positivi e negativi;
+\item
+  non pubblicare i fallimenti più informativi.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che OCT sia già pienamente falsificata o pienamente confermata;
+\item
+  che ogni controesempio conduca necessariamente a rigetto;
+\item
+  che la governance metodologica sostituisca la necessità di nuova matematica dove richiesta.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C11.1 & Una tassonomia di controesempi è necessaria per revisione non arbitraria della teoria & metodologico & S1 & validated \\
+C11.2 & La separazione L1-L4 migliora la diagnosi dei fallimenti & metodologico & S1 & validated \\
+C11.3 & I criteri K1-K7 sono una base sufficiente per falsificabilità operativa tracciabile & epistemico-operativo & S2 & in\_review \\
+C11.4 & La matrice A-D riduce il rischio di revisioni ad hoc & epistemico & S1 & in\_review \\
+C11.5 & Non ogni fallimento locale implica rigetto globale della teoria & metateorico & S2 & in\_proof \\
+C11.6 & La pubblicazione dei fallimenti è parte costitutiva della qualità scientifica OCT & metodologico & S1 & validated \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 12}
+
+Con questo capitolo si completa la fase metateorica \texttt{8-11}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 8: spazio di validità e invarianti;
+\item
+  Capitolo 9: teoremi fondativi;
+\item
+  Capitolo 10: teoremi differenziali e applicativi;
+\item
+  Capitolo 11: controesempi, limiti e falsificabilità.
+\end{enumerate}
+
+Il Capitolo 12 tradurrà questa base in protocollo scientifico operativo: metrica, osservazione, decisione. In altre parole, passeremo dalla teoria criticamente stabilizzata alla procedura standardizzata di valutazione.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_THEOREM\_PROGRAM\_v0\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_08\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_09\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_10\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Popper, K. (1959). \emph{The Logic of Scientific Discovery}.
+\item
+  Lakatos, I. (1978). \emph{The Methodology of Scientific Research Programmes}.
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}.
+\end{enumerate}

@@ -1,0 +1,1032 @@
+\chapter{Capitolo 12 - Protocollo scientifico OCT: metrica, osservazione, decisione}
+
+\section{1. Problema}
+
+Con i capitoli precedenti abbiamo costruito un impianto teorico completo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  fondazione ontologica e assiomatica;
+\item
+  teoremi fondativi, differenziali e applicativi;
+\item
+  estensione del corpus classico fino alle strutture avanzate;
+\item
+  grammatica di controesempi, limiti e falsificabilità.
+\end{enumerate}
+
+Manca però il passaggio che decide se la teoria può diventare pratica scientifica condivisa: un protocollo unico che dica \textbf{come} osservare, \textbf{cosa} misurare e \textbf{quando} decidere.
+
+Senza protocollo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i risultati restano locali e difficili da confrontare;
+\item
+  le decisioni di validazione diventano opache;
+\item
+  i passaggi \texttt{in\_proof\ -\textgreater{}\ validated} rischiano arbitrarietà.
+\end{enumerate}
+
+Con protocollo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ogni test diventa replicabile;
+\item
+  ogni decisione è tracciabile;
+\item
+  la teoria può essere auditata da team indipendenti.
+\end{enumerate}
+
+Il problema del capitolo è quindi:
+
+\textbf{come formalizzare una procedura standard che unisca metrica ordinativa, osservazione contestuale e decisione epistemica senza ridurre OCT a sola statistica né a sola deduzione formale?}
+
+\subsection{\texorpdfstring{1.1 Perché questo capitolo apre la milestone \texttt{v1.4}}{1.1 Perché questo capitolo apre la milestone v1.4}}
+
+La milestone \texttt{v1.4} è il passaggio da ``teoria estesa'' a ``metodo scientifico operativo'':
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 12: protocollo;
+\item
+  Capitolo 13: benchmark e replicabilità;
+\item
+  Capitolo 14: governance epistemica.
+\end{enumerate}
+
+Il Capitolo 12 è la base perché definisce il linguaggio procedurale comune usato nei due capitoli successivi.
+
+\subsection{1.2 Vincolo metodologico}
+
+Il protocollo OCT deve mantenere una tripla coerenza:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  coerenza matematica (con O1-O7 e i teoremi F/D/A);
+\item
+  coerenza sperimentale (misure replicabili);
+\item
+  coerenza decisionale (regole esplicite di accettazione/revisione/rigetto).
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi è articolata in nove enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Un risultato OCT è scientificamente forte solo se combina prova formale e protocollo di osservazione replicabile.
+\item
+  La triade metrica canonica (\texttt{Coh}, \texttt{Phi}, \texttt{Delta}) è necessaria ma non sufficiente: servono metriche ausiliarie dominio-specifiche.
+\item
+  Ogni esperimento deve essere indicizzato da un contesto \texttt{Omega} dichiarato e versionato.
+\item
+  La pre-registrazione dei criteri decisionali riduce bias di conferma.
+\item
+  La validazione richiede benchmark indipendenti e multi-contesto.
+\item
+  I criteri di decisione devono distinguere \texttt{validated}, \texttt{revise}, \texttt{reject}.
+\item
+  Il protocollo deve prevedere pubblicazione di fallimenti significativi, non solo esiti positivi.
+\item
+  Il passaggio di stato di un teorema è legittimo solo con evidenza tracciata.
+\item
+  Il protocollo proposto è sufficiente per sostenere il disegno benchmark del Capitolo 13.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 12.1 (Unità di validazione)}
+
+Unità minima di validazione:
+
+\texttt{U\_val\ :=\ \textless{}Claim,\ Omega,\ Dataset,\ Pipeline,\ Metriche,\ Criteri,\ Log,\ Esito\textgreater{}}.
+
+\subsection{Definizione 12.2 (Contesto osservativo registrato)}
+
+\texttt{Omega\_reg} è il contesto osservativo con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  variabili rilevanti;
+\item
+  ipotesi di dominio;
+\item
+  condizioni di perturbazione ammesse;
+\item
+  versione del protocollo.
+\end{enumerate}
+
+\subsection{Definizione 12.3 (Metriche canoniche e ausiliarie)}
+
+Metriche canoniche:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Coh\_Omega(D)\ in\ {[}0,1{]}};
+\item
+  \texttt{Phi\_Omega(D)} (normalizzata quando necessario);
+\item
+  \texttt{Delta\_Omega(D)=1-Coh\_Omega(D)}.
+\end{enumerate}
+
+Metriche ausiliarie (esempi):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Err\_sem} per qualità semantica;
+\item
+  \texttt{Err\_struct} per fedeltà strutturale;
+\item
+  \texttt{Var\_Omega} per stabilità cross-contesto.
+\end{enumerate}
+
+\subsection{Definizione 12.4 (Pre-registrazione)}
+
+La pre-registrazione è la dichiarazione ex ante di:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  criteri di conferma;
+\item
+  criteri di falsificazione;
+\item
+  soglie e test statistici;
+\item
+  regole di decisione.
+\end{enumerate}
+
+\subsection{Definizione 12.5 (Decisione epistemica)}
+
+Esito finale di un test:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{validated}: evidenza sufficiente e replicata;
+\item
+  \texttt{revise}: evidenza mista o insufficiente;
+\item
+  \texttt{reject}: controevidenza robusta nel dominio dichiarato.
+\end{enumerate}
+
+\subsection{Definizione 12.6 (Tracciabilità completa)}
+
+Un risultato è tracciabile se include:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  configurazione di esecuzione;
+\item
+  dati/versione;
+\item
+  codice o procedura;
+\item
+  output e log;
+\item
+  motivazione della decisione.
+\end{enumerate}
+
+\subsection{Definizione 12.7 (Indice di evidenza composta)}
+
+Dato un claim \texttt{C} e un contesto \texttt{Omega}, definiamo l'indice di evidenza composta:
+
+\texttt{IEC(C,Omega)\ :=\ w1*Coh\ +\ w2*Phi\_norm\ +\ w3*(1-Delta)\ +\ w4*Rep\ +\ w5*Trace}
+
+con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{w\_i\ \textgreater{}=\ 0} e \texttt{sum\_i\ w\_i\ =\ 1};
+\item
+  \texttt{Phi\_norm} normalizzata nel dominio del benchmark;
+\item
+  \texttt{Rep} indice di replicabilità inter-benchmark;
+\item
+  \texttt{Trace} indice di completezza di tracciabilità.
+\end{enumerate}
+
+L'\texttt{IEC} non sostituisce la valutazione teorica, ma fornisce una sintesi comparabile tra esperimenti.
+
+\subsection{Definizione 12.8 (Budget d'incertezza)}
+
+Per ogni unità \texttt{U\_val} definiamo un budget d'incertezza:
+
+\texttt{B\_unc\ :=\ \textless{}u\_data,\ u\_model,\ u\_measure,\ u\_context,\ u\_decision\textgreater{}}
+
+dove ogni termine quantifica la componente di incertezza legata a:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  qualità e copertura dei dati;
+\item
+  specificazione del modello/pipeline;
+\item
+  errore o variabilità di misura;
+\item
+  trasferibilità tra contesti;
+\item
+  discrezionalità residua in decisione.
+\end{enumerate}
+
+Un claim non può essere promosso a \texttt{validated} se \texttt{B\_unc} supera la soglia preregistrata.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Architettura del protocollo in tre strati}
+
+Il protocollo OCT è organizzato in tre strati:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Strato Metrico}: cosa misurare (\texttt{Coh/Phi/Delta} + ausiliarie);
+\item
+  \textbf{Strato Osservativo}: in quale \texttt{Omega} e con quali perturbazioni;
+\item
+  \textbf{Strato Decisionale}: come passare da misura a stato teorico.
+\end{enumerate}
+
+La separazione evita confusioni:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  buone metriche con cattivo contesto;
+\item
+  buon contesto con regole decisionali opache;
+\item
+  decisioni forti su evidenza debole.
+\end{enumerate}
+
+\subsection{4.2 Pipeline minima di validazione (PV-8)}
+
+Proponiamo una pipeline in otto passi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dichiarare claim e teorema target;
+\item
+  registrare \texttt{Omega\_reg};
+\item
+  fissare dataset/versione e baseline;
+\item
+  pre-registrare criteri di conferma/falsificazione;
+\item
+  eseguire esperimento e raccogliere metriche;
+\item
+  ripetere su benchmark indipendente;
+\item
+  consolidare risultati multi-contesto;
+\item
+  assegnare esito (\texttt{validated}/\texttt{revise}/\texttt{reject}) con motivazione.
+\end{enumerate}
+
+La PV-8 è il nucleo operativo del capitolo.
+
+\subsection{4.3 Regole di evidenza minima}
+
+Per promuovere un claim a \texttt{validated} proponiamo quattro condizioni minime:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  conferma su almeno due benchmark indipendenti;
+\item
+  replicazione su almeno due contesti \texttt{Omega} non equivalenti banalmente;
+\item
+  coerenza tra metrica canonica e metrica ausiliaria rilevante;
+\item
+  assenza di controesempio forte non risolto nel dominio dichiarato.
+\end{enumerate}
+
+Se una condizione manca:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  default su \texttt{revise} (non su \texttt{validated}).
+\end{enumerate}
+
+\subsection{4.4 Trattamento dei risultati discordanti}
+
+È frequente ottenere risultati misti tra benchmark o contesti. In OCT non si risolve con media semplice.
+
+Regola proposta:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  identificare la fonte di divergenza (dati, mapping, soglia, pipeline);
+\item
+  classificare divergenza come:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    rumore controllabile;
+  \item
+    instabilità strutturale;
+  \item
+    controevidenza sostanziale.
+  \end{itemize}
+\item
+  decidere esito in funzione della classe di divergenza.
+\end{enumerate}
+
+Questa regola impedisce sia ottimismo ingiustificato sia rigetto prematuro.
+
+\subsection{4.5 Matrice decisionale standard}
+
+Per ogni unità \texttt{U\_val}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{D-Valid}: criteri soddisfatti, replicazione robusta;
+\item
+  \textbf{D-Revise}: evidenza parziale o conflittuale;
+\item
+  \textbf{D-Reject}: fallimento robusto nel dominio dichiarato.
+\end{enumerate}
+
+Ogni decisione deve includere:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  claim colpito;
+\item
+  evidenze principali;
+\item
+  limiti residui;
+\item
+  azione successiva.
+\end{enumerate}
+
+\subsection{4.6 Collegamento con la falsificabilità (Capitolo 11)}
+
+Il protocollo incorpora i principi K1-K7:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  riproducibilità e tracciabilità;
+\item
+  localizzazione del fallimento;
+\item
+  decisione finale non arbitraria.
+\end{enumerate}
+
+In questo modo, la falsificabilità non resta solo principio teorico: diventa procedura eseguibile.
+
+\subsection{4.7 Controllo di qualità del protocollo}
+
+Ogni campagna sperimentale dovrebbe produrre un report QA con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  completezza metadati;
+\item
+  qualità log;
+\item
+  copertura benchmark;
+\item
+  coerenza tra decisione e criteri pre-registrati.
+\end{enumerate}
+
+Se il QA è insufficiente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il risultato non può passare a \texttt{validated}.
+\end{enumerate}
+
+\subsection{4.8 Versionamento del protocollo}
+
+Il protocollo deve essere versionato (\texttt{P\_v1}, \texttt{P\_v2}, \ldots). Ogni versione deve dichiarare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  cosa cambia nelle metriche;
+\item
+  cosa cambia nei criteri decisionali;
+\item
+  quali risultati pregressi vanno rivalutati.
+\end{enumerate}
+
+Questo previene inconsistenze storiche nei passaggi di stato.
+
+\subsection{4.9 Protocollo e apertura dei dati}
+
+Per quanto possibile, la validazione deve favorire:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  pubblicazione di dataset/manifest;
+\item
+  pubblicazione dei log principali;
+\item
+  pubblicazione degli errori significativi.
+\end{enumerate}
+
+La trasparenza non è accessorio etico: è condizione tecnica di replicabilità.
+
+\subsection{4.10 Condizione di non-ridondanza del capitolo}
+
+Il capitolo è non ridondante se mostra che:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  senza protocollo la stessa teoria può produrre esiti incompatibili;
+\item
+  con protocollo gli esiti diventano confrontabili e decidibili.
+\end{enumerate}
+
+Questa condizione è soddisfatta dall'integrazione tra PV-8, regole di evidenza minima e matrice decisionale.
+
+\subsection{\texorpdfstring{4.11 Operatore decisionale ordinativo \texttt{D\_OCT}}{4.11 Operatore decisionale ordinativo D\_OCT}}
+
+Per rendere la decisione riproducibile introduciamo un operatore esplicito:
+
+\texttt{D\_OCT(U\_val)\ -\textgreater{}\ \{validated,\ revise,\ reject\}}.
+
+Input minimi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  indicatori canonici e ausiliari;
+\item
+  esito repliche indipendenti;
+\item
+  \texttt{B\_unc} e \texttt{IEC};
+\item
+  presenza/assenza di controesempi forti.
+\end{enumerate}
+
+Regola orientativa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{validated} se tutte le condizioni minime sono soddisfatte, \texttt{IEC\ \textgreater{}=\ tau\_val} e \texttt{B\_unc\ \textless{}=\ beta\_val};
+\item
+  \texttt{revise} se evidenza intermedia, conflittuale o incertezza oltre soglia di validazione;
+\item
+  \texttt{reject} se controevidenza robusta o violazioni strutturali persistenti.
+\end{enumerate}
+
+L'operatore non elimina il giudizio scientifico, ma ne impone la struttura argomentativa.
+
+\subsection{4.12 Budget d'incertezza e analisi di sensibilità}
+
+Ogni campagna deve includere almeno tre verifiche:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{sensibilità dati}: variazione controllata del campione/stratificazione;
+\item
+  \textbf{sensibilità soglie}: stress su \texttt{tau\_val}, \texttt{beta\_val}, soglie ausiliarie;
+\item
+  \textbf{sensibilità contesto}: cambio di \texttt{Omega} mantenendo claim invariato.
+\end{enumerate}
+
+Se l'esito cambia in modo non spiegato rispetto a piccole perturbazioni, il claim va in \texttt{revise} fino a chiarimento.
+
+\subsection{4.13 Schema minimo di preregistrazione}
+
+Per evitare preregistrazioni deboli proponiamo uno schema minimo obbligatorio.
+
+Campi obbligatori:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  claim e dominio di validità dichiarato;
+\item
+  dataset, fonti, criteri di inclusione/esclusione;
+\item
+  pipeline esecutiva e versioni software;
+\item
+  metriche canoniche e metriche ausiliarie;
+\item
+  soglie decisionali (\texttt{tau\_val}, \texttt{tau\_rev}, \texttt{beta\_val});
+\item
+  test di robustezza previsti;
+\item
+  criteri espliciti di falsificazione;
+\item
+  politica di gestione risultati inattesi.
+\end{enumerate}
+
+Senza questi campi, l'unita non e idonea a validazione conclusiva.
+
+\subsection{4.14 Livelli di riproducibilità degli artefatti}
+
+Definiamo quattro livelli progressivi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{R0} - descrizione narrativa non eseguibile;
+\item
+  \texttt{R1} - script disponibili ma ambiente non congelato;
+\item
+  \texttt{R2} - script + ambiente + manifest dati con hash;
+\item
+  \texttt{R3} - replay indipendente riuscito su infrastruttura esterna.
+\end{enumerate}
+
+Per claims con impatto teorico alto, il livello minimo raccomandato e \texttt{R2}; per promozione critica e preferibile \texttt{R3}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 12.1 (Necessità della pre-registrazione)}
+
+Enunciato:
+Senza pre-registrazione dei criteri decisionali, la validazione OCT è esposta a bias di conferma non controllati.
+
+Intuizione:
+la decisione ex post può essere adattata al risultato osservato.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 12.2 (Insufficienza del benchmark singolo)}
+
+Enunciato:
+Un singolo benchmark non è condizione sufficiente per promuovere un claim a \texttt{validated}.
+
+Intuizione:
+la robustezza richiede indipendenza minima delle evidenze.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 12.3 (Sufficienza operativa della pipeline PV-8)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  esecuzione completa dei passi PV-8;
+\item
+  tracciabilità completa;
+\item
+  decisione conforme alla matrice standard.
+\end{enumerate}
+
+Tesi:
+La decisione epistemica risultante è auditabile e non arbitraria.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  PV-8 rende esplicite tutte le dipendenze dell'esperimento;
+\item
+  tracciabilità completa rende verificabile il processo;
+\item
+  la matrice decisionale vincola la scelta finale.
+\end{enumerate}
+
+Conseguenze:
+fornisce base operativa per passaggio di stato dei teoremi.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Teorema 12.4 (Compatibilità tra rigore formale e rigore sperimentale)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  claim formalmente ben specificato;
+\item
+  protocollo PV-8 applicato;
+\item
+  evidenza multi-benchmark coerente.
+\end{enumerate}
+
+Tesi:
+È possibile mantenere simultaneamente rigore matematico e rigore sperimentale nel ciclo OCT.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il formalismo definisce cosa testare;
+\item
+  il protocollo definisce come testare;
+\item
+  la decisione tracciata definisce quando accettare o rivedere.
+\end{enumerate}
+
+Conseguenze:
+evita la falsa alternativa tra ``teoria pura'' e ``solo empiria''.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Proposizione 12.5 (Monotonia informativa della tracciabilità)}
+
+Enunciato:
+A parita di esito metrico, unita con livello di tracciabilità superiore (\texttt{Trace}) produce decisioni più auditabili e meno controvertibili.
+
+Intuizione:
+la trasparenza riduce ambiguità interpretative e facilità la replica indipendente.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 12.6 (Necessità del budget d'incertezza)}
+
+Enunciato:
+Senza quantificazione esplicita del budget d'incertezza (\texttt{B\_unc}), la distinzione tra \texttt{revise} e \texttt{validated} resta metodologicamente fragile.
+
+Intuizione:
+la stessa metrica può apparire forte o debole a seconda della varianza nascosta non esplicitata.
+
+Stato: \texttt{in\_review}.
+
+\subsection{\texorpdfstring{Teorema 12.7 (Consistenza procedurale dell'operatore \texttt{D\_OCT})}{Teorema 12.7 (Consistenza procedurale dell'operatore D\_OCT)}}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  preregistrazione completa;
+\item
+  regole decisionali fissate ex ante;
+\item
+  applicazione uniforme su benchmark indipendenti.
+\end{enumerate}
+
+Tesi:
+L'operatore \texttt{D\_OCT} e consistente nel senso procedurale: a parita di input e regole, produce decisioni replicabili tra valutatori.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la preregistrazione blocca il perimetro decisionale;
+\item
+  la codifica degli input riduce ambiguità semantiche;
+\item
+  la matrice decisionale limita la discrezionalità ex post.
+\end{enumerate}
+
+Conseguenze:
+fornisce base per audit inter-team e comparazione temporale delle decisioni.
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per progettazione benchmark (Capitolo 13)}
+
+Il Capitolo 13 dovrà derivare direttamente da PV-8:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  benchmark primari e secondari;
+\item
+  manifest dati/versioni;
+\item
+  criteri di conferma/falsificazione pre-registrati.
+\end{enumerate}
+
+\subsection{6.2 Per governance epistemica (Capitolo 14)}
+
+Il Capitolo 14 userà:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  matrice decisionale standard;
+\item
+  regole di versionamento protocollo;
+\item
+  policy di pubblicazione dei fallimenti.
+\end{enumerate}
+
+\subsection{6.3 Per team di ricerca multipli}
+
+Il protocollo consente collaborazione distribuita con linguaggio comune:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  stesso schema di report;
+\item
+  stessi stati decisionali;
+\item
+  stessa mappa di responsabilità metodologica.
+\end{enumerate}
+
+\subsection{6.4 Per pubblicazione tecnica}
+
+Ogni release dovrebbe includere:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  versione protocollo usata;
+\item
+  claim valutati;
+\item
+  esiti e motivazioni;
+\item
+  limiti aperti.
+\end{enumerate}
+
+Questo migliora la leggibilità esterna e riduce ambiguità interpretative.
+
+\subsection{6.5 Per continuità del manoscritto}
+
+Il protocollo funziona da ``strato comune'' tra teoria (capitoli 1-11) e applicazioni/benchmark (capitoli 13-16).\\
+Senza questo strato, il libro rischierebbe frammentazione in blocchi non comunicanti.
+
+\subsection{6.6 Per pacchetto pubblicazione multi-piattaforma}
+
+Il protocollo del Capitolo 12 consente una pubblicazione coordinata su canali diversi senza perdita di significato metodologico.
+
+Mappatura operativa consigliata:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  GitHub: versione eseguibile (documenti, script, manifest, changelog);
+\item
+  Zenodo: snapshot citabile con DOI di release;
+\item
+  OSF: progetto di ricerca con artefatti, preregistrazioni e versioni intermedie;
+\item
+  Hugging Face: eventuali dataset mirror e card metodologiche per benchmark ripetibili.
+\end{enumerate}
+
+La coerenza tra piattaforme si ottiene mantenendo identico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  identificatore di versione del protocollo;
+\item
+  manifest dei dataset con hash;
+\item
+  decision table usata per \texttt{validated/revise/reject}.
+\end{enumerate}
+
+\subsection{6.7 Per lettori non specialisti}
+
+Un protocollo esplicito e anche una funzione pedagogica: rende leggibile il passaggio da teoria ad evidenza.
+
+Per una fruizione ``a prova di bambino'', ogni report dovrebbe includere:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  obiettivo in linguaggio naturale;
+\item
+  cosa e stato misurato e perché;
+\item
+  esito finale e motivo della scelta;
+\item
+  cosa manca ancora per aumentare la confidenza.
+\end{enumerate}
+
+Questo non semplifica la teoria, ma semplifica il suo accesso.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo definisce un protocollo minimo, non esaustivo per tutti i domini;
+\item
+  alcune metriche ausiliarie richiedono specifica per caso d'uso;
+\item
+  la robustezza statistica dipende dalla qualità dei dataset disponibili.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  pre-registrazione incompleta o retroattiva;
+\item
+  benchmark non indipendenti presentati come indipendenti;
+\item
+  decisioni non allineate ai criteri dichiarati;
+\item
+  omissione di fallimenti significativi nei report pubblici.
+\end{enumerate}
+
+Contromisure prioritarie:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  checklist di preregistrazione bloccante prima dell'esecuzione;
+\item
+  revisione incrociata minima a due valutatori per la decisione finale;
+\item
+  audit trimestrale dei livelli \texttt{R0-R3} sugli artefatti pubblici;
+\item
+  registro pubblico delle revisioni che motivi ogni cambio di stato dei claim.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che il protocollo garantisca automaticamente risultati positivi;
+\item
+  che ogni claim in \texttt{in\_proof} debba diventare \texttt{validated};
+\item
+  che la standardizzazione metodologica sostituisca l'innovazione teorica.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C12.1 & La pipeline PV-8 è sufficiente come baseline operativa di validazione OCT & metodologico & S2 & in\_review \\
+C12.2 & La pre-registrazione riduce bias decisionali in modo significativo & epistemico & S1 & validated \\
+C12.3 & Multi-benchmark e multi-contesto sono necessari per promozione a \texttt{validated} & metodologico & S1 & validated \\
+C12.4 & La matrice decisionale standard migliora tracciabilità e auditabilità & metodologico & S1 & in\_review \\
+C12.5 & Il protocollo unifica rigore formale e rigore sperimentale & metateorico & S2 & in\_proof \\
+C12.6 & La pubblicazione dei fallimenti è condizione tecnica di replicabilità & epistemico-operativo & S1 & validated \\
+C12.7 & L'operatore \texttt{D\_OCT} rende replicabile la decisione a parita di input/regole & metodologico-formale & S2 & in\_proof \\
+C12.8 & Il budget d'incertezza e necessario per distinguere validazione da revisione & metodologico & S1 & in\_review \\
+C12.9 & I livelli \texttt{R0-R3} migliorano la comparabilità di riproducibilità tra studi & operativo & S1 & validated \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 13}
+
+Il Capitolo 12 ha definito la procedura standard di validazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  metrica canonica e ausiliaria;
+\item
+  osservazione contestuale registrata;
+\item
+  decisione epistemica tracciata.
+\end{enumerate}
+
+Il Capitolo 13 tradurrà questa procedura in disegno benchmark completo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  selezione e stratificazione dataset;
+\item
+  benchmark indipendenti e replicabilità multi-dominio;
+\item
+  criteri quantitativi di conferma/falsificazione per i blocchi F/D/A.
+\end{enumerate}
+
+In sintesi: il Capitolo 12 definisce il metodo; il Capitolo 13 ne implementa l'infrastruttura sperimentale.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_VALIDATION\_PROTOCOL\_v0\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_11\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_10\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Popper, K. (1959). \emph{The Logic of Scientific Discovery}.
+\item
+  Lakatos, I. (1978). \emph{The Methodology of Scientific Research Programmes}.
+\item
+  Nosek, B. et al. (2018). \emph{The preregistration revolution}.
+\end{enumerate}

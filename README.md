@@ -59,13 +59,14 @@ If you are new, read in this order:
 3. `TE_BOOTLOADER_v6_0_PROJECT.md`
 4. `TE_CORE_v5.1.md`
 5. `OCT/START_HERE_OCT.md`
-6. `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
-7. `OCT/validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
+6. `OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md`
+7. `OCT/OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
+8. `OCT/validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
 
 ## Publication Scope
 
 - Canonical TE framework documents
-- OCT corpus in English
+- OCT corpus and working-book track
 - Validation datasets/scripts/results for OCT benchmarking
 - Governance and contribution documents
 

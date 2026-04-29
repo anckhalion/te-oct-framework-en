@@ -19,6 +19,12 @@ This folder contains the OCT research materials in English for:
 ## Start Here
 
 1. `START_HERE_OCT.md`
-2. `OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md`
-3. `OCT_PREPRINT_METADATA_FINAL_v1_0.md`
-4. `validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
+2. `OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md`
+3. `OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
+4. `OCT_BOOK_LATEX/README.md`
+5. `validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
+
+## Legacy Material
+
+- `OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md` and related preprint files are preserved for traceability.
+- The `OCT_BOOK` and `OCT_FULL` folders represent the current working manuscript state.

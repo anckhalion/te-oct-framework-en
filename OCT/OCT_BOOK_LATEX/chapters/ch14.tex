@@ -1,0 +1,748 @@
+\chapter{Capitolo 14 - Governance epistemica: versioning, audit trail, quality gates}
+
+\section{1. Problema}
+
+Una teoria può avere buone definizioni e buoni benchmark, ma fallire comunque come programma scientifico se non possiede una governance epistemica esplicita.
+
+Nel contesto OCT, il rischio non e solo tecnico. E istituzionale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  stati dei claim aggiornati in modo incoerente tra file diversi;
+\item
+  release pubbliche prive di tracciabilità decisionale;
+\item
+  conflitti tra risultati locali e narrativa generale del progetto.
+\end{enumerate}
+
+Per questo il problema del capitolo e netto:
+
+\textbf{quale sistema di regole permette di governare nel tempo il passaggio dei claim tra \texttt{draft}, \texttt{in\_proof}, \texttt{validated/revise/reject}, mantenendo trasparenza, reversibilità controllata e responsabilità editoriale?}
+
+\subsection{1.1 Perché la governance e parte della teoria}
+
+In OCT la validità non e solo proprietà logica di una formula: e proprietà processuale di una catena evidenziale.
+
+Di conseguenza:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  senza governance, la teoria non scala oltre il laboratorio originario;
+\item
+  senza audit trail, la validazione non e verificabile retrospettivamente;
+\item
+  senza quality gate, la pubblicazione rischia di confondere stato ipotetico e stato consolidato.
+\end{enumerate}
+
+\subsection{\texorpdfstring{1.2 Ruolo nella milestone \texttt{v1.4}}{1.2 Ruolo nella milestone v1.4}}
+
+Con questo capitolo si chiude il blocco metodologico.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 12: protocollo di decisione;
+\item
+  Capitolo 13: infrastruttura benchmark;
+\item
+  Capitolo 14: costituzione operativa del corpus.
+\end{enumerate}
+
+Dopo questo punto il libro può passare ai case study (Capitoli 15-16) senza perdere rigore di stato.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi e articolata in dieci enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ogni claim OCT deve avere doppio stato: formale e decisionale.
+\item
+  Lo stato decisionale e valido solo se ancorato a evidenza tracciata e versionata.
+\item
+  I quality gate devono essere pubblici, finiti e verificabili ex post.
+\item
+  Ogni cambio di stato deve essere reversibile solo tramite procedura esplicita.
+\item
+  Le deviazioni dal protocollo sono ammesse solo con eccezione registrata.
+\item
+  L'audit trail e parte del risultato scientifico, non metadato accessorio.
+\item
+  Il versioning epistemico deve distinguere evoluzione teorica da evoluzione empirica.
+\item
+  La pubblicazione multi-piattaforma richiede sincronizzazione di stato e identificatori.
+\item
+  Le decisioni \texttt{revise} non sono fallimenti: sono meccanismi di controllo della deriva.
+\item
+  Il sistema proposto e sufficiente per governare la fase case-study e la transizione a preprint stabile.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 14.1 (Stato formale)}
+
+Stato formale di un claim nel programma teorematico:
+
+\texttt{S\_form\ in\ \{draft,\ in\_proof,\ validated\}}.
+
+\subsection{Definizione 14.2 (Stato decisionale)}
+
+Stato decisionale basato su evidenza operativa:
+
+\texttt{S\_dec\ in\ \{validated,\ revise,\ reject\}}.
+
+\texttt{S\_dec} non sostituisce \texttt{S\_form}, ma lo qualifica per uso editoriale e pubblicazione.
+
+\subsection{Definizione 14.3 (Record di stato)}
+
+Un record minimo di stato e:
+
+\texttt{R\_state\ :=\ \textless{}ClaimID,\ S\_form,\ S\_dec,\ EvidenceRef,\ DecisionDate,\ Version,\ Signatures\textgreater{}}.
+
+\subsection{Definizione 14.4 (Quality Gate)}
+
+Un quality gate \texttt{G\_k} e una condizione booleana preregistrata che deve risultare \texttt{PASS} per autorizzare un tipo specifico di rilascio.
+
+\subsection{Definizione 14.5 (Eccezione governance)}
+
+Eccezione governance: deviazione motivata da procedura standard, registrata con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  motivo;
+\item
+  rischio introdotto;
+\item
+  mitigazione;
+\item
+  data di scadenza dell'eccezione.
+\end{enumerate}
+
+\subsection{Definizione 14.6 (Audit trail epistemico)}
+
+Catena ordinata di evidenze e decisioni che permette di ricostruire integralmente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  quali dati sono stati usati;
+\item
+  quali criteri erano attivi;
+\item
+  perché uno stato e cambiato.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Architettura governance a quattro strati}
+
+La governance proposta e composta da quattro strati coordinati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Strato G1 - Semantico}: definizioni, notazione, perimetro del claim.
+\item
+  \textbf{Strato G2 - Evidenziale}: benchmark, metriche, report, repliche.
+\item
+  \textbf{Strato G3 - Decisionale}: matrice \texttt{validated/revise/reject}.
+\item
+  \textbf{Strato G4 - Rilascio}: gate, versioning, pubblicazione.
+\end{enumerate}
+
+Un errore in un singolo strato può invalidare il rilascio anche se gli altri tre sono coerenti.
+
+\subsection{4.2 Doppio stato e regole di coerenza}
+
+Definiamo regole minime di coerenza tra \texttt{S\_form} e \texttt{S\_dec}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  se \texttt{S\_form\ =\ draft}, allora \texttt{S\_dec} non può essere \texttt{validated};
+\item
+  se \texttt{S\_dec\ =\ reject}, il claim non può essere promosso senza nuova evidenza versionata;
+\item
+  se \texttt{S\_dec\ =\ revise}, il claim resta pubblicabile solo con etichetta esplicita di provvisorieta;
+\item
+  promozione a \texttt{S\_form\ =\ validated} richiede allineamento con decisione non conflittuale e gate di rilascio superati.
+\end{enumerate}
+
+Queste regole evitano inversioni narrative del tipo ``teorema consolidato'' con evidenza ancora in revisione.
+
+\subsection{4.3 Versioning epistemico}
+
+Il versioning deve distinguere almeno tre dimensioni:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{V\_theory}: cambi nella formalizzazione/assiomatica;
+\item
+  \texttt{V\_evidence}: cambi nei benchmark, dataset o analisi;
+\item
+  \texttt{V\_release}: confezionamento editoriale/pubblicazione.
+\end{enumerate}
+
+Regola:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  una modifica in \texttt{V\_evidence} senza modifica teorica non autorizza riscrittura implicita di claim;
+\item
+  una modifica in \texttt{V\_theory} richiede rivalutazione esplicita delle evidenze collegate;
+\item
+  ogni release pubblica deve dichiarare la tripla versione (\texttt{V\_theory}, \texttt{V\_evidence}, \texttt{V\_release}).
+\end{enumerate}
+
+\subsection{\texorpdfstring{4.4 Quality gate standard \texttt{G0-G6}}{4.4 Quality gate standard G0-G6}}
+
+Proponiamo sette gate minimi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{G0} - completezza metadati (\texttt{PASS/FAIL});
+\item
+  \texttt{G1} - integrità artefatti (manifest + hash);
+\item
+  \texttt{G2} - preregistrazione e criteri decisionali bloccati;
+\item
+  \texttt{G3} - evidenza benchmark indipendente minima;
+\item
+  \texttt{G4} - audit trail leggibile e ripercorribile;
+\item
+  \texttt{G5} - coerenza tra stato formale e decisionale;
+\item
+  \texttt{G6} - checklist pubblicazione multi-piattaforma allineata.
+\end{enumerate}
+
+Policy:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{FAIL} su \texttt{G0-G2} blocca qualsiasi release;
+\item
+  \texttt{FAIL} su \texttt{G3-G5} blocca release ``claim-strong'' e consente solo release di lavoro;
+\item
+  \texttt{FAIL} su \texttt{G6} consente rilascio locale ma non rilascio ufficiale.
+\end{enumerate}
+
+\subsection{4.5 Procedura di cambio stato (PCS-6)}
+
+Ogni cambio stato deve seguire sei passi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  proposta di cambio con motivazione;
+\item
+  verifica automatica gate disponibili;
+\item
+  revisione umana indipendente minima;
+\item
+  emissione decisione e firma;
+\item
+  aggiornamento record \texttt{R\_state};
+\item
+  pubblicazione del changelog decisionale.
+\end{enumerate}
+
+La PCS-6 rende il cambio di stato una procedura, non un atto implicito.
+
+\subsection{4.6 Gestione eccezioni e debito epistemico}
+
+Le eccezioni non vanno eliminate, vanno governate.
+
+Per ogni eccezione registriamo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  grado di rischio (\texttt{low/medium/high});
+\item
+  scadenza entro cui rientrare in procedura standard;
+\item
+  owner responsabile del rientro;
+\item
+  impatto su gate e release ammesse.
+\end{enumerate}
+
+L'accumulo di eccezioni oltre soglia definisce debito epistemico e obbliga una release dedicata di consolidamento.
+
+\subsection{4.7 Audit trail minimo pubblicabile}
+
+Ogni rilascio claim-sensitive deve includere:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  decision matrix corrente;
+\item
+  stato teoremi allineato;
+\item
+  riferimenti ai report benchmark rilevanti;
+\item
+  log sintetico dei cambi di stato;
+\item
+  elenco eccezioni aperte e chiuse.
+\end{enumerate}
+
+Senza questo bundle, un revisore esterno non può verificare la storia decisionale.
+
+\subsection{4.8 Governance multi-piattaforma}
+
+Per GitHub, Zenodo, OSF, Hugging Face il principio e uno: \textbf{stesso stato, stessa versione, stesso claim ledger}.
+
+Sincronizzazioni obbligatorie:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ID versione release;
+\item
+  checksum dei pacchetti dati;
+\item
+  decision table di riferimento;
+\item
+  timestamp di emissione.
+\end{enumerate}
+
+Divergenze tra piattaforme sono trattate come incidenti di governance.
+
+\subsection{4.9 Politica di comunicazione dello stato}
+
+Ogni documento pubblico che cita un claim deve riportare etichetta di stato nel punto d'uso.
+
+Formato raccomandato:
+
+\texttt{ClaimID\ {[}S\_form\ /\ S\_dec\ /\ EvidenceLevel{]}}.
+
+Esempio:
+
+\texttt{D03\ {[}in\_proof\ /\ revise\ /\ S2{]}}.
+
+Questo riduce ambiguità per lettori nuovi e impedisce overclaiming involontario.
+
+\subsection{4.10 Condizione di sufficienza del capitolo}
+
+La governance e sufficiente se garantisce contemporaneamente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  tracciabilità completa dei cambi stato;
+\item
+  regole di blocco rilascio verificabili;
+\item
+  allineamento stabile tra teoria, evidenza e pubblicazione.
+\end{enumerate}
+
+La condizione e soddisfatta dall'integrazione di G1-G4 con PCS-6, gate \texttt{G0-G6} e policy multi-piattaforma.
+
+\subsection{4.11 Indicatori di salute della governance (KPI-E)}
+
+Per monitorare se la governance funziona nel tempo proponiamo cinque indicatori periodici:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{K1\_time\_to\_decision}: tempo medio tra chiusura benchmark e decisione ufficiale;
+\item
+  \texttt{K2\_trace\_completeness}: percentuale record con audit trail completo;
+\item
+  \texttt{K3\_exception\_debt}: numero eccezioni aperte oltre scadenza;
+\item
+  \texttt{K4\_sync\_gap}: discrepanze di stato tra piattaforme pubbliche;
+\item
+  \texttt{K5\_revise\_stagnation}: claim in \texttt{revise} senza piano attivo di uscita.
+\end{enumerate}
+
+Uso operativo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  soglie KPI fissate trimestralmente;
+\item
+  superamento soglia produce azione correttiva obbligatoria;
+\item
+  trend peggiorativo su due finestre consecutive blocca release non critiche.
+\end{enumerate}
+
+Questo blocco evita che la governance resti un disegno statico e la trasforma in sistema vivo, misurabile e migliorabile.
+
+\subsection{4.12 Registro delle decisioni contestate}
+
+Una governance matura deve prevedere anche disaccordo strutturato.\\
+Per questo ogni contestazione formale a una decisione va registrata in un log dedicato con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  decisione contestata e riferimento al record \texttt{R\_state};
+\item
+  motivo tecnico della contestazione;
+\item
+  evidenza addizionale proposta;
+\item
+  esito della revisione (conferma, modifica, sospensione).
+\end{enumerate}
+
+Il registro non indebolisce l'autorità del processo: la rende verificabile e correggibile.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 14.1 (Necessità del doppio stato)}
+
+Enunciato:
+Un singolo stato non distingue adeguatamente maturità formale e maturità evidenziale del claim.
+
+Intuizione:
+la stessa formula può essere formalmente elegante ma sperimentalmente ancora instabile.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 14.2 (Funzione anti-deriva dei gate)}
+
+Enunciato:
+Un sistema di gate pubblici riduce la probabilità di promozioni opportunistiche di stato.
+
+Intuizione:
+vincoli espliciti rendono costoso ignorare evidenze negative o incomplete.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 14.3 (Valore epistemico delle eccezioni tracciate)}
+
+Enunciato:
+Eccezioni registrate e temporalmente limitate migliorano l'affidabilità complessiva rispetto a eccezioni implicite non documentate.
+
+Intuizione:
+la trasparenza dell'anomalia e preferibile alla sua invisibilità.
+
+Stato: \texttt{in\_review}.
+
+\subsection{Teorema 14.4 (Consistenza procedurale della PCS-6)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  applicazione completa della procedura PCS-6;
+\item
+  quality gate valutati prima della decisione;
+\item
+  aggiornamento record di stato obbligatorio.
+\end{enumerate}
+
+Tesi:
+La governance produce cambi di stato auditabili e confrontabili nel tempo.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la procedura serializza decisione e responsabilità;
+\item
+  i gate impongono condizioni minime verificabili;
+\item
+  il record standardizzato abilità confronto storico.
+\end{enumerate}
+
+Conseguenze:
+rende possibile una storia epistemica computabile del corpus OCT.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{\texorpdfstring{Teorema 14.5 (Sufficienza dei gate \texttt{G0-G6} per rilascio claim-sensitive)}{Teorema 14.5 (Sufficienza dei gate G0-G6 per rilascio claim-sensitive)}}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  tutti i gate \texttt{G0-G6} in \texttt{PASS};
+\item
+  allineamento tra ledger, decision matrix e stato teoremi;
+\item
+  assenza di eccezioni \texttt{high} scadute.
+\end{enumerate}
+
+Tesi:
+Il rilascio e metodologicamente idoneo a disseminazione scientifica pubblica.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{G0-G2} garantiscono base tecnica minima;
+\item
+  \texttt{G3-G5} garantiscono coerenza evidenziale e semantica;
+\item
+  \texttt{G6} garantisce consistenza cross-piattaforma.
+\end{enumerate}
+
+Conseguenze:
+fornisce criterio operativo unificato per pubblicazione OCT.
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{\texorpdfstring{6.1 Per chiusura milestone \texttt{v1.4}}{6.1 Per chiusura milestone v1.4}}
+
+Con il Capitolo 14 la milestone metodologica e chiusa quando:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 12 (protocollo) e completo;
+\item
+  Capitolo 13 (benchmark design) e completo;
+\item
+  Capitolo 14 (governance) e completo e coerente con gli artefatti di validazione.
+\end{enumerate}
+
+\subsection{6.2 Per i case study (Capitoli 15-16)}
+
+Ogni case study dovra essere scritto con vincolo di stato esplicito:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  quali claim usa;
+\item
+  in quale stato sono;
+\item
+  quali parti sono ipotesi operative e quali sono evidenze consolidate.
+\end{enumerate}
+
+\subsection{6.3 Per gestione editoriale}
+
+La governance permette un editing ``forte'' senza alterare significato epistemico:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  si può migliorare il testo;
+\item
+  non si può migliorare lo stato senza nuova evidenza.
+\end{enumerate}
+
+\subsection{6.4 Per revisori e comunità scientifica}
+
+Un revisore esterno può ricostruire l'intera catena decisionale senza accesso privato al team, se il bundle governance e completo.
+
+Questa proprietà e essenziale per credibilità internazionale del programma OCT.
+
+\subsection{6.5 Per ritmo operativo del team}
+
+La governance non deve solo "controllare"; deve anche dare ritmo alla ricerca.
+
+Cadenza consigliata:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  review settimanale dei gate per i claim attivi;
+\item
+  review mensile del debito epistemico;
+\item
+  review trimestrale dei KPI-E e delle policy eccezioni;
+\item
+  retrospettiva semestrale su versioning e coerenza multi-piattaforma.
+\end{enumerate}
+
+Questa cadenza rende sostenibile il programma su orizzonte pluriennale senza accumulare disordine metodologico.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il modello di governance e baseline operativa, non costituzione definitiva;
+\item
+  alcuni domini ad alta sensibilità possono richiedere gate aggiuntivi;
+\item
+  la procedura non elimina il conflitto interpretativo, ma lo rende tracciabile.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  proliferazione di eccezioni non chiuse;
+\item
+  aggiornamento parziale dei record tra piattaforme;
+\item
+  uso improprio dello stato \texttt{revise} come zona grigia permanente;
+\item
+  eccesso di burocrazia che rallenta la ricerca viva.
+\end{enumerate}
+
+Contromisure raccomandate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  revisione periodica del debito epistemico;
+\item
+  allineamento automatico dei ledger principali;
+\item
+  policy di scadenza massima per claim in \texttt{revise} senza piano;
+\item
+  semplificazione continua dei template senza perdere auditabilità.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che la governance sostituisca il valore creativo della teoria;
+\item
+  che ogni decisione governance sia incontestabile;
+\item
+  che un claim in \texttt{revise} sia scientificamente irrilevante.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C14.1 & Il doppio stato (\texttt{S\_form}, \texttt{S\_dec}) e necessario per evitare ambiguità epistemiche & governance-metateorica & S1 & validated \\
+C14.2 & I gate \texttt{G0-G6} riducono la deriva decisionale in rilascio & metodologico-operativo & S1 & validated \\
+C14.3 & La PCS-6 rende auditabili i cambi di stato & procedurale & S2 & in\_proof \\
+C14.4 & La sincronizzazione multi-piattaforma e condizione di credibilità esterna & infrastrutturale & S1 & in\_review \\
+C14.5 & La gestione esplicita delle eccezioni riduce il rischio epistemico cumulativo & governance-rischio & S1 & in\_review \\
+C14.6 & Il pacchetto governance e sufficiente per supportare la fase case-study & metaprogramma & S2 & in\_proof \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 15}
+
+Con il Capitolo 14 il quadro metodologico dell'opera e completo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  protocollo di validazione (Cap. 12);
+\item
+  benchmark design e replicabilità (Cap. 13);
+\item
+  governance di stato e rilascio (Cap. 14).
+\end{enumerate}
+
+Il Capitolo 15 entra nel primo caso studio fisico (standing waves e controfase strutturale), usando integralmente questa architettura come base di lettura e valutazione.
+
+In sintesi: da qui in avanti l'opera non espone solo teoria OCT, ma mostra OCT in azione con disciplina scientifica esplicita.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_12\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_13\_v1\_0.md}.
+\item
+  \texttt{OCT\_Theory\_and\_Theorems/validation/DECISION\_MATRIX\_FINAL\_UNIFIED\_v0\_1.md}.
+\item
+  \texttt{OCT\_Theory\_and\_Theorems/validation/OCT\_THEOREM\_STATUS\_ALIGNMENT\_v1\_0\_candidate\_v0\_1.md}.
+\item
+  \texttt{OCT\_Theory\_and\_Theorems/validation/OCT\_PUBLICATION\_PROGRESS\_TRACKER\_v0\_1.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Popper, K. (1959). \emph{The Logic of Scientific Discovery}.
+\item
+  Lakatos, I. (1978). \emph{The Methodology of Scientific Research Programmes}.
+\item
+  Merton, R. K. (1973). \emph{The Sociology of Science}.
+\item
+  Goodman, S., Fanelli, D., Ioannidis, J. (2016). \emph{What does research reproducibility mean?}.
+\end{enumerate}

@@ -14,3 +14,17 @@ desktop.ini
 SESSION_MEMORY_DUMP*.md
 *_DRAFT*.md
 notes_private/
+
+# Do not publish local restricted work areas
+**/not-to-release/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.lof
+*.lot

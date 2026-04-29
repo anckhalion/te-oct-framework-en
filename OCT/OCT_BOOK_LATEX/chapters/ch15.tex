@@ -1,0 +1,608 @@
+\chapter{Capitolo 15 - Case study fisico: standing waves e controfase strutturale}
+
+\section{1. Problema}
+
+Dopo i capitoli metodologici, il testo fondativo OCT deve mostrare una prova di lavoro su un dominio fisico in cui:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il fenomeno sia osservabile, riproducibile e formalizzabile;
+\item
+  la differenza tra lettura estensionale e lettura ordinativa sia non banale;
+\item
+  la nozione di controfase non resti una metafora, ma assuma forma misurabile.
+\end{enumerate}
+
+Il caso delle standing waves in fluido rotante soddisfa queste condizioni. La letteratura classica sullo scattering Aharonov-Bohm idrodinamico mostra già la dipendenza topologica della risposta dal campo di circolazione. Il lavoro sperimentale del 2026 su standing waves e singolo vortice aggiunge un passaggio chiave: la transizione da difetti locali vicino al core a linee nodali globali quantizzate, in contro-rotazione rispetto al vortice.
+
+Il problema del capitolo e quindi preciso:
+
+\textbf{come leggere questo risultato come caso studio OCT, distinguendo chiaramente cosa e dato fisico consolidato, cosa e mappatura ordinativa, e cosa resta ipotesi da consolidare nei cicli successivi?}
+
+\subsection{1.1 Rilevanza per l'opera fondativa}
+
+Il capitolo ha quattro funzioni strategiche:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dimostrare che il lessico ordinativo può interpretare un fenomeno fisico non progettato da OCT;
+\item
+  mostrare che la struttura \texttt{\textless{}Sigma,\ R,\ Phi\textgreater{}} ha potere esplicativo anche in sistemi classici controllati;
+\item
+  offrire un esempio didattico ad alta intuibilità per il lettore non specialistico;
+\item
+  preparare il passaggio al caso sistemico-sociale (Capitolo 16) evitando salto analogico troppo brusco.
+\end{enumerate}
+
+\subsection{1.2 Vincolo epistemico}
+
+Per evitare overclaiming, questo capitolo adotta tre regole:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i dati sperimentali restano attribuiti al dominio fisico originario;
+\item
+  la lettura OCT e esplicitata come traduzione strutturale, non come ``appropriazione'' del risultato;
+\item
+  ogni estensione inter-dominio viene etichettata con stato di evidenza coerente (\texttt{S0-S3}).
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi e articolata in nove enunciati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Il sistema standing-wave + vortice e un candidato robusto per formalizzazione ordinativa in quanto separa chiaramente componenti (\texttt{Sigma}), relazioni (\texttt{R}) e risposta (\texttt{Phi}).
+\item
+  La sostituzione strutturale che porta alla doppia periodicità angolare mostra non-additività ordinativa: piccolo cambio in \texttt{R}, grande cambio in \texttt{Phi}.
+\item
+  Le linee nodali globali quantizzate sono interpretabili come controfase strutturale e non come semplice cancellazione locale.
+\item
+  La quantizzazione del numero di linee nodali da parametro continuo supporta la tesi di quantizzazione topologica emergente.
+\item
+  La contro-rotazione sistematica delle linee nodali rispetto al vortice e un marker osservabile di opposizione coerente all'attrattore.
+\item
+  Il caso dimostra una forma fisica di inversione causale teleodinamica: stessa causa locale, envelope di effetto differente in base alla configurazione globale.
+\item
+  La lettura OCT non sostituisce il modello fisico, ma ne espande la trasferibilità concettuale.
+\item
+  Il caso e sufficiente come benchmark qualitativo per claims metodologici del libro, non ancora per claims quantitativi universali cross-dominio.
+\item
+  La struttura del caso fornisce template operativo per la scrittura dei case study successivi.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche del caso}
+
+\subsection{Definizione 15.1 (Sistema fisico ordinativo)}
+
+Nel contesto del case study definiamo:
+
+\texttt{I\_sw\ :=\ \textless{}Sigma\_sw,\ R\_sw,\ Phi\_sw\textgreater{}}
+
+con:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Sigma\_sw} = \{fluido, vortice irrotazionale, onde contro-propaganti\};
+\item
+  \texttt{R\_sw} = vincoli dinamici e topologici della configurazione standing-wave;
+\item
+  \texttt{Phi\_sw} = pattern nodale emergente osservabile.
+\end{enumerate}
+
+\subsection{Definizione 15.2 (Parametro topologico di scattering)}
+
+Sia \texttt{alpha} il parametro adimensionale che lega circolazione, lunghezza d'onda e velocità di gruppo. \texttt{alpha} governa la struttura globale del pattern nodale.
+
+\subsection{Definizione 15.3 (Controfase strutturale nel dominio fisico)}
+
+Una configurazione e in controfase strutturale quando:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  emerge un insieme nodale non locale;
+\item
+  i settori separati dal nodo mostrano opposizione di fase;
+\item
+  la risposta complessiva si oppone in verso all'attrattore che la organizza.
+\end{enumerate}
+
+\subsection{Definizione 15.4 (Indice di globalità nodale)}
+
+Definiamo indice di globalità:
+
+\texttt{G\_n\ :=\ L\_n\ /\ L\_dom}
+
+con \texttt{L\_n} lunghezza media delle linee nodali osservate e \texttt{L\_dom} scala lineare del dominio utile. \texttt{G\_n} alto indica risposta sistemica non confinata al core.
+
+\subsection{Definizione 15.5 (Delta configurativo)}
+
+\texttt{Delta\_R\ :=\ R\_sw\ -\ R\_travel}
+
+dove \texttt{R\_travel} indica la relazione corrispondente al caso a onda viaggiante singola. Il caso mostra che \texttt{Delta\_R} piccolo in apparenza può produrre salto qualitativo in \texttt{Phi}.
+
+\subsection{Definizione 15.6 (Inversione causale locale-globale)}
+
+In questo capitolo c'e inversione causale quando la stessa sorgente locale (vortice) esprime effetti confinati o globali a seconda della configurazione relazionale del campo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale del case study}
+
+\subsection{4.1 Dalla lettura estensionale alla lettura ordinativa}
+
+La lettura estensionale standard descrive componenti e equazioni del sistema, ottenendo predizioni corrette sul pattern osservato. La lettura ordinativa aggiunge una domanda diversa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  quale trasformazione in \texttt{R} produce il salto di regime in \texttt{Phi}?
+\item
+  quali invarianti restano stabili nella transizione?
+\item
+  quali proprietà della risposta sono trasferibili a sistemi non fluidodinamici?
+\end{enumerate}
+
+Il vantaggio non e rifare la fisica, ma esplicitarne la grammatica di configurazione.
+
+\subsection{4.2 Non-additività strutturale}
+
+Nel confronto tra regime travelling-wave e regime standing-wave il sistema mostra una non-additività tipica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  non otteniamo due copie specchiate del pattern locale;
+\item
+  otteniamo una topologia nuova a scala di dominio.
+\end{enumerate}
+
+In linguaggio OCT:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  stessa famiglia di oggetti fisici;
+\item
+  mutazione compatta delle relazioni;
+\item
+  biforcazione della risposta di categoria (locale vs globale).
+\end{enumerate}
+
+Questo e uno dei passaggi più forti del capitolo: la distinzione tra ``somma di effetti'' e ``riorganizzazione di campo''.
+
+\subsection{4.3 Quantizzazione topologica da sorgente continua}
+
+Il parametro di circolazione e continuo, ma il numero di linee nodali osservabili e discreto e legato a intervalli integer-like di \texttt{\textbar{}alpha\textbar{}}.
+
+Interpretazione ordinativa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la discretizzazione non viene imposta dalla sorgente;
+\item
+  emerge dal vincolo topologico della configurazione;
+\item
+  il conteggio nodale e quindi proprietà di \texttt{R}, non di una quantizzazione microscopica primaria della sorgente.
+\end{enumerate}
+
+Implicazione per OCT: la categoria di output può essere discreta anche quando la categoria dei controlli sperimentali e continua.
+
+\subsection{4.4 Controfase come forma, non come assenza}
+
+Un punto pedagogico cruciale: la linea nodale non e ``vuoto''. E una forma strutturante che organizza il campo in settori con opposizione di fase.
+
+Per questo la controfase nel caso fisico soddisfa tre criteri:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  necessità strutturale (non artificio post hoc);
+\item
+  orientamento opposto all'attrattore;
+\item
+  funzione ordinativa globale del pattern.
+\end{enumerate}
+
+In termini del libro, questo caso rende operativa la definizione TE di controfase strutturale, altrimenti percepita dal lettore come lessico astratto.
+
+\subsection{4.5 Inversione causale teleodinamica}
+
+Lo stesso vortice, con parametro di intensita comparabile, produce:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  effetto locale nel caso classico;
+\item
+  effetto globale nel caso standing-wave.
+\end{enumerate}
+
+L'invariante non e il raggio d'azione, ma la sorgente. Cambia la configurazione del campo che ``ospita'' la sorgente. Questo e precisamente il pattern di inversione causale discusso nella teleodinamica ordinativa.
+
+\subsection{4.6 Mappatura con protocollo del Capitolo 12}
+
+Per mantenere coerenza metodologica, il case study viene letto con la pipeline PV-8:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  claim: esistenza di controfase strutturale globale quantizzata;
+\item
+  contesto: dominio idrodinamico shallow-water con vortice irrotazionale;
+\item
+  evidenza: report sperimentale e formulazione analitica coerente;
+\item
+  decisione: claims metodologici in stato \texttt{validated} o \texttt{in\_review} secondo portata.
+\end{enumerate}
+
+Questo impedisce che il capitolo diventi solo ``narrazione elegante'' senza disciplina decisionale.
+
+\subsection{4.7 Indicatori minimi per replicazione OCT-oriented}
+
+Proponiamo un micro-set di indicatori per eventuali repliche future:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{N\_nodes} (conteggio linee nodali);
+\item
+  \texttt{G\_n} (globalità nodale);
+\item
+  \texttt{Omega\_rel} (verso di rotazione relativo nodo-vortice);
+\item
+  \texttt{S\_phase} (salto di fase inter-settori);
+\item
+  robustezza a variazioni moderate dei parametri geometrici.
+\end{enumerate}
+
+Se almeno quattro indicatori su cinque sono confermati in benchmark indipendente, il claim C15.2 può avanzare di stato.
+
+\subsection{4.8 Condizione di sufficienza del capitolo}
+
+Il capitolo e considerato sufficiente se dimostra insieme:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  mappatura rigorosa \texttt{fisica\ -\textgreater{}\ OST/OCT};
+\item
+  assenza di overclaim inter-dominio;
+\item
+  utilità metodologica per il case study successivo.
+\end{enumerate}
+
+Questa condizione e soddisfatta da definizioni 15.1-15.6, analisi 4.1-4.7 e ledger claims in sezione 8.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 15.1 (Non-additività configurativa osservabile)}
+
+Enunciato:
+Nel caso standing-wave + vortice, la risposta globale non e riducibile a sovrapposizione lineare dei pattern locali del caso a onda singola.
+
+Intuizione:
+il passaggio di relazione topologica cambia classe di risposta.
+
+Stato: \texttt{validated}.
+
+\subsection{Proposizione 15.2 (Controfase strutturale fisicamente ancorata)}
+
+Enunciato:
+Le linee nodali quantizzate in contro-rotazione costituiscono una realizzazione fisica coerente della controfase strutturale.
+
+Intuizione:
+la controfase e una forma organizzativa che emerge per vincolo, non un'assenza passiva.
+
+Stato: \texttt{in\_review}.
+
+\subsection{Proposizione 15.3 (Quantizzazione emergente da relazione)}
+
+Enunciato:
+Un output discreto può emergere da controllo continuo quando la topologia relazionale impone vincoli di conteggio.
+
+Intuizione:
+la discretizzazione e una proprietà del sistema configurato, non necessariamente della sorgente elementare.
+
+Stato: \texttt{validated}.
+
+\subsection{Teorema 15.4 (Compatibilità tra formalismo fisico e formalismo ordinativo)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  descrizione sperimentale/analitica consistente del fenomeno;
+\item
+  mappatura esplicita \texttt{Sigma,\ R,\ Phi};
+\item
+  criteri di decisione metodologica tracciati.
+\end{enumerate}
+
+Tesi:
+Il caso standing-wave e compatibile con una lettura ordinativa forte senza perdita di rigore fisico.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il formalismo fisico resta intatto;
+\item
+  la mappatura ordinativa agisce come livello strutturale aggiuntivo;
+\item
+  i claim sono graduati per evidenza e non per retorica.
+\end{enumerate}
+
+Conseguenze:
+abilità l'uso del caso come ponte disciplinare in un testo fondativo OCT.
+
+Stato: \texttt{in\_proof}.
+
+\subsection{Teorema 15.5 (Marker minimo di controfase globale)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  nodi estesi con \texttt{G\_n} sopra soglia;
+\item
+  opposizione di fase inter-settori;
+\item
+  verso di rotazione opposto all'attrattore.
+\end{enumerate}
+
+Tesi:
+La risposta può essere classificata come controfase strutturale globale nel lessico OCT.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  i tre marker coprono estensione, dinamica e semantica di fase;
+\item
+  l'assenza di uno dei marker riduce il claim a pattern locale o ambiguo;
+\item
+  la compresenza dei tre marker soddisfa la definizione 15.3.
+\end{enumerate}
+
+Conseguenze:
+fornisce criterio operativo per confronto con altri domini.
+
+Stato: \texttt{in\_proof}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per il Capitolo 16}
+
+Il caso fisico prepara il lettore a una traslazione controllata verso sistemi sociali complessi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  stesso schema \texttt{sorgente\ -\textgreater{}\ relazione\ -\textgreater{}\ risposta};
+\item
+  stessa attenzione alla differenza tra locale e globale;
+\item
+  stessa disciplina su non-confondere analogia con identità strutturale.
+\end{enumerate}
+
+\subsection{6.2 Per OCT come teoria generale}
+
+Il case study fornisce un benchmark narrativamente forte e metodologicamente pulito per tre idee chiave:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  non-additività ordinativa;
+\item
+  controfase strutturale;
+\item
+  quantizzazione emergente topologica.
+\end{enumerate}
+
+\subsection{6.3 Per pubblicazione e peer dialog}
+
+Questo capitolo e progettato per essere leggibile anche da revisori esterni non già allineati al lessico TE/OCT, perché:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ancora i passaggi a un esperimento pubblico e replicabile;
+\item
+  separa chiaramente dati, interpretazione, estensione;
+\item
+  rende falsificabili i claims metodologici principali.
+\end{enumerate}
+
+\subsection{6.4 Per didattica e onboarding}
+
+Tra tutti i casi possibili, questo e probabilmente il più didattico per introdurre OCT a nuovi ricercatori:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  fenomenologia visiva forte;
+\item
+  matematica gestibile;
+\item
+  ponte diretto tra fisica classica e linguaggio ordinativo.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il capitolo non sostituisce la trattazione fisica specialistica del paper originale;
+\item
+  la mappatura inter-dominio non implica universalità automatica;
+\item
+  alcuni indicatori operativi proposti richiedono campagna replicativa dedicata per consolidamento.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  abuso analogico: trasferire troppo dal caso fisico al caso sociale;
+\item
+  riduzione simbolica: usare ``controfase'' come metafora senza marker misurabili;
+\item
+  semplificazione eccessiva della dipendenza da contesto sperimentale.
+\end{enumerate}
+
+Contromisure:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  mantenere separazione netta tra stato dei dati fisici e stato dei claims OCT;
+\item
+  usare sempre ledger \texttt{S0-S3} nei passaggi di estensione;
+\item
+  ancorare ogni estensione a un criterio di falsificabilità esplicito.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che ogni pattern nodale sia controfase strutturale;
+\item
+  che il caso standing-wave validi di per se tutto OCT;
+\item
+  che la relazione con domini sociali sia diretta senza mediazione metodologica.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C15.1 & Il caso standing-wave realizza non-additività ordinativa osservabile & metodologico & S1 & validated \\
+C15.2 & Le linee nodali contro-rotanti sono classificabili come controfase strutturale & metateorico & S2 & in\_review \\
+C15.3 & La quantizzazione nodale da parametro continuo e un esempio di quantizzazione topologica emergente & teorico-operativo & S1 & validated \\
+C15.4 & Il caso mostra una forma di inversione causale locale-globale coerente con teleodinamica OST & metateorico & S2 & in\_proof \\
+C15.5 & Il set indicatori (\texttt{N\_nodes}, \texttt{G\_n}, \texttt{Omega\_rel}, \texttt{S\_phase}) e sufficiente come baseline di replica OCT-oriented & protocollo & S1 & in\_review \\
+C15.6 & Il caso e benchmark didattico robusto per introduzione a OCT & editoriale-scientifico & S1 & validated \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 16}
+
+Il Capitolo 15 ha mostrato OCT su un sistema fisico controllato, dove la trasformazione di relazione produce un salto di risposta globale osservabile.
+
+Il Capitolo 16 usera la stessa grammatica su un dominio ad alta complessità storica: le dinamiche reaction-diffusion dei sistemi civilizzazionali. Il passaggio e deliberato:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  dal laboratorio fisico alla dinamica socio-storica;
+\item
+  da controfase in campo ondoso a controfase in architetture istituzionali;
+\item
+  da quantizzazione topologica locale a biforcazioni multi-scala di sistema.
+\end{enumerate}
+
+In sintesi: dopo aver verificato la forma in fisica, testiamo la forma nella storia.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_12\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_13\_v1\_0.md}.
+\item
+  \texttt{OCT\_FOUNDATIONAL\_BOOK\_CHAPTER\_14\_v1\_0.md}.
+\item
+  \texttt{OST\_Case\_Study\_Standing\_Waves\_Spinning\_Fluid\_v1\_0.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Singh, R.; Ronning, J.; Liu, L.; Angheluta, L.; Concha, A.; Bandi, M. (2026). \emph{Communications Physics} 9:123.
+\item
+  Berry, M. V. et al. (1980). Hydrodynamic analogue of Aharonov-Bohm scattering.
+\item
+  Aharonov, Y.; Bohm, D. (1959). Significance of electromagnetic potentials.
+\end{enumerate}

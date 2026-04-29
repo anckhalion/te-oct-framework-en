@@ -1,0 +1,996 @@
+\chapter{Capitolo 3 - Categoria ordinativa: definizioni canoniche e assiomi O1-O7}
+
+\section{1. Problema}
+
+I primi due capitoli hanno stabilito due condizioni preliminari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la validità sintattica classica non basta, da sola, a decidere la realtà operativa di una composizione;
+\item
+  l'unità ontologica utile per domini complessi non è la cosa estensionale, ma la singolarità relazionale-funzionale situata in un contesto osservativo \texttt{Omega}.
+\end{enumerate}
+
+Resta ora il passaggio decisivo: trasformare queste due condizioni in una teoria categoriale formalizzata, con regole esplicite di oggetti, morfismi, identità e composizione. In assenza di questa formalizzazione, OCT resterebbe un programma metodologico plausibile ma incompleto. Con questa formalizzazione, OCT diventa invece una grammatica matematica estensiva, verificabile e comparabile con la category theory classica.
+
+Il problema del capitolo può essere formulato in modo diretto:
+
+\textbf{come definire una categoria ordinativa che conservi l'apparato classico, ma introduca criteri interni di coerenza, emergenza e non-degenerazione senza scivolare in arbitrarietà?}
+
+La difficoltà non è solo tecnica. Se gli assiomi fossero troppo deboli, OCT collasserebbe in una ridenominazione del classico; se fossero troppo forti o troppo dipendenti da specifici domini, OCT perderebbe generalità e trasferibilità. Serve quindi un nucleo assiomatico minimo, capace di:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  mantenere compatibilità con la sintassi categoriale standard;
+\item
+  filtrare composizioni sterili o degenerative;
+\item
+  restare falsificabile, con vincoli dichiarati e verifiche replicabili.
+\end{enumerate}
+
+\subsection{1.1 Obiettivo assiomatico minimo}
+
+L'obiettivo non è costruire in un solo capitolo tutta la teoria avanzata (enriched, fibrations, topos ordinativi), ma fissare un \textbf{kernel O1-O7} sufficiente per:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definire cosa significhi morfismo ordinativamente ammissibile;
+\item
+  chiarire quando la composizione ordinativa è lecita;
+\item
+  stabilire il ruolo dell'identità in regime non-degenerativo;
+\item
+  introdurre un legame esplicito tra validità teorica e tracciabilità evidenziale.
+\end{enumerate}
+
+Questo kernel diventa la base su cui i capitoli successivi (4-7 e 8-11) estenderanno tutto il corpus classico.
+
+\subsection{1.2 Vincolo di continuità con il classico}
+
+Questo capitolo adotta una regola non negoziabile: OCT non può negare le leggi di base della category theory. Può però introdurre un \textbf{gate aggiuntivo} che seleziona le costruzioni ontologicamente operative in \texttt{Omega}.
+
+In termini sintetici:
+
+\texttt{Classical\ category} + \texttt{Ordinative\ admissibility\ layer} = \texttt{Ordinative\ category}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{2. Tesi del capitolo}
+
+La tesi centrale è composta da sette enunciati coordinati.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Esiste una nozione coerente di categoria ordinativa \texttt{OrdCat\_Omega} come estensione conservativa di una categoria classica \texttt{C}.
+\item
+  Gli oggetti ordinativi sono oggetti classici singolarizzati in \texttt{Omega}.
+\item
+  I morfismi ordinativi sono morfismi classici più vincoli su coerenza (\texttt{Coh\_Omega}) ed emergenza (\texttt{Phi\_Omega}).
+\item
+  La composizione ordinativa richiede chiusura sintattica e tenuta non-degenerativa.
+\item
+  L'identità ordinativa non è solo identità tipologica: deve preservare la persistenza minima della singolarità.
+\item
+  Il nucleo assiomatico O1-O7 è sufficiente per distinguere formalmente tra composizioni ammissibili e composizioni sterili.
+\item
+  L'impianto resta scientificamente responsabile solo se ogni claim è accompagnato da etichetta di evidenza e protocollo di falsificazione.
+\end{enumerate}
+
+Questa tesi prepara due passaggi successivi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 4: oggetti, morfismi, composizione e identità in estensione OCT;
+\item
+  Capitolo 8: metrica esplicita dello spazio di validità (\texttt{Coh}, \texttt{Phi}, \texttt{Delta}).
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{3. Definizioni canoniche}
+
+\subsection{Definizione 3.1 (Categoria ordinativa in contesto)}
+
+Una \textbf{categoria ordinativa in contesto} è una struttura:
+
+\texttt{OrdCat\_Omega\ :=\ \textless{}Ob\_Omega,\ Hom\_Omega,\ \ o\ \_Omega,\ id\_Omega,\ Coh\_Omega,\ Phi\_Omega,\ Tau\_Omega\textgreater{}}
+
+dove:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{\textless{}Ob\_Omega,\ Hom\_Omega,\ \ o\ \_Omega,\ id\_Omega\textgreater{}} è una categoria nel senso classico;
+\item
+  \texttt{Coh\_Omega} assegna un valore di coerenza normalizzato;
+\item
+  \texttt{Phi\_Omega} assegna una misura di funzione emergente;
+\item
+  \texttt{Tau\_Omega} definisce soglie minime dominio-dipendenti.
+\end{enumerate}
+
+Commento:
+
+\begin{itemize}
+\tightlist
+\item
+  la parte classica è preservata;
+\item
+  la parte ordinativa aggiunge un criterio di realtà compositiva.
+\end{itemize}
+
+\subsection{Definizione 3.2 (Oggetto ordinativo)}
+
+Un oggetto ordinativo \texttt{A\_Omega} è una singolarizzazione di un oggetto classico \texttt{A}:
+
+\texttt{A\_Omega\ :=\ S\_Omega(A)\ =\ \textless{}A,\ R\_Omega(A),\ H\_t(A),\ Pi\_Omega(A)\textgreater{}}.
+
+\subsection{Definizione 3.3 (Morfismo ordinativamente ammissibile)}
+
+Dato \texttt{f:\ A\_Omega\ -\textgreater{}\ B\_Omega}, definiamo:
+
+\texttt{Adm\_Omega(f)\ :=\ Syn(f)\ \ AND\ \ Coh\_Omega(f)\ \textgreater{}=\ tau\_f\ \ AND\ \ Phi\_Omega(f)\ !=\ 0}.
+
+Il morfismo è ordinativamente ammissibile se e solo se \texttt{Adm\_Omega(f)} è vero.
+
+\subsection{Definizione 3.4 (Composizione ordinativa)}
+
+Per \texttt{f:\ A\_Omega\ -\textgreater{}\ B\_Omega} e \texttt{g:\ B\_Omega\ -\textgreater{}\ C\_Omega}, la composizione ordinativa \texttt{g\ \ o\ \_Omega\ f} è ammessa se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la composizione classica \texttt{g\ \ o\ \ f} è definita;
+\item
+  \texttt{Adm\_Omega(f)} e \texttt{Adm\_Omega(g)} valgono;
+\item
+  \texttt{Adm\_Omega(g\ \ o\ \ f)} è soddisfatta secondo soglie dichiarate.
+\end{enumerate}
+
+\subsection{Definizione 3.5 (Identità ordinativa)}
+
+\texttt{id\_A\^{}Omega:\ A\_Omega\ -\textgreater{}\ A\_Omega} è identità ordinativa se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  è identità classica su \texttt{A};
+\item
+  non induce degrado sotto soglia su coerenza e funzione in regime di auto-applicazione.
+\end{enumerate}
+
+\subsection{Definizione 3.6 (Degenerazione compositiva)}
+
+Una composizione è degenerativa in \texttt{Omega} se è sintatticamente lecita ma viola almeno una condizione ordinativa:
+
+\texttt{Deg\_Omega(h)\ :=\ Syn(h)\ \ AND\ \ (Coh\_Omega(h)\ \textless{}\ tau\_h\ \ OR\ \ Phi\_Omega(h)\ =\ 0)}.
+
+\subsection{Definizione 3.7 (Equivalenza ordinativa)}
+
+Due oggetti \texttt{A\_Omega}, \texttt{B\_Omega} sono ordinativamente equivalenti (\texttt{A\_Omega\ \textasciitilde{}ord\ B\_Omega}) se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  sono correlabili da morfismi ammissibili in entrambe le direzioni;
+\item
+  tali morfismi preservano invarianti ordinativi entro tolleranza esplicita;
+\item
+  non emergono pattern degenerativi sistematici nella finestra osservata.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{4. Sviluppo formale}
+
+\subsection{4.1 Struttura di base}
+
+Sia \texttt{C} una categoria classica. Costruiamo una famiglia contestuale \texttt{OrdCat\_Omega} attraverso:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  operatore di singolarizzazione \texttt{S\_Omega} su oggetti;
+\item
+  lifting ordinativo \texttt{L\_Omega} su morfismi;
+\item
+  gate \texttt{Adm\_Omega} per decidere ammissibilità.
+\end{enumerate}
+
+L'idea è semplice: non sostituire \texttt{C}, ma introdurre un filtro interno che impedisca di trattare come equivalenti composizioni formalmente corrette ma ordinativamente sterili.
+
+\subsection{4.2 Assiomi O1-O7}
+
+\subsubsection{Assioma O1 (Conservazione sintattica)}
+
+Ogni oggetto e morfismo ordinativo deve essere, in primo luogo, ben tipizzato nel senso classico.
+
+Forma:
+
+\texttt{Adm\_Omega(f)\ -\textgreater{}\ Syn(f)}.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  non esiste validità ordinativa senza validità classica;
+\item
+  OCT non autorizza scorciatoie anti-formali.
+\end{itemize}
+
+\subsubsection{Assioma O2 (Soglia minima di coerenza)}
+
+Per ogni morfismo ammissibile:
+
+\texttt{Adm\_Omega(f)\ -\textgreater{}\ Coh\_Omega(f)\ \textgreater{}=\ tau\_f}.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{tau\_f} è parametro dichiarato;
+\item
+  la coerenza non è opzionale, è condizione costitutiva.
+\end{itemize}
+
+\subsubsection{Assioma O3 (Non-sterilità emergente)}
+
+Per ogni morfismo ammissibile:
+
+\texttt{Adm\_Omega(f)\ -\textgreater{}\ Phi\_Omega(f)\ !=\ 0}.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  una trasformazione può essere formalmente corretta ma emergenzialmente nulla;
+\item
+  in OCT quella trasformazione non è sufficiente per il regime di realtà compositiva.
+\end{itemize}
+
+\subsubsection{Assioma O4 (Chiusura compositiva ordinativa)}
+
+Se \texttt{f} e \texttt{g} sono ammissibili e composibili, allora \texttt{g\ \ o\ \_Omega\ f} è ammissibile solo se soddisfa i vincoli ordinativi aggregati.
+
+Forma schematica:
+
+\texttt{Adm\_Omega(f)\ \ AND\ \ Adm\_Omega(g)\ \ AND\ \ Comp(g,f)\ -\textgreater{}\ Gate\_Omega(g\ \ o\ \ f)},
+
+dove \texttt{Gate\_Omega} verifica soglie su \texttt{Coh} e \texttt{Phi} della composta.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  la composizione non è automaticamente lecita in senso ordinativo;
+\item
+  la chiusura richiede controllo di propagazione della coerenza.
+\end{itemize}
+
+\subsubsection{Assioma O5 (Identità non-degenerativa)}
+
+Per ogni oggetto \texttt{A\_Omega}, l'identità \texttt{id\_A\^{}Omega} preserva la persistenza minima:
+
+\texttt{Coh\_Omega(id\_A\^{}Omega)\ \textgreater{}=\ tau\_id} e \texttt{Phi\_Omega(id\_A\^{}Omega)\ !=\ 0} oppure non decrementa la funzione emergente sotto soglia dominio-specifica.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  l'identità ordinativa non è un puro simbolo;
+\item
+  è il vincolo minimo di tenuta interna del nodo.
+\end{itemize}
+
+\subsubsection{Assioma O6 (Stabilità contestuale controllata)}
+
+Le proprietà ordinative devono essere dichiarate rispetto a \texttt{Omega} e a una famiglia di variazioni controllate \texttt{DeltaOmega}.
+
+Forma:
+
+\texttt{Adm\_Omega(f)} richiede robustezza minima su perturbazioni ammesse:
+
+\texttt{forall\ omega\textquotesingle{}\ in\ N\_epsilon(Omega):\ Coh\_omega\textquotesingle{}(f)\ \textgreater{}=\ tau\textquotesingle{}\_f}.
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  un valore puntuale non basta;
+\item
+  serve stabilità locale in vicinato contestuale.
+\end{itemize}
+
+\subsubsection{Assioma O7 (Tracciabilità e falsificabilità)}
+
+Ogni uso scientifico di un costrutto ordinativo deve dichiarare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  contesto \texttt{Omega};
+\item
+  soglie \texttt{tau};
+\item
+  metrica di \texttt{Coh} e \texttt{Phi};
+\item
+  classe di evidenza (\texttt{S0-S3});
+\item
+  condizioni di confutazione.
+\end{enumerate}
+
+Interpretazione:
+
+\begin{itemize}
+\tightlist
+\item
+  questo assioma connette matematica e pratica scientifica;
+\item
+  impedisce claim forti non auditabili.
+\end{itemize}
+
+\subsection{4.3 Relazione tra gli assiomi}
+
+Gli assiomi sono organizzati in tre strati:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Strato strutturale}: O1, O4, O5;
+\item
+  \textbf{Strato dinamico-funzionale}: O2, O3, O6;
+\item
+  \textbf{Strato epistemico-scientifico}: O7.
+\end{enumerate}
+
+La separazione è importante perché evita due errori simmetrici:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ridurre OCT a sola algebra senza criterio empirico;
+\item
+  ridurre OCT a metodologia empirica senza struttura formale.
+\end{enumerate}
+
+\subsection{4.4 Gate ordinativo esplicito}
+
+Definiamo un gate completo per composizioni:
+
+\texttt{Gate\_Omega(h)\ :=\ Syn(h)\ \ AND\ \ Coh\_Omega(h)\ \textgreater{}=\ tau\_h\ \ AND\ \ Phi\_Omega(h)\ !=\ 0\ \ AND\ \ Robust\_Omega(h)}.
+
+Allora:
+
+\texttt{Adm\_Omega(h)\ :=\ Gate\_Omega(h)}.
+
+\texttt{Robust\_Omega(h)} può assumere forme differenti per dominio, ma deve essere esplicitata prima della validazione.
+
+\subsection{4.5 Conservatività rispetto al classico}
+
+Sia \texttt{U:\ OrdCat\_Omega\ -\textgreater{}\ C} il funtore di oblio che rimuove il layer ordinativo e conserva la struttura classica.
+
+Proprietà attesa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{U} preserva composizione e identità classiche;
+\item
+  ogni morfismo ordinativamente ammissibile è anche morfismo classico valido;
+\item
+  non vale il viceversa in generale.
+\end{enumerate}
+
+Questa asimmetria formalizza la tesi di estensione conservativa non ridondante.
+
+\subsection{4.6 Esempio astratto di fallimento O4}
+
+Siano \texttt{f:\ A-\textgreater{}B}, \texttt{g:\ B-\textgreater{}C} ammissibili singolarmente. È possibile che:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Coh\_Omega(f)} e \texttt{Coh\_Omega(g)} siano sopra soglia;
+\item
+  la composta \texttt{g\ o\ f} produca interferenze relazionali e abbassi la coerenza aggregata sotto \texttt{tau}.
+\end{enumerate}
+
+In questo caso:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la categoria classica considera la composta lecita;
+\item
+  OCT la classifica come degenerativa (\texttt{Deg\_Omega(g\ o\ f)}).
+\end{enumerate}
+
+L'esempio mostra che O4 non è un dettaglio tecnico ma il punto in cui OCT guadagna potere discriminante.
+
+\subsection{4.7 Nota sulla parametrizzazione delle soglie}
+
+Le soglie \texttt{tau} non devono essere arbitrarie. In ogni applicazione:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  devono essere motivate dal dominio;
+\item
+  devono essere dichiarate ex ante;
+\item
+  devono essere sottoposte a analisi di sensibilità;
+\item
+  devono essere tracciate nel log sperimentale.
+\end{enumerate}
+
+Senza questa disciplina, O2-O6 diventerebbero manipolabili a posteriori e perderebbero valore scientifico.
+
+\subsection{4.8 Consistenza interna del kernel O1-O7}
+
+Il kernel proposto deve soddisfare una condizione di coerenza meta-assiomatica: nessun assioma deve rendere inutilizzabile o contraddittorio un altro assioma nel dominio di applicazione dichiarato.
+
+Verifica minima di compatibilità:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  O1 è prerequisito logico di O2-O6, quindi non entra in conflitto con essi;
+\item
+  O2 e O3 sono indipendenti ma complementari: alta coerenza senza funzione emergente resta insufficiente, e viceversa;
+\item
+  O4 dipende da O2-O3 ma non li sostituisce: regola la propagazione compositiva;
+\item
+  O5 è il caso limite locale su identità e non collassa in O2 perché include clausola di persistenza;
+\item
+  O6 impedisce letture puntuali opportunistiche dei valori di coerenza;
+\item
+  O7 rende auditabile l'insieme precedente.
+\end{enumerate}
+
+Questa struttura a dipendenze controllate è importante perché permette di localizzare gli errori:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  errore di tipizzazione: violazione O1;
+\item
+  errore di soglia: violazione O2;
+\item
+  errore di sterilità: violazione O3;
+\item
+  errore di propagazione: violazione O4;
+\item
+  errore di persistenza identitaria: violazione O5;
+\item
+  errore di robustezza contestuale: violazione O6;
+\item
+  errore epistemico-documentale: violazione O7.
+\end{enumerate}
+
+In termini pratici, O1-O7 funziona anche come sistema di diagnosi, non solo come sistema di ammissibilità.
+
+\subsection{4.9 Matrice decisionale ordinativa}
+
+Per rendere operativa la classificazione, introduciamo una matrice minima basata su quattro stati.
+
+Sia \texttt{h} una trasformazione candidata. Definiamo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{Syn(h)} stato sintattico;
+\item
+  \texttt{CohPass(h)} vero se \texttt{Coh\_Omega(h)\ \textgreater{}=\ tau\_h};
+\item
+  \texttt{PhiPass(h)} vero se \texttt{Phi\_Omega(h)\ !=\ 0}.
+\end{enumerate}
+
+Allora:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Stato A (Ammissibile pieno)}: \texttt{Syn\ \ AND\ \ CohPass\ \ AND\ \ PhiPass};
+\item
+  \textbf{Stato B (Lecito ma sterile)}: \texttt{Syn\ \ AND\ \ CohPass\ \ AND\ \ not\ PhiPass};
+\item
+  \textbf{Stato C (Lecito ma degenerativo)}: \texttt{Syn\ \ AND\ \ not\ CohPass};
+\item
+  \textbf{Stato D (Non lecito)}: \texttt{not\ Syn}.
+\end{enumerate}
+
+Significato operativo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  solo Stato A entra in pipeline ordinativa ordinaria;
+\item
+  Stati B-C possono essere usati come controesempi o materiale diagnostico;
+\item
+  Stato D appartiene a errore formale preliminare.
+\end{enumerate}
+
+La matrice non sostituisce la teoria, ma riduce l'ambiguità nel reporting sperimentale e rende confrontabili risultati tra gruppi diversi.
+
+\subsection{4.10 Minimo protocollo di valutazione per una composta}
+
+Per una coppia \texttt{f,\ g} composibile, il protocollo minimo suggerito è:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  verifica \texttt{Syn(f)}, \texttt{Syn(g)}, \texttt{Syn(g\ o\ f)};
+\item
+  stima \texttt{Coh\_Omega(f)}, \texttt{Coh\_Omega(g)}, \texttt{Coh\_Omega(g\ o\ f)};
+\item
+  stima \texttt{Phi\_Omega(f)}, \texttt{Phi\_Omega(g)}, \texttt{Phi\_Omega(g\ o\ f)};
+\item
+  test locale su vicinato \texttt{N\_epsilon(Omega)} per O6;
+\item
+  classificazione finale nella matrice A/B/C/D;
+\item
+  registrazione claim con etichetta \texttt{S0-S3}.
+\end{enumerate}
+
+Questo protocollo è volutamente minimale. Serve come baseline comune: ogni dominio può aggiungere test specifici, ma non dovrebbe omettere questi passaggi senza dichiararlo.
+
+\subsection{4.11 Condizione di trasferibilità tra contesti}
+
+Un'obiezione frequente è la seguente: se OCT dipende da \texttt{Omega}, come evitare la frammentazione in micro-teorie incomunicabili? La risposta non è eliminare il contesto, ma formalizzare il passaggio tra contesti.
+
+Introduciamo quindi una condizione di trasferibilità controllata:
+
+dato un mapping \texttt{T:\ Omega\_1\ -\textgreater{}\ Omega\_2}, una proprietà ordinativa è trasferibile se:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  il mapping preserva le variabili strutturalmente rilevanti;
+\item
+  la variazione delle soglie è dichiarata e giustificata;
+\item
+  la classificazione A/B/C/D resta stabile entro margini concordati.
+\end{enumerate}
+
+Questa condizione non garantisce universalità assoluta, ma rende la generalizzazione esplicita e verificabile. In altre parole, OCT sostituisce il salto implicito di contesto con una procedura dichiarata di trasporto contestuale.
+
+\subsection{4.12 Nota su parsimonia assiomatica}
+
+Il set O1-O7 è costruito con un criterio di parsimonia: ogni assioma deve aggiungere una funzione logica non già coperta dagli altri. Questo è rilevante per due ragioni.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  evita inflazione assiomatica, che renderebbe OCT difficile da apprendere e applicare;
+\item
+  mantiene separabile il dibattito critico, perché ogni revisione può essere localizzata su un assioma specifico senza riscrivere l'intero impianto.
+\end{enumerate}
+
+In fase editoriale, la parsimonia facilità anche la revisione tra pari: il lettore può verificare in modo progressivo il nucleo prima di entrare nelle estensioni avanzate.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{5. Proposizioni e teoremi locali}
+
+\subsection{Proposizione 3.1 (Inclusione ordinativo-classica)}
+
+Enunciato:
+Esiste un funtore fedele \texttt{U:\ OrdCat\_Omega\ -\textgreater{}\ C} che dimentica il layer ordinativo e conserva la struttura categoriale classica.
+
+Intuizione:
+
+\begin{itemize}
+\tightlist
+\item
+  tutto ciò che è ordinativamente ammissibile è già formalmente lecito;
+\item
+  OCT non rompe la grammatica classica.
+\end{itemize}
+
+Stato: \texttt{validated} (livello strutturale di base).
+
+\subsection{Proposizione 3.2 (Non-equivalenza del viceversa)}
+
+Enunciato:
+In generale non vale che ogni morfismo classico valido sia ordinativamente ammissibile.
+
+Intuizione:
+
+\begin{itemize}
+\tightlist
+\item
+  basta un controesempio con \texttt{Phi=0} o \texttt{Coh\textless{}tau};
+\item
+  il gate ordinativo è selettivo.
+\end{itemize}
+
+Stato: \texttt{validated} (forma logica), con rafforzamento empirico nei capitoli 8-11.
+
+\subsection{Teorema 3.3 (Chiusura condizionata della composizione ordinativa)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{f} e \texttt{g} composibili;
+\item
+  \texttt{Adm\_Omega(f)} e \texttt{Adm\_Omega(g)};
+\item
+  \texttt{Gate\_Omega(g\ o\ f)} soddisfatto.
+\end{enumerate}
+
+Tesi:
+\texttt{Adm\_Omega(g\ o\ f)}.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  da O1 segue la correttezza sintattica della composta;
+\item
+  da O2-O3 e dalla verifica del gate segue la tenuta di coerenza ed emergenza;
+\item
+  per definizione di ammissibilità, la composta è ammessa.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{itemize}
+\tightlist
+\item
+  la chiusura esiste, ma non è automatica;
+\item
+  il controllo esplicito evita derivazioni degenerative.
+\end{itemize}
+
+Stato: \texttt{in\_proof} (chiusura completa nel programma F01-F10).
+
+\subsection{Teorema 3.4 (Criterio minimo di identità persistente)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  per ogni oggetto \texttt{A\_Omega} vale O5;
+\item
+  la dinamica locale resta in vicinato \texttt{N\_epsilon(Omega)} compatibile con O6.
+\end{enumerate}
+
+Tesi:
+\texttt{id\_A\^{}Omega} mantiene persistenza minima della singolarità in intervallo osservato.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  O5 fornisce la condizione di non-degenerazione locale;
+\item
+  O6 estende la validità a variazioni contestuali controllate;
+\item
+  quindi l'identità ordinativa resta operativa nel regime dichiarato.
+\end{enumerate}
+
+Conseguenze:
+
+\begin{itemize}
+\tightlist
+\item
+  l'identità non è più solo formalismo statico;
+\item
+  diventa vincolo dinamico verificabile.
+\end{itemize}
+
+Stato: \texttt{revise} (dipende da formalizzazione metrica di \texttt{Robust\_Omega}).
+
+\subsection{Teorema 3.5 (Conservatività non ridondante)}
+
+Ipotesi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  O1 garantisce inclusione nel classico;
+\item
+  esiste almeno una famiglia di morfismi con \texttt{Syn=vero} ma \texttt{Adm=falso}.
+\end{enumerate}
+
+Tesi:
+OCT è estensione conservativa non ridondante della category theory classica.
+
+Proof sketch:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  inclusione: da O1 e Proposizione 3.1;
+\item
+  non ridondanza: da esistenza di controesempi selezionati dal gate;
+\item
+  combinando 1 e 2, l'estensione conserva e discrimina.
+\end{enumerate}
+
+Stato: \texttt{in\_proof} (rafforzamento con benchmark nel Capitolo 13).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{6. Implicazioni operative}
+
+\subsection{6.1 Per la scrittura matematica del libro}
+
+Da questo capitolo in avanti, ogni costrutto deve dichiarare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  oggetto classico di riferimento;
+\item
+  singolarizzazione in \texttt{Omega};
+\item
+  condizione di ammissibilità \texttt{Adm\_Omega};
+\item
+  eventuale criterio di robustezza.
+\end{enumerate}
+
+Questo standard evita ambiguità tra enunciato classico e enunciato ordinativo.
+
+\subsection{6.2 Per la progettazione di esperimenti}
+
+Ogni esperimento OCT-compatibile deve includere:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  specifica delle soglie \texttt{tau};
+\item
+  metodo di calcolo di \texttt{Coh} e \texttt{Phi};
+\item
+  set di perturbazioni per O6;
+\item
+  regola di confutazione per O7.
+\end{enumerate}
+
+In assenza di uno di questi blocchi, il risultato può essere utile come esplorazione, ma non come evidenza forte (\texttt{S0/S1}).
+
+\subsection{6.3 Per benchmark e dataset}
+
+I dataset non devono più essere letti solo come collezione di esempi, ma come ambiente per testare:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  chiusura ordinativa delle composizioni;
+\item
+  sensibilità delle soglie;
+\item
+  persistenza identitaria in traiettoria.
+\end{enumerate}
+
+Da qui nasce il passaggio dai benchmark statici ai benchmark ordinativi multi-ciclo.
+
+\subsection{6.4 Per sistemi AI ordinativi}
+
+In architetture agentiche, O1-O7 implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  controllo di ammissibilità prima della propagazione decisionale;
+\item
+  blocco di composizioni ad alta degenerazione anche se formalmente tipizzate;
+\item
+  audit trail con metadati di contesto e classe di evidenza.
+\end{enumerate}
+
+Questo riduce il rischio di overfitting strutturale: il sistema non ottimizza solo forma locale, ma tenuta funzionale globale.
+
+\subsection{6.5 Per pubblicazione e revisione tra pari}
+
+La pubblicabilità aumenta quando la teoria espone chiaramente:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ciò che conserva del classico;
+\item
+  ciò che aggiunge in modo formalmente controllato;
+\item
+  ciò che resta ancora in prova (\texttt{in\_proof} o \texttt{revise}).
+\end{enumerate}
+
+Gli assiomi O1-O7 sono costruiti esattamente per questo: rendere OCT discutibile in senso scientifico, non solo suggestiva in senso narrativo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{7. Limiti e non-claim}
+
+Limiti espliciti del capitolo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  O1-O7 definisce un kernel, non l'intera teoria avanzata;
+\item
+  non è ancora dimostrata una forma unica universale di \texttt{Robust\_Omega};
+\item
+  la calibratura delle soglie resta dominio-dipendente;
+\item
+  i teoremi 3.3-3.5 sono in stato di prova parziale;
+\item
+  non sono ancora formalizzate in dettaglio tutte le varianti enriched/fibrational/topos.
+\end{enumerate}
+
+Failure mode riconosciuti:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  soglie troppo alte: rigetto eccessivo di composizioni utili;
+\item
+  soglie troppo basse: ammissione di composizioni sterili;
+\item
+  metrica \texttt{Phi} mal definita: falsi segnali di emergenza;
+\item
+  perturbazioni O6 troppo deboli: robustezza apparente;
+\item
+  reporting incompleto: impossibilità di audit indipendente.
+\end{enumerate}
+
+Box C - Non-claim
+
+Questo capitolo non implica:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  che ogni categoria classica debba essere automaticamente riformulata in OCT;
+\item
+  che O1-O7 sia già un sistema assiomatico definitivo e chiuso;
+\item
+  che la sola assiomatica basti senza pipeline di validazione empirico-formale.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{8. Claim Ledger (S0-S3)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+ID & Claim & Tipo & Evidenza & Stato \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C3.1 & \texttt{OrdCat\_Omega} è formalizzabile come estensione conservativa di una categoria classica & formale & S2 & in\_review \\
+C3.2 & O1 garantisce inclusione strutturale nel quadro classico & formale & S1 & validated \\
+C3.3 & O2-O3 introducono un criterio minimo di realtà compositiva (\texttt{Coh} + \texttt{Phi}) & formale-metodologico & S2 & in\_review \\
+C3.4 & O4 rende la chiusura compositiva ordinativa condizionata e non automatica & formale & S2 & in\_proof \\
+C3.5 & O5 trasforma l'identità in vincolo non-degenerativo verificabile & formale & S2 & revise \\
+C3.6 & O6 richiede robustezza locale su variazioni contestuali controllate & metodologico & S1 & validated \\
+C3.7 & O7 è necessario per la falsificabilità scientifica delle estensioni OCT & epistemico & S1 & validated \\
+C3.8 & L'estensione OCT è non ridondante se esistono morfismi classici validi ma non ammissibili ordinativamente & metateorico & S2 & in\_proof \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{9. Bridge al Capitolo 4}
+
+Con il presente capitolo abbiamo completato la triade fondativa iniziale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Capitolo 1: perché la validità sintattica non basta nei domini reali complessi;
+\item
+  Capitolo 2: quale ontologia minima serve (singolarità contestuale);
+\item
+  Capitolo 3: come questa ontologia diventa categoria ordinativa assiomatizzata.
+\end{enumerate}
+
+Il Capitolo 4 userà O1-O7 per entrare nei dettagli operativi di:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  oggetti e morfismi in estensione OCT;
+\item
+  composizione e identità con esempi tipizzati;
+\item
+  criteri di ammissibilità su diagrammi concreti.
+\end{enumerate}
+
+In altre parole: il kernel assiomatico ora esiste; il prossimo passo è mostrarne il funzionamento strutturale passo per passo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Riferimenti}
+
+Riferimenti di framework interno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ghioni, F. (2026). \texttt{TE\_CORE\_v5.1.md}.
+\item
+  Ghioni, F. (2026). \texttt{Ordinative\_Set\_Theory\_OST\_A\_Concise\_Guide\_For\_AI\_v2\_1.md}.
+\item
+  \texttt{OCT\_CLASSICAL\_TO\_ORDINATIVE\_MAP\_v0\_1.md}.
+\item
+  \texttt{OCT\_THEOREM\_PROGRAM\_v0\_1.md}.
+\item
+  \texttt{OCT\_TYPED\_FORMAL\_SPEC\_v0\_1.md}.
+\end{enumerate}
+
+Riferimenti primari:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Eilenberg, S., Mac Lane, S. (1945). \emph{General Theory of Natural Equivalences}.
+\item
+  Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}.
+\item
+  Riehl, E. (2016). \emph{Category Theory in Context}.
+\item
+  Spivak, D. (2014). \emph{Category Theory for the Sciences}.
+\end{enumerate}

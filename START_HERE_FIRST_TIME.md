@@ -20,7 +20,8 @@ This project is a research framework that explains:
 1. Read `README.md`.
 2. Read `TE_CORE_v5.1.md` (core rules for the framework).
 3. Read `OCT/README.md` (what OCT is in this repository).
-4. Read `OCT/OCT_FOUNDATIONAL_OPERA_PREPRINT_CANDIDATE_v1_0.md` (main OCT manuscript).
+4. Read `OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md` (main OCT book start).
+5. If needed, open `OCT/OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md` (single-file full manuscript).
 
 ## If You Want Evidence and Validation
 
