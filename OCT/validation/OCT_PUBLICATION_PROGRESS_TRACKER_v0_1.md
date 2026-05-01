@@ -76,6 +76,13 @@ Objective: monitor remaining steps toward publishable formalization.
   - `templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md`
   - `OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md`
   - `OCT_CLAIM_TYPE_ANTIPATTERN_CHECKLIST_v0_1.md`
+- Cycle 5 refactor specs published (execution pending):
+  - `CYCLE_5_2026-05-01/CYCLE_5_OVERVIEW_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_A01_PROCESS_LEVEL_SPEC_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_D03_LOCKED_TAXONOMY_SPEC_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_D02_EVIDENCE_CLASS_SPEC_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_EXECUTION_AND_REJECT_RULES_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_PREREG_SEAL_TEMPLATE_v0_1.md`
 
 ## Usage note
 

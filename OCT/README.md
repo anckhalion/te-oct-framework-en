@@ -29,6 +29,7 @@ This folder contains the OCT research materials in English for:
 9. `validation/OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md`
 10. `validation/templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md`
 11. `validation/OCT_CLAIM_TYPE_ANTIPATTERN_CHECKLIST_v0_1.md`
+12. `validation/CYCLE_5_2026-05-01/CYCLE_5_OVERVIEW_v0_1.md`
 
 ## Legacy Material
 

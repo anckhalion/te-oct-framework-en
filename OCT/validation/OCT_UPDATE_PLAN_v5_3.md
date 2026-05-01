@@ -2,7 +2,7 @@
 
 Date: 2026-05-01  
 Owner: OCT program (Fabio Ghioni + collaborators)  
-Status: in progress (Phase 1 and Phase 2 completed)
+Status: in progress (Phase 1, Phase 2, and Phase 3 specs completed)
 
 ## Objective
 
@@ -59,7 +59,7 @@ Completion criteria:
 ## Phase 3 - A01/D02/D03 validation refactor
 
 Target window: 4-6 days  
-Status: pending
+Status: specification completed (2026-05-01), execution pending
 
 Deliverables:
 1. A01: process-level metric pipeline (trajectory + gate decisions), replacing output-only proxy logic.
@@ -118,3 +118,9 @@ Completion criteria:
   - `templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md`
   - `OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md`
   - `OCT_CLAIM_TYPE_ANTIPATTERN_CHECKLIST_v0_1.md`
+- 2026-05-01: Phase 3 specification package delivered:
+  - `CYCLE_5_2026-05-01/CYCLE_5_A01_PROCESS_LEVEL_SPEC_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_D03_LOCKED_TAXONOMY_SPEC_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_D02_EVIDENCE_CLASS_SPEC_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_EXECUTION_AND_REJECT_RULES_v0_1.md`
+  - `CYCLE_5_2026-05-01/CYCLE_5_PREREG_SEAL_TEMPLATE_v0_1.md`
