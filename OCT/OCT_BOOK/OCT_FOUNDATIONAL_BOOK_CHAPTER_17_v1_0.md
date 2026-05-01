@@ -351,6 +351,12 @@ Riferimenti di framework interno:
 4. `OCT_VALIDATION_PROTOCOL_v0_1.md`.
 5. `DECISION_MATRIX_FINAL_UNIFIED_v0_1.md`.
 6. `OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`.
+7. `OCT_UPDATE_PLAN_v5_3.md`.
+8. `external_reviews_2026-05-01/anti_patterns_validation.md`.
+9. `external_reviews_2026-05-01/a01_gate_design.md`.
+10. `OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md`.
+11. `templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md`.
+12. `OCT_CLAIM_TYPE_ANTIPATTERN_CHECKLIST_v0_1.md`.
 
 Riferimenti primari:
 

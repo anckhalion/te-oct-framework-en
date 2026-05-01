@@ -23,6 +23,12 @@ This folder contains the OCT research materials in English for:
 3. `OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
 4. `OCT_BOOK_LATEX/README.md`
 5. `validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
+6. `validation/OCT_UPDATE_PLAN_v5_3.md`
+7. `validation/external_reviews_2026-05-01/anti_patterns_validation.md`
+8. `validation/external_reviews_2026-05-01/a01_gate_design.md`
+9. `validation/OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md`
+10. `validation/templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md`
+11. `validation/OCT_CLAIM_TYPE_ANTIPATTERN_CHECKLIST_v0_1.md`
 
 ## Legacy Material
 

@@ -9,6 +9,9 @@ This is the easiest path for understanding OCT in this repository.
 3. Read `OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md` (full single-file manuscript).
 4. Read `OCT_BOOK_LATEX/README.md` (Overleaf-ready LaTeX package).
 5. Read `validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md` (validation status).
+6. Read `validation/OCT_UPDATE_PLAN_v5_3.md` (current hardening roadmap).
+7. Read `validation/OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md` (mandatory gate policy).
+8. Read `validation/templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md` (required template before any new cycle).
 
 ## If You Only Want the Bottom Line
 
