@@ -30,6 +30,7 @@ This folder contains the OCT research materials in English for:
 10. `validation/templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md`
 11. `validation/OCT_CLAIM_TYPE_ANTIPATTERN_CHECKLIST_v0_1.md`
 12. `validation/CYCLE_5_2026-05-01/CYCLE_5_OVERVIEW_v0_1.md`
+13. `validation/runtime/README.md`
 
 ## Legacy Material
 

@@ -83,6 +83,11 @@ Objective: monitor remaining steps toward publishable formalization.
   - `CYCLE_5_2026-05-01/CYCLE_5_D02_EVIDENCE_CLASS_SPEC_v0_1.md`
   - `CYCLE_5_2026-05-01/CYCLE_5_EXECUTION_AND_REJECT_RULES_v0_1.md`
   - `CYCLE_5_2026-05-01/CYCLE_5_PREREG_SEAL_TEMPLATE_v0_1.md`
+- Runtime governance package published and smoke-tested:
+  - `runtime/OCT_APPEND_ONLY_TRAJECTORY_SCHEMA_v0_1.json`
+  - `runtime/OCT_PREREG_SEAL_SCHEMA_v0_1.json`
+  - `runtime/check_gate_compliance.py`
+  - `runtime/compliance_report_v0_1.json` with `compliant=true`
 
 ## Usage note
 

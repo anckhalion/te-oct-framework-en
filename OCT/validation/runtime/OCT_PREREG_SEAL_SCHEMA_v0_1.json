@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "oct://validation/runtime/prereg-seal/v0.1",
+  "title": "OCT Preregistration Seal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cycle_id",
+    "theorem_id",
+    "spec_file",
+    "designer",
+    "auditor",
+    "claim_hash",
+    "thresholds_hash",
+    "formula_hash",
+    "dataset_manifest_hash",
+    "script_version_hash",
+    "timestamp_utc",
+    "seal_method",
+    "immutable_storage_path",
+    "auditor_signature"
+  ],
+  "properties": {
+    "cycle_id": {"type": "string", "minLength": 1},
+    "theorem_id": {"type": "string", "minLength": 1},
+    "spec_file": {"type": "string", "minLength": 1},
+    "designer": {"type": "string", "minLength": 1},
+    "auditor": {"type": "string", "minLength": 1},
+    "claim_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "thresholds_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "formula_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "dataset_manifest_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "script_version_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "timestamp_utc": {"type": "string", "format": "date-time"},
+    "seal_method": {"type": "string", "minLength": 1},
+    "immutable_storage_path": {"type": "string", "minLength": 1},
+    "auditor_signature": {"type": "string", "minLength": 1},
+    "lock_acknowledged": {"type": "boolean"}
+  }
+}
+

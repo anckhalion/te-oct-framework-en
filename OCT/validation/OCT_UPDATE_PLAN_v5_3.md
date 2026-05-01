@@ -2,7 +2,7 @@
 
 Date: 2026-05-01  
 Owner: OCT program (Fabio Ghioni + collaborators)  
-Status: in progress (Phase 1, Phase 2, and Phase 3 specs completed)
+Status: in progress (Phase 1-4 minimum package completed)
 
 ## Objective
 
@@ -75,7 +75,7 @@ Completion criteria:
 ## Phase 4 - Minimum operational implementation
 
 Target window: 5-7 days  
-Status: pending
+Status: completed (minimum package, 2026-05-01)
 
 Deliverables:
 1. Append-only trajectory logging schema.
@@ -124,3 +124,8 @@ Completion criteria:
   - `CYCLE_5_2026-05-01/CYCLE_5_D02_EVIDENCE_CLASS_SPEC_v0_1.md`
   - `CYCLE_5_2026-05-01/CYCLE_5_EXECUTION_AND_REJECT_RULES_v0_1.md`
   - `CYCLE_5_2026-05-01/CYCLE_5_PREREG_SEAL_TEMPLATE_v0_1.md`
+- 2026-05-01: Phase 4 minimum runtime package delivered:
+  - `runtime/OCT_APPEND_ONLY_TRAJECTORY_SCHEMA_v0_1.json`
+  - `runtime/OCT_PREREG_SEAL_SCHEMA_v0_1.json`
+  - `runtime/check_gate_compliance.py`
+  - compliance report generated: `runtime/compliance_report_v0_1.json`

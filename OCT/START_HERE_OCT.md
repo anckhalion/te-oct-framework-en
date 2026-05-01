@@ -13,6 +13,7 @@ This is the easiest path for understanding OCT in this repository.
 7. Read `validation/OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md` (mandatory gate policy).
 8. Read `validation/templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md` (required template before any new cycle).
 9. Read `validation/CYCLE_5_2026-05-01/CYCLE_5_OVERVIEW_v0_1.md` (A01/D02/D03 refactor specs).
+10. Read `validation/runtime/README.md` (runtime schemas and compliance check).
 
 ## If You Only Want the Bottom Line
 

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "oct://validation/runtime/trajectory/v0.1",
+  "title": "OCT Append-Only Trajectory Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cycle_id",
+    "theorem_id",
+    "task_id",
+    "event_index",
+    "event_id",
+    "source_state_id",
+    "target_state_id",
+    "morphism_id",
+    "gate_decision",
+    "metrics",
+    "timestamp_utc",
+    "event_hash",
+    "prev_event_hash"
+  ],
+  "properties": {
+    "cycle_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "theorem_id": {
+      "type": "string",
+      "enum": ["A01", "D02", "D03", "D04", "A02", "A03", "F03", "F08", "F10"]
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_state_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_state_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "morphism_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gate_decision": {
+      "type": "string",
+      "enum": ["admit", "refine", "reject", "abort"]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Syn", "Coh", "Phi", "tau_f_used"],
+      "properties": {
+        "Syn": {"type": "boolean"},
+        "Coh": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "Phi": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "tau_f_used": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "Delta_step": {"type": "number"},
+        "Err_sem_step": {"type": "number"}
+      }
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_hash": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "prev_event_hash": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
+
