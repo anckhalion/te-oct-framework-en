@@ -1,0 +1,36 @@
+{
+  "context_metrics": {
+    "D02_CTX_01": {
+      "n": 60,
+      "phi_zero_count": 17,
+      "phi_positive_count": 43,
+      "phi_zero_ratio": 0.2833333333333333,
+      "all_commutative_flag": true
+    },
+    "D02_CTX_02": {
+      "n": 60,
+      "phi_zero_count": 19,
+      "phi_positive_count": 41,
+      "phi_zero_ratio": 0.31666666666666665,
+      "all_commutative_flag": true
+    },
+    "D02_CTX_03": {
+      "n": 60,
+      "phi_zero_count": 21,
+      "phi_positive_count": 39,
+      "phi_zero_ratio": 0.35,
+      "all_commutative_flag": true
+    }
+  },
+  "reject_triggers": {
+    "universal_commutative_without_verification": true,
+    "guaranteed_pass_geometry": false,
+    "vacuum_pass_no_reachable_fail": false
+  },
+  "criteria": {
+    "non_empty_phi_zero_in_at_least_2_of_3_contexts": true,
+    "commutativity_explicitly_verified": false,
+    "falsification_route_reachable": true
+  },
+  "decision": "reject_candidate"
+}

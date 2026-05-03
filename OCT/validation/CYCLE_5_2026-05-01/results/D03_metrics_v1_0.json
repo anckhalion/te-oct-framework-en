@@ -1,0 +1,44 @@
+{
+  "theorem_id": "D03",
+  "thresholds": {
+    "t_low": 0.1,
+    "t_high": 0.22,
+    "max_ambiguous_rate": 0.35,
+    "loss_index_formula": "0.5*abs(Delta_Coh)+0.5*abs(Delta_Phi)"
+  },
+  "contexts": {
+    "D03_CTX_01": {
+      "n": 87,
+      "preservative": 0,
+      "degenerative": 77,
+      "ambiguous": 10,
+      "ambiguous_rate": 0.11494252873563218
+    },
+    "D03_CTX_02": {
+      "n": 87,
+      "preservative": 0,
+      "degenerative": 76,
+      "ambiguous": 11,
+      "ambiguous_rate": 0.12643678160919541
+    },
+    "D03_CTX_03": {
+      "n": 86,
+      "preservative": 0,
+      "degenerative": 77,
+      "ambiguous": 9,
+      "ambiguous_rate": 0.10465116279069768
+    }
+  },
+  "criteria": {
+    "both_classes_non_empty_in_2_of_3_contexts": false,
+    "ambiguous_below_threshold_in_2_of_3_contexts": true,
+    "coh_and_phi_participate": true
+  },
+  "reject_triggers": {
+    "missing_explicit_U_mapping": false,
+    "criterion_shift_after_fail": false,
+    "class_unreachable_under_locked_formula": true,
+    "coh_absent_from_logic": false
+  },
+  "decision": "reject_candidate"
+}

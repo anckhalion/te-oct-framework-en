@@ -1,0 +1,60 @@
+{
+  "theorem_id": "A01",
+  "contexts": {
+    "A01_CTX_01": {
+      "P_cls": {
+        "delta_cum": 0.3173500560747664,
+        "err_sem_final": 0.3098220373831776,
+        "mean_Coh_trajectory": 0.6826499439252336,
+        "reject_rate": 0.35514018691588783,
+        "trajectory_length": 107
+      },
+      "P_ord": {
+        "delta_cum": 0.24045212149532708,
+        "err_sem_final": 0.2766483457943925,
+        "mean_Coh_trajectory": 0.759547878504673,
+        "reject_rate": 0.12149532710280374,
+        "trajectory_length": 107
+      }
+    },
+    "A01_CTX_02": {
+      "P_cls": {
+        "delta_cum": 0.323977,
+        "err_sem_final": 0.32043580373831776,
+        "mean_Coh_trajectory": 0.676023,
+        "reject_rate": 0.3364485981308411,
+        "trajectory_length": 107
+      },
+      "P_ord": {
+        "delta_cum": 0.2472068504672897,
+        "err_sem_final": 0.28611781308411216,
+        "mean_Coh_trajectory": 0.7527931495327103,
+        "reject_rate": 0.14953271028037382,
+        "trajectory_length": 107
+      }
+    },
+    "A01_CTX_03": {
+      "P_cls": {
+        "delta_cum": 0.33962548113207547,
+        "err_sem_final": 0.34570490566037737,
+        "mean_Coh_trajectory": 0.6603745188679246,
+        "reject_rate": 0.3490566037735849,
+        "trajectory_length": 106
+      },
+      "P_ord": {
+        "delta_cum": 0.26308556603773586,
+        "err_sem_final": 0.3086895094339623,
+        "mean_Coh_trajectory": 0.7369144339622642,
+        "reject_rate": 0.14150943396226415,
+        "trajectory_length": 106
+      }
+    }
+  },
+  "criteria": {
+    "delta_pass_contexts": 3,
+    "err_pass_contexts": 3,
+    "coh_pass_contexts": 3,
+    "equal_output_subset_count": 44
+  },
+  "decision": "pass_candidate"
+}
