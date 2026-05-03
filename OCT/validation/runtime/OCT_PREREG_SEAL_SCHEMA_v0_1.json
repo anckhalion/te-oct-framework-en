@@ -10,32 +10,90 @@
     "spec_file",
     "designer",
     "auditor",
+    "auditor_independence_declared",
+    "auditor_independence_note",
+    "claim_source_path",
     "claim_hash",
+    "thresholds_source_path",
     "thresholds_hash",
+    "formula_source_path",
     "formula_hash",
+    "dataset_manifest_path",
     "dataset_manifest_hash",
+    "script_version_source_path",
     "script_version_hash",
+    "contexts_source_path",
+    "contexts_hash",
     "timestamp_utc",
     "seal_method",
     "immutable_storage_path",
-    "auditor_signature"
+    "auditor_signature",
+    "lock_acknowledged"
   ],
   "properties": {
     "cycle_id": {"type": "string", "minLength": 1},
-    "theorem_id": {"type": "string", "minLength": 1},
+    "theorem_id": {
+      "type": "string",
+      "enum": ["A01", "D02", "D03", "D04", "A02", "A03", "F03", "F08", "F10"]
+    },
     "spec_file": {"type": "string", "minLength": 1},
     "designer": {"type": "string", "minLength": 1},
     "auditor": {"type": "string", "minLength": 1},
+    "auditor_independence_declared": {"type": "boolean", "const": true},
+    "auditor_independence_note": {"type": "string", "minLength": 1},
+    "claim_source_path": {"type": "string", "minLength": 1},
     "claim_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "thresholds_source_path": {"type": "string", "minLength": 1},
     "thresholds_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "formula_source_path": {"type": "string", "minLength": 1},
     "formula_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "dataset_manifest_path": {"type": "string", "minLength": 1},
     "dataset_manifest_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "script_version_source_path": {"type": "string", "minLength": 1},
     "script_version_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "contexts_source_path": {"type": "string", "minLength": 1},
+    "contexts_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
     "timestamp_utc": {"type": "string", "format": "date-time"},
-    "seal_method": {"type": "string", "minLength": 1},
+    "seal_method": {
+      "type": "string",
+      "enum": [
+        "zenodo_doi",
+        "opentimestamps",
+        "ipfs_cid",
+        "git_signed_tag_with_external_witness"
+      ]
+    },
     "immutable_storage_path": {"type": "string", "minLength": 1},
     "auditor_signature": {"type": "string", "minLength": 1},
-    "lock_acknowledged": {"type": "boolean"}
-  }
+    "lock_acknowledged": {"type": "boolean", "const": true}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"seal_method": {"const": "zenodo_doi"}}},
+      "then": {
+        "properties": {
+          "immutable_storage_path": {
+            "type": "string",
+            "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Za-z0-9]+$"
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"seal_method": {"const": "ipfs_cid"}}},
+      "then": {
+        "properties": {
+          "immutable_storage_path": {"type": "string", "pattern": "^ipfs://.+"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"seal_method": {"const": "opentimestamps"}}},
+      "then": {
+        "properties": {
+          "immutable_storage_path": {"type": "string", "pattern": "^.+\\.ots$"}
+        }
+      }
+    }
+  ]
 }
-

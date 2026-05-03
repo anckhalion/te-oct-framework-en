@@ -28,7 +28,8 @@ Single-instance sentence proxies without explicit `U` mapping are invalid for D0
 
 1. `Delta_Coh = Coh(D_post) - Coh(D_pre)`
 2. `Delta_Phi = Phi(D_post) - Phi(D_pre)`
-3. `Loss_index = f(Delta_Coh, Delta_Phi)` (formula fixed in preregistration)
+3. `Loss_index = 0.5 * abs(Delta_Coh) + 0.5 * abs(Delta_Phi)`
+4. Weight lock: `(w_Coh, w_Phi) = (0.5, 0.5)` is fixed for Cycle 5 and cannot be changed on same data.
 
 ## Class partition (pre-registered)
 
@@ -65,4 +66,3 @@ D03 is `revise_needed` if:
 1. No post-hoc rescue on same data.
 2. No variable switch (`drop` to `loss`, or equivalent) after fail without new preregistration + new cycle.
 3. Any rescue attempt triggers automatic `reject_candidate` for that cycle.
-

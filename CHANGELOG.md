@@ -4,6 +4,32 @@ All notable changes to this repository should be documented in this file.
 
 The format is inspired by Keep a Changelog and semantic versioning principles for documentation releases.
 
+## [5.3.1] - 2026-05-03
+
+### Updated
+- Hardened runtime compliance logic in `OCT/validation/runtime/check_gate_compliance.py`:
+  - checks instantiated theorem sheets (not template presence only),
+  - requires explicit `PASS` gate decision,
+  - validates role separation,
+  - validates prereg seal payload structure and hash re-computability,
+  - checks prereg timestamp precedence against trajectory logs when available.
+- Strengthened prereg and runtime schemas:
+  - `OCT/validation/runtime/OCT_PREREG_SEAL_SCHEMA_v0_1.json`
+  - `OCT/validation/runtime/OCT_APPEND_ONLY_TRAJECTORY_SCHEMA_v0_1.json`
+- Strengthened governance policy and cycle specs:
+  - `OCT/validation/OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md`
+  - `OCT/validation/CYCLE_5_2026-05-01/CYCLE_5_A01_PROCESS_LEVEL_SPEC_v0_1.md`
+  - `OCT/validation/CYCLE_5_2026-05-01/CYCLE_5_D03_LOCKED_TAXONOMY_SPEC_v0_1.md`
+  - `OCT/validation/CYCLE_5_2026-05-01/CYCLE_5_EXECUTION_AND_REJECT_RULES_v0_1.md`
+  - `OCT/validation/CYCLE_5_2026-05-01/CYCLE_5_PREREG_SEAL_TEMPLATE_v0_1.md`
+- Updated state interpretation artifacts:
+  - `OCT/validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
+  - `OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_17_v1_0.md`
+
+### Notes
+- `compliant=true` is now reserved for substantive gate compliance; template-only presence is no longer sufficient.
+- Historical Cycle 3-4 outputs remain preserved but are not sufficient for theorem promotion under ex-ante gate policy.
+
 ## [5.3.0] - 2026-05-01
 
 ### Added

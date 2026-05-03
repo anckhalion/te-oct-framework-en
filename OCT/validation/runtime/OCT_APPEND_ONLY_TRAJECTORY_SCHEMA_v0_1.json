@@ -8,6 +8,7 @@
     "cycle_id",
     "theorem_id",
     "task_id",
+    "context_id",
     "event_index",
     "event_id",
     "source_state_id",
@@ -29,6 +30,10 @@
       "enum": ["A01", "D02", "D03", "D04", "A02", "A03", "F03", "F08", "F10"]
     },
     "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context_id": {
       "type": "string",
       "minLength": 1
     },
@@ -86,4 +91,3 @@
     }
   }
 }
-

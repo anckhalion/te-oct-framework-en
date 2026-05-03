@@ -77,6 +77,14 @@ Why reachable:
 
 If not reachable, mark sheet as `fail`.
 
+### 4.4 Universal claim guard (trivial confirmation lock)
+
+If claim type is `universal`, show reachable counterexample strategy.
+
+Concrete reachable counterexample search strategy:
+
+Confirmation is not tautological by construction? `yes/no`
+
 ## 5) Falsifiability reachability test
 
 Required before run:
@@ -87,6 +95,12 @@ Required before run:
 Pass/fail of reachability test:
 
 Evidence artifact paths:
+
+### 5.1 Pre-registered context list (mandatory when using multi-context criteria)
+
+| context_id | Distinguishing features | Expected difficulty | Dataset slice |
+| --- | --- | --- | --- |
+|  |  |  |  |
 
 ## 6) Validity space coverage declaration (Coh/Phi/Delta)
 
@@ -119,6 +133,9 @@ Proxy designer and proxy auditor must be different.
 Designer:
 Auditor:
 Confirmed different identities: `yes/no`
+Auditor co-authorship with designer in last 24 months: `yes/no`
+If yes, list:
+Auditor school-of-thought affiliation declaration:
 
 ## 9) Preregistration seal
 
@@ -127,6 +144,9 @@ Required fields:
 - checksum/hash:
 - timestamp (UTC):
 - immutable storage location:
+- seal method:
+- contexts hash:
+- auditor independence declared (`yes/no`):
 
 Seal valid: `yes/no`
 
@@ -143,4 +163,3 @@ Decision rationale (short, technical):
 
 Signer (auditor):
 Date:
-

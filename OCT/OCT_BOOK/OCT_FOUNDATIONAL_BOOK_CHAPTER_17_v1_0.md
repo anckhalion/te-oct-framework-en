@@ -85,6 +85,7 @@ Restano in consolidamento:
 1. promozione theorem-level di claims ad alta portata metateorica;
 2. benchmarking indipendente esteso per dominio sociale;
 3. stabilizzazione di metriche ausiliarie cross-dominio.
+4. adozione piena del gate ex-ante con sheet compilati e seal validi per ogni promozione di stato.
 
 Questa zona non e debolezza narrativa: e il luogo normale della ricerca viva.
 
@@ -265,6 +266,7 @@ Ipotesi:
 1. pubblicazione integrale di successi e fallimenti;
 2. aggiornamento versionato del ledger;
 3. coerenza tra stato claim e rilascio pubblico.
+4. validazione ex-ante (`OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md`) soddisfatta per ogni promozione da `revise` a `validated`.
 
 Tesi:
 La conoscenza OCT cresce in modo cumulativo senza perdita di tracciabilità.

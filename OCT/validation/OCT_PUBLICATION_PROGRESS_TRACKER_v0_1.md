@@ -87,7 +87,12 @@ Objective: monitor remaining steps toward publishable formalization.
   - `runtime/OCT_APPEND_ONLY_TRAJECTORY_SCHEMA_v0_1.json`
   - `runtime/OCT_PREREG_SEAL_SCHEMA_v0_1.json`
   - `runtime/check_gate_compliance.py`
-  - `runtime/compliance_report_v0_1.json` with `compliant=true`
+  - `runtime/compliance_report_v0_1.json` (must be interpreted as substantive gate check, not file-presence only)
+
+Interpretation note (v5.3.1 hardening):
+- Historical Cycle 3-4 outputs for A01/D02/D03 remain preserved as record.
+- Under ex-ante policy, those outputs are not sufficient for theorem-state promotion by themselves.
+- Cycle 5 artifacts supersede historical outputs as admissible evidence basis for A01/D02/D03 promotion.
 
 ## Usage note
 

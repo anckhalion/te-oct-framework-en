@@ -1,21 +1,70 @@
 {
   "validation_root": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation",
+  "cycle_id": "CYCLE_5_2026-05-01",
   "compliant": true,
-  "missing_count": 0,
-  "missing": [],
-  "present_count": 9,
+  "global_missing_count": 0,
+  "global_missing": [],
+  "global_present_count": 11,
   "theorem_status": {
     "A01": {
-      "path": "CYCLE_5_2026-05-01/CYCLE_5_A01_PROCESS_LEVEL_SPEC_v0_1.md",
-      "exists": true
+      "spec_path": "CYCLE_5_2026-05-01/CYCLE_5_A01_PROCESS_LEVEL_SPEC_v0_1.md",
+      "spec_exists": true,
+      "sheet_check": {
+        "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\instances\\A01_OCT_PROXY_PREVALIDATION_SHEET_v0_1.md",
+        "exists": true,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      "seal_check": {
+        "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\seals\\A01_PREREG_SEAL_v0_1.json",
+        "exists": true,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      "errors_count": 0,
+      "warnings_count": 0
     },
     "D03": {
-      "path": "CYCLE_5_2026-05-01/CYCLE_5_D03_LOCKED_TAXONOMY_SPEC_v0_1.md",
-      "exists": true
+      "spec_path": "CYCLE_5_2026-05-01/CYCLE_5_D03_LOCKED_TAXONOMY_SPEC_v0_1.md",
+      "spec_exists": true,
+      "sheet_check": {
+        "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\instances\\D03_OCT_PROXY_PREVALIDATION_SHEET_v0_1.md",
+        "exists": true,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      "seal_check": {
+        "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\seals\\D03_PREREG_SEAL_v0_1.json",
+        "exists": true,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      "errors_count": 0,
+      "warnings_count": 0
     },
     "D02": {
-      "path": "CYCLE_5_2026-05-01/CYCLE_5_D02_EVIDENCE_CLASS_SPEC_v0_1.md",
-      "exists": true
+      "spec_path": "CYCLE_5_2026-05-01/CYCLE_5_D02_EVIDENCE_CLASS_SPEC_v0_1.md",
+      "spec_exists": true,
+      "sheet_check": {
+        "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\instances\\D02_OCT_PROXY_PREVALIDATION_SHEET_v0_1.md",
+        "exists": true,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      "seal_check": {
+        "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\seals\\D02_PREREG_SEAL_v0_1.json",
+        "exists": true,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      "errors_count": 0,
+      "warnings_count": 0
     }
   }
 }

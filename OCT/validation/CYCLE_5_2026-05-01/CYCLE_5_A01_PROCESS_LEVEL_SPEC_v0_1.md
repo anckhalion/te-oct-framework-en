@@ -36,13 +36,15 @@ Both pipelines must be run:
 2. `Err_sem_final`: final semantic error against gold/anchor.
 3. `Reject_rate`: fraction of steps rejected or refined.
 4. `Trajectory_length`: number of effective transitions.
+5. `mean_Coh_trajectory`: mean process-level Coh over effective trajectory.
 
 ## Confirmation criterion (pre-registered)
 
 A01 is `pass_candidate` only if all are true:
 1. `E[Delta_cum(P_ord)] < E[Delta_cum(P_cls)]` in at least 2/3 contexts.
 2. `E[Err_sem_final(P_ord)] < E[Err_sem_final(P_cls)]` in at least 2/3 contexts.
-3. At least one subset shows equal/similar final output but different trajectory quality favoring `P_ord`.
+3. `E[mean_Coh_trajectory(P_ord)] > E[mean_Coh_trajectory(P_cls)]` in at least 2/3 contexts.
+4. At least one subset shows equal/similar final output but different trajectory quality favoring `P_ord`.
 
 ## Reject conditions (pre-registered)
 
@@ -64,4 +66,3 @@ A01 is `revise_needed` if:
 1. No level-shift: output-only proxy cannot be decisive.
 2. No hidden metric substitution after first run.
 3. No threshold adjustment on same dataset after fail.
-

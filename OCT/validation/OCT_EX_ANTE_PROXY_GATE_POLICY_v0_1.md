@@ -22,6 +22,7 @@ If gate status is `FAIL` or `HOLD`, execution is blocked.
 4. **Role separation**: proxy designer and proxy auditor must be distinct.
 5. **Preregistration seal**: immutable hash+timestamp before run.
 6. **Evidence class declaration**: L1/L2/synthetic classes must be explicit and non-collapsed.
+7. **Cycle budget declaration**: each claim must declare `max_independent_cycles` before execution.
 
 ## Anti-pattern lock clauses
 
@@ -47,6 +48,14 @@ If no disconfirming configuration is reachable, gate must return `FAIL`.
 
 Formal pilot pass, synthetic pass, and empirical pass are separate evidence classes and cannot be auto-summed as independent confirmations.
 
+### Clause E - No sequential preregistration p-hacking
+
+Repeated reformulation of the same claim is bounded by an explicit cycle budget:
+- each claim ID must declare `max_independent_cycles` ex ante (recommended default: 3)
+- once budget is exhausted, the claim must be either:
+  - redefined with a new claim ID and explicit rationale, or
+  - escalated to external higher-level audit before any additional cycle
+
 ## Enforcement
 
 Minimum artifacts required per theorem-cycle:
@@ -54,6 +63,7 @@ Minimum artifacts required per theorem-cycle:
 2. Preregistration artifact with seal
 3. Auditor signature
 4. Link to planned cycle spec
+5. Auditor independence declaration (identity + co-authorship + affiliation)
 
 Missing any artifact -> automatic gate `FAIL`.
 
@@ -69,4 +79,3 @@ Decision state changes in matrix artifacts (`validated/revise/reject`) must refe
 
 Effective date: 2026-05-01.  
 Historical cycles remain unchanged as historical record, but are interpreted under this policy when reassessed.
-

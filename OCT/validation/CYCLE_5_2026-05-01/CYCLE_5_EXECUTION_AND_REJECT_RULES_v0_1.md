@@ -22,6 +22,8 @@ Any missing item -> cycle status `blocked`.
    - reason log
    - rerun declaration
 3. Context labels must represent genuine context separation, not decorative rescaling.
+4. Every trajectory event must include `context_id` aligned with pre-registered context list.
+5. No sequential rerun beyond claim `max_independent_cycles` without escalation.
 
 ## Theorem-level reject triggers
 
@@ -62,4 +64,3 @@ Global theorem status cannot be assigned before lane-level status is complete.
 ## Governance note
 
 Cycle 5 is valid only if this file and all theorem specs are sealed before execution.
-

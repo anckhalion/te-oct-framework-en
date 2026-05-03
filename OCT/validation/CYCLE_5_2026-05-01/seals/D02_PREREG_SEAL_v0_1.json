@@ -1,0 +1,27 @@
+{
+  "cycle_id": "CYCLE_5_2026-05-01",
+  "theorem_id": "D02",
+  "spec_file": "CYCLE_5_2026-05-01/CYCLE_5_D02_EVIDENCE_CLASS_SPEC_v0_1.md",
+  "designer": "Fabio Ghioni",
+  "auditor": "Solomon",
+  "auditor_independence_declared": true,
+  "auditor_independence_note": "Independent external critical review; no co-authorship in last 24 months.",
+  "claim_source_path": "CYCLE_5_2026-05-01/claim_locks/D02_claim_lock_v0_1.md",
+  "claim_hash": "585640beb99cc20d6b018454f527db136bc94876a484bee91868d397a7d1f836",
+  "thresholds_source_path": "CYCLE_5_2026-05-01/threshold_locks/D02_thresholds_lock_v0_1.md",
+  "thresholds_hash": "99310bff499336d9703c1a782da1fb9b9965525fe521f53aef29416a84288f4c",
+  "formula_source_path": "CYCLE_5_2026-05-01/formula_locks/D02_formula_lock_v0_1.md",
+  "formula_hash": "b7ef3d87e8acf8cc7c218a5d72e84da415ed039436dd16ac170a0f0410e0efd8",
+  "dataset_manifest_path": "CYCLE_5_2026-05-01/dataset_manifests/D02_dataset_manifest_v0_1.md",
+  "dataset_manifest_hash": "ad81d844dc13a4f30b4761409b78947e3be315c3e5ba2b70704b2632dca5c7b7",
+  "script_version_source_path": "CYCLE_5_2026-05-01/script_locks/D02_script_lock_v0_1.md",
+  "script_version_hash": "fcdd469fc904bc8be93ffd83ae5625dc13634d46213b37eea1c363766d7ac0e5",
+  "contexts_source_path": "CYCLE_5_2026-05-01/contexts/D02_contexts_v0_1.md",
+  "contexts_hash": "2333bdf8f04893a538ee06608c8912d35b24b30e42cc24c34eefb4fcc437d1fa",
+  "timestamp_utc": "2026-05-03T08:40:00Z",
+  "seal_method": "zenodo_doi",
+  "immutable_storage_path": "10.5281/zenodo.19959724",
+  "auditor_signature": "Signed electronically by Solomon on 2026-05-03",
+  "lock_acknowledged": true
+}
+
