@@ -30,6 +30,7 @@
   "criteria": {
     "non_empty_phi_zero_in_at_least_2_of_3_contexts": true,
     "commutativity_explicitly_verified": false,
+    "verification_fields_detected": [],
     "falsification_route_reachable": true
   },
   "decision": "reject_candidate"

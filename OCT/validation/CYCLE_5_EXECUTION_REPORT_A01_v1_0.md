@@ -2,24 +2,25 @@
 
 Date: 2026-05-03
 Theorem: A01
-Decision: `pass_candidate`
+Decision: `revise_needed`
 
 ## Context metrics
 
 | Context | delta_cum_cls | delta_cum_ord | err_cls | err_ord | mean_Coh_cls | mean_Coh_ord |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| A01_CTX_01 | 0.317350 | 0.240452 | 0.309822 | 0.276648 | 0.682650 | 0.759548 |
-| A01_CTX_02 | 0.323977 | 0.247207 | 0.320436 | 0.286118 | 0.676023 | 0.752793 |
-| A01_CTX_03 | 0.339625 | 0.263086 | 0.345705 | 0.308690 | 0.660375 | 0.736914 |
+| A01_CTX_01 | 0.416102 | 0.399112 | 0.438484 | 0.421211 | 0.583898 | 0.600888 |
+| A01_CTX_02 | 0.423892 | 0.419588 | 0.448109 | 0.443174 | 0.576108 | 0.580412 |
+| A01_CTX_03 | 0.431399 | 0.442191 | 0.456571 | 0.465889 | 0.568601 | 0.557809 |
 
 ## Criteria summary
 
-- Delta pass contexts: `3`
-- Error pass contexts: `3`
-- Coh pass contexts: `3`
-- Equal-output/trajectory-quality subset count: `44`
+- Delta pass contexts: `2`
+- Error pass contexts: `2`
+- Coh pass contexts: `2`
+- Equal-output/trajectory-quality subset count: `0`
 
 ## Notes
 
-- Metrics are computed from deterministic execution proxies over cycle3 input corpus.
+- Metrics are computed from deterministic proxy execution over cycle3 input corpus.
+- `decision_raw` is de-escalated to `decision=revise_needed` because this runner is non-promotable proxy mode.
 - This report is reproducible from files in `datasets/cycle3_inputs` and script lock artifacts.

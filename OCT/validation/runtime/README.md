@@ -16,6 +16,12 @@ Purpose: minimal operational layer for v5.3 governance
      - role separation checks,
      - prereg seal integrity and hash re-check,
      - timestamp precedence vs trajectory logs.
+   - default hash mode: canonical text hashing (UTF-8, BOM stripped, LF line endings) for cross-platform reproducibility.
+   - optional `--raw-hash` mode for byte-level diagnostics.
+4. `run_cycle5_execution.py`
+   - deterministic cycle5 proxy execution runner generating full trajectory logs, results, and reports.
+5. `refresh_seal_hashes.py`
+   - recomputes seal hash fields in canonical hash mode.
 
 ## Usage
 
@@ -29,6 +35,12 @@ Optional explicit path:
 
 ```powershell
 python OCT/validation/runtime/check_gate_compliance.py --validation-root OCT/validation
+```
+
+Raw-byte diagnostic run:
+
+```powershell
+python OCT/validation/runtime/check_gate_compliance.py --raw-hash
 ```
 
 ## Notes

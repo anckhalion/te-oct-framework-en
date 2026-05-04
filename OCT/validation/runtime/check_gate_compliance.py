@@ -98,6 +98,17 @@ SEAL_METHOD_RULES = {
     or value.startswith("http://"),
 }
 
+TEXT_HASH_EXTENSIONS = {
+    ".md",
+    ".txt",
+    ".json",
+    ".jsonl",
+    ".py",
+    ".csv",
+    ".yaml",
+    ".yml",
+}
+
 
 def _read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
@@ -125,11 +136,20 @@ def _parse_iso_datetime(value: str) -> datetime | None:
         return None
 
 
-def _sha256_file(path: Path) -> str:
+def _canonicalize_text_bytes(data: bytes) -> bytes:
+    bom = b"\xef\xbb\xbf"
+    if data.startswith(bom):
+        data = data[len(bom) :]
+    data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return data
+
+
+def _sha256_file(path: Path, canonicalize_text: bool) -> str:
     digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(65536), b""):
-            digest.update(chunk)
+    data = path.read_bytes()
+    if canonicalize_text and path.suffix.lower() in TEXT_HASH_EXTENSIONS:
+        data = _canonicalize_text_bytes(data)
+    digest.update(data)
     return digest.hexdigest()
 
 
@@ -231,6 +251,7 @@ def _check_seal(
     theorem_id: str,
     expected_cycle_id: str,
     trajectory_path: Path,
+    canonicalize_hashes: bool,
 ) -> dict:
     result = {
         "path": str(seal_path),
@@ -342,7 +363,7 @@ def _check_seal(
             result["errors"].append(f"Referenced source path not found: `{source_raw}`")
             continue
 
-        computed = _sha256_file(source_path)
+        computed = _sha256_file(source_path, canonicalize_text=canonicalize_hashes)
         if computed.lower() != hash_value.lower():
             result["errors"].append(
                 f"Hash mismatch for `{source_key}`: expected `{hash_value}`, computed `{computed}`."
@@ -366,7 +387,7 @@ def _check_seal(
     return result
 
 
-def run_check(validation_root: Path, cycle_id: str) -> dict:
+def run_check(validation_root: Path, cycle_id: str, canonicalize_hashes: bool) -> dict:
     missing_global = []
     present_global = []
 
@@ -391,7 +412,14 @@ def run_check(validation_root: Path, cycle_id: str) -> dict:
             missing_global.append(cfg["spec"])
 
         sheet_result = _check_sheet(sheet_path, theorem_id)
-        seal_result = _check_seal(validation_root, seal_path, theorem_id, cycle_id, trajectory_path)
+        seal_result = _check_seal(
+            validation_root,
+            seal_path,
+            theorem_id,
+            cycle_id,
+            trajectory_path,
+            canonicalize_hashes=canonicalize_hashes,
+        )
 
         theorem_errors = []
         theorem_errors.extend(sheet_result["errors"])
@@ -413,6 +441,7 @@ def run_check(validation_root: Path, cycle_id: str) -> dict:
     return {
         "validation_root": str(validation_root),
         "cycle_id": cycle_id,
+        "hash_mode": "canonical_text_utf8_lf" if canonicalize_hashes else "raw_bytes",
         "compliant": compliant,
         "global_missing_count": len(missing_global),
         "global_missing": sorted(set(missing_global)),
@@ -438,10 +467,15 @@ def main() -> int:
         default="OCT/validation/runtime/compliance_report_v0_1.json",
         help="Output JSON report path",
     )
+    parser.add_argument(
+        "--raw-hash",
+        action="store_true",
+        help="Use raw-byte hash mode instead of canonical text hash mode.",
+    )
     args = parser.parse_args()
 
     validation_root = Path(args.validation_root).resolve()
-    report = run_check(validation_root, args.cycle_id)
+    report = run_check(validation_root, args.cycle_id, canonicalize_hashes=not args.raw_hash)
 
     out_path = Path(args.write_report).resolve()
     out_path.parent.mkdir(parents=True, exist_ok=True)

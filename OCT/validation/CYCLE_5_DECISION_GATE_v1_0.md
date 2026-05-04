@@ -4,7 +4,7 @@ Date: 2026-05-03
 
 | Theorem | Lane/class | Decision | Reference artifacts |
 | --- | --- | --- | --- |
-| A01 | L1 empirical process | pass_candidate | results/A01_metrics_v1_0.json; trajectory/A01_trajectory_events.jsonl |
+| A01 | L1 empirical process | revise_needed | results/A01_metrics_v1_0.json; trajectory/A01_trajectory_events.jsonl |
 | D02 | L1 empirical | reject_candidate | results/D02_metrics_empirical_v1_0.json; trajectory/D02_trajectory_events.jsonl |
 | D02 | L2 formal | pass_candidate | results/D02_metrics_formal_v1_0.json |
 | D02 | theorem global | revise_needed | lane split matrix above |
@@ -12,7 +12,7 @@ Date: 2026-05-03
 
 ## Theorem-level outcome summary
 
-- A01: `pass_candidate`
+- A01: `revise_needed`
 - D02: `revise_needed`
 - D03: `reject_candidate`
 

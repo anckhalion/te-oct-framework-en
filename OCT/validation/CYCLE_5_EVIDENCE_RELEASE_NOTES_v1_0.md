@@ -5,7 +5,7 @@ Commit baseline: c9e7ae7
 
 ## Summary
 
-- A01 decision: `pass_candidate`
+- A01 decision: `revise_needed`
 - D02 decision: `revise_needed`
 - D03 decision: `reject_candidate`
 

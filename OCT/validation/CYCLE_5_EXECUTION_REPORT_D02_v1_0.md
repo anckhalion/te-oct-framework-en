@@ -7,7 +7,7 @@ Global decision: `revise_needed`
 ## Lane L1 empirical
 
 - Decision: `reject_candidate`
-- Criteria: `{"non_empty_phi_zero_in_at_least_2_of_3_contexts": true, "commutativity_explicitly_verified": false, "falsification_route_reachable": true}`
+- Criteria: `{"non_empty_phi_zero_in_at_least_2_of_3_contexts": true, "commutativity_explicitly_verified": false, "verification_fields_detected": [], "falsification_route_reachable": true}`
 - Reject triggers: `{"universal_commutative_without_verification": true, "guaranteed_pass_geometry": false, "vacuum_pass_no_reachable_fail": false}`
 
 | Context | n | phi_zero | phi_positive | phi_zero_ratio | all_commutative_flag |
@@ -25,4 +25,4 @@ Global decision: `revise_needed`
 ## Notes
 
 - D02 lane split was preserved.
-- Empirical lane fails under universal commutativity without independent verification proof trace.
+- Empirical lane fails because no explicit commutativity verification trace field is provided in the dataset schema.

@@ -7,6 +7,7 @@ import csv
 import hashlib
 import json
 import math
+import re
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -106,6 +107,22 @@ def clamp01(value: float) -> float:
     return max(0.0, min(1.0, value))
 
 
+TOKEN_RE = re.compile(r"[a-z0-9']+")
+
+
+def tokenize(text: str) -> set[str]:
+    return set(TOKEN_RE.findall(text.lower()))
+
+
+def jaccard_similarity(a: set[str], b: set[str]) -> float:
+    if not a and not b:
+        return 1.0
+    union = a | b
+    if not union:
+        return 0.0
+    return len(a & b) / len(union)
+
+
 def to_iso(base: datetime, step: int) -> str:
     return (base + timedelta(seconds=step)).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
@@ -159,14 +176,24 @@ def run_a01() -> dict[str, Any]:
         len2 = len(row["sentence2"].split())
         len_gap = abs(len1 - len2) / max(1, max(len1, len2))
 
+        tok1 = tokenize(row["sentence1"])
+        tok2 = tokenize(row["sentence2"])
+        sim = jaccard_similarity(tok1, tok2)
+
         for pipeline in ("P_cls", "P_ord"):
-            base_coh = clamp01(0.55 + 0.35 * gold - 0.08 * len_gap)
-            if pipeline == "P_ord":
-                coh = clamp01(base_coh + 0.055 - 0.02 * len_gap)
-                err = clamp01((1.0 - gold) * 0.52 + 0.06 * len_gap)
+            # Proxy execution mode: both branches are heuristics.
+            # They are intentionally non-monotonic to avoid guaranteed dominance by construction.
+            if pipeline == "P_cls":
+                coh = clamp01(0.38 + 0.47 * sim - 0.10 * len_gap + 0.08 * gold)
+                err = clamp01((1.0 - sim) * 0.62 + 0.10 * len_gap + 0.08 * (1.0 - gold))
             else:
-                coh = clamp01(base_coh - 0.025)
-                err = clamp01((1.0 - gold) * 0.58 + 0.075 * len_gap)
+                # Ordinative branch includes gate-like adjustments that can improve or worsen.
+                gate_bonus = 0.03 if sim >= 0.70 else (-0.02 if sim <= 0.30 else 0.005)
+                context_term = {"Omega_A": 0.010, "Omega_B": 0.0, "Omega_C": -0.015}[omega]
+                coh = clamp01(0.39 + 0.46 * sim - 0.11 * len_gap + 0.09 * gold + gate_bonus + context_term)
+                err = clamp01(
+                    (1.0 - sim) * 0.61 + 0.11 * len_gap + 0.07 * (1.0 - gold) - gate_bonus - context_term
+                )
 
             delta_step = clamp01(1.0 - coh)
             gate = "admit"
@@ -245,8 +272,16 @@ def run_a01() -> dict[str, Any]:
         else:
             decision = "revise_needed"
 
+    # A01 in this runner is still a proxy-mode execution, not independent dual-pipeline benchmark code.
+    # Even if criteria pass, theorem promotion cannot be based on this artifact alone.
+    decision_effective = decision
+    if decision == "pass_candidate":
+        decision_effective = "revise_needed"
+
     result = {
         "theorem_id": "A01",
+        "evidence_mode": "proxy_execution_non_promotable",
+        "proxy_non_promotable_reason": "Runner executes heuristic proxy branches, not independent pipeline implementations.",
         "contexts": summary,
         "criteria": {
             "delta_pass_contexts": delta_pass,
@@ -254,7 +289,8 @@ def run_a01() -> dict[str, Any]:
             "coh_pass_contexts": coh_pass,
             "equal_output_subset_count": equal_output_subset_count,
         },
-        "decision": decision,
+        "decision_raw": decision,
+        "decision": decision_effective,
     }
     write_json(RESULTS_DIR / "A01_metrics_v1_0.json", result)
     return result
@@ -340,16 +376,20 @@ def run_d02() -> dict[str, Any]:
         if phi_zero > 0:
             contexts_nonempty_phi_zero += 1
 
-    universal_commutative = all(
-        int(row["is_commutative"]) == 1 for row in data
+    universal_commutative = all(int(row["is_commutative"]) == 1 for row in data)
+    # Discovery-based check: verification requires explicit proof trace field in data.
+    verification_fields = ("commutativity_proof", "commutativity_witness", "proof_trace_id")
+    present_fields = [f for f in verification_fields if f in data[0]]
+    commutativity_verified = bool(present_fields) and all(
+        str(row.get(present_fields[0], "")).strip() for row in data
     )
-    commutativity_verified = False
     fail_configuration_reachable = True
     empirical_reject = universal_commutative and not commutativity_verified
 
     lane_empirical["criteria"] = {
         "non_empty_phi_zero_in_at_least_2_of_3_contexts": contexts_nonempty_phi_zero >= 2,
         "commutativity_explicitly_verified": commutativity_verified,
+        "verification_fields_detected": present_fields,
         "falsification_route_reachable": fail_configuration_reachable,
     }
     lane_empirical["reject_triggers"] = {
@@ -565,8 +605,9 @@ def write_report_a01(result: dict[str, Any]) -> None:
             "",
             "## Notes",
             "",
-            "- Metrics are computed from deterministic execution proxies over cycle3 input corpus.",
-            "- This report is reproducible from files in `datasets/cycle3_inputs` and script lock artifacts.",
+        "- Metrics are computed from deterministic proxy execution over cycle3 input corpus.",
+        "- `decision_raw` is de-escalated to `decision=revise_needed` because this runner is non-promotable proxy mode.",
+        "- This report is reproducible from files in `datasets/cycle3_inputs` and script lock artifacts.",
         ]
     )
     REPORT_A01.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -608,7 +649,7 @@ def write_report_d02(result: dict[str, Any]) -> None:
             "## Notes",
             "",
             "- D02 lane split was preserved.",
-            "- Empirical lane fails under universal commutativity without independent verification proof trace.",
+            "- Empirical lane fails because no explicit commutativity verification trace field is provided in the dataset schema.",
         ]
     )
     REPORT_D02.write_text("\n".join(lines) + "\n", encoding="utf-8")

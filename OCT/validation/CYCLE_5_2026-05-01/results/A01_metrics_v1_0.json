@@ -1,60 +1,63 @@
 {
   "theorem_id": "A01",
+  "evidence_mode": "proxy_execution_non_promotable",
+  "proxy_non_promotable_reason": "Runner executes heuristic proxy branches, not independent pipeline implementations.",
   "contexts": {
     "A01_CTX_01": {
       "P_cls": {
-        "delta_cum": 0.3173500560747664,
-        "err_sem_final": 0.3098220373831776,
-        "mean_Coh_trajectory": 0.6826499439252336,
-        "reject_rate": 0.35514018691588783,
+        "delta_cum": 0.41610218691588785,
+        "err_sem_final": 0.4384838224299065,
+        "mean_Coh_trajectory": 0.5838978130841121,
+        "reject_rate": 0.5981308411214953,
         "trajectory_length": 107
       },
       "P_ord": {
-        "delta_cum": 0.24045212149532708,
-        "err_sem_final": 0.2766483457943925,
-        "mean_Coh_trajectory": 0.759547878504673,
-        "reject_rate": 0.12149532710280374,
+        "delta_cum": 0.399112261682243,
+        "err_sem_final": 0.4212114859813084,
+        "mean_Coh_trajectory": 0.600887738317757,
+        "reject_rate": 0.48598130841121495,
         "trajectory_length": 107
       }
     },
     "A01_CTX_02": {
       "P_cls": {
-        "delta_cum": 0.323977,
-        "err_sem_final": 0.32043580373831776,
-        "mean_Coh_trajectory": 0.676023,
-        "reject_rate": 0.3364485981308411,
+        "delta_cum": 0.4238916635514019,
+        "err_sem_final": 0.4481091869158878,
+        "mean_Coh_trajectory": 0.5761083364485982,
+        "reject_rate": 0.5794392523364486,
         "trajectory_length": 107
       },
       "P_ord": {
-        "delta_cum": 0.2472068504672897,
-        "err_sem_final": 0.28611781308411216,
-        "mean_Coh_trajectory": 0.7527931495327103,
-        "reject_rate": 0.14953271028037382,
+        "delta_cum": 0.41958809345794396,
+        "err_sem_final": 0.4431737570093458,
+        "mean_Coh_trajectory": 0.5804119065420561,
+        "reject_rate": 0.5514018691588785,
         "trajectory_length": 107
       }
     },
     "A01_CTX_03": {
       "P_cls": {
-        "delta_cum": 0.33962548113207547,
-        "err_sem_final": 0.34570490566037737,
-        "mean_Coh_trajectory": 0.6603745188679246,
-        "reject_rate": 0.3490566037735849,
+        "delta_cum": 0.43139916981132076,
+        "err_sem_final": 0.4565710283018868,
+        "mean_Coh_trajectory": 0.5686008301886792,
+        "reject_rate": 0.6792452830188679,
         "trajectory_length": 106
       },
       "P_ord": {
-        "delta_cum": 0.26308556603773586,
-        "err_sem_final": 0.3086895094339623,
-        "mean_Coh_trajectory": 0.7369144339622642,
-        "reject_rate": 0.14150943396226415,
+        "delta_cum": 0.44219097169811317,
+        "err_sem_final": 0.4658893018867924,
+        "mean_Coh_trajectory": 0.5578090283018868,
+        "reject_rate": 0.6792452830188679,
         "trajectory_length": 106
       }
     }
   },
   "criteria": {
-    "delta_pass_contexts": 3,
-    "err_pass_contexts": 3,
-    "coh_pass_contexts": 3,
-    "equal_output_subset_count": 44
+    "delta_pass_contexts": 2,
+    "err_pass_contexts": 2,
+    "coh_pass_contexts": 2,
+    "equal_output_subset_count": 0
   },
-  "decision": "pass_candidate"
+  "decision_raw": "revise_needed",
+  "decision": "revise_needed"
 }
