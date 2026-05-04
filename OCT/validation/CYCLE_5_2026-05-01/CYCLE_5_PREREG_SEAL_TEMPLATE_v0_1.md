@@ -30,8 +30,12 @@ Cycle budget (`max_independent_cycles` for claim):
 1. UTC timestamp:
 2. Seal method:
 3. Immutable storage path:
-4. Signed by auditor:
-5. Lock acknowledged: `yes/no`
+4. Gate-entry signature (pre-run):
+5. Gate-entry timestamp (UTC):
+6. Gate-exit signature (post-run):
+7. Gate-exit timestamp (UTC):
+8. Gate-exit status: `not_executed | executed_no_promotion | executed_promotable | invalidated`
+9. Lock acknowledged: `yes/no`
 
 ## Lock clauses acknowledged
 

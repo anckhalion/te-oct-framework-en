@@ -61,9 +61,10 @@ Repeated reformulation of the same claim is bounded by an explicit cycle budget:
 Minimum artifacts required per theorem-cycle:
 1. Filled pre-validation sheet
 2. Preregistration artifact with seal
-3. Auditor signature
-4. Link to planned cycle spec
-5. Auditor independence declaration (identity + co-authorship + affiliation)
+3. Gate-entry signature (pre-run)
+4. Gate-exit signature (post-run review)
+5. Link to planned cycle spec
+6. Auditor independence declaration (identity + co-authorship + affiliation)
 
 Missing any artifact -> automatic gate `FAIL`.
 

@@ -27,7 +27,11 @@
     "timestamp_utc",
     "seal_method",
     "immutable_storage_path",
-    "auditor_signature",
+    "gate_entry_signature",
+    "gate_entry_timestamp_utc",
+    "gate_exit_signature",
+    "gate_exit_timestamp_utc",
+    "gate_exit_status",
     "lock_acknowledged"
   ],
   "properties": {
@@ -64,7 +68,19 @@
       ]
     },
     "immutable_storage_path": {"type": "string", "minLength": 1},
-    "auditor_signature": {"type": "string", "minLength": 1},
+    "gate_entry_signature": {"type": "string", "minLength": 1},
+    "gate_entry_timestamp_utc": {"type": "string", "format": "date-time"},
+    "gate_exit_signature": {"type": "string", "minLength": 1},
+    "gate_exit_timestamp_utc": {"type": "string", "format": "date-time"},
+    "gate_exit_status": {
+      "type": "string",
+      "enum": [
+        "not_executed",
+        "executed_no_promotion",
+        "executed_promotable",
+        "invalidated"
+      ]
+    },
     "lock_acknowledged": {"type": "boolean", "const": true}
   },
   "allOf": [

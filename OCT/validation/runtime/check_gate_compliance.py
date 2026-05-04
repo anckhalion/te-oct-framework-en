@@ -9,6 +9,8 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
+from urllib import error as urlerror
+from urllib import request as urlrequest
 
 
 REQUIRED_GLOBAL_FILES = [
@@ -45,6 +47,7 @@ THEOREM_CONFIG = {
 
 SHEET_REQUIRED_HEADINGS = [
     "## 1) Claim logical type",
+    "## 1.1) Cycle budget control (anti-p-hacking)",
     "## 2) Claim statement and falsifier statement",
     "## 3) Concept-to-observable mapping table",
     "## 4) Anti-pattern prevention checks (mandatory)",
@@ -66,6 +69,7 @@ SHEET_REQUIRED_LABELS = [
     "Prepared by (proxy designer):",
     "Audited by (independent auditor):",
     "Theorem ID:",
+    "Claim ID:",
     "Cycle ID candidate:",
     "Status:",
     "Decision:",
@@ -97,6 +101,11 @@ SEAL_METHOD_RULES = {
     "git_signed_tag_with_external_witness": lambda value: value.startswith("https://")
     or value.startswith("http://"),
 }
+
+CLAIM_LOCK_INT_FIELDS = (
+    "max_independent_cycles",
+    "cycle_sequence_index",
+)
 
 TEXT_HASH_EXTENSIONS = {
     ".md",
@@ -134,6 +143,69 @@ def _parse_iso_datetime(value: str) -> datetime | None:
         return datetime.fromisoformat(raw)
     except ValueError:
         return None
+
+
+def _parse_kv_text(text: str) -> dict[str, str]:
+    kv: dict[str, str] = {}
+    for line in text.splitlines():
+        if ":" not in line:
+            continue
+        left, right = line.split(":", 1)
+        key = left.strip().lower()
+        if key:
+            kv[key] = right.strip()
+    return kv
+
+
+def _validate_claim_budget(claim_lock_text: str, theorem_id: str) -> list[str]:
+    errors: list[str] = []
+    kv = _parse_kv_text(claim_lock_text)
+
+    claim_id = kv.get("claim id", "")
+    if claim_id and claim_id != theorem_id:
+        errors.append(
+            f"Claim lock theorem mismatch: expected `{theorem_id}`, found claim ID `{claim_id}`."
+        )
+
+    values: dict[str, int] = {}
+    for field in CLAIM_LOCK_INT_FIELDS:
+        raw = kv.get(field, "")
+        if not raw:
+            errors.append(f"Claim lock missing `{field}`.")
+            continue
+        if not raw.isdigit():
+            errors.append(f"Claim lock field `{field}` must be an integer, found `{raw}`.")
+            continue
+        values[field] = int(raw)
+
+    max_cycles = values.get("max_independent_cycles")
+    idx = values.get("cycle_sequence_index")
+    if max_cycles is not None and max_cycles <= 0:
+        errors.append("Claim lock `max_independent_cycles` must be >= 1.")
+    if idx is not None and idx <= 0:
+        errors.append("Claim lock `cycle_sequence_index` must be >= 1.")
+    if max_cycles is not None and idx is not None and idx > max_cycles:
+        errors.append(
+            f"Claim lock cycle index `{idx}` exceeds max_independent_cycles `{max_cycles}`."
+        )
+
+    return errors
+
+
+def _resolve_doi(doi: str, timeout: int = 8) -> tuple[bool, str]:
+    url = f"https://doi.org/{doi}"
+    req = urlrequest.Request(url, method="GET", headers={"Accept": "text/plain"})
+    try:
+        with urlrequest.urlopen(req, timeout=timeout) as resp:
+            code = getattr(resp, "status", 200)
+            final_url = resp.geturl()
+            if 200 <= code < 400:
+                return True, final_url
+            return False, f"http_status={code}"
+    except urlerror.HTTPError as exc:
+        return False, f"http_error={exc.code}"
+    except urlerror.URLError as exc:
+        return False, f"url_error={exc.reason}"
 
 
 def _canonicalize_text_bytes(data: bytes) -> bytes:
@@ -223,6 +295,11 @@ def _check_sheet(sheet_path: Path, theorem_id: str) -> dict:
         result["errors"].append(
             f"Theorem mismatch in sheet: expected `{theorem_id}`, found `{sheet_theorem}`."
         )
+    claim_id = labels.get("Claim ID:", "")
+    if claim_id and claim_id != theorem_id:
+        result["errors"].append(
+            f"Claim ID mismatch in sheet: expected `{theorem_id}`, found `{claim_id}`."
+        )
 
     designer = labels.get("Prepared by (proxy designer):", "")
     auditor = labels.get("Audited by (independent auditor):", "")
@@ -252,6 +329,7 @@ def _check_seal(
     expected_cycle_id: str,
     trajectory_path: Path,
     canonicalize_hashes: bool,
+    strict_doi_resolve: bool,
 ) -> dict:
     result = {
         "path": str(seal_path),
@@ -297,7 +375,11 @@ def _check_seal(
         "timestamp_utc",
         "seal_method",
         "immutable_storage_path",
-        "auditor_signature",
+        "gate_entry_signature",
+        "gate_entry_timestamp_utc",
+        "gate_exit_signature",
+        "gate_exit_timestamp_utc",
+        "gate_exit_status",
         "lock_acknowledged",
     }
     missing_fields = sorted(field for field in required_fields if field not in payload)
@@ -329,8 +411,27 @@ def _check_seal(
     if not _is_non_placeholder(str(payload.get("auditor_independence_note", ""))):
         result["errors"].append("Missing substantive `auditor_independence_note`.")
 
-    if not _is_non_placeholder(str(payload.get("auditor_signature", ""))):
-        result["errors"].append("Missing substantive auditor signature.")
+    if not _is_non_placeholder(str(payload.get("gate_entry_signature", ""))):
+        result["errors"].append("Missing substantive `gate_entry_signature`.")
+    if not _is_non_placeholder(str(payload.get("gate_exit_signature", ""))):
+        result["errors"].append("Missing substantive `gate_exit_signature`.")
+
+    entry_ts = _parse_iso_datetime(str(payload.get("gate_entry_timestamp_utc", "")))
+    exit_ts = _parse_iso_datetime(str(payload.get("gate_exit_timestamp_utc", "")))
+    if entry_ts is None:
+        result["errors"].append("Invalid `gate_entry_timestamp_utc` in seal.")
+    if exit_ts is None:
+        result["errors"].append("Invalid `gate_exit_timestamp_utc` in seal.")
+    if entry_ts is not None and exit_ts is not None and exit_ts < entry_ts:
+        result["errors"].append("`gate_exit_timestamp_utc` must be >= gate entry timestamp.")
+
+    if payload.get("gate_exit_status") not in {
+        "not_executed",
+        "executed_no_promotion",
+        "executed_promotable",
+        "invalidated",
+    }:
+        result["errors"].append("Invalid `gate_exit_status` in seal.")
 
     if payload.get("lock_acknowledged") is not True:
         result["errors"].append("`lock_acknowledged` must be true.")
@@ -346,6 +447,16 @@ def _check_seal(
         result["errors"].append(
             f"`immutable_storage_path` is not valid for `seal_method={seal_method}`."
         )
+    elif seal_method == "zenodo_doi":
+        ok, details = _resolve_doi(immutable_path)
+        if not ok and strict_doi_resolve:
+            result["errors"].append(
+                f"DOI resolution failed for `{immutable_path}`: {details}."
+            )
+        elif not ok:
+            result["warnings"].append(
+                f"DOI resolution not confirmed for `{immutable_path}`: {details}."
+            )
 
     for source_key, hash_key in SEAL_HASH_FIELDS:
         source_raw = str(payload.get(source_key, "")).strip()
@@ -368,6 +479,11 @@ def _check_seal(
             result["errors"].append(
                 f"Hash mismatch for `{source_key}`: expected `{hash_value}`, computed `{computed}`."
             )
+        if source_key == "claim_source_path":
+            claim_budget_errors = _validate_claim_budget(
+                _read_text(source_path), theorem_id=theorem_id
+            )
+            result["errors"].extend(claim_budget_errors)
 
     seal_dt = _parse_iso_datetime(str(payload.get("timestamp_utc", "")))
     if seal_dt is None:
@@ -387,7 +503,12 @@ def _check_seal(
     return result
 
 
-def run_check(validation_root: Path, cycle_id: str, canonicalize_hashes: bool) -> dict:
+def run_check(
+    validation_root: Path,
+    cycle_id: str,
+    canonicalize_hashes: bool,
+    strict_doi_resolve: bool,
+) -> dict:
     missing_global = []
     present_global = []
 
@@ -419,6 +540,7 @@ def run_check(validation_root: Path, cycle_id: str, canonicalize_hashes: bool) -
             cycle_id,
             trajectory_path,
             canonicalize_hashes=canonicalize_hashes,
+            strict_doi_resolve=strict_doi_resolve,
         )
 
         theorem_errors = []
@@ -472,10 +594,20 @@ def main() -> int:
         action="store_true",
         help="Use raw-byte hash mode instead of canonical text hash mode.",
     )
+    parser.add_argument(
+        "--strict-doi-resolve",
+        action="store_true",
+        help="Fail compliance when zenodo_doi cannot be resolved online.",
+    )
     args = parser.parse_args()
 
     validation_root = Path(args.validation_root).resolve()
-    report = run_check(validation_root, args.cycle_id, canonicalize_hashes=not args.raw_hash)
+    report = run_check(
+        validation_root,
+        args.cycle_id,
+        canonicalize_hashes=not args.raw_hash,
+        strict_doi_resolve=args.strict_doi_resolve,
+    )
 
     out_path = Path(args.write_report).resolve()
     out_path.parent.mkdir(parents=True, exist_ok=True)

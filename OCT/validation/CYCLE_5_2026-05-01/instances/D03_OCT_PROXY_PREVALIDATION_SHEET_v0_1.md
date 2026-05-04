@@ -4,6 +4,7 @@ Date: 2026-05-03
 Prepared by (proxy designer): Fabio Ghioni
 Audited by (independent auditor): Solomon
 Theorem ID: D03
+Claim ID: D03
 Claim source (chapter/section): Chapter 10 / D03
 Cycle ID candidate: CYCLE_5_2026-05-01
 Status: pass
@@ -15,6 +16,12 @@ Select one:
 
 Expected dominant anti-pattern risk:
 - taxonomic -> post-hoc rescue
+
+## 1.1) Cycle budget control (anti-p-hacking)
+
+Max independent cycles for this claim: 3
+Current cycle sequence index: 1
+Budget policy status: within_budget
 
 ## 2) Claim statement and falsifier statement
 
@@ -158,6 +165,11 @@ Required fields:
 - seal method: zenodo_doi
 - contexts hash: declared in seal payload
 - auditor independence declared (yes/no): yes
+- gate-entry signature: declared in seal payload
+- gate-entry timestamp (UTC): declared in seal payload
+- gate-exit signature: declared in seal payload
+- gate-exit timestamp (UTC): declared in seal payload
+- gate-exit status: declared in seal payload
 
 Seal valid: yes
 

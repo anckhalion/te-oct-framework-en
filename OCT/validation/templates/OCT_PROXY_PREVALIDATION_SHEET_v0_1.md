@@ -4,6 +4,7 @@ Date:
 Prepared by (proxy designer):
 Audited by (independent auditor):
 Theorem ID:
+Claim ID:
 Claim source (chapter/section):
 Cycle ID candidate:
 Status: `draft | pass | fail`
@@ -21,6 +22,12 @@ Expected dominant anti-pattern risk:
 - `comparative -> level-shift`
 - `taxonomic -> post-hoc rescue`
 - `universal -> trivial confirmation without reachable falsification`
+
+## 1.1) Cycle budget control (anti-p-hacking)
+
+Max independent cycles for this claim:
+Current cycle sequence index:
+Budget policy status: `within_budget | exhausted_requires_escalation`
 
 ## 2) Claim statement and falsifier statement
 
@@ -147,6 +154,11 @@ Required fields:
 - seal method:
 - contexts hash:
 - auditor independence declared (`yes/no`):
+- gate-entry signature:
+- gate-entry timestamp (UTC):
+- gate-exit signature:
+- gate-exit timestamp (UTC):
+- gate-exit status: `not_executed | executed_no_promotion | executed_promotable | invalidated`
 
 Seal valid: `yes/no`
 
