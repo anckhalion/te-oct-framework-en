@@ -40,5 +40,6 @@
     "class_unreachable_under_locked_formula": true,
     "coh_absent_from_logic": false
   },
+  "decision_raw": "reject_candidate",
   "decision": "reject_candidate"
 }

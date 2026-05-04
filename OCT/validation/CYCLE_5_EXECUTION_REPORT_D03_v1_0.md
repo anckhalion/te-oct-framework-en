@@ -1,6 +1,6 @@
 # CYCLE 5 EXECUTION REPORT - D03 v1.0
 
-Date: 2026-05-03
+Date: 2026-05-04
 Theorem: D03
 Decision: `reject_candidate`
 
@@ -23,6 +23,7 @@ Decision: `reject_candidate`
 
 - Criteria: `{"both_classes_non_empty_in_2_of_3_contexts": false, "ambiguous_below_threshold_in_2_of_3_contexts": true, "coh_and_phi_participate": true}`
 - Reject triggers: `{"missing_explicit_U_mapping": false, "criterion_shift_after_fail": false, "class_unreachable_under_locked_formula": true, "coh_absent_from_logic": false}`
+- Decision raw: `reject_candidate`
 
 ## Notes
 

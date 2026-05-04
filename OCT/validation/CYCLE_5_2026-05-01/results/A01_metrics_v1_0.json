@@ -2,6 +2,13 @@
   "theorem_id": "A01",
   "evidence_mode": "proxy_execution_non_promotable",
   "proxy_non_promotable_reason": "Runner executes heuristic proxy branches, not independent pipeline implementations.",
+  "proxy_stress_test": {
+    "total_configurations": 135,
+    "qualifying_configurations": 0,
+    "qualifying_rate": 0.0,
+    "criterion": "abs(err_ord-err_cls)<=0.01 and (coh_ord-coh_cls)>0.03",
+    "examples": []
+  },
   "contexts": {
     "A01_CTX_01": {
       "P_cls": {

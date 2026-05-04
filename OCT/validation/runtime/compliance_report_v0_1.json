@@ -1,8 +1,8 @@
 {
   "validation_root": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation",
   "cycle_id": "CYCLE_5_2026-05-01",
-  "hash_mode": "raw_bytes",
-  "compliant": false,
+  "hash_mode": "canonical_text_utf8_lf",
+  "compliant": true,
   "global_missing_count": 0,
   "global_missing": [],
   "global_present_count": 11,
@@ -20,18 +20,11 @@
       "seal_check": {
         "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\seals\\A01_PREREG_SEAL_v0_1.json",
         "exists": true,
-        "pass": false,
-        "errors": [
-          "Hash mismatch for `claim_source_path`: expected `bb409e3774a3524fefe43e1d95a33718c86f93397d71bf3a4a1cb25726b363fb`, computed `1092f2fe0780a14d86941fb87ce26410a1a44adf3cb194936f6f88660dcc3fab`.",
-          "Hash mismatch for `thresholds_source_path`: expected `1d3b38549f5183922b2c55d04e133753de6d3c16a8260189453f0c380a67c965`, computed `3207c59f4843cb52e70e065a11c9a1b4711cb54d5cf876f403adc26501675ef1`.",
-          "Hash mismatch for `formula_source_path`: expected `aed053b3175e7851650017427befa82c9ae3d7805d519ec586392ba44294066e`, computed `107be2e7a68e3a37f8241d02a7699ad5d169efed19101bb7946ba3bf24a7a39b`.",
-          "Hash mismatch for `dataset_manifest_path`: expected `4e4387235be60aaac1607018ef3fb1d85e1cd28947f2854c7736d67bd76a1795`, computed `96387ed6ac352bb7e762f660941ff711e04e527880bdea59145aee785f6b50aa`.",
-          "Hash mismatch for `script_version_source_path`: expected `7ba61891d8a5ae6c0d6e52ac82e89c7696d015ec83727b4f2bcaa9dad4b42a8f`, computed `db19dff85f9dfff941a92713d75e8c666083004b9bcbf21a36e4c65732a8af58`.",
-          "Hash mismatch for `contexts_source_path`: expected `8bcf166513f61baa18333777cb25aaeed7e525c83d3bbb04c02ca712ae1dd3cf`, computed `c24efb2fbbde65fd46e3f54c770a0502739a4325e0f10d1ba6a923882652f183`."
-        ],
+        "pass": true,
+        "errors": [],
         "warnings": []
       },
-      "errors_count": 6,
+      "errors_count": 0,
       "warnings_count": 0
     },
     "D03": {
@@ -47,18 +40,11 @@
       "seal_check": {
         "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\seals\\D03_PREREG_SEAL_v0_1.json",
         "exists": true,
-        "pass": false,
-        "errors": [
-          "Hash mismatch for `claim_source_path`: expected `a15b3eb897be9d507d4e7f2407bbde3550f6b192f4835608a0740911179e3a22`, computed `7bd3c3e1befed832afbb5093ed1cd2cb1ca76eb41a1498d1b626c0377656d449`.",
-          "Hash mismatch for `thresholds_source_path`: expected `b824715149f84bb26e791ea7c56de6947a0081f4b5f04d11f8b62fa893df347e`, computed `c67be4254f7772cd9dadcec8e651fe018fdde68160997ff891320248937a758a`.",
-          "Hash mismatch for `formula_source_path`: expected `d4ac2d9d35cd4ec503476660c65dbbdb8f6f8d83d30a1403c6ff55bd313f024c`, computed `d083879912f871d827059233fef0c3c7c80185e4c0f36ed58ab874db61448de2`.",
-          "Hash mismatch for `dataset_manifest_path`: expected `ae51153b3391a8cd94c4a7a95abe1eefe2d5179a05fdc13b4b774741235d6d9d`, computed `c93a0f6f1c681d104938b3c59b917fc4c2422d85e79c502da68b1e74fb88f645`.",
-          "Hash mismatch for `script_version_source_path`: expected `f447fd81f2a74cc41d0d1c555c87264e024f0066c8747321620a6a6c3cd029ad`, computed `bd7764140eeb5b879bb6f2e6be513e3cc711c043be4d7eee72c3a00f98f587b6`.",
-          "Hash mismatch for `contexts_source_path`: expected `27ed9713d08999942aee04d1d18df93b8878246376f4833a1321d3b05b17c60c`, computed `ee92d9dbbfb87b4e997aca7ec09aad1bb57c867d1f90034c19298d42769d0d1a`."
-        ],
+        "pass": true,
+        "errors": [],
         "warnings": []
       },
-      "errors_count": 6,
+      "errors_count": 0,
       "warnings_count": 0
     },
     "D02": {
@@ -74,18 +60,11 @@
       "seal_check": {
         "path": "C:\\Users\\fabio\\OneDrive\\OPERA IN LAVORAZIONE\\AI\\OBSIDIAN\\Tecnologia_delle_Espressioni\\CODEX OPENAI\\FRAMEWORK_EN\\OCT\\validation\\CYCLE_5_2026-05-01\\seals\\D02_PREREG_SEAL_v0_1.json",
         "exists": true,
-        "pass": false,
-        "errors": [
-          "Hash mismatch for `claim_source_path`: expected `deb37624742aca595e8a6760e958bbac18de9d1def34d17dc9745f6649d9969d`, computed `585640beb99cc20d6b018454f527db136bc94876a484bee91868d397a7d1f836`.",
-          "Hash mismatch for `thresholds_source_path`: expected `b9daaa0bd42acce63720b1320da256be355b2b2c6adf3da30b847bfb982d358b`, computed `99310bff499336d9703c1a782da1fb9b9965525fe521f53aef29416a84288f4c`.",
-          "Hash mismatch for `formula_source_path`: expected `fa473f3610e9daca6f97c11ade909c520d36a172d941043880e5bf9d5690aa05`, computed `b7ef3d87e8acf8cc7c218a5d72e84da415ed039436dd16ac170a0f0410e0efd8`.",
-          "Hash mismatch for `dataset_manifest_path`: expected `0cf5ced9fea530366a00f0db9c4f02ddbb7f930c32b645dcd3a89115bd1e318c`, computed `ad81d844dc13a4f30b4761409b78947e3be315c3e5ba2b70704b2632dca5c7b7`.",
-          "Hash mismatch for `script_version_source_path`: expected `372d0bcbee4ca71bf403951ce5c3bed862f8df4f4f4e0eea43f2b2c044b5ccfe`, computed `fcdd469fc904bc8be93ffd83ae5625dc13634d46213b37eea1c363766d7ac0e5`.",
-          "Hash mismatch for `contexts_source_path`: expected `8b26e1d1184285d25e65b4478804a0ebb522c869032be2df79f58a55bc98cdc7`, computed `2333bdf8f04893a538ee06608c8912d35b24b30e42cc24c34eefb4fcc437d1fa`."
-        ],
+        "pass": true,
+        "errors": [],
         "warnings": []
       },
-      "errors_count": 6,
+      "errors_count": 0,
       "warnings_count": 0
     }
   }

@@ -30,6 +30,8 @@ DECISION_GATE = VALIDATION_ROOT / "CYCLE_5_DECISION_GATE_v1_0.md"
 REPRO_MANIFEST = VALIDATION_ROOT / "CYCLE_5_REPRO_PACK_MANIFEST_v1_0.md"
 EVIDENCE_RELEASE_NOTES = VALIDATION_ROOT / "CYCLE_5_EVIDENCE_RELEASE_NOTES_v1_0.md"
 EXTERNAL_NOTE = VALIDATION_ROOT / "CYCLE_5_EXTERNAL_REPLICATION_NOTE_v1_0.md"
+RUN_UTC = datetime.now(timezone.utc)
+RUN_DATE = RUN_UTC.date().isoformat()
 
 CONTEXT_MAP = {
     "Omega_A": {
@@ -137,6 +139,69 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def compute_a01_proxy_metrics(omega: str, sim: float, gold: float, len_gap: float) -> dict[str, dict[str, float]]:
+    def _branch(pipeline: str) -> tuple[float, float]:
+        if pipeline == "P_cls":
+            coh = clamp01(0.38 + 0.47 * sim - 0.10 * len_gap + 0.08 * gold)
+            err = clamp01((1.0 - sim) * 0.62 + 0.10 * len_gap + 0.08 * (1.0 - gold))
+        else:
+            gate_bonus = 0.03 if sim >= 0.70 else (-0.02 if sim <= 0.30 else 0.005)
+            context_term = {"Omega_A": 0.010, "Omega_B": 0.0, "Omega_C": -0.015}[omega]
+            coh = clamp01(0.39 + 0.46 * sim - 0.11 * len_gap + 0.09 * gold + gate_bonus + context_term)
+            err = clamp01(
+                (1.0 - sim) * 0.61 + 0.11 * len_gap + 0.07 * (1.0 - gold) - gate_bonus - context_term
+            )
+        return coh, err
+
+    cls_coh, cls_err = _branch("P_cls")
+    ord_coh, ord_err = _branch("P_ord")
+    return {
+        "P_cls": {"coh": cls_coh, "err": cls_err},
+        "P_ord": {"coh": ord_coh, "err": ord_err},
+    }
+
+
+def a01_proxy_stress_test() -> dict[str, Any]:
+    sims = [0.15, 0.35, 0.55, 0.75, 0.9]
+    golds = [0.3, 0.6, 0.9]
+    gaps = [0.0, 0.2, 0.4]
+    contexts = ["Omega_A", "Omega_B", "Omega_C"]
+
+    total = 0
+    qualifying = 0
+    examples: list[dict[str, float | str]] = []
+    for omega in contexts:
+        for sim in sims:
+            for gold in golds:
+                for gap in gaps:
+                    total += 1
+                    m = compute_a01_proxy_metrics(omega, sim, gold, gap)
+                    err_diff = m["P_ord"]["err"] - m["P_cls"]["err"]
+                    coh_diff = m["P_ord"]["coh"] - m["P_cls"]["coh"]
+                    ok = abs(err_diff) <= 0.01 and coh_diff > 0.03
+                    if ok:
+                        qualifying += 1
+                        if len(examples) < 5:
+                            examples.append(
+                                {
+                                    "omega": omega,
+                                    "sim": round(sim, 3),
+                                    "gold": round(gold, 3),
+                                    "len_gap": round(gap, 3),
+                                    "coh_diff": round(coh_diff, 6),
+                                    "err_diff": round(err_diff, 6),
+                                }
+                            )
+
+    return {
+        "total_configurations": total,
+        "qualifying_configurations": qualifying,
+        "qualifying_rate": round(qualifying / total if total else 0.0, 6),
+        "criterion": "abs(err_ord-err_cls)<=0.01 and (coh_ord-coh_cls)>0.03",
+        "examples": examples,
+    }
+
+
 def summarize_pipeline_metrics(rows: list[dict[str, Any]]) -> dict[str, float]:
     if not rows:
         return {
@@ -181,19 +246,9 @@ def run_a01() -> dict[str, Any]:
         sim = jaccard_similarity(tok1, tok2)
 
         for pipeline in ("P_cls", "P_ord"):
-            # Proxy execution mode: both branches are heuristics.
-            # They are intentionally non-monotonic to avoid guaranteed dominance by construction.
-            if pipeline == "P_cls":
-                coh = clamp01(0.38 + 0.47 * sim - 0.10 * len_gap + 0.08 * gold)
-                err = clamp01((1.0 - sim) * 0.62 + 0.10 * len_gap + 0.08 * (1.0 - gold))
-            else:
-                # Ordinative branch includes gate-like adjustments that can improve or worsen.
-                gate_bonus = 0.03 if sim >= 0.70 else (-0.02 if sim <= 0.30 else 0.005)
-                context_term = {"Omega_A": 0.010, "Omega_B": 0.0, "Omega_C": -0.015}[omega]
-                coh = clamp01(0.39 + 0.46 * sim - 0.11 * len_gap + 0.09 * gold + gate_bonus + context_term)
-                err = clamp01(
-                    (1.0 - sim) * 0.61 + 0.11 * len_gap + 0.07 * (1.0 - gold) - gate_bonus - context_term
-                )
+            m = compute_a01_proxy_metrics(omega, sim, gold, len_gap)
+            coh = m[pipeline]["coh"]
+            err = m[pipeline]["err"]
 
             delta_step = clamp01(1.0 - coh)
             gate = "admit"
@@ -282,6 +337,7 @@ def run_a01() -> dict[str, Any]:
         "theorem_id": "A01",
         "evidence_mode": "proxy_execution_non_promotable",
         "proxy_non_promotable_reason": "Runner executes heuristic proxy branches, not independent pipeline implementations.",
+        "proxy_stress_test": a01_proxy_stress_test(),
         "contexts": summary,
         "criteria": {
             "delta_pass_contexts": delta_pass,
@@ -426,6 +482,7 @@ def run_d02() -> dict[str, Any]:
         "theorem_id": "D02",
         "lane_L1_empirical": lane_empirical,
         "lane_L2_formal": lane_formal,
+        "decision_raw": global_decision,
         "decision": global_decision,
     }
 
@@ -566,6 +623,7 @@ def run_d03() -> dict[str, Any]:
             "class_unreachable_under_locked_formula": reject_unreachable_class,
             "coh_absent_from_logic": False,
         },
+        "decision_raw": decision,
         "decision": decision,
     }
     write_json(RESULTS_DIR / "D03_metrics_v1_0.json", result)
@@ -576,7 +634,7 @@ def write_report_a01(result: dict[str, Any]) -> None:
     lines = [
         "# CYCLE 5 EXECUTION REPORT - A01 v1.0",
         "",
-        "Date: 2026-05-03",
+        f"Date: {RUN_DATE}",
         "Theorem: A01",
         f"Decision: `{result['decision']}`",
         "",
@@ -603,11 +661,19 @@ def write_report_a01(result: dict[str, Any]) -> None:
             f"- Coh pass contexts: `{result['criteria']['coh_pass_contexts']}`",
             f"- Equal-output/trajectory-quality subset count: `{result['criteria']['equal_output_subset_count']}`",
             "",
+            "## Proxy Stress Test",
+            "",
+            f"- Total configurations scanned: `{result['proxy_stress_test']['total_configurations']}`",
+            f"- Qualifying configurations: `{result['proxy_stress_test']['qualifying_configurations']}`",
+            f"- Qualifying rate: `{result['proxy_stress_test']['qualifying_rate']}`",
+            f"- Criterion: `{result['proxy_stress_test']['criterion']}`",
+            "",
             "## Notes",
             "",
-        "- Metrics are computed from deterministic proxy execution over cycle3 input corpus.",
-        "- `decision_raw` is de-escalated to `decision=revise_needed` because this runner is non-promotable proxy mode.",
-        "- This report is reproducible from files in `datasets/cycle3_inputs` and script lock artifacts.",
+            "- Metrics are computed from deterministic proxy execution over cycle3 input corpus.",
+            "- `decision_raw` is de-escalated to `decision=revise_needed` because this runner is non-promotable proxy mode.",
+            "- If proxy stress test returns zero qualifying configurations, the runner cannot currently exhibit process-only advantage under this proxy family.",
+            "- This report is reproducible from files in `datasets/cycle3_inputs` and script lock artifacts.",
         ]
     )
     REPORT_A01.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -619,7 +685,7 @@ def write_report_d02(result: dict[str, Any]) -> None:
     lines = [
         "# CYCLE 5 EXECUTION REPORT - D02 v1.0",
         "",
-        "Date: 2026-05-03",
+        f"Date: {RUN_DATE}",
         "Theorem: D02",
         f"Global decision: `{result['decision']}`",
         "",
@@ -640,11 +706,12 @@ def write_report_d02(result: dict[str, Any]) -> None:
     lines.extend(
         [
             "",
-            "## Lane L2 formal",
-            "",
-            f"- Decision: `{formal['decision']}`",
-            f"- Witness count: `{formal['witness_count']}`",
-            f"- Assumptions consistent: `{formal['assumptions_consistent']}`",
+        "## Lane L2 formal",
+        "",
+        f"- Decision: `{formal['decision']}`",
+        f"- Decision raw: `{result['decision_raw']}`",
+        f"- Witness count: `{formal['witness_count']}`",
+        f"- Assumptions consistent: `{formal['assumptions_consistent']}`",
             "",
             "## Notes",
             "",
@@ -659,7 +726,7 @@ def write_report_d03(result: dict[str, Any]) -> None:
     lines = [
         "# CYCLE 5 EXECUTION REPORT - D03 v1.0",
         "",
-        "Date: 2026-05-03",
+        f"Date: {RUN_DATE}",
         "Theorem: D03",
         f"Decision: `{result['decision']}`",
         "",
@@ -687,6 +754,7 @@ def write_report_d03(result: dict[str, Any]) -> None:
             "",
             f"- Criteria: `{json.dumps(result['criteria'])}`",
             f"- Reject triggers: `{json.dumps(result['reject_triggers'])}`",
+            f"- Decision raw: `{result['decision_raw']}`",
             "",
             "## Notes",
             "",
@@ -700,7 +768,7 @@ def write_decision_gate(a01: dict[str, Any], d02: dict[str, Any], d03: dict[str,
     lines = [
         "# CYCLE 5 DECISION GATE v1.0",
         "",
-        "Date: 2026-05-03",
+        f"Date: {RUN_DATE}",
         "",
         "| Theorem | Lane/class | Decision | Reference artifacts |",
         "| --- | --- | --- | --- |",
@@ -757,7 +825,7 @@ def write_repro_manifest() -> None:
     lines = [
         "# CYCLE 5 REPRO PACK MANIFEST v1.0",
         "",
-        "Date: 2026-05-03",
+        f"Date: {RUN_DATE}",
         "",
         "| File | SHA256 |",
         "| --- | --- |",
@@ -772,7 +840,7 @@ def write_release_notes(a01: dict[str, Any], d02: dict[str, Any], d03: dict[str,
     lines = [
         "# CYCLE 5 EVIDENCE RELEASE NOTES v1.0",
         "",
-        "Date: 2026-05-03",
+        f"Date: {RUN_DATE}",
         "Commit baseline: c9e7ae7",
         "",
         "## Summary",
@@ -800,7 +868,7 @@ def write_external_replication_note() -> None:
     lines = [
         "# CYCLE 5 EXTERNAL REPLICATION NOTE v1.0",
         "",
-        "Date: 2026-05-03",
+        f"Date: {RUN_DATE}",
         "External reviewer target: Solomon",
         "",
         "## Request",

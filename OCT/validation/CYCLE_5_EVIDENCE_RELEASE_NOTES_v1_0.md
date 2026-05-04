@@ -1,6 +1,6 @@
 # CYCLE 5 EVIDENCE RELEASE NOTES v1.0
 
-Date: 2026-05-03
+Date: 2026-05-04
 Commit baseline: c9e7ae7
 
 ## Summary

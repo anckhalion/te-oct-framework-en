@@ -1,6 +1,6 @@
 # CYCLE 5 EXECUTION REPORT - D02 v1.0
 
-Date: 2026-05-03
+Date: 2026-05-04
 Theorem: D02
 Global decision: `revise_needed`
 
@@ -19,6 +19,7 @@ Global decision: `revise_needed`
 ## Lane L2 formal
 
 - Decision: `pass_candidate`
+- Decision raw: `revise_needed`
 - Witness count: `4`
 - Assumptions consistent: `True`
 
