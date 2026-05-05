@@ -1,6 +1,7 @@
 # OCT Publication Progress Tracker v0.1
 
 Tracker launch date: 2026-04-18  
+Last update: 2026-05-05  
 Objective: monitor remaining steps toward publishable formalization.
 
 ## General status (historical v1.0 track)
@@ -93,6 +94,25 @@ Interpretation note (v5.3.1 hardening):
 - Historical Cycle 3-4 outputs for A01/D02/D03 remain preserved as record.
 - Under ex-ante policy, those outputs are not sufficient for theorem-state promotion by themselves.
 - Cycle 5 artifacts supersede historical outputs as admissible evidence basis for A01/D02/D03 promotion.
+
+## v5.4 candidate lane (started 2026-05-05)
+
+Purpose:
+1. Open A01 promotion path with real implementations and independent benchmark.
+2. Keep D02/D03 unchanged while A01 is methodologically upgraded.
+
+Published planning artifacts:
+1. `CYCLE_6_2026-05-05/CYCLE_6_OVERVIEW_v0_1.md`
+2. `CYCLE_6_2026-05-05/CYCLE_6_A01_REAL_PIPELINES_SPEC_v0_1.md`
+3. `CYCLE_6_2026-05-05/CYCLE_6_EXECUTION_AND_REJECT_RULES_v0_1.md`
+4. `CYCLE_6_2026-05-05/CYCLE_6_BENCHMARK_INDEPENDENCE_PROTOCOL_v0_1.md`
+5. `CYCLE_6_2026-05-05/CYCLE_6_EXTERNAL_AUDIT_PLAN_v0_1.md`
+6. `CYCLE_6_2026-05-05/CYCLE_6_PREREG_SEAL_TEMPLATE_v0_1.md`
+7. `RUNBOOK_CYCLE6_EXECUTION_v0_1.md`
+
+Current status:
+1. Specification package complete.
+2. Execution pending (benchmark acquisition + dual-auditor assignment completion).
 
 ## Usage note
 

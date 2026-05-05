@@ -129,3 +129,11 @@ Completion criteria:
   - `runtime/OCT_PREREG_SEAL_SCHEMA_v0_1.json`
   - `runtime/check_gate_compliance.py`
   - compliance report generated: `runtime/compliance_report_v0_1.json`
+- 2026-05-05: Cycle 6 launch package published (A01 real-pipeline promotion path):
+  - `CYCLE_6_2026-05-05/CYCLE_6_OVERVIEW_v0_1.md`
+  - `CYCLE_6_2026-05-05/CYCLE_6_A01_REAL_PIPELINES_SPEC_v0_1.md`
+  - `CYCLE_6_2026-05-05/CYCLE_6_EXECUTION_AND_REJECT_RULES_v0_1.md`
+  - `CYCLE_6_2026-05-05/CYCLE_6_BENCHMARK_INDEPENDENCE_PROTOCOL_v0_1.md`
+  - `CYCLE_6_2026-05-05/CYCLE_6_EXTERNAL_AUDIT_PLAN_v0_1.md`
+  - `CYCLE_6_2026-05-05/CYCLE_6_PREREG_SEAL_TEMPLATE_v0_1.md`
+  - `RUNBOOK_CYCLE6_EXECUTION_v0_1.md`

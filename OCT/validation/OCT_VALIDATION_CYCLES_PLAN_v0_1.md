@@ -1,7 +1,7 @@
 # OCT Validation Cycles Plan v0.1
 
 Initial date: 2026-04-16  
-Update date: 2026-05-01  
+Update date: 2026-05-05  
 Objective: maintain a reproducible cycle architecture for theorem validation.
 
 ## Historical baseline (completed)
@@ -54,3 +54,24 @@ Promotion to `validated` is blocked unless:
 Cycle count alone is not evidence quality.  
 Only cycle outputs that satisfy gate and preregistration constraints are admissible for theorem promotion.
 
+## Cycle 6 (v5.4 lane candidate)
+
+Cycle folder: `CYCLE_6_2026-05-05/`  
+Status: specification complete, execution not started
+
+Scope:
+1. A01-only focused cycle
+2. Real implementation split (`P_cls` vs `P_ord`)
+3. Independent benchmark mandatory (no overlap with `cycle3_inputs`)
+4. Dual external audit checkpoint before theorem promotion
+
+Key rationale:
+1. Round-4 audit confirmed A01 heuristic proxy mode is non-promotable.
+2. Stress test (`0/135`) confirmed structural non-testability in current synthetic proxy family.
+3. Promotion path requires real pipeline evidence.
+
+Mandatory gate before execution:
+1. `OCT_EX_ANTE_PROXY_GATE_POLICY_v0_1.md`
+2. `templates/OCT_PROXY_PREVALIDATION_SHEET_v0_1.md` (A01 instance)
+3. `CYCLE_6_2026-05-05/CYCLE_6_BENCHMARK_INDEPENDENCE_PROTOCOL_v0_1.md`
+4. Valid A01 prereg seal with entry/exit signature fields
