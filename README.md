@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20059532.svg)](https://doi.org/10.5281/zenodo.20059532)
+
 # Technology of Expressions (TE) + Ordinative Category Theory (OCT)
 
 English public mirror of a research framework for AI reasoning protocols and formal theoretical work.
