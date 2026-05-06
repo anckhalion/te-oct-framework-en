@@ -4,6 +4,15 @@ All notable changes to this repository should be documented in this file.
 
 The format is inspired by Keep a Changelog and semantic versioning principles for documentation releases.
 
+## [5.3.2] - 2026-05-06
+
+### Updated
+- `ECOSYSTEM.md` extended from 3-pillar to 4-pillar architecture to include the new `te-ordinative-algebras-en` repository (SA + PA frameworks).
+- `README.md` "Part of a Larger Ecosystem" table updated from three-part to four-part, with row added for `te-ordinative-algebras-en`.
+
+### Notes
+- The new repository [`te-ordinative-algebras-en`](https://github.com/anckhalion/te-ordinative-algebras-en) was published on 2026-05-06 with initial release `v1.0.0`. It contains the Semantic Algebra (SA) and Proportional Algebra (PA) corpora plus a Python reference engine for PA. PA Theorem 9.1 establishes that SA is mathematically a restriction of PA to the decoherent space `D`; the two are presented as distinct frameworks bundled in one repository for cross-reference convenience.
+
 ## [5.3.1] - 2026-05-03
 
 ### Updated
