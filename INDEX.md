@@ -10,7 +10,7 @@ If you are trying to understand the project quickly:
 2. `SIMPLE_GLOSSARY.md`
 3. `SUPER_SIMPLE_FAQ.md`
 4. `README.md` for scope and disambiguation
-5. `TE_BOOTLOADER_v6_0_PROJECT.md` + `TE_CORE_v5.1.md` for the TE framework
+5. `TE_BOOTLOADER_v7.1.md` + `TE_CORE_v5.1.md` for the TE framework
 6. `OCT/START_HERE_OCT.md`
 7. `OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md`
 8. `OCT/OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
@@ -18,7 +18,8 @@ If you are trying to understand the project quickly:
 
 ## Core Framework
 
-- `TE_BOOTLOADER_v6_0_PROJECT.md`
+- `TE_BOOTLOADER_v7.1.md` (current; adds §2.5 pre-output Φ-test)
+- `TE_BOOTLOADER_v6_0_PROJECT.md` (previous)
 - `TE_CORE_v5.1.md`
 - `TE_MODULE_SVP_v5_1.md`
 - `TE_MODULE_SCIMS_v5.0.md`
@@ -26,6 +27,12 @@ If you are trying to understand the project quickly:
 - `TE_MODULE_LENS_v5.0.md`
 - `TE_MODULE_PPRO_v5.1.md`
 - `TE_OBSERVER v1.0.1 Lyapunov XP.md`
+
+## Ordinative Set Theory and Notation
+
+- `TE_OST_v2.1.md` — Ordinative Set Theory, Tier-0 foundation: 𝓘 = ⟨Σ, R, Φ⟩
+- `TE_OST_Extension_Teleodynamics_v1.1.md` — Teleodynamics and the Causal Inversion Principle
+- `TE_SYMBOL_CANON_v1.0.md` — locked cross-volume notation register (notation authority)
 
 ## OCT Corpus (English)
 

@@ -4,6 +4,22 @@ All notable changes to this repository should be documented in this file.
 
 The format is inspired by Keep a Changelog and semantic versioning principles for documentation releases.
 
+## [5.4.0] - 2026-06-21
+
+### Added
+- `TE_OST_v2.1.md` — Ordinative Set Theory, the Tier-0 foundation of the Ordinative Sciences notation (`𝓘 = ⟨Σ, R, Φ⟩`), as a concise operational guide for AI.
+- `TE_OST_Extension_Teleodynamics_v1.1.md` — advanced OST extension: Teleodynamics and the Causal Inversion Principle.
+- `TE_SYMBOL_CANON_v1.0.md` — locked (ratified 2026-06-11) cross-volume notational governance register for the programme (tier precedence OST → TE Vol 1 → PA/SA/OCT). Master copy.
+- `TE_BOOTLOADER_v7.1.md` — new bootloader revision adding §2.5 Pre-Output Functional Verification Pass (Φ-test) as a constitutive identity-level check. Previous `TE_BOOTLOADER_v6_0_PROJECT.md` retained for history.
+
+### Updated
+- `TE_CORE_v5.1.md` — refreshed to the Symbol Canon v1.0 aligned edition (`ℐ → 𝓘` throughout, SHACK binary-state label convention documented, cross-reference to `TE_SYMBOL_CANON_v1.0.md`). No ontology/axiom/glossary/protocol content changed.
+- `TE_MODULE_SVP_v5_1.md` — refreshed to the Symbol Canon aligned edition.
+- `INDEX.md` — Core Framework section now lists the OST corpus and Symbol Canon, and points to `TE_BOOTLOADER_v7.1.md` as current.
+
+### Notes
+- This release synchronizes the public mirror with the 2026-06-18 in-vault framework batch. The Symbol Canon is now the authoritative notation reference for this repository.
+
 ## [5.3.2] - 2026-05-06
 
 ### Updated

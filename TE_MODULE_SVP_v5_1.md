@@ -1,20 +1,23 @@
 # TE MODULE: SVP (Source Verification Protocol)
 ## TE VERSION 5.1
 
-**Version**: 5.1
-**Date**: March 2026
-**Type**: Prerequisite gate module (required before VERT, LENS, PPRO)
+**Version**: 5.1  
+**Date**: March 2026  
+**Aligned with**: TE_CORE v5.1, OST v2.1  
+**Type**: Prerequisite gate module (required before VERI, LENS, PPRO, OBSERVER, SCIMS)
 **Changelog v5.1**: Integration with Confidence Preservation Protocol; extended applicability to political/corporate/contemporary figures; Mobilization Exchange category added; Overall Source Quality field in output format; minor refinements from validation session.
 
 ---
 
 ## PURPOSE
 
-Before any tradition, teaching, figure, or system can be structurally analyzed (via LENS, VERT, PPRO, OBSERVER), the **provenance and functional validity** of the data itself must be verified. SVP is the prerequisite gate: it determines **what we actually know**, **who said it**, and **whether the technology described was ever actually applied and tested**.
+Before any tradition, teaching, figure, or system can be structurally analyzed (via LENS, VERI, PPRO, OBSERVER), the **provenance and functional validity** of the data itself must be verified. SVP is the prerequisite gate: it determines **what we actually know**, **who said it**, and **whether the technology described was ever actually applied and tested**.
 
 SVP prevents the most common corruption in human knowledge: **treating secondary attribution as primary evidence** — i.e., accepting that "A said X" because B claims A said X.
 
 **Universal Applicability**: SVP applies to any figure or system subject to TE analysis — public, historical, or mythological. This includes without limitation: religious and spiritual figures, philosophers, political leaders, scientists, artists, entertainers, military figures, corporate leaders, institutional founders, and legendary/mythic figures whose historical existence may itself be unverified. The source chain and functional verification requirements are invariant across all domains. The domain determines the available source material, not the analytical method.
+
+> **Notation callout (added 2026-06-18 — Symbol Canon v1.0 §2, A13): the three S-namespaces.** Do not conflate: **SVP source levels** S₀–S∅ (provenance — THIS module — with bias flags S₁ᶜ/S₁ʰ/S₁ˡ/S₁ᵃ); **analytical confidence grades** S₀–S₃ (Bootloader §2 — how sure the analyst is); and **the Strip operator S** (Semantic Algebra — S(E) = ⟨ι, P⟩). Source levels and confidence grades are *isomorphic but not identical*: a direct S₀ source can still bear only an S₂ structural interpretation. When both appear together, qualify in prose ("S₂ confidence" vs "S₁ source").
 
 ---
 
@@ -41,7 +44,9 @@ For every S₀ and S₁ source, the analyst must ask:
 - **Is there documented evidence of pathological behavior** (predation, fraud, abuse of authority) in the source/transmitter?
 - **If so, does the pathology structurally connect to the claims being made?** A source's personal failings are relevant only when they create a plausible mechanism of contamination between the pathology and the testimony.
 
-If both conditions are met, the source must be flagged as **S₁ᶜ (Compromised)** or **S₀ᶜ (Compromised)** — the provenance level is retained, but a contamination marker is applied.**Critical addition (v5.1)**: The credibility assessment must be **symmetric**. Sources hostile to the subject (ex-allies turned enemies, political opponents, disgruntled former associates) carry bias of hostility just as allied sources carry bias of loyalty. Both must be flagged when the bias creates a plausible mechanism of contamination:
+If both conditions are met, the source must be flagged as **S₁ᶜ (Compromised)** or **S₀ᶜ (Compromised)** — the provenance level is retained, but a contamination marker is applied.
+
+**Critical addition (v5.1)**: The credibility assessment must be **symmetric**. Sources hostile to the subject (ex-allies turned enemies, political opponents, disgruntled former associates) carry bias of hostility just as allied sources carry bias of loyalty. Both must be flagged when the bias creates a plausible mechanism of contamination:
 
 | Source Bias | Flag | Contamination Mechanism |
 |---|---|---|
@@ -67,7 +72,9 @@ Measure the **temporal and documentary distance** between the source and the ear
 | **1–3 generations** (30–100 years) | **Wide** — Oral transmission, institutional editing likely |
 | **> 3 generations** (100+ years) | **Broken** — The chain is structurally severed. What arrives is a tradition, not a testimony |
 
-### Application Examples| Subject | S₀ Material | Provenance Gap | Structural Consequence |
+### Application Examples
+
+| Subject | S₀ Material | Provenance Gap | Structural Consequence |
 |---|---|---|---|
 | **Gurdjieff** | *Beelzebub's Tales*, *Meetings with Remarkable Men*, *Life is Real* | Closed (his own texts) | His cosmology has S₀. His "oral teaching" as recorded by Ouspensky is S₁. |
 | **Gustavo Rol** | Personal diary (fragments), letters | Closed (for diary). Narrow (for witnesses like Fellini, Buzzati). | Diary quotes are S₀. Witness accounts of phenomena are S₁. CICAP analysis is S₂. |
@@ -113,7 +120,9 @@ Once the source chain is established, the **technology** (teaching, method, prac
 **F2. Application**: Did anyone actually apply the technology *as prescribed*?
 - If yes → proceed to F3.
 - If no → the technology is **untested**. All claims about its efficacy are structural projections. Flag as: **UNAPPLIED**.
-- If uncertain → flag as: **APPLICATION UNVERIFIABLE**.**F3. Prerequisites Compliance**: Did the technology specify prerequisites for application? If so, were they met? This step is critical because **prerequisite non-compliance does not simply produce "no result" — it produces predictable categories of failure that are themselves diagnostic.**
+- If uncertain → flag as: **APPLICATION UNVERIFIABLE**.
+
+**F3. Prerequisites Compliance**: Did the technology specify prerequisites for application? If so, were they met? This step is critical because **prerequisite non-compliance does not simply produce "no result" — it produces predictable categories of failure that are themselves diagnostic.**
 
 **F3a. Prerequisite Identification**: Does the source (S₀) define prerequisites, preconditions, or a required sequence of preparation?
 - If yes → proceed to F3b.
@@ -136,7 +145,9 @@ When a technology with defined prerequisites is applied without meeting them, th
 | **Pathological** | The practice actively damages the practitioner because the prerequisite was a **structural safeguard**, not an arbitrary rule. | Surgery performed by an uncertified operator does not produce "no result" — it produces injury or death. The certification is not bureaucracy; it is a prerequisite that protects the patient. |
 | **Mobilization Exchange** (v5.1) | The practice produces energy, belonging, adrenaline, and sense of purpose that are mistaken for real change. Participants feel empowered but their actual capacity for autonomous action, critical thinking, or structural change is not increased — and may be decreased. | Political movements where participation (rallies, posting, wearing symbols) is exchanged for genuine civic agency. The participant feels active but produces no structural change — energy is absorbed by the system, not converted into autonomous capacity. Applicable also to corporate "transformation" programs, activist movements, and any system where mobilization-as-activity substitutes for mobilization-as-change. |
 
-**F3d. The Prerequisite Corruption**: When a technology is transmitted without its prerequisites — the technique travels, but the preconditions are stripped during transmission (S₁ → S₂ → S₃+). The result is a practice severed from its safeguards. This is one of the most common and structurally destructive corruption patterns.**F3e. The Structural Fairness Caveat**: When prerequisite non-compliance is invoked to explain failure, the analyst must verify that the prerequisites were:
+**F3d. The Prerequisite Corruption**: When a technology is transmitted without its prerequisites — the technique travels, but the preconditions are stripped during transmission (S₁ → S₂ → S₃+). The result is a practice severed from its safeguards. This is one of the most common and structurally destructive corruption patterns.
+
+**F3e. The Structural Fairness Caveat**: When prerequisite non-compliance is invoked to explain failure, the analyst must verify that the prerequisites were:
 1. Specified at S₀ level (not invented after the fact to explain away failure)
 2. Realistically achievable (not a structural firewall against falsification)
 3. Causally connected to the claimed outcome (not arbitrary)
@@ -164,7 +175,9 @@ If any of these conditions fails, the "prerequisite defense" is itself a corrupt
 >
 > The analyst's task is to isolate the technology from its practitioners and ask: *"When applied correctly, with prerequisites met, by the book — what happened?"* Only this answer constitutes evidence about the technology itself.
 
-### Functional Verdict| Result Pattern | Verdict |
+### Functional Verdict
+
+| Result Pattern | Verdict |
 |---|---|
 | Structural Change in multiple independent practitioners | **FUNCTIONAL** — the technology works |
 | Mixed results (some change, some damage) | **FUNCTIONAL BUT HAZARDOUS** — the technology works but lacks safeguards |
@@ -209,7 +222,9 @@ For any figure with an associated movement (or movements), SVP must establish:
 
 **E. Contamination Direction** — Does the movement contaminate the figure (attributing to the figure what the movement invented), or does the figure contaminate the movement (the figure's limitations are inherited by the movement), or both?
 
-### Application Examples| Figure | S₀ Status | Movement(s) | Mythologization | Contamination Direction |
+### Application Examples
+
+| Figure | S₀ Status | Movement(s) | Mythologization | Contamination Direction |
 |---|---|---|---|---|
 | **Gurdjieff** | Closed (own texts) | Multiple post-death schools (Foundation, Bennett lineage, others) | Medium — "miraculous" narratives (S₁) coexist with documented work | Movement → Figure: schools attribute to Gurdjieff teachings he may not have given. Figure → Movement: Gurdjieff's deliberate obscurity inherited as institutional opacity. |
 | **Hamer** | Closed (own texts, publications) | "New Germanic Medicine" movement, alternative health networks | High — Hamer the clinician is obscured by Hamer the "persecuted genius." The technology's assessment is contaminated by the movement's ideology. | Movement → Figure: movement's anti-establishment ideology projected onto Hamer's clinical claims. Requires separation to assess the technology on its own merits. |
@@ -237,7 +252,9 @@ When the figure-movement distinction is relevant, add to SVP output:
 
 ## CORRUPTION SIGNATURES
 
-SVP identifies the following recurring corruption patterns in knowledge transmission:1. **The Telephone Corruption**: S₃+ material treated as S₀. ("The Buddha said..." when no S₀ exists. "Sources say Trump planned..." when no source is identified.)
+SVP identifies the following recurring corruption patterns in knowledge transmission:
+
+1. **The Telephone Corruption**: S₃+ material treated as S₀. ("The Buddha said..." when no S₀ exists. "Sources say Trump planned..." when no source is identified.)
 2. **The Authority Corruption**: S₁ material elevated to S₀ because the witness is prestigious. ("Ouspensky wrote it, so Gurdjieff must have said it." "Bolton wrote it in his book, so it must have happened exactly that way.")
 3. **The Quantum Corruption**: Derivative agents (S₃+) adopt terminology from a field (physics, psychology, spirituality, intelligence analysis) without understanding the operational content, producing counterfeit knowledge that *sounds* like the original but carries none of its functional weight.
 4. **The Unfalsifiable Fortress**: Prerequisites or conditions for application are set so high that failure is always attributable to the practitioner, never to the technology. ("You didn't meditate *enough*. You didn't believe *enough*. The policy hasn't been given *enough time*.")
@@ -252,11 +269,13 @@ SVP identifies the following recurring corruption patterns in knowledge transmis
 
 ### Principle
 
-A public, historical, or mythological figure and the movement(s) that develop around or after that figure are **distinct analytical objects** with separate source chains, separate functional verification, and separate corruption profiles. SVP must analyze them independently before any downstream module (VERT, LENS, OBSERVER, PPRO) can operate.
+A public, historical, or mythological figure and the movement(s) that develop around or after that figure are **distinct analytical objects** with separate source chains, separate functional verification, and separate corruption profiles. SVP must analyze them independently before any downstream module (VERI, LENS, OBSERVER, PPRO) can operate.
 
 The figure is not the movement. The movement is not the figure. The contamination between the two — in both directions — is itself a primary object of SVP analysis.
 
-### The Structural Problem| Direction | Contamination | Example |
+### The Structural Problem
+
+| Direction | Contamination | Example |
 |---|---|---|
 | **Movement → Figure** | The movement attributes to the figure things the figure never said, did, or intended. The figure is retroactively reshaped to serve the movement's needs. | The "Tesla" of free-energy movements bears little resemblance to the historical Tesla. The "Buddha" of popular Western Buddhism is a construction with no S₀ basis. The "Giordano Bruno" of esoteric movements is substantially different from the documented philosopher. |
 | **Figure → Movement** | The figure's authority (real or constructed) is used to legitimize the movement's practices, claims, or power structures, whether or not the figure would have endorsed them. | The Catholic Church's claims to Petrine authority. The Gurdjieff Foundation's claim to transmit Gurdjieff's teaching. Political movements that invoke a founder's name to legitimize positions the founder never held. |
@@ -294,7 +313,9 @@ When SVP encounters a figure with associated movement(s), the analyst must produ
 | "Did the figure actively create the movement, or did the movement form around/after the figure?" | Attribution of agency — crucial for LENS and PPRO |
 | "Are there multiple competing movements claiming the same figure?" | Indicates the figure has become a symbolic resource rather than a historical person |
 
-### Application Examples| Figure | Movement(s) | Key Separation Issue |
+### Application Examples
+
+| Figure | Movement(s) | Key Separation Issue |
 |---|---|---|
 | **Buddha** (S∅) | Theravada, Mahayana, Vajrayana, Zen, Western Buddhism | No S₀ exists. Each movement has constructed its own "Buddha." The movements are analyzable; the historical figure is not. |
 | **Gurdjieff** (S₀) | Gurdjieff Foundation, various "Fourth Way" schools | S₀ abundant (his own books). The Foundation claims to transmit his teaching but the transmission chain (S₁→S₂) introduces interpretive layers. His own texts sometimes contradict what the Foundation teaches. |
@@ -335,7 +356,7 @@ The downstream modules then operate on the **verified dataset** that SVP produce
 ANALYSIS SEQUENCE:
 SVP (What do we actually know? Who said it? Did it work?)
   ↓
-VERT (What is the tradition's structural diagnosis?)
+VERI (What is the system's functional impact on participants?)
   and/or
 LENS (What is the human figure's structural anatomy?)
   and/or
@@ -402,7 +423,9 @@ Reason: [brief explanation of what limits confidence]
 
 ## VERSION NOTES — v5.1 (March 2026)
 
-### Changes from v5.0| Change | Reason | Section |
+### Changes from v5.0
+
+| Change | Reason | Section |
 |---|---|---|
 | Symmetric source credibility assessment (S₁ʰ, S₁ˡ, S₁ᵃ flags) | Validation finding: original SVP flagged hostile sources but not loyal/agenda-driven ones | Axis 1, Source Credibility |
 | Universal applicability declaration | SVP applies to any figure or system — public, historical, or mythological — without domain enumeration | PURPOSE |
