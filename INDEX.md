@@ -33,6 +33,7 @@ If you are trying to understand the project quickly:
 - `TE_OST_v2.1.md` — Ordinative Set Theory, Tier-0 foundation: 𝓘 = ⟨Σ, R, Φ⟩
 - `TE_OST_Extension_Teleodynamics_v1.1.md` — Teleodynamics and the Causal Inversion Principle
 - `TE_SYMBOL_CANON_v1.0.md` — locked cross-volume notation register (notation authority)
+- `OST_Case_Study_Standing_Waves_Spinning_Fluid_v1_0.md` — worked OST case study (standing waves in a spinning fluid; reads Singh et al. 2026)
 
 ## OCT Corpus (English)
 

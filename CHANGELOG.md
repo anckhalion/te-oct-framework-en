@@ -4,6 +4,15 @@ All notable changes to this repository should be documented in this file.
 
 The format is inspired by Keep a Changelog and semantic versioning principles for documentation releases.
 
+## [5.4.1] - 2026-06-21
+
+### Fixed
+- OCT book internal cross-references now resolve. The OST guide is cited under its actual repository filename `TE_OST_v2.1.md` (was the legacy slug `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`, 34 occurrences across the consolidated bibliography, the per-chapter reference lists, and the single-file manuscript).
+- `Ghioni_2026_Reaction_Diffusion_Civilizational_Dynamics_v1_2.md` reclassified from an internal-corpus reference to a forthcoming external citation (the work is not part of this repository).
+
+### Added
+- `OST_Case_Study_Standing_Waves_Spinning_Fluid_v1_0.md` — the worked OST case study cited by the OCT book, now bundled so the internal reference resolves.
+
 ## [5.4.0] - 2026-06-21
 
 ### Added

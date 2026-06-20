@@ -455,7 +455,7 @@ In sintesi: da qui in avanti l'opera non espone solo teoria OCT, ma mostra OCT i
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_12_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_13_v1_0.md`.
 5. `OCT_Theory_and_Theorems/validation/DECISION_MATRIX_FINAL_UNIFIED_v0_1.md`.

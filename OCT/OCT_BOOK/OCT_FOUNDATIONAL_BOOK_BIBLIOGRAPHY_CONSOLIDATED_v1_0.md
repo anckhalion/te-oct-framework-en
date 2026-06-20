@@ -13,7 +13,7 @@ Metadati:
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
 2. Ghioni, F. (2026). `TE_BOOTLOADER_v6_0_PROJECT.md`.
 3. Ghioni, F. (2026). `TE_MODULE_SVP_v5_1.md`.
-4. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+4. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 5. Ghioni, F. (2026). `OCT_CLASSICAL_TO_ORDINATIVE_MAP_v0_1.md`.
 6. Ghioni, F. (2026). `OCT_THEOREM_PROGRAM_v0_1.md`.
 7. Ghioni, F. (2026). `OCT_TYPED_FORMAL_SPEC_v0_1.md`.
@@ -50,7 +50,7 @@ Metadati:
 ## 4) Case Studies and Domain Documents (interno)
 
 1. `OST_Case_Study_Standing_Waves_Spinning_Fluid_v1_0.md`.
-2. `Ghioni_2026_Reaction_Diffusion_Civilizational_Dynamics_v1_2.md`.
+2. Ghioni, F. (2026). *Reaction-Diffusion Models of Civilizational Dynamics* (forthcoming; CC BY 4.0 - Zenodo / OSF / GitHub / HuggingFace).
 
 ## 5) Primary External Sources
 

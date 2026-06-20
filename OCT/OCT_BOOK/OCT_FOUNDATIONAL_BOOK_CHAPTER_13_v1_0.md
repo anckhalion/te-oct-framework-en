@@ -496,7 +496,7 @@ In breve: il Capitolo 13 costruisce la macchina sperimentale; il Capitolo 14 ne 
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_VALIDATION_PROTOCOL_v0_1.md`.
 4. `OCT_Theory_and_Theorems/validation/CYCLE_3_2026-04-18/BENCHMARK_MANIFEST_cycle3_v0_1.md`.
 5. `OCT_Theory_and_Theorems/validation/CYCLE_4_2026-04-19/CYCLE_4_REPORT.md`.

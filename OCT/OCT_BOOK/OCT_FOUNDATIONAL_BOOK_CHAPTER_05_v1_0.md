@@ -621,7 +621,7 @@ In particolare, il nodo centrale sarà capire quando una trasformazione tra cate
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_04_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_08_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_09_v1_0.md`.

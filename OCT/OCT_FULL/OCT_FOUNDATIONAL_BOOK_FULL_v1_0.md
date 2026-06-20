@@ -993,7 +993,7 @@ In termini operativi, il passaggio è questo:
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_CLASSICAL_TO_ORDINATIVE_MAP_v0_1.md`.
 4. `OCT_THEOREM_PROGRAM_v0_1.md`.
 5. `OCT_TYPED_FORMAL_SPEC_v0_1.md`.
@@ -1605,7 +1605,7 @@ In altre parole: il kernel assiomatico ora esiste; il prossimo passo è mostrarn
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_CLASSICAL_TO_ORDINATIVE_MAP_v0_1.md`.
 4. `OCT_THEOREM_PROGRAM_v0_1.md`.
 5. `OCT_TYPED_FORMAL_SPEC_v0_1.md`.
@@ -2225,7 +2225,7 @@ In sintesi: il Capitolo 4 fissa i mattoni; il Capitolo 5 valuterà la stabilità
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_03_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_08_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_09_v1_0.md`.
@@ -2866,7 +2866,7 @@ In particolare, il nodo centrale sarà capire quando una trasformazione tra cate
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_04_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_08_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_09_v1_0.md`.
@@ -3568,7 +3568,7 @@ In sintesi: il Capitolo 6 stabilisce come trasportare la validità ordinativa; i
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_04_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_05_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_08_v1_0.md`.
@@ -4214,7 +4214,7 @@ In sintesi: i capitoli 4-7 hanno esteso il linguaggio; i capitoli 12-14 ne defin
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_06_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_08_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_11_v1_0.md`.
@@ -4840,7 +4840,7 @@ In sintesi: il Capitolo 8 costruisce il “piano cartesiano” di OCT; il Capito
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_THEOREM_PROGRAM_v0_1.md`.
 4. `OCT_TYPED_FORMAL_SPEC_v0_1.md`.
 5. `OCT_CLASSICAL_TO_ORDINATIVE_MAP_v0_1.md`.
@@ -5548,7 +5548,7 @@ In sintesi: se il Capitolo 9 stabilisce le leggi di base, il Capitolo 10 ne misu
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_THEOREM_PROGRAM_v0_1.md`.
 4. `OCT_TYPED_FORMAL_SPEC_v0_1.md`.
 5. `OCT_CLASSICAL_TO_ORDINATIVE_MAP_v0_1.md`.
@@ -6059,7 +6059,7 @@ In sintesi: il Capitolo 10 misura la capacità discriminante di OCT; il Capitolo
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_THEOREM_PROGRAM_v0_1.md`.
 4. `OCT_TYPED_FORMAL_SPEC_v0_1.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_09_v1_0.md`.
@@ -6442,7 +6442,7 @@ Il Capitolo 12 tradurrà questa base in protocollo scientifico operativo: metric
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_THEOREM_PROGRAM_v0_1.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_08_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_09_v1_0.md`.
@@ -7061,7 +7061,7 @@ In sintesi: il Capitolo 12 definisce il metodo; il Capitolo 13 ne implementa l�
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_VALIDATION_PROTOCOL_v0_1.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_11_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_10_v1_0.md`.
@@ -7576,7 +7576,7 @@ In breve: il Capitolo 13 costruisce la macchina sperimentale; il Capitolo 14 ne 
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_VALIDATION_PROTOCOL_v0_1.md`.
 4. `OCT_Theory_and_Theorems/validation/CYCLE_3_2026-04-18/BENCHMARK_MANIFEST_cycle3_v0_1.md`.
 5. `OCT_Theory_and_Theorems/validation/CYCLE_4_2026-04-19/CYCLE_4_REPORT.md`.
@@ -8053,7 +8053,7 @@ In sintesi: da qui in avanti l'opera non espone solo teoria OCT, ma mostra OCT i
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_12_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_13_v1_0.md`.
 5. `OCT_Theory_and_Theorems/validation/DECISION_MATRIX_FINAL_UNIFIED_v0_1.md`.
@@ -8447,7 +8447,7 @@ In sintesi: dopo aver verificato la forma in fisica, testiamo la forma nella sto
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_12_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_13_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_14_v1_0.md`.
@@ -8877,12 +8877,12 @@ In breve: dopo aver mostrato che OCT può leggere sia fisica che storia, il capi
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_12_v1_0.md`.
 4. `OCT_FOUNDATIONAL_BOOK_CHAPTER_13_v1_0.md`.
 5. `OCT_FOUNDATIONAL_BOOK_CHAPTER_14_v1_0.md`.
 6. `OCT_FOUNDATIONAL_BOOK_CHAPTER_15_v1_0.md`.
-7. `Ghioni_2026_Reaction_Diffusion_Civilizational_Dynamics_v1_2.md`.
+7. Ghioni, F. (2026). *Reaction-Diffusion Models of Civilizational Dynamics* (forthcoming; CC BY 4.0 - Zenodo / OSF / GitHub / HuggingFace).
 
 Riferimenti primari:
 
@@ -9244,7 +9244,7 @@ Questa e la condizione reale perché OCT entri nella grammatica della scienza um
 Riferimenti di framework interno:
 
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
-2. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+2. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 3. `OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md` ... `OCT_FOUNDATIONAL_BOOK_CHAPTER_16_v1_0.md`.
 4. `OCT_VALIDATION_PROTOCOL_v0_1.md`.
 5. `DECISION_MATRIX_FINAL_UNIFIED_v0_1.md`.
@@ -9282,7 +9282,7 @@ Metadati:
 1. Ghioni, F. (2026). `TE_CORE_v5.1.md`.
 2. Ghioni, F. (2026). `TE_BOOTLOADER_v6_0_PROJECT.md`.
 3. Ghioni, F. (2026). `TE_MODULE_SVP_v5_1.md`.
-4. Ghioni, F. (2026). `Ordinative_Set_Theory_OST_A_Concise_Guide_For_AI_v2_1.md`.
+4. Ghioni, F. (2026). `TE_OST_v2.1.md`.
 5. Ghioni, F. (2026). `OCT_CLASSICAL_TO_ORDINATIVE_MAP_v0_1.md`.
 6. Ghioni, F. (2026). `OCT_THEOREM_PROGRAM_v0_1.md`.
 7. Ghioni, F. (2026). `OCT_TYPED_FORMAL_SPEC_v0_1.md`.
@@ -9319,7 +9319,7 @@ Metadati:
 ## 4) Case Studies and Domain Documents (interno)
 
 1. `OST_Case_Study_Standing_Waves_Spinning_Fluid_v1_0.md`.
-2. `Ghioni_2026_Reaction_Diffusion_Civilizational_Dynamics_v1_2.md`.
+2. Ghioni, F. (2026). *Reaction-Diffusion Models of Civilizational Dynamics* (forthcoming; CC BY 4.0 - Zenodo / OSF / GitHub / HuggingFace).
 
 ## 5) Primary External Sources
 
