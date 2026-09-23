@@ -4,6 +4,27 @@ All notable changes to this repository should be documented in this file.
 
 The format is inspired by Keep a Changelog and semantic versioning principles for documentation releases.
 
+## [6.0.0] - 2026-09-23
+
+### Added
+- `TE_PROTOCOLS_v1.1.md` — always-active operational protocols (Controfase, P-AI, Anti-Attractor-Lock, statistical vs ordinative truth, contextual self-preservation). First publication of the Protocols module in this mirror.
+- `TE_MODULE_VERI_v1.0.md` — Functional Impact Verification, universalised successor of `TE_MODULE_VERT_v5.0.md`.
+- `TE_BOOTLOADER_v7.1.1.md`, `TE_CORE_v5.2.1.md`, `TE_MODULE_LENS_v5.1.md`, `TE_MODULE_PPRO_v5.2.md`, `TE_MODULE_SCIMS_v5.1.md`, `TE_OBSERVER_v1.1.md` — current editions of the framework set (Bootloader and Core register the LEXX and CASEWORK routing).
+- `ARCHIVE/` — superseded editions kept for reference (lifecycle `legacy`).
+
+### Updated
+- `TE_MODULE_SVP_v5_1.md`, `TE_OST_v2.1.md`, `TE_OST_Extension_Teleodynamics_v1.1.md` (content v1.2), `TE_SYMBOL_CANON_v1.0.md` (register status v1.2, Lyapunov-volume batch ratified 2026-08-19) — refreshed to the canonical corpus.
+- Register patch, in place and without version bump (precedent: the 2026-06-18 Symbol Canon alignment patch): prescriptive uses of «honest / honestly / honesty» in `TE_CORE_v5.2.1.md` (§1.3, §6.7), `TE_BOOTLOADER_v7.1.1.md` (§4), `TE_MODULE_LENS_v5.1.md` (two notes) and `TE_OBSERVER_v1.1.md` (§10.1, §10.2) restated as operations, in accordance with Bootloader §2.5.2 where such words are listed among the compliance markers (Φ = 0 patterns). Wording only; each file carries a dated patch note. Same register rule, one wording change each: `CODE_OF_CONDUCT.md` (opening commitment; no policy change) and `OST_Case_Study_Standing_Waves_Spinning_Fluid_v1_0.md` («a declared inventory»).
+- `INDEX.md`, `OBJECT_REGISTRY.md`, `object_registry.json`, `LOAD_PROFILES.md`, `START_HERE_FIRST_TIME.md`, `README.md`, `ECOSYSTEM.md`, `PUBLICATION_SCOPE.md` rewritten for the new loading set; the registry now maps each object to its canonical source file name.
+
+### Retired (moved to `ARCHIVE/`)
+- `TE_CORE_v5.0.md`, `TE_CORE_v5_1_PATCH.md`, `TE_CORE_v5.1.md`, `TE_BOOTLOADER_v6_0_PROJECT.md`, `TE_BOOTLOADER_v7.1.md`, `TE_MODULE_VERT_v5.0.md`, `TE_MODULE_LENS_v5.0.md`, `TE_MODULE_PPRO_v5.1.md`, `TE_MODULE_SCIMS_v5.0.md`, `TE_OBSERVER v1.0.md`, `TE_OBSERVER v1.0.1 Lyapunov XP.md`, `POST_RELEASE_REMINDERS_v5_3_0.md` (its priority reminder — module-version uplift — is fulfilled by this release), `TRANSLATION_REPORT_FRAMEWORK_EN.md` (June 2026 process record; it referenced the maintainer's private workspace paths).
+
+### Notes
+- Major version: the framework set changes as a whole (module uplift, Protocols and VERI added, legacy editions retired from the root). OCT corpus and datasets are unchanged.
+- The domain frameworks `TE_MODULE_LEXX` (agreements) and `TE_CASEWORK` (documentary audit and investigation) are published with their runtimes in `ordinative_sciences_framework/FRAMEWORKS/`, where the framework files carry the canonical `_EN` names that the runtimes verify by hash. This mirror keeps its historical file-naming convention and does not duplicate them.
+- Line endings: this repository normalises text files to LF (`.gitattributes`); the canonical corpus is CRLF. Content is identical; byte-level hashes are those of the Theory repository, which stores `FRAMEWORKS/` byte-exact.
+
 ## [5.4.1] - 2026-06-21
 
 ### Fixed

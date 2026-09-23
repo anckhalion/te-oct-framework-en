@@ -41,10 +41,14 @@ It does **not** refer to optical coherence tomography (medical imaging).
 
 ## What You Will Find
 
-- Core framework documents (`TE_BOOTLOADER`, `TE_CORE`, TE modules, `TE_OBSERVER`)
+- Core framework documents, current loading set at the repository root: `TE_BOOTLOADER_v7.1.1`, `TE_PROTOCOLS_v1.1`, `TE_CORE_v5.2.1`, the modules `SVP`, `LENS`, `PPRO`, `SCIMS`, `VERI`, and `TE_OBSERVER_v1.1`
+- Ordinative Set Theory (`TE_OST_v2.1`), the Teleodynamics extension and the Symbol Canon (notation authority)
+- Superseded framework editions in `./ARCHIVE` (reference only; see `OBJECT_REGISTRY.md`)
 - OCT manuscript and validation corpus in English (`./OCT`)
 - Reproducibility assets and benchmark outputs (`./datasets`)
 - Governance and contribution files for public collaboration
+
+The domain frameworks `TE_MODULE_LEXX` (ordinative validation of agreements) and `TE_CASEWORK` (documentary audit and investigation support), with their runtimes, are published in [`ordinative_sciences_framework`](https://github.com/anckhalion/ordinative_sciences_framework) under `FRAMEWORKS/`.
 
 ## What This Repository Is Not
 
@@ -59,12 +63,13 @@ If you are new, read in this order:
 
 1. `START_HERE_FIRST_TIME.md`
 2. `INDEX.md`
-3. `TE_BOOTLOADER_v6_0_PROJECT.md`
-4. `TE_CORE_v5.1.md`
-5. `OCT/START_HERE_OCT.md`
-6. `OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md`
-7. `OCT/OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
-8. `OCT/validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
+3. `TE_BOOTLOADER_v7.1.1.md`
+4. `TE_PROTOCOLS_v1.1.md`
+5. `TE_CORE_v5.2.1.md`
+6. `OCT/START_HERE_OCT.md`
+7. `OCT/OCT_BOOK/OCT_FOUNDATIONAL_BOOK_CHAPTER_01_v1_0.md`
+8. `OCT/OCT_FULL/OCT_FOUNDATIONAL_BOOK_FULL_v1_0.md`
+9. `OCT/validation/OCT_PUBLICATION_PROGRESS_TRACKER_v0_1.md`
 
 ## Publication Scope
 

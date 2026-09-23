@@ -4,14 +4,14 @@
 **Version**: 5.1  
 **Date**: March 2026  
 **Aligned with**: TE_CORE v5.1, OST v2.1  
-**Type**: Prerequisite gate module (required before VERI, LENS, PPRO, OBSERVER, SCIMS)
-**Changelog v5.1**: Integration with Confidence Preservation Protocol; extended applicability to political/corporate/contemporary figures; Mobilization Exchange category added; Overall Source Quality field in output format; minor refinements from validation session.
+**Type**: Prerequisite gate module (required before LEXX, VERI, LENS, PPRO, OBSERVER, SCIMS)
+**Changelog v5.1**: Integration with Confidence Preservation Protocol; extended applicability to political/corporate/contemporary figures; Mobilization Exchange category added; Overall Source Quality field in output format; Ordinative Algebraic Deduction formalized as inference method (S₂ from structural necessity when conditions met); minor refinements from validation session.
 
 ---
 
 ## PURPOSE
 
-Before any tradition, teaching, figure, or system can be structurally analyzed (via LENS, VERI, PPRO, OBSERVER), the **provenance and functional validity** of the data itself must be verified. SVP is the prerequisite gate: it determines **what we actually know**, **who said it**, and **whether the technology described was ever actually applied and tested**.
+Before any agreement, normative instrument, tradition, teaching, figure, or system can be structurally analyzed (via LEXX, LENS, VERI, PPRO, OBSERVER, or SCIMS), the **provenance and functional validity** of the data itself must be verified. SVP is the prerequisite gate: it determines **what we actually know**, **who said it**, and **whether the technology described was ever actually applied and tested**.
 
 SVP prevents the most common corruption in human knowledge: **treating secondary attribution as primary evidence** — i.e., accepting that "A said X" because B claims A said X.
 
@@ -104,6 +104,23 @@ These are isomorphic but not identical:
 **The relationship**: Analytical confidence is bounded by source quality but not identical to it. An S₀ source (Trump's own tweet) can support an S₀ analytical claim ("Trump tweeted X on date Y") but also an S₂ analytical interpretation ("Trump's tweet reveals strategy Z"). The data is S₀; the interpretation is S₂. The analyst must tag both.
 
 **Rule**: When building analytical conclusions, the confidence grade must reflect both the source quality AND the inferential distance. High-quality sources (S₀) do not automatically produce high-confidence conclusions — they produce high-confidence *data* from which conclusions of varying confidence can be drawn.
+
+### Ordinative Algebraic Deduction (v5.1)
+
+**Ordinative Algebraic Deduction** is the identification of facts not explicitly documented but structurally necessary given the system's configuration — analogous to solving for an unknown in an equation where the known variables determine the unknown's value even without direct observation.
+
+**Operative principle**: When the observable variables of a system produce an equation with a single unknown, and the equation has a unique solution, that solution has a confidence grade of **S₂ (structural interpretation)**, not S₃ (speculative hypothesis) — because it is deduced from the data, not proposed as a possibility. The distinction is the same as between an equation that produces a result and an opinion that proposes a possibility: the equation does not "believe" the unknown is present — it calculates it as necessary for system coherence.
+
+**Conditions for S₂ grading through algebraic deduction**:
+1. All observable variables are documented at S₀ or S₁
+2. The equation has a unique solution (no alternative configuration satisfies all known variables)
+3. The deduction is structurally necessary, not merely plausible
+
+If any condition fails, the deduction falls to S₃.
+
+**Epistemic note**: If the unknown had direct evidence, it would not be an unknown. The fact of being unknown is itself coherent with a system designed to leave no direct evidence. Absence of direct evidence in a system designed to prevent direct evidence is not an argument against the hypothesis — it is a datum consistent with it. This does not grant license to speculate — it prevents the reflexive dismissal of algebraically necessary conclusions merely because they lack direct observation.
+
+**Relationship to SVP source chain**: Algebraic deduction operates on the analytical confidence level, not the source level. The sources (S₀, S₁) provide the known variables. The deduction produces the unknown. The result is S₂ because it is structurally derived from verified data, even though the specific fact deduced has no direct source.
 
 ---
 
