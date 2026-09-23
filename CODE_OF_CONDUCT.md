@@ -2,7 +2,7 @@
 
 ## Our Commitment
 
-We commit to a respectful, evidence-oriented, and intellectually honest environment.
+We commit to a respectful, evidence-oriented environment, where claims are argued and verified.
 
 ## Expected Behavior
 
