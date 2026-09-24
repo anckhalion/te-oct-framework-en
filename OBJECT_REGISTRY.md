@@ -4,13 +4,13 @@ Canonical registry of project objects for publication, maintenance, and automate
 
 ## Lifecycle Legend
 
-- `canonical`: active and recommended
-- `legacy`: historical/reference only (files in `ARCHIVE/`)
-- `private`: not published in this mirror
+- `canonical`: active; the edition to load
+- `legacy`: superseded edition, kept in `ARCHIVE/` for historical comparison and reproduction of earlier cycles; loads through Profile D
+- `private`: held in the vault; the table below lists canonical and legacy objects
 
 ## Canonical source
 
-The in-vault corpus of the Ordinative Sciences programme is the source of truth; this mirror is a publication target, synchronised as one release. The column "Canonical file" gives the source file name as used in the Theory repository (`ordinative_sciences_framework/FRAMEWORKS/`), where the domain runtimes verify files by that exact name and hash.
+The canonical corpus of the Ordinative Sciences programme lives in the vault; this mirror is its publication target, synchronised as one release (Core, Bootloader, Protocols, Symbol Canon and the module set in one batch). The column "Canonical file" gives the source file name as used in the Theory repository (`ordinative_sciences_framework/FRAMEWORKS/`), where the domain runtimes verify files by that exact name and hash.
 
 ## Objects
 
@@ -42,8 +42,6 @@ The in-vault corpus of the Ordinative Sciences programme is the source of truth;
 | `TE-OBSERVER-1.0` | integrator | 1.0 | legacy | `ARCHIVE/TE_OBSERVER v1.0.md` | — | `TE-SVP-5.1` |
 | `POST-RELEASE-REMINDERS-5.3.0` | note | 5.3.0 | legacy | `ARCHIVE/POST_RELEASE_REMINDERS_v5_3_0.md` | — | none (fulfilled by release 6.0.0) |
 
-Private objects (session dumps, synthetic memory logs, brainstorming drafts) are not published and are not listed here.
-
 ## Domain frameworks (published in the Theory repository)
 
 | Object ID | Type | Version | Location |
@@ -63,6 +61,6 @@ Private objects (session dumps, synthetic memory logs, brainstorming drafts) are
 ## Optimization Rules
 
 - Keep one canonical object per type/version.
-- Preserve legacy objects without editing unless critical fixes are needed.
-- Never promote a private object to canonical without explicit maintainer decision.
+- Legacy objects stay as released; a critical fix is the one change a maintainer makes to them.
+- A private object becomes canonical by explicit maintainer decision.
 - Synchronise from the canonical corpus as one release; a partial uplift leaves the router list and the module files misaligned.

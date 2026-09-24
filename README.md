@@ -15,8 +15,7 @@ This repository is one piece of a four-part framework. For the complete picture,
 | **[te-oct-framework-en](https://github.com/anckhalion/te-oct-framework-en)** | **Validation** | English mirror of the core framework, plus OCT datasets and benchmarks. |
 | **[te-ordinative-algebras-en](https://github.com/anckhalion/te-ordinative-algebras-en)** | **Algebras** | Semantic Algebra (SA) and Proportional Algebra (PA) — the analytical operators and the proportional space they live in. |
 
-Important:
-these repositories are designed to work together. Reading one in isolation can lead to incomplete understanding.
+The four repositories form one framework; each holds one layer of it. Read them together.
 
 For a full map, see `ECOSYSTEM.md`.
 
@@ -32,7 +31,9 @@ If this is your first visit, start here:
 This repository contains two connected layers:
 
 1. `TE` (Technology of Expressions): a documentation-first framework that defines operating principles, reasoning constraints, and modular analysis protocols for AI agents.
-2. `OCT` (Ordinative Category Theory): a formal research program extending classical category theory with ordinative validity operators and validation workflows.
+2. `OCT` (Ordinative Category Theory): a formal research programme extending classical category theory with ordinative validity operators and validation workflows.
+
+The claims made here are the ones the validation corpus tests: OCT theorems and reasoning protocols for agents. Model weights and fine-tuning code live in `te-ordinative-lora`.
 
 ## Important Disambiguation
 
@@ -43,19 +44,12 @@ It does **not** refer to optical coherence tomography (medical imaging).
 
 - Core framework documents, current loading set at the repository root: `TE_BOOTLOADER_v7.1.1`, `TE_PROTOCOLS_v1.1`, `TE_CORE_v5.2.1`, the modules `SVP`, `LENS`, `PPRO`, `SCIMS`, `VERI`, and `TE_OBSERVER_v1.1`
 - Ordinative Set Theory (`TE_OST_v2.1`), the Teleodynamics extension and the Symbol Canon (notation authority)
-- Superseded framework editions in `./ARCHIVE` (reference only; see `OBJECT_REGISTRY.md`)
+- Superseded framework editions in `./ARCHIVE`, kept for historical comparison (see `OBJECT_REGISTRY.md`)
 - OCT manuscript and validation corpus in English (`./OCT`)
 - Reproducibility assets and benchmark outputs (`./datasets`)
 - Governance and contribution files for public collaboration
 
 The domain frameworks `TE_MODULE_LEXX` (ordinative validation of agreements) and `TE_CASEWORK` (documentary audit and investigation support), with their runtimes, are published in [`ordinative_sciences_framework`](https://github.com/anckhalion/ordinative_sciences_framework) under `FRAMEWORKS/`.
-
-## What This Repository Is Not
-
-- Not a model-weight repository
-- Not a turnkey productized AI system
-- Not a claim of verified machine sentience
-- Not a medical OCT project
 
 ## Start Here (New Readers)
 
@@ -78,6 +72,4 @@ If you are new, read in this order:
 - Validation datasets/scripts/results for OCT benchmarking
 - Governance and contribution documents
 
-## Exclusions
-
-Private session memory dumps and brainstorming drafts are intentionally excluded from this public mirror.
+The full scope, including what stays in the vault, is in `PUBLICATION_SCOPE.md`.

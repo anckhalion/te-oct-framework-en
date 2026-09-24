@@ -10,11 +10,11 @@ Included:
 - OST foundation, Teleodynamics extension and the Symbol Canon
 - Core docs: `README`, `INDEX`, `OBJECT_REGISTRY`, `LOAD_PROFILES`, governance docs
 
-Published elsewhere (not duplicated here):
+Published in the Theory repository:
 - `TE_MODULE_LEXX` and `TE_CASEWORK` / `TE_AUDIT` / `TE_INVESTIGATION`, with their runtimes — in `ordinative_sciences_framework/FRAMEWORKS/`
 
-Excluded:
+Held in the vault:
 - Session memory dumps and logs (`SESSION_MEMORY_*`, `UNIFIED_SYNTHETIC_MEMORY_LOG_*`)
 - `BRAINSTORMING DA GPT/`
 - Italian OCT source folder (`OCT_Theory_and_Theorems`)
-- In-vault governance files of the canonical corpus (canonical source policy, canonical manifest, backups)
+- Governance files of the canonical corpus (canonical source policy, canonical manifest, backups)

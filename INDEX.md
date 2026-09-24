@@ -39,7 +39,7 @@ Load in this order. Every file below is the current edition; superseded editions
 
 ## Domain frameworks published in the Theory repository
 
-`TE_MODULE_LEXX` (ordinative validation of agreements) and `TE_CASEWORK` / `TE_AUDIT` / `TE_INVESTIGATION` (documentary audit and investigation support) are published, with their runtimes, in [`ordinative_sciences_framework`](https://github.com/anckhalion/ordinative_sciences_framework) under `FRAMEWORKS/`. Their runtimes verify the framework files by canonical file name and SHA-256, so they live next to the canonical-named corpus. This mirror does not duplicate them.
+`TE_MODULE_LEXX` (ordinative validation of agreements) and `TE_CASEWORK` / `TE_AUDIT` / `TE_INVESTIGATION` (documentary audit and investigation support) are published, with their runtimes, in [`ordinative_sciences_framework`](https://github.com/anckhalion/ordinative_sciences_framework) under `FRAMEWORKS/`. Their runtimes verify the framework files by canonical file name and SHA-256, so they live next to the canonical-named corpus. This mirror links to them at that location.
 
 ## OCT Corpus (English)
 
@@ -56,9 +56,9 @@ Load in this order. Every file below is the current edition; superseded editions
 - `datasets/cycle3_work/`
 - `datasets/cycle4_work/`
 
-## Archive (reference only)
+## Archive
 
-- `ARCHIVE/` — superseded framework editions, kept for historical comparison and reproduction. Lifecycle `legacy` in `OBJECT_REGISTRY.md`; never load them for current work.
+- `ARCHIVE/` — superseded framework editions, kept for historical comparison and reproduction. Lifecycle `legacy` in `OBJECT_REGISTRY.md`. They load through Profile D in `LOAD_PROFILES.md`.
 
 ## Governance
 
@@ -77,6 +77,5 @@ Load in this order. Every file below is the current edition; superseded editions
 
 ## Publication Notes
 
-- This mirror is a publication target of the in-vault canonical corpus; each release synchronises Core, Bootloader, Protocols, Symbol Canon and the module set as one batch.
+- Each release ships Core, Bootloader, Protocols, Symbol Canon and the module set from the vault corpus as one batch.
 - File naming in this mirror follows its historical convention (version in the file name, dot-separated); the Theory repository uses the canonical `_EN` names. `OBJECT_REGISTRY.md` maps each object to its canonical source name.
-- Private session dumps, synthetic memory logs and brainstorming drafts are excluded.

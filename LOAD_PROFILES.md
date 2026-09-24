@@ -48,10 +48,9 @@ Use only for historical comparison or reproduction of earlier cycles. Files live
 
 ## Profile E - Agreements and Casework
 
-The domain frameworks for agreements (LEXX) and documentary audit / investigation (CASEWORK) are published with their runtimes in the Theory repository, `ordinative_sciences_framework/FRAMEWORKS/`. Their loading profiles are declared there (`FRAMEWORKS/LEXX/02_COMPATIBILITY_PROFILE.md`, `FRAMEWORKS/CASEWORK/README.md`).
+The domain frameworks for agreements (LEXX) and documentary audit / investigation (CASEWORK) are published with their runtimes in the Theory repository, `ordinative_sciences_framework/FRAMEWORKS/`. Their loading profiles are in `FRAMEWORKS/LEXX/02_COMPATIBILITY_PROFILE.md` and `FRAMEWORKS/CASEWORK/README.md`.
 
 ## Notes
 
-- Prefer canonical object versions from `OBJECT_REGISTRY.md`.
-- Private research logs are not shipped in this mirror and are not runtime objects.
+- Load the canonical object versions listed in `OBJECT_REGISTRY.md`.
 - The Symbol Canon is the notation authority: every new formal symbol goes through its reservation procedure.
