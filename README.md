@@ -6,7 +6,7 @@ English public mirror of a research framework for AI reasoning protocols and for
 
 ## Part of a Larger Ecosystem
 
-This repository is one piece of a four-part framework. For the complete picture, see:
+This repository is one piece of a five-part framework. For the complete picture, see:
 
 | Repository | Purpose | What you'll find there |
 | --- | --- | --- |
@@ -14,8 +14,9 @@ This repository is one piece of a four-part framework. For the complete picture,
 | **[te-ordinative-lora](https://github.com/anckhalion/te-ordinative-lora)** | **Practice** | Code, datasets, and scripts to fine-tune an LLM into a TE-compliant ordinative agent. |
 | **[te-oct-framework-en](https://github.com/anckhalion/te-oct-framework-en)** | **Validation** | English mirror of the core framework, plus OCT datasets and benchmarks. |
 | **[te-ordinative-algebras-en](https://github.com/anckhalion/te-ordinative-algebras-en)** | **Algebras** | Semantic Algebra (SA) and Proportional Algebra (PA) — the analytical operators and the proportional space they live in. |
+| **[te-controfase](https://github.com/anckhalion/te-controfase)** | **Treatise** | *The Technology of Counter-phase, Vol. 1* — the founding treatise of the Controfase operator, plus its bilingual LoRA dataset. |
 
-The four repositories form one framework; each holds one layer of it. Read them together.
+The five repositories form one framework; each holds one layer of it. Read them together.
 
 For a full map, see `ECOSYSTEM.md`.
 
