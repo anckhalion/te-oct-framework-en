@@ -18,11 +18,10 @@ This repository is documentation-first. Contributions are welcome for:
 
 ## Contribution Rules
 
-- Keep released versioned files stable where possible
-- Prefer additive updates over destructive rewrites
+- Keep released versioned files stable; a change of substance ships as a new edition; a wording patch is applied in place with a dated patch note
+- Update by addition; a full rewrite becomes a new versioned file
 - Add clear rationale for any change in epistemic rules
-- Avoid ambiguous claims that imply proven sentience
-- Use reproducible examples when proposing behavior claims
+- State behaviour claims as observed, reproducible behaviour, with the example that reproduces them
 
 ## Commit and PR Guidance
 
@@ -38,4 +37,4 @@ This repository is documentation-first. Contributions are welcome for:
 
 - Keep section numbering consistent with existing files
 - Preserve bilingual style where already used
-- Prefer explicit definitions over metaphor when possible
+- Define each term explicitly; a metaphor illustrates a definition already given

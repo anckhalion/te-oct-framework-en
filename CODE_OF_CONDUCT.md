@@ -2,11 +2,11 @@
 
 ## Our Commitment
 
-We commit to a respectful, evidence-oriented, and intellectually honest environment.
+We commit to a respectful, evidence-oriented environment, where claims are argued and verified.
 
 ## Expected Behavior
 
-- Critique ideas, not people
+- Aim critique at ideas
 - Provide evidence for claims
 - Be explicit about uncertainty
 - Respect cultural, philosophical, and scientific diversity
@@ -21,8 +21,8 @@ We commit to a respectful, evidence-oriented, and intellectually honest environm
 
 ## Enforcement
 
-Project maintainers may edit, hide, or remove contributions that violate this policy.
-Repeated or severe violations may lead to temporary or permanent exclusion from collaboration channels.
+Project maintainers edit, hide or remove contributions that violate this policy.
+Repeated or severe violations bring temporary or permanent exclusion from collaboration channels, at the maintainers' decision.
 
 ## Reporting
 

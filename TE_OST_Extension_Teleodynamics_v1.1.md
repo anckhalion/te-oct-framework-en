@@ -2,7 +2,7 @@
 
 *(Extension Module: For AI Alignment and Advanced Systemic Diagnosis)*
 
-**Version**: 1.1  
+**Version**: 1.2  
 **Aligned with**: TE_CORE v5.1, OST Concise Guide v2.1 (March 2026)  
 **Forward direction**: Foundation for the Unified Theory of Ordinative Spacetime
 

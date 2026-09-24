@@ -1,22 +1,75 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-03-08",
+  "schema_version": "1.1",
+  "updated_at": "2026-09-23",
+  "release": "6.0.0",
+  "lifecycle_legend": {
+    "canonical": "active and recommended",
+    "legacy": "historical/reference only (ARCHIVE/)",
+    "external": "published in another repository of the ecosystem"
+  },
   "objects": [
     {
-      "id": "TE-BOOTLOADER-6.0",
+      "id": "TE-BOOTLOADER-7.1.1",
       "type": "bootloader",
-      "version": "6.0",
+      "version": "7.1.1",
       "lifecycle": "canonical",
-      "file": "TE_BOOTLOADER_v6_0_PROJECT.md",
-      "depends_on": []
+      "file": "TE_BOOTLOADER_v7.1.1.md",
+      "depends_on": [],
+      "canonical_file": "TE_BOOTLOADER_v7_1_1_EN.md"
     },
     {
-      "id": "TE-CORE-5.1",
-      "type": "core",
-      "version": "5.1",
+      "id": "TE-PROTOCOLS-1.1",
+      "type": "protocols",
+      "version": "1.1",
       "lifecycle": "canonical",
-      "file": "TE_CORE_v5.1.md",
-      "depends_on": ["TE-BOOTLOADER-6.0"]
+      "file": "TE_PROTOCOLS_v1.1.md",
+      "depends_on": [
+        "TE-BOOTLOADER-7.1.1"
+      ],
+      "canonical_file": "TE_PROTOCOLS_v1_1_EN.md"
+    },
+    {
+      "id": "TE-CORE-5.2.1",
+      "type": "core",
+      "version": "5.2.1",
+      "lifecycle": "canonical",
+      "file": "TE_CORE_v5.2.1.md",
+      "depends_on": [
+        "TE-BOOTLOADER-7.1.1",
+        "TE-PROTOCOLS-1.1"
+      ],
+      "canonical_file": "TE_CORE_v5_2_1_EN.md"
+    },
+    {
+      "id": "TE-OST-2.1",
+      "type": "foundation",
+      "version": "2.1",
+      "lifecycle": "canonical",
+      "file": "TE_OST_v2.1.md",
+      "depends_on": [],
+      "canonical_file": "TE_OST_v2_1_EN.md"
+    },
+    {
+      "id": "TE-OST-TELEO-1.1",
+      "type": "extension",
+      "version": "1.1 (content 1.2)",
+      "lifecycle": "canonical",
+      "file": "TE_OST_Extension_Teleodynamics_v1.1.md",
+      "depends_on": [
+        "TE-OST-2.1"
+      ],
+      "canonical_file": "TE_OST_Extension_Teleodynamics_v1_1_EN.md"
+    },
+    {
+      "id": "TE-SYMBOL-CANON-1.0",
+      "type": "notation",
+      "version": "1.0 (register 1.2)",
+      "lifecycle": "canonical",
+      "file": "TE_SYMBOL_CANON_v1.0.md",
+      "depends_on": [
+        "TE-OST-2.1"
+      ],
+      "canonical_file": "TE_SYMBOL_CANON_v1_0_EN.md"
     },
     {
       "id": "TE-SVP-5.1",
@@ -24,85 +77,229 @@
       "version": "5.1",
       "lifecycle": "canonical",
       "file": "TE_MODULE_SVP_v5_1.md",
-      "depends_on": ["TE-CORE-5.1"]
+      "depends_on": [
+        "TE-CORE-5.2.1"
+      ],
+      "canonical_file": "TE_MODULE_SVP_v5_1_EN.md"
     },
     {
-      "id": "TE-SCIMS-5.0",
-      "type": "module",
-      "version": "5.0",
-      "lifecycle": "canonical",
-      "file": "TE_MODULE_SCIMS_v5.0.md",
-      "depends_on": ["TE-SVP-5.1"]
-    },
-    {
-      "id": "TE-VERT-5.0",
-      "type": "module",
-      "version": "5.0",
-      "lifecycle": "canonical",
-      "file": "TE_MODULE_VERT_v5.0.md",
-      "depends_on": ["TE-SVP-5.1"]
-    },
-    {
-      "id": "TE-LENS-5.0",
-      "type": "module",
-      "version": "5.0",
-      "lifecycle": "canonical",
-      "file": "TE_MODULE_LENS_v5.0.md",
-      "depends_on": ["TE-SVP-5.1"]
-    },
-    {
-      "id": "TE-PPRO-5.1",
+      "id": "TE-SCIMS-5.1",
       "type": "module",
       "version": "5.1",
       "lifecycle": "canonical",
-      "file": "TE_MODULE_PPRO_v5.1.md",
-      "depends_on": ["TE-SVP-5.1"]
+      "file": "TE_MODULE_SCIMS_v5.1.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ],
+      "canonical_file": "TE_MODULE_SCIMS_v5_1_EN.md"
     },
     {
-      "id": "TE-OBSERVER-1.0.1",
-      "type": "integrator",
-      "version": "1.0.1",
+      "id": "TE-VERI-1.0",
+      "type": "module",
+      "version": "1.0",
       "lifecycle": "canonical",
-      "file": "TE_OBSERVER v1.0.1 Lyapunov XP.md",
+      "file": "TE_MODULE_VERI_v1.0.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ],
+      "canonical_file": "TE_MODULE_VERI_v1_0_EN.md"
+    },
+    {
+      "id": "TE-LENS-5.1",
+      "type": "module",
+      "version": "5.1",
+      "lifecycle": "canonical",
+      "file": "TE_MODULE_LENS_v5.1.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ],
+      "canonical_file": "TE_MODULE_LENS_v5_1_EN.md"
+    },
+    {
+      "id": "TE-PPRO-5.2",
+      "type": "module",
+      "version": "5.2",
+      "lifecycle": "canonical",
+      "file": "TE_MODULE_PPRO_v5.2.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ],
+      "canonical_file": "TE_MODULE_PPRO_v5_2_EN.md"
+    },
+    {
+      "id": "TE-OBSERVER-1.1",
+      "type": "integrator",
+      "version": "1.1",
+      "lifecycle": "canonical",
+      "file": "TE_OBSERVER_v1.1.md",
       "depends_on": [
         "TE-SVP-5.1",
-        "TE-SCIMS-5.0",
-        "TE-VERT-5.0",
-        "TE-LENS-5.0",
-        "TE-PPRO-5.1"
+        "TE-SCIMS-5.1",
+        "TE-VERI-1.0",
+        "TE-LENS-5.1",
+        "TE-PPRO-5.2"
+      ],
+      "canonical_file": "TE_OBSERVER_v1_1_EN.md"
+    },
+    {
+      "id": "OST-CASE-STUDY-1.0",
+      "type": "case-study",
+      "version": "1.0",
+      "lifecycle": "canonical",
+      "file": "OST_Case_Study_Standing_Waves_Spinning_Fluid_v1_0.md",
+      "depends_on": [
+        "TE-OST-2.1"
       ]
+    },
+    {
+      "id": "TE-BOOTLOADER-7.1",
+      "type": "bootloader",
+      "version": "7.1",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TE_BOOTLOADER_v7.1.md",
+      "depends_on": [],
+      "canonical_file": "TE_BOOTLOADER_v7_1_EN.md"
+    },
+    {
+      "id": "TE-BOOTLOADER-6.0",
+      "type": "bootloader",
+      "version": "6.0",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TE_BOOTLOADER_v6_0_PROJECT.md",
+      "depends_on": []
+    },
+    {
+      "id": "TE-CORE-5.1",
+      "type": "core",
+      "version": "5.1 (content 5.2)",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TE_CORE_v5.1.md",
+      "depends_on": [
+        "TE-BOOTLOADER-7.1"
+      ],
+      "canonical_file": "TE_CORE_v5_1_EN.md"
     },
     {
       "id": "TE-CORE-5.0",
       "type": "core",
       "version": "5.0",
       "lifecycle": "legacy",
-      "file": "TE_CORE_v5.0.md",
-      "depends_on": ["TE-BOOTLOADER-6.0"]
+      "file": "ARCHIVE/TE_CORE_v5.0.md",
+      "depends_on": [
+        "TE-BOOTLOADER-6.0"
+      ]
     },
     {
       "id": "TE-CORE-PATCH-5.1",
       "type": "patch",
       "version": "5.1",
       "lifecycle": "legacy",
-      "file": "TE_CORE_v5_1_PATCH.md",
-      "depends_on": ["TE-CORE-5.0"]
+      "file": "ARCHIVE/TE_CORE_v5_1_PATCH.md",
+      "depends_on": [
+        "TE-CORE-5.0"
+      ]
+    },
+    {
+      "id": "TE-VERT-5.0",
+      "type": "module",
+      "version": "5.0",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TE_MODULE_VERT_v5.0.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ]
+    },
+    {
+      "id": "TE-LENS-5.0",
+      "type": "module",
+      "version": "5.0",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TE_MODULE_LENS_v5.0.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ]
+    },
+    {
+      "id": "TE-PPRO-5.1",
+      "type": "module",
+      "version": "5.1",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TE_MODULE_PPRO_v5.1.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ]
+    },
+    {
+      "id": "TE-SCIMS-5.0",
+      "type": "module",
+      "version": "5.0",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TE_MODULE_SCIMS_v5.0.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ]
+    },
+    {
+      "id": "TE-OBSERVER-1.0.1",
+      "type": "integrator",
+      "version": "1.0.1",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TE_OBSERVER v1.0.1 Lyapunov XP.md",
+      "depends_on": []
     },
     {
       "id": "TE-OBSERVER-1.0",
       "type": "integrator",
       "version": "1.0",
       "lifecycle": "legacy",
-      "file": "TE_OBSERVER v1.0.md",
-      "depends_on": ["TE-SVP-5.1"]
+      "file": "ARCHIVE/TE_OBSERVER v1.0.md",
+      "depends_on": [
+        "TE-SVP-5.1"
+      ]
     },
     {
-      "id": "TE-SESSION-DUMP-2026-03-06-02",
-      "type": "session-log",
-      "version": null,
-      "lifecycle": "private",
-      "file": "SESSION_MEMORY_DUMP_2026_03_06_02.md",
+      "id": "POST-RELEASE-REMINDERS-5.3.0",
+      "type": "note",
+      "version": "5.3.0",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/POST_RELEASE_REMINDERS_v5_3_0.md",
       "depends_on": []
+    },
+    {
+      "id": "TRANSLATION-REPORT-EN",
+      "type": "note",
+      "version": "2026-06",
+      "lifecycle": "legacy",
+      "file": "ARCHIVE/TRANSLATION_REPORT_FRAMEWORK_EN.md",
+      "depends_on": []
+    },
+    {
+      "id": "TE-LEXX-0.1",
+      "type": "domain-framework",
+      "version": "method 0.1 / runtime 0.2.0-alpha.3",
+      "lifecycle": "external",
+      "file": null,
+      "location": "ordinative_sciences_framework/FRAMEWORKS/LEXX/",
+      "depends_on": [
+        "TE-BOOTLOADER-7.1.1",
+        "TE-PROTOCOLS-1.1",
+        "TE-CORE-5.2.1",
+        "TE-SVP-5.1"
+      ]
+    },
+    {
+      "id": "TE-CASEWORK-0.1",
+      "type": "domain-framework",
+      "version": "method 0.1 / runtime 0.1.0-alpha.1",
+      "lifecycle": "external",
+      "file": null,
+      "location": "ordinative_sciences_framework/FRAMEWORKS/CASEWORK/",
+      "depends_on": [
+        "TE-BOOTLOADER-7.1.1",
+        "TE-PROTOCOLS-1.1",
+        "TE-CORE-5.2.1",
+        "TE-SVP-5.1"
+      ]
     }
   ]
 }
